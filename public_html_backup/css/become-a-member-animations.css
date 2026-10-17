@@ -1,0 +1,346 @@
+/* Become a Member Page Animations */
+
+/* 1. Enhanced Floating Scholarship Icons */
+@keyframes scholarshipFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.1;
+    }
+    25% {
+        transform: translateY(-15px) rotate(90deg) scale(1.1);
+        opacity: 0.15;
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg) scale(1.2);
+        opacity: 0.2;
+    }
+    75% {
+        transform: translateY(-15px) rotate(270deg) scale(1.1);
+        opacity: 0.15;
+    }
+}
+
+@keyframes scholarshipFloatReverse {
+    0%, 100% {
+        transform: translateY(0px) rotate(360deg) scale(1);
+        opacity: 0.1;
+    }
+    25% {
+        transform: translateY(-20px) rotate(270deg) scale(1.15);
+        opacity: 0.18;
+    }
+    50% {
+        transform: translateY(-40px) rotate(180deg) scale(1.3);
+        opacity: 0.25;
+    }
+    75% {
+        transform: translateY(-20px) rotate(90deg) scale(1.15);
+        opacity: 0.18;
+    }
+}
+
+/* 2. Membership Card Animations */
+.membership-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.membership-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.membership-card:hover::before {
+    left: 100%;
+}
+
+.membership-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(124, 58, 237, 0.25);
+}
+
+/* 3. Scholarship Icon Pulse Animation */
+@keyframes scholarshipPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+.scholarship-icon-pulse {
+    animation: scholarshipPulse 2s ease-in-out infinite;
+}
+
+/* 4. Form Input Focus Animation */
+.form-input-animated {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.form-input-animated:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
+}
+
+/* 5. Button Hover Animations */
+.btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-animated::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-animated:hover::before {
+    left: 100%;
+}
+
+.btn-animated:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.3);
+}
+
+/* 6. Advisory Board Card Animations */
+.advisory-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.advisory-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.advisory-card img {
+    transition: all 0.3s ease;
+}
+
+.advisory-card:hover img {
+    transform: scale(1.1);
+}
+
+/* 7. Video Container Animation */
+.video-container {
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.video-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* 8. Benefit Card Hover Effects */
+.benefit-card {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(79, 70, 229, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.benefit-card:hover::before {
+    opacity: 1;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(124, 58, 237, 0.15);
+}
+
+/* 9. Icon Rotation Animation */
+@keyframes iconRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.icon-rotate:hover {
+    animation: iconRotate 1s ease-in-out;
+}
+
+/* 10. Gradient Text Animation */
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #7c3aed, #8b5cf6, #a78bfa, #c4b5fd);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* 11. Stagger Animation for Cards */
+.stagger-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: staggerFadeIn 0.6s ease forwards;
+}
+
+@keyframes staggerFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stagger-animation:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation:nth-child(5) { animation-delay: 0.5s; }
+.stagger-animation:nth-child(6) { animation-delay: 0.6s; }
+
+/* 12. Floating Action Button Animation */
+@keyframes floatingPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(124, 58, 237, 0);
+    }
+}
+
+.floating-pulse {
+    animation: floatingPulse 2s infinite;
+}
+
+/* 13. Section Reveal Animation */
+@keyframes sectionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-reveal {
+    animation: sectionReveal 0.8s ease-out;
+}
+
+/* 14. Responsive Animations */
+@media (max-width: 768px) {
+    .membership-card:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+    
+    .advisory-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+}
+
+/* 15. Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .scholarship-icon,
+    .membership-card,
+    .advisory-card,
+    .benefit-card,
+    .btn-animated {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .membership-card:hover,
+    .advisory-card:hover,
+    .benefit-card:hover,
+    .btn-animated:hover {
+        transform: none !important;
+    }
+}
+
+/* 16. Loading Animation for Images */
+@keyframes imageLoad {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.image-load {
+    animation: imageLoad 0.5s ease-out;
+}
+
+/* 17. Text Reveal Animation */
+@keyframes textReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-reveal {
+    animation: textReveal 0.6s ease-out;
+}
+
+/* 18. Glow Effect */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(124, 58, 237, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(124, 58, 237, 0.8);
+    }
+}
+
+.glow-effect:hover {
+    animation: glow 1.5s ease-in-out infinite;
+}

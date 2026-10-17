@@ -1,0 +1,407 @@
+/* Scholarship Animations CSS */
+
+/* 1. Floating Scholarship Icons Animation */
+@keyframes floatScholarshipIcon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.1;
+    }
+    90% {
+        opacity: 0.1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.floating-scholarship-icons {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* 2. Scholarship Confetti Animation */
+@keyframes confettiDrop {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* 3. Scholarship Progress Animation */
+.scholarship-step {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.scholarship-step::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #7c3aed, #4f46e5);
+    transform: translateY(-50%);
+    transition: width 0.5s ease;
+    opacity: 0;
+}
+
+.scholarship-step-active {
+    transform: translateX(5px);
+}
+
+.scholarship-step-active::before {
+    width: 15px;
+    opacity: 1;
+}
+
+.scholarship-step-completed::before {
+    width: 15px;
+    opacity: 1;
+    background: linear-gradient(to right, #10b981, #059669);
+}
+
+.scholarship-step-upcoming {
+    opacity: 0.7;
+}
+
+.scholarship-step-active [class*="rounded-full"] {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+    transition: all 0.3s ease;
+}
+
+.scholarship-step-completed [class*="rounded-full"] {
+    background: linear-gradient(to right, #10b981, #059669);
+    transition: all 0.3s ease;
+}
+
+/* 4. Countdown Animation - REMOVED */
+/* Countdown animations have been disabled to remove "days left" displays */
+
+/* 5. Eligibility Checker Animation */
+.eligibility-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.eligibility-checking {
+    animation: checking 0.8s infinite;
+}
+
+@keyframes checking {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px);
+    }
+    75% {
+        transform: translateX(2px);
+    }
+}
+
+.eligibility-met {
+    color: #10b981 !important;
+    font-weight: bold;
+}
+
+.eligibility-met div {
+    background-color: #10b981 !important;
+}
+
+.eligibility-not-met {
+    color: #ef4444 !important;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.eligibility-not-met div {
+    background-color: #ef4444 !important;
+}
+
+/* 6. Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) skew(-12deg);
+    }
+    100% {
+        transform: translateX(200%) skew(-12deg);
+    }
+}
+
+/* 7. Scholarship Icon Pulse Animation */
+.scholarship-icon-pulse {
+    animation: iconPulse 2s infinite;
+}
+
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(124, 58, 237, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+    }
+}
+
+/* 8. Document Upload Animation */
+.document-upload-animation {
+    position: relative;
+    overflow: hidden;
+}
+
+.document-upload-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to bottom, rgba(124, 58, 237, 0.2), rgba(79, 70, 229, 0.2));
+    transition: height 1.5s ease;
+}
+
+.document-upload-animation.uploading::after {
+    height: 100%;
+}
+
+/* 9. Scholarship Award Animation */
+@keyframes celebrate {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.scholarship-award {
+    animation: celebrate 1s ease-in-out;
+}
+
+/* 10. Application Status Animation */
+.application-status {
+    position: relative;
+    overflow: hidden;
+}
+
+.application-status::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, rgba(124, 58, 237, 0.1), rgba(79, 70, 229, 0.1));
+    transition: width 2s ease;
+}
+
+.application-status.in-progress::before {
+    width: 50%;
+}
+
+.application-status.completed::before {
+    width: 100%;
+}
+
+/* 11. Scholarship Filter Animation */
+.filter-animation {
+    transition: all 0.3s ease;
+}
+
+.filter-animation:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.filter-animation.active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.2), 0 2px 4px -1px rgba(124, 58, 237, 0.1);
+}
+
+/* 12. Scholarship Card Hover Animation */
+.scholarship-card {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.scholarship-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    z-index: 10;
+}
+
+/* 13. Scholarship Badge Animation */
+.scholarship-badge {
+    position: relative;
+    overflow: hidden;
+}
+
+.scholarship-badge::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    animation: badgeShine 3s infinite;
+}
+
+@keyframes badgeShine {
+    0% {
+        transform: rotate(45deg) translateY(-100%);
+    }
+    100% {
+        transform: rotate(45deg) translateY(100%);
+    }
+}
+
+/* 14. Scholarship Amount Animation */
+.amount-highlight {
+    position: relative;
+    overflow: hidden;
+}
+
+.amount-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: amountHighlight 3s infinite;
+}
+
+@keyframes amountHighlight {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* 15. Scholarship CTA Button Animation */
+.cta-button-animation {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button-animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transition: all 0.5s ease;
+}
+
+.cta-button-animation:hover::before {
+    left: 100%;
+    transition: all 0.5s ease;
+}
+
+/* 16. Additional Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shimmerEffect {
+    0% { transform: translateX(-100%) skewX(-15deg); }
+    100% { transform: translateX(100%) skewX(-15deg); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 17. Scholarship Card Animation */
+.scholarship-card-animated {
+    animation: cardAppear 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes cardAppear {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 18. Ensure animations work on all browsers */
+.animate-all {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* 19. Force animation display */
+.force-animation {
+    animation-play-state: running !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: all 0.5s ease !important;
+}
