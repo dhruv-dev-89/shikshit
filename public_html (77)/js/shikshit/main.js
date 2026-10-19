@@ -164,4 +164,81 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // 7. Creative Hero Interactions (Spotlight, Parallax, and Polaroid Drag)
+  function initCreativeHero() {
+    const hero = document.getElementById('hero-section') || document.querySelector('.hero');
+    if (!hero) return;
+
+    const pcs = Array.from(hero.querySelectorAll('.pc'));
+    const ips = hero.querySelectorAll('.ip img');
+    let hint = hero.querySelector('.hint') || document.getElementById('hint');
+
+    // Pointermove dynamic spotlight and subtle parallax
+    hero.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      const r = hero.getBoundingClientRect();
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+      hero.style.setProperty('--mx', x + 'px');
+      hero.style.setProperty('--my', y + 'px');
+
+      if (window.innerWidth <= 1080) return;
+      const nx = (x / r.width) - 0.5;
+      const ny = (y / r.height) - 0.5;
+
+      pcs.forEach(function (p) {
+        if (p.classList.contains('drag')) return;
+        const k = parseFloat(p.dataset.d) || 16;
+        const inner = p.firstElementChild;
+        if (inner) {
+          inner.style.transform = 'translate3d(' + (-nx * k) + 'px, ' + (-ny * k) + 'px, 0)';
+        }
+      });
+
+      ips.forEach(function (img, idx) {
+        const factor = idx ? -8 : 8;
+        img.style.transform = 'scale(1.06) translate(' + (nx * factor) + 'px, ' + (ny * 4) + 'px)';
+      });
+    });
+
+    // Draggable Polaroids with pointer capture and smooth translate
+    pcs.forEach(function (pc) {
+      let sx = 0, sy = 0, bx = 0, by = 0, dragging = false;
+
+      pc.addEventListener('pointerdown', function (e) {
+        if (window.innerWidth <= 1080 || e.button > 0) return;
+        dragging = true;
+        sx = e.clientX;
+        sy = e.clientY;
+        pc.setPointerCapture(e.pointerId);
+        pc.classList.add('drag');
+
+        if (hint) {
+          hint.remove();
+          hint = null;
+        }
+      });
+
+      pc.addEventListener('pointermove', function (e) {
+        if (!dragging) return;
+        const dx = bx + e.clientX - sx;
+        const dy = by + e.clientY - sy;
+        pc.style.transform = 'translate3d(' + dx + 'px, ' + dy + 'px, 0) rotate(var(--r))';
+      });
+
+      function endDrag(e) {
+        if (!dragging) return;
+        dragging = false;
+        bx += e.clientX - sx;
+        by += e.clientY - sy;
+        pc.classList.remove('drag');
+      }
+
+      pc.addEventListener('pointerup', endDrag);
+      pc.addEventListener('pointercancel', endDrag);
+    });
+  }
+
+  initCreativeHero();
 });

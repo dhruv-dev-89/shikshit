@@ -198,114 +198,89 @@ shikshit academic development services,shikshit training and mentorship,
     <main id="main-content">
 
       <!-- ====================================================================
-           1. HERO (Two Columns: Text Left + Grid Photo Composition Right)
+           1. CREATIVE HERO (Headline with Inline Face Pills, Draggable Polaroids & Dual Marquee)
            ==================================================================== -->
-      <section class="shikshit-section hero-editorial hero-section" id="hero-section">
-        <div class="shikshit-container">
-          <div class="hero-grid">
+      <section class="hero hero-section" id="hero-section">
+        <div class="spot"></div>
+        <div class="dots"></div>
 
-            <!-- Left Column: Intro Copy & Buttons -->
-            <div class="hero-text-col editorial-reveal">
-              <!-- Top Chip -->
-              <div class="shikshit-chip">
-                Empowering Education 🎓
+        <div class="inner">
+          <div class="chip">Empowering Education 🎓</div>
+          <h1>
+            <span class="ln"><span class="k">Welcome to Shikshit</span></span>
+            <span class="ln"><span>Transforming <span class="ip"><img src="images/vision.webp" alt="Smiling students" loading="eager"></span> Lives</span></span>
+            <span class="ln"><span>Through <span class="ip"><img src="images/siksha.webp" alt="Classroom learning" loading="eager"></span> <span class="gt">Education<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9C50 2 110 3 198 7" stroke="#F4A58A" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span></span></span>
+          </h1>
+
+          <p class="lead">
+            Shikshit is a <b>not-for-profit organization</b> dedicated to enabling access to quality education for underprivileged and deserving students across India.
+          </p>
+
+          <div class="cta">
+            <a class="btn btn-p" href="scholarship.html">📚 View Scholarships &rarr;</a>
+            <a class="btn btn-q" href="become-a-member.html">🤝 Join Our Network</a>
+          </div>
+        </div>
+
+        <!-- Draggable Polaroid Stage with Comfortable Photo Framing -->
+        <div class="stage">
+          <!-- Polaroid 1: Raised ₹2.5Cr+ -->
+          <figure class="pc p1" data-d="16">
+            <div class="pi">
+              <span class="sk">₹2.5Cr+</span>
+              <div class="pi-img-frame">
+                <img src="images/vision.webp" alt="Smiling students" loading="eager">
               </div>
-
-              <!-- H1 with small line & big line with gradient underline -->
-              <h1 class="hero-title">
-                <span class="hero-small-heading">Welcome to Shikshit</span>
-                <span class="hero-main-line">
-                  Transforming Lives Through <span class="shikshit-gradient-text hero-underline-wrapper">Education<svg class="hero-underline-svg" viewBox="0 0 320 20" fill="none" aria-hidden="true"><path class="hero-underline-path" d="M4 14C62 5 180 3 316 14" stroke="url(#sigGradient)" stroke-width="4.5" stroke-linecap="round"/></svg></span>
-                </span>
-              </h1>
-
-              <!-- Not-for-profit paragraph -->
-              <p class="hero-paragraph">
-                Shikshit is a not-for-profit organization dedicated to enabling access to quality education for
-                underprivileged and deserving students across India.
-              </p>
-
-              <!-- CTA Buttons -->
-              <div class="hero-btn-row hero-cta-buttons">
-                <a href="scholarship.html" class="btn-pill btn-primary-gradient btn-lg">
-                  <span>📚</span> View Scholarships <span class="btn-arrow-icon">&rarr;</span>
-                </a>
-                <a href="become-a-member.html" class="btn-pill btn-secondary-white btn-lg">
-                  <span>🤝</span> Join Our Network
-                </a>
-              </div>
-
-              <!-- Small Tick Row -->
-              <div class="hero-tick-row">
-                <div class="hero-tick-item">
-                  <span class="hero-tick-icon">&#10003;</span>
-                  <span>Free Registration</span>
-                </div>
-                <div class="hero-tick-item">
-                  <span class="hero-tick-icon">&#10003;</span>
-                  <span>Merit-Based</span>
-                </div>
-                <div class="hero-tick-item">
-                  <span class="hero-tick-icon">&#10003;</span>
-                  <span>Nationwide</span>
-                </div>
-              </div>
+              <figcaption>Raised</figcaption>
+              <span class="hint" id="hint">✋ drag me</span>
             </div>
+          </figure>
 
-            <!-- Right Column: CSS-Grid Photo Composition (~600px Fixed Height) -->
-            <div class="hero-composition editorial-reveal">
-              <!-- Tall ARCH-shaped photo on left spanning 2 rows -->
-              <div class="hero-photo-arch">
-                <img src="images/vision.webp" alt="Shikshit Students in Learning Environment" loading="eager">
+          <!-- Polaroid 2: Students Helped 500+ -->
+          <figure class="pc p2" data-d="26">
+            <div class="pi">
+              <span class="sk">500+</span>
+              <div class="pi-img-frame">
+                <img src="images/siksha.webp" alt="Students in a science lab" loading="eager">
               </div>
-
-              <!-- Round photo on top right with white border -->
-              <div class="hero-photo-round">
-                <img src="images/siksha.webp" alt="Classroom and Laboratory Learning" loading="eager">
-              </div>
-
-              <!-- Gradient Impact Card on bottom right -->
-              <div class="hero-impact-card">
-                <div class="hero-impact-stat">
-                  <div>
-                    <div class="hero-impact-num" data-counter-target="2.5" data-counter-prefix="₹" data-counter-suffix="Cr+">₹2.5Cr+</div>
-                    <div class="hero-impact-label">Raised</div>
-                  </div>
-                  <span style="font-size: 24px;">🎯</span>
-                </div>
-                <div class="hero-impact-stat">
-                  <div>
-                    <div class="hero-impact-num" data-counter-target="500" data-counter-suffix="+">500+</div>
-                    <div class="hero-impact-label">Students Helped</div>
-                  </div>
-                  <span style="font-size: 24px;">🎓</span>
-                </div>
-                <div class="hero-impact-stat">
-                  <div>
-                    <div class="hero-impact-num" data-counter-target="50" data-counter-suffix="+">50+</div>
-                    <div class="hero-impact-label">Institutions</div>
-                  </div>
-                  <span style="font-size: 24px;">🏛️</span>
-                </div>
-              </div>
-
-              <!-- Overlapping Rotating Circular Badge -->
-              <div class="hero-rotating-badge-pos" aria-hidden="true">
-                <div class="rotating-badge-container">
-                  <svg class="rotating-badge-svg" viewBox="0 0 130 130">
-                    <path id="badgeCirclePath" d="M 65, 65 m -47, 0 a 47,47 0 1,1 94,0 a 47,47 0 1,1 -94,0" fill="none" />
-                    <text font-size="9.5" font-weight="700" fill="#7C3AED" letter-spacing="2.4">
-                      <textPath href="#badgeCirclePath" startOffset="0%">
-                        • NOT-FOR-PROFIT • QUALITY EDUCATION
-                      </textPath>
-                    </text>
-                  </svg>
-                  <span class="rotating-badge-icon">🎓</span>
-                </div>
-              </div>
-
+              <figcaption>Students Helped</figcaption>
             </div>
+          </figure>
 
+          <!-- Polaroid 3: Institutions 50+ -->
+          <figure class="pc p3" data-d="20">
+            <div class="pi">
+              <span class="sk">50+</span>
+              <div class="pi-img-frame">
+                <img src="images/opp1.webp" alt="Students with certificates" loading="eager">
+              </div>
+              <figcaption>Institutions</figcaption>
+            </div>
+          </figure>
+
+          <!-- Polaroid 4: Not-for-profit -->
+          <figure class="pc p4" data-d="30">
+            <div class="pi">
+              <span class="sk">🎓</span>
+              <div class="pi-img-frame">
+                <img src="images/opp4.webp" alt="Student writing notes" loading="eager">
+              </div>
+              <figcaption>Not-for-profit</figcaption>
+            </div>
+          </figure>
+        </div>
+
+        <!-- Dual Running Marquee Ribbons -->
+        <div class="bands" aria-hidden="true">
+          <div class="bd a">
+            <div>
+              <span>Free Registration</span><span>✦</span><span>Merit-Based</span><span>✦</span><span>Nationwide</span><span>✦</span><span>Not-for-profit</span><span>✦</span><span>Quality Education</span><span>✦</span><span>Free Registration</span><span>✦</span><span>Merit-Based</span><span>✦</span><span>Nationwide</span><span>✦</span><span>Not-for-profit</span><span>✦</span><span>Quality Education</span><span>✦</span><span>Free Registration</span><span>✦</span><span>Merit-Based</span><span>✦</span><span>Nationwide</span><span>✦</span><span>Not-for-profit</span><span>✦</span><span>Quality Education</span><span>✦</span><span>Free Registration</span><span>✦</span><span>Merit-Based</span><span>✦</span><span>Nationwide</span><span>✦</span><span>Not-for-profit</span><span>✦</span><span>Quality Education</span><span>✦</span>
+            </div>
+          </div>
+          <div class="bd b">
+            <div>
+              <span>Free Registration</span><span>✦</span><span>Merit-Based</span><span>✦</span><span>Nationwide</span><span>✦</span><span>Not-for-profit</span><span>✦</span><span>Quality Education</span><span>✦</span><span>Free Registration</span><span>✦</span><span>Merit-Based</span><span>✦</span><span>Nationwide</span><span>✦</span><span>Not-for-profit</span><span>✦</span><span>Quality Education</span><span>✦</span><span>Free Registration</span><span>✦</span><span>Merit-Based</span><span>✦</span><span>Nationwide</span><span>✦</span><span>Not-for-profit</span><span>✦</span><span>Quality Education</span><span>✦</span><span>Free Registration</span><span>✦</span><span>Merit-Based</span><span>✦</span><span>Nationwide</span><span>✦</span><span>Not-for-profit</span><span>✦</span><span>Quality Education</span><span>✦</span>
+            </div>
           </div>
         </div>
       </section>
