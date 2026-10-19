@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Shikshit - Learn how we collect, use, and protect your information">
+    <title>Privacy Policy - Shikshit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 40px;
+            margin: -40px -40px 40px -40px;
+            border-radius: 5px 5px 0 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .website-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9em;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .website-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .intro {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 15px 0 20px 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        li:before {
+            content: "▹";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            header {
+                padding: 20px;
+                margin: -20px -20px 20px -20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Privacy Policy</h1>
+            <a href="https://www.shikshit.in/" class="website-link">https://www.shikshit.in/</a>
+        </header>
+
+        <div class="intro">
+            <p>At <strong>Shikshit</strong>, accessible from <a href="https://www.shikshit.in/" target="_blank">https://www.shikshit.in/</a>, the privacy of our visitors is one of our main priorities. This Privacy Policy document outlines the types of information that are collected and recorded by Shikshit and how we use it.</p>
+        </div>
+
+        <div class="section">
+            <h2>Information We Collect</h2>
+            <p>When you interact with our website, we may collect certain information including:</p>
+            <ul>
+                <li>Basic personal details such as name or email address (only when voluntarily submitted)</li>
+                <li>Browser type and device information</li>
+                <li>Internet Protocol (IP) address</li>
+                <li>Pages visited and time spent on the website</li>
+                <li>Other analytical information related to website usage</li>
+            </ul>
+            <p>This information helps us understand how visitors use our platform and allows us to improve the overall user experience.</p>
+        </div>
+
+        <div class="section">
+            <h2>How We Use Your Information</h2>
+            <p>The information collected may be used in the following ways:</p>
+            <ul>
+                <li>To improve website functionality and performance</li>
+                <li>To respond to user queries or feedback</li>
+                <li>To provide relevant educational content and updates</li>
+                <li>To analyse visitor behaviour and website traffic patterns</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Cookies and Tracking Technologies</h2>
+            <p>Shikshit may use cookies to store information about visitor preferences and optimize the user experience by customizing web page content based on browser type or other information.</p>
+        </div>
+
+        <div class="section">
+            <h2>Third-Party Services</h2>
+            <p>We may use third-party tools such as analytics services that help us understand website traffic. These tools may collect limited anonymous data in accordance with their own privacy policies.</p>
+        </div>
+
+        <div class="section">
+            <h2>Data Protection</h2>
+            <p>We take reasonable measures to protect user information from unauthorized access, disclosure, or misuse.</p>
+        </div>
+
+        <div class="section">
+            <h2>Policy Updates</h2>
+            <p>This Privacy Policy may be updated periodically. Any changes will be reflected on this page.</p>
+        </div>
+
+        <footer>
+            <p>Last Updated: <span id="lastUpdated"></span></p>
+            <p>&copy; <span id="currentYear"></span> Shikshit. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Set last updated date
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>

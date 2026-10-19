@@ -1,0 +1,574 @@
+<!-- NSMAS Responsive Navbar Component -->
+<nav
+  class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo and Brand Section -->
+      <div class="flex items-center space-x-3">
+        <a href="ns-mas.html" class="flex items-center space-x-3 group">
+          <img
+            src="./images/Logos02.png"
+            alt="Sikshit Logo"
+            class="h-10 w-10 md:h-12 md:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+          <div class="block">
+            <div
+              class="text-sm md:text-lg lg:text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-300"
+            >
+              National Scholarship
+            </div>
+            <div class="text-xs md:text-sm text-gray-600">
+              Merit and Assistance Scheme
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden xl:flex items-center space-x-8" id="desktop-nav">
+        <a
+          href="/"
+          class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300 relative group"
+        >
+          Shikshit
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href="scholarship.html"
+          class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300 relative group"
+        >
+          Scholarships
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href="how-it-works.html"
+          class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300 relative group"
+        >
+          How it works
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+        <a
+          href="contact.html"
+          class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300 relative group"
+        >
+          Contact us
+          <span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
+          ></span>
+        </a>
+      </div>
+
+      <!-- Search Bar and Apply Button -->
+      <div class="hidden xl:flex items-center space-x-4">
+        <!-- Search Bar -->
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search scholarships..."
+            class="w-48 lg:w-64 px-4 py-2 pl-12 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+          />
+          <svg
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
+        </div>
+
+        <!-- Apply Now Button -->
+        <a
+          href="registration.html"
+          class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          Apply Now
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="xl:hidden">
+        <button
+          id="mobile-menu-button"
+          class="mobile-menu-button p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 transition-colors duration-300"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <svg
+            id="menu-open-icon"
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+          <svg
+            id="menu-close-icon"
+            class="h-6 w-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="xl:hidden hidden bg-white border-t border-gray-200 shadow-lg"
+    style="display: none"
+  >
+    <div class="px-4 py-6 space-y-4 ml-4">
+      <!-- Mobile Search -->
+      <div class="relative mb-4">
+        <input
+          type="text"
+          placeholder="Search scholarships..."
+          class="mobile-search-input w-full px-4 py-3 pl-12 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+        />
+        <svg
+          class="mobile-search-icon absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <a
+        href="/"
+        class="block py-3 px-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-300"
+      >
+        Shikshit
+      </a>
+      <a
+        href="scholarship.html"
+        class="block py-3 px-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-300"
+      >
+        Scholarships
+      </a>
+      <a
+        href="how-it-works.html"
+        class="block py-3 px-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-300"
+      >
+        How it works
+      </a>
+      <a
+        href="contact.html"
+        class="block py-3 px-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-300"
+      >
+        Contact us
+      </a>
+
+      <!-- Mobile Apply Button -->
+      <div class="pt-4 border-t border-gray-200">
+        <a
+          href="registration.html"
+          class="block w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-center py-3 px-4 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg"
+        >
+          Apply Now
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu JavaScript - Simplified to avoid conflicts -->
+<script>
+  // Simplified Mobile Menu - Defers to main script.js for functionality
+  (function () {
+    "use strict";
+
+    console.log(
+      "NSMAS Navbar: Loaded - Mobile menu functionality handled by script.js"
+    );
+
+    // Mark that navbar is loaded so script.js can initialize mobile menu
+    window.navbarLoaded = true;
+
+    // Dispatch event to notify that navbar is ready
+    document.dispatchEvent(new CustomEvent("navbar:loaded"));
+  })();
+</script>
+
+<!-- Responsive Styles -->
+<style>
+  /* Ensure body has top padding for fixed navbar */
+  body {
+    padding-top: 64px; /* Default for mobile */
+  }
+
+  @media (min-width: 768px) {
+    body {
+      padding-top: 80px; /* Larger padding for desktop */
+    }
+  }
+
+  /* Smooth transitions for mobile menu */
+  #mobile-menu {
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Hover effects for desktop navigation */
+  @media (min-width: 1024px) {
+    .navbar-link {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .navbar-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #7c3aed, #6366f1);
+      transition: left 0.3s ease;
+    }
+
+    .navbar-link:hover::before {
+      left: 0;
+    }
+  }
+
+  /* Search bar focus effects and mobile search styling */
+  .search-input:focus,
+  .mobile-search-input:focus {
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    border-color: #7c3aed;
+    outline: none;
+  }
+
+  /* Base mobile search input styling */
+  .mobile-search-input {
+    -webkit-appearance: none;
+    appearance: none;
+    background-clip: padding-box;
+    transition: all 0.3s ease;
+  }
+
+  /* Base mobile search icon styling */
+  .mobile-search-icon {
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Apply button hover effects */
+  .apply-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .apply-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .apply-btn:hover::before {
+    left: 100%;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .navbar-brand-text {
+      display: none;
+    }
+
+    body {
+      padding-top: 64px;
+    }
+  }
+
+  /* Enhanced search input spacing for all mobile dimensions */
+
+  /* Default mobile search spacing (all mobile devices) */
+  @media (max-width: 1023px) {
+    .mobile-search-input {
+      padding-left: 4rem !important; /* Increased padding for better spacing */
+      padding-right: 1.5rem !important;
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+      font-size: 16px !important; /* Prevents zoom on iOS */
+      min-height: 52px !important;
+      border-radius: 12px !important;
+    }
+
+    .mobile-search-icon {
+      left: 1.25rem !important; /* Better positioning for icon */
+      width: 1.25rem !important;
+      height: 1.25rem !important;
+    }
+  }
+
+  /* Small mobile devices (320px - 480px) */
+  @media (max-width: 480px) {
+    .mobile-search-input {
+      padding-left: 4.25rem !important; /* Extra padding for small screens */
+      padding-right: 1.25rem !important;
+      padding-top: 0.875rem !important;
+      padding-bottom: 0.875rem !important;
+      min-height: 48px !important;
+      border-radius: 10px !important;
+    }
+
+    .mobile-search-icon {
+      left: 1.125rem !important;
+      width: 1.125rem !important;
+      height: 1.125rem !important;
+    }
+  }
+
+  /* Extra small mobile devices (≤360px) */
+  @media (max-width: 360px) {
+    .mobile-search-input {
+      padding-left: 4.5rem !important; /* Maximum padding for very small screens */
+      padding-right: 1rem !important;
+      padding-top: 0.75rem !important;
+      padding-bottom: 0.75rem !important;
+      min-height: 44px !important;
+      border-radius: 8px !important;
+    }
+
+    .mobile-search-icon {
+      left: 1rem !important;
+      width: 1rem !important;
+      height: 1rem !important;
+    }
+  }
+
+  /* Large mobile and small tablets (481px - 767px) */
+  @media (min-width: 481px) and (max-width: 767px) {
+    .mobile-search-input {
+      padding-left: 4.5rem !important;
+      padding-right: 1.75rem !important;
+      padding-top: 1.125rem !important;
+      padding-bottom: 1.125rem !important;
+      min-height: 56px !important;
+      border-radius: 14px !important;
+    }
+
+    .mobile-search-icon {
+      left: 1.375rem !important;
+      width: 1.375rem !important;
+      height: 1.375rem !important;
+    }
+  }
+
+  /* Tablets (768px - 1023px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .mobile-search-input {
+      padding-left: 5rem !important;
+      padding-right: 2rem !important;
+      padding-top: 1.25rem !important;
+      padding-bottom: 1.25rem !important;
+      min-height: 60px !important;
+      border-radius: 16px !important;
+      font-size: 17px !important;
+    }
+
+    .mobile-search-icon {
+      left: 1.5rem !important;
+      width: 1.5rem !important;
+      height: 1.5rem !important;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 768px) {
+    body {
+      padding-top: 72px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    body {
+      padding-top: 80px;
+    }
+  }
+
+  /* Additional responsive fixes for all laptop dimensions */
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    .max-w-7xl {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1367px) and (max-width: 1920px) {
+    .max-w-7xl {
+      max-width: 1536px;
+    }
+  }
+
+  @media (min-width: 1921px) {
+    .max-w-7xl {
+      max-width: 1792px;
+    }
+  }
+
+  /* Mobile menu improvements */
+  @media (max-width: 1023px) {
+    #mobile-menu {
+      max-height: calc(100vh - 64px);
+      overflow-y: auto;
+    }
+  }
+
+  /* Desktop specific adjustments - XL breakpoint and above */
+  @media (min-width: 1280px) {
+    /* Ensure desktop navigation is visible from xl breakpoint */
+    .hidden.xl\\:flex {
+      display: flex !important;
+    }
+
+    /* Hide mobile menu button from xl breakpoint */
+    .xl\\:hidden {
+      display: none !important;
+    }
+
+    /* Ensure mobile menu is hidden from xl breakpoint */
+    #mobile-menu.xl\\:hidden {
+      display: none !important;
+    }
+  }
+
+  /* Mobile and Tablet range - Show hamburger menu */
+  @media (max-width: 1279px) {
+    /* Ensure mobile menu button is visible */
+    .xl\\:hidden {
+      display: block !important;
+    }
+
+    /* Ensure desktop navigation is hidden */
+    .hidden.xl\\:flex {
+      display: none !important;
+    }
+
+    /* Ensure mobile menu can be shown when activated */
+    #mobile-menu.xl\\:hidden {
+      display: none; /* Will be toggled by JavaScript */
+    }
+
+    /* Show mobile menu when active */
+    #mobile-menu.xl\\:hidden.show {
+      display: block !important;
+    }
+  }
+
+  /* Tablet specific adjustments for better mobile menu display */
+  @media (min-width: 768px) and (max-width: 1279px) {
+    /* Optimize brand text for tablet */
+    .text-sm.md\\:text-lg.lg\\:text-xl {
+      font-size: 1rem !important;
+    }
+
+    .text-xs.md\\:text-sm {
+      font-size: 0.8rem !important;
+    }
+
+    /* Ensure hamburger menu button is properly sized */
+    .xl\\:hidden button {
+      padding: 0.5rem;
+    }
+
+    /* Mobile menu styling for tablet */
+    #mobile-menu {
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+    }
+  }
+
+  /* Large laptop/desktop range - Still show hamburger menu */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    /* Keep hamburger menu visible */
+    .xl\\:hidden {
+      display: block !important;
+    }
+
+    /* Keep desktop navigation hidden */
+    .hidden.xl\\:flex {
+      display: none !important;
+    }
+
+    /* Optimize brand text for large tablet/small laptop */
+    .text-sm.md\\:text-lg.lg\\:text-xl {
+      font-size: 1.1rem !important;
+    }
+
+    .text-xs.md\\:text-sm {
+      font-size: 0.85rem !important;
+    }
+  }
+
+  /* Desktop layout - XL and above (1280px+) */
+  @media (min-width: 1280px) {
+    /* Force desktop navigation to be visible */
+    #desktop-nav {
+      display: flex !important;
+      gap: 2rem;
+    }
+
+    /* Hide hamburger menu */
+    .xl\\:hidden {
+      display: none !important;
+    }
+
+    /* Show search bar and apply button */
+    .hidden.xl\\:flex {
+      display: flex !important;
+    }
+
+    /* Optimize for desktop */
+    .text-sm.md\\:text-lg.lg\\:text-xl {
+      font-size: 1.25rem !important;
+    }
+
+    .text-xs.md\\:text-sm {
+      font-size: 0.875rem !important;
+    }
+  }
+</style>

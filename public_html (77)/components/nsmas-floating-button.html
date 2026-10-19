@@ -1,0 +1,436 @@
+<!-- NS-MAS Floating Action Buttons - WhatsApp, Apply Now, and Donate -->
+<div class="nsmas-floating-buttons-container">
+    <!-- WhatsApp Button -->
+    <div class="nsmas-floating-button whatsapp-btn" id="nsmas-whatsapp-btn">
+        <div class="nsmas-floating-button-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
+            </svg>
+        </div>
+        <span class="nsmas-floating-button-text">WhatsApp</span>
+    </div>
+
+    <!-- Apply Now Button -->
+    <div class="nsmas-floating-button apply-now-btn" id="nsmas-apply-now-btn">
+        <div class="nsmas-floating-button-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14,2 14,8 20,8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10,9 9,9 8,9"/>
+            </svg>
+        </div>
+        <span class="nsmas-floating-button-text">Apply Now</span>
+    </div>
+
+    <!-- Donate Button -->
+    <div class="nsmas-floating-button donate-btn" id="nsmas-donate-btn">
+        <div class="nsmas-floating-button-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+        </div>
+        <span class="nsmas-floating-button-text">Donate</span>
+    </div>
+</div>
+
+<!-- NS-MAS Floating Buttons Styles -->
+<style>
+/* NS-MAS Floating Action Buttons Styles */
+.nsmas-floating-buttons-container {
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+}
+
+.nsmas-floating-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+    min-width: 38px;
+    height: 38px;
+    border-radius: 19px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 0 12px 0 0;
+}
+
+.nsmas-floating-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: inherit;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.nsmas-floating-button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.nsmas-floating-button-text {
+    color: white;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+
+
+/* Individual Button Styles */
+.nsmas-floating-button.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E) !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.nsmas-floating-button.apply-now-btn {
+    background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.nsmas-floating-button.donate-btn {
+    background: linear-gradient(135deg, #EC4899, #DC2626) !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Hover Effects */
+.nsmas-floating-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.nsmas-floating-button:hover .nsmas-floating-button-icon {
+    transform: scale(1.1);
+}
+
+.nsmas-floating-button.whatsapp-btn:hover {
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+.nsmas-floating-button.apply-now-btn:hover {
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+}
+
+.nsmas-floating-button.donate-btn:hover {
+    box-shadow: 0 8px 30px rgba(236, 72, 153, 0.4);
+}
+
+/* Pulse Animation */
+@keyframes nsmas-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(124, 58, 237, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+    }
+}
+
+.nsmas-floating-button {
+    animation: nsmas-pulse 2s infinite;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nsmas-floating-buttons-container {
+        right: 15px;
+        bottom: 15px;
+        gap: 12px;
+    }
+
+    .nsmas-floating-button {
+        min-width: 50px;
+        height: 50px;
+        padding: 0 15px 0 0;
+    }
+
+    .nsmas-floating-button-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nsmas-floating-button-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nsmas-floating-button-text {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .nsmas-floating-button:hover {
+        transform: translateY(-3px) scale(1.03);
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .nsmas-floating-buttons-container {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .nsmas-floating-button {
+        min-width: 45px;
+        height: 45px;
+        padding: 0 12px 0 0;
+    }
+
+    .nsmas-floating-button-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nsmas-floating-button-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .nsmas-floating-button-text {
+        font-size: 11px;
+        padding: 0 8px;
+    }
+}
+</style>
+
+<!-- NS-MAS Floating Buttons JavaScript -->
+<script>
+/* NS-MAS Floating Action Buttons JavaScript */
+(function() {
+    'use strict';
+
+    // Configuration
+    const nsmasConfig = {
+        whatsappNumber: '+919560307025', // Replace with actual WhatsApp number
+        whatsappMessage: 'Hello! I need assistance with NS-MAS scholarships.',
+        applyNowPage: 'registration.html',
+        donatePage: 'donate.html'
+    };
+
+    // Initialize NS-MAS floating buttons when DOM is loaded
+    function initNSMASFloatingButtons() {
+        console.log('Initializing NS-MAS floating buttons...');
+
+        // Check if container exists
+        const container = document.querySelector('.nsmas-floating-buttons-container');
+        console.log('NS-MAS floating buttons container found:', !!container);
+
+        if (container) {
+            console.log('NS-MAS Container HTML:', container.innerHTML);
+        }
+
+        // Wait for buttons to be available
+        setTimeout(() => {
+            attachNSMASEventListeners();
+            addNSMASAccessibilityFeatures();
+            handleNSMASMobileOptimizations();
+        }, 100);
+    }
+
+    // Attach event listeners to NS-MAS buttons
+    function attachNSMASEventListeners() {
+        const whatsappBtn = document.getElementById('nsmas-whatsapp-btn');
+        const applyNowBtn = document.getElementById('nsmas-apply-now-btn');
+        const donateBtn = document.getElementById('nsmas-donate-btn');
+
+        console.log('NS-MAS floating buttons found:', {
+            whatsapp: !!whatsappBtn,
+            applyNow: !!applyNowBtn,
+            donate: !!donateBtn
+        });
+
+        if (whatsappBtn) {
+            whatsappBtn.addEventListener('click', handleWhatsAppClick);
+            whatsappBtn.addEventListener('touchstart', handleNSMASTouchStart);
+            console.log('WhatsApp button initialized');
+        } else {
+            console.error('WhatsApp button not found!');
+        }
+
+        if (applyNowBtn) {
+            applyNowBtn.addEventListener('click', handleApplyNowClick);
+            applyNowBtn.addEventListener('touchstart', handleNSMASTouchStart);
+            console.log('Apply Now button initialized');
+        } else {
+            console.error('Apply Now button not found!');
+        }
+
+        if (donateBtn) {
+            donateBtn.addEventListener('click', handleNSMASDonateClick);
+            donateBtn.addEventListener('touchstart', handleNSMASTouchStart);
+            console.log('NS-MAS Donate button initialized');
+        } else {
+            console.error('NS-MAS Donate button not found!');
+        }
+
+        console.log('Event listeners attached to NS-MAS floating buttons');
+    }
+
+    // Handle WhatsApp button click
+    function handleWhatsAppClick(event) {
+        event.preventDefault();
+
+        // Add click animation
+        addNSMASClickAnimation(event.currentTarget);
+
+        // Open WhatsApp
+        setTimeout(() => {
+            const whatsappUrl = `https://wa.me/${nsmasConfig.whatsappNumber}?text=${encodeURIComponent(nsmasConfig.whatsappMessage)}`;
+            window.open(whatsappUrl, '_blank');
+        }, 200);
+
+        console.log('WhatsApp button clicked');
+    }
+
+    // Handle Apply Now button click
+    function handleApplyNowClick(event) {
+        event.preventDefault();
+
+        // Add click animation
+        addNSMASClickAnimation(event.currentTarget);
+
+        // Navigate to apply now page
+        setTimeout(() => {
+            window.location.href = nsmasConfig.applyNowPage;
+        }, 200);
+
+        console.log('Apply Now button clicked');
+    }
+
+    // Handle Donate button click
+    function handleNSMASDonateClick(event) {
+        event.preventDefault();
+
+        // Add click animation
+        addNSMASClickAnimation(event.currentTarget);
+
+        // Navigate to donate page
+        setTimeout(() => {
+            window.location.href = nsmasConfig.donatePage;
+        }, 200);
+
+        console.log('NS-MAS Donate button clicked');
+    }
+
+    // Handle touch start for mobile devices
+    function handleNSMASTouchStart(event) {
+        const button = event.currentTarget;
+        button.style.transform = 'scale(0.95)';
+
+        setTimeout(() => {
+            button.style.transform = '';
+        }, 150);
+    }
+
+    // Add click animation
+    function addNSMASClickAnimation(button) {
+        button.style.transform = 'scale(0.9)';
+        button.style.transition = 'transform 0.1s ease';
+
+        setTimeout(() => {
+            button.style.transform = '';
+            button.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        }, 100);
+    }
+
+    // Add accessibility features
+    function addNSMASAccessibilityFeatures() {
+        const buttons = document.querySelectorAll('.nsmas-floating-button');
+
+        buttons.forEach(button => {
+            // Add ARIA labels
+            if (button.id === 'nsmas-whatsapp-btn') {
+                button.setAttribute('aria-label', 'Contact us on WhatsApp');
+                button.setAttribute('role', 'button');
+                button.setAttribute('tabindex', '0');
+            } else if (button.id === 'nsmas-apply-now-btn') {
+                button.setAttribute('aria-label', 'Apply for scholarship now');
+                button.setAttribute('role', 'button');
+                button.setAttribute('tabindex', '0');
+            } else if (button.id === 'nsmas-donate-btn') {
+                button.setAttribute('aria-label', 'Donate for the cause');
+                button.setAttribute('role', 'button');
+                button.setAttribute('tabindex', '0');
+            }
+
+            // Add keyboard support
+            button.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    button.click();
+                }
+            });
+        });
+    }
+
+    // Handle mobile optimizations
+    function handleNSMASMobileOptimizations() {
+        if (window.innerWidth <= 768) {
+            const container = document.querySelector('.nsmas-floating-buttons-container');
+            if (container) {
+                // Adjust position for mobile keyboards
+                window.addEventListener('resize', function() {
+                    if (window.innerHeight < 500) {
+                        container.style.bottom = '10px';
+                    } else {
+                        container.style.bottom = '15px';
+                    }
+                });
+            }
+        }
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNSMASFloatingButtons);
+    } else {
+        initNSMASFloatingButtons();
+    }
+
+    // Also initialize after includeHTML loads content
+    window.addEventListener('load', function() {
+        setTimeout(initNSMASFloatingButtons, 500);
+    });
+
+    // Export for manual initialization if needed
+    window.initNSMASFloatingButtons = initNSMASFloatingButtons;
+
+})();
+</script>

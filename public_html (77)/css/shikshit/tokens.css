@@ -1,0 +1,104 @@
+/* ==========================================================================
+   SHIKSHIT DESIGN SYSTEM — TOKENS (Preserving Exact Brand Theme)
+   ========================================================================== */
+
+:root {
+  /* Brand Theme Colors (Directly matching Shikshit Identity) */
+  --color-primary: #6B46C1;
+  --color-primary-light: #7C3AED;
+  --color-primary-lighter: #8B5CF6;
+  --color-primary-subtle: #F5F3FF;
+  --color-primary-dark: #581C87;
+  --color-primary-darker: #3B0764;
+  
+  /* Brand Accent & Secondary */
+  --color-accent: #4F46E5;
+  --color-accent-light: #6366F1;
+  --color-accent-subtle: #EEF2FF;
+  --color-cyan: #06B6D4;
+  --color-cyan-light: #E0F2FE;
+  
+  /* Feedback & Trust */
+  --color-success: #10B981;
+  --color-success-dark: #059669;
+  --color-success-subtle: #ECFDF5;
+  --color-warning: #F59E0B;
+  --color-warning-subtle: #FFFBEB;
+  --color-error: #EF4444;
+  --color-error-subtle: #FEF2F2;
+
+  /* Surfaces & Neutrals */
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F8FAFC;
+  --color-bg-card: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-border-hover: #CBD5E1;
+  --color-border-focus: #7C3AED;
+  
+  /* Typography Text Colors (High Contrast WCAG AAA/AA) */
+  --color-text-main: #0F172A;
+  --color-text-muted: #475569;
+  --color-text-light: #64748B;
+  --color-text-inverse: #FFFFFF;
+
+  /* Gradients (Shikshit Signature Gradients) */
+  --grad-primary: linear-gradient(135deg, #6B46C1 0%, #4F46E5 100%);
+  --grad-primary-hover: linear-gradient(135deg, #7C3AED 0%, #4338CA 100%);
+  --grad-hero: linear-gradient(135deg, #FAF5FF 0%, #F5F3FF 50%, #EEF2FF 100%);
+  --grad-accent: linear-gradient(135deg, #7C3AED 0%, #2563EB 100%);
+  --grad-card: linear-gradient(180deg, #FFFFFF 0%, #FAF5FF 100%);
+  --grad-dark: linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%);
+
+  /* Typography */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Type Scale */
+  --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+  --fs-sm: clamp(0.875rem, 0.825rem + 0.25vw, 0.9375rem);
+  --fs-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --fs-md: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --fs-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --fs-xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
+  --fs-2xl: clamp(1.875rem, 1.65rem + 1.1vw, 2.375rem);
+  --fs-3xl: clamp(2.25rem, 1.95rem + 1.5vw, 3rem);
+  --fs-4xl: clamp(2.75rem, 2.25rem + 2.5vw, 3.75rem);
+
+  /* Spacing */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-purple: 0 10px 25px -5px rgba(107, 70, 193, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
+  /* Layout */
+  --container-max: 1280px;
+  --nav-height: 80px;
+
+  /* Transitions */
+  --trans-fast: 0.15s ease;
+  --trans-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}

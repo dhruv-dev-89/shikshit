@@ -1,0 +1,367 @@
+/* Review Cards Styles */
+
+/* Base styles for review cards */
+.review-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 7rem;
+    position: relative;
+    overflow: hidden;
+    gap: 0.1rem;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo container styles */
+.review-logo {
+    min-width: 140px;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.review-logo img {
+    height: 4.5rem;
+    object-fit: contain;
+    max-width: 100%;
+    width: auto;
+}
+
+/* Logo specific styles */
+.forbes-logo, .bes-logo, .coursereport-logo, .urbanpro-logo,
+.mouthshut-logo, .edugorilla-logo, .reviewsreporter-logo {
+    min-width: 140px;
+    width: 140px;
+}
+
+/* Specific fix for Reviewsreporter logo */
+.reviewsreporter-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.reviewsreporter-logo span {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: bold;
+}
+
+/* Fix for Reviewsreporter card */
+.review-card:last-child {
+    z-index: 5;
+    position: relative;
+}
+
+.review-card:last-child .rating-badge {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10;
+}
+
+.google-logo, .gooverseas-logo, .justdial-logo {
+    min-width: 140px;
+    width: 140px;
+}
+
+/* Fix for bes logo */
+.review-logo img[alt="bes"] {
+    height: 4.5rem;
+    width: auto;
+    max-width: 100%;
+    object-position: center;
+    object-fit: contain;
+}
+
+/* Fix for Reviewsreporter rating badge */
+.review-card:last-child .rating-badge {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10;
+}
+
+/* Star rating styles */
+.star-rating {
+    display: flex;
+    color: #FBBF24; /* Yellow color for stars */
+    margin: 0 0.5rem;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+/* Rating container and badge styles */
+.rating-container {
+    min-width: 90px;
+    width: 90px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 5;
+}
+
+.rating-badge {
+    background-color: #6B21A8; /* Purple color */
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.35rem 0.5rem;
+    border-radius: 0.375rem;
+    white-space: nowrap;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-width: 4rem;
+    width: 4rem;
+    height: 2rem;
+    box-sizing: content-box;
+    text-align: center;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10;
+}
+
+/* Grid container for review cards */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .reviews-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Animations for review cards */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.review-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.review-card:nth-child(1) { animation-delay: 0.1s; }
+.review-card:nth-child(2) { animation-delay: 0.2s; }
+.review-card:nth-child(3) { animation-delay: 0.3s; }
+.review-card:nth-child(4) { animation-delay: 0.4s; }
+.review-card:nth-child(5) { animation-delay: 0.5s; }
+.review-card:nth-child(6) { animation-delay: 0.6s; }
+.review-card:nth-child(7) { animation-delay: 0.7s; }
+.review-card:nth-child(8) { animation-delay: 0.8s; }
+.review-card:nth-child(9) { animation-delay: 0.9s; }
+
+/* Ensure images maintain aspect ratio */
+.review-logo img {
+    width: auto;
+    max-height: 3.5rem;
+    object-fit: contain;
+    display: block;
+}
+
+/* Special fix for Forbes image */
+.review-logo img[alt="Forbes"] {
+    height: 3.75rem;
+    width: auto;
+    max-width: 100%;
+    object-position: left;
+}
+
+/* Special fix for UrbanPro image */
+.review-logo img[alt="Trustpilot"] {
+    height: 3.75rem;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Special fix for JustDial image */
+.review-logo img[alt="JustDial"] {
+    height: 3.5rem;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Special fix for CourseReport image */
+.review-logo img[alt="CourseReport"] {
+    height: 3.75rem;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Special fix for Mouthshut image */
+.review-logo img[alt="Mouthshut"] {
+    height: 3.5rem;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Special fix for Edumaterial image */
+.review-logo img[alt="Edumaterial"] {
+    height: 3.75rem;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+    .review-card {
+        padding: 1.5rem;
+        min-height: 6rem;
+        width: 100%;
+    }
+
+    .review-logo {
+        min-width: 110px;
+        width: 110px;
+    }
+
+    .forbes-logo, .bes-logo, .coursereport-logo, .urbanpro-logo,
+    .mouthshut-logo, .edugorilla-logo, .reviewsreporter-logo {
+        min-width: 110px;
+        width: 110px;
+    }
+
+    .google-logo, .gooverseas-logo, .justdial-logo {
+        min-width: 110px;
+        width: 110px;
+    }
+
+    .review-logo img {
+        height: 3.5rem;
+    }
+
+    .star-rating {
+        margin: 0 0.4rem;
+    }
+
+    .reviewsreporter-logo span {
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
+
+    .rating-badge {
+        min-width: 3.5rem;
+        width: 3.5rem;
+        height: 1.85rem;
+        font-size: 0.85rem;
+        padding: 0.25rem 0.4rem;
+        text-align: center;
+    }
+
+    .rating-container {
+        min-width: 80px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 480px) {
+    .review-card {
+        padding: 1.25rem;
+        min-height: 5.5rem;
+        width: 100%;
+    }
+
+    .review-logo {
+        min-width: 80px;
+        width: 80px;
+    }
+
+    .review-logo img {
+        height: 2.25rem;
+    }
+
+    .forbes-logo, .bes-logo, .coursereport-logo, .urbanpro-logo,
+    .mouthshut-logo, .edugorilla-logo, .reviewsreporter-logo {
+        min-width: 80px;
+        width: 80px;
+    }
+
+    .google-logo, .gooverseas-logo, .justdial-logo {
+        min-width: 75px;
+        width: 75px;
+    }
+
+    /* Special fix for logo images on small screens */
+    .review-logo img[alt="Forbes"],
+    .review-logo img[alt="bes"],
+    .review-logo img[alt="CourseReport"],
+    .review-logo img[alt="Trustpilot"],
+    .review-logo img[alt="Google"],
+    .review-logo img[alt="Google Overseas"],
+    .review-logo img[alt="JustDial"],
+    .review-logo img[alt="Mouthshut"],
+    .review-logo img[alt="Edumaterial"] {
+        height: 2.25rem;
+    }
+
+    .star-rating {
+        margin: 0 0.25rem;
+        font-size: 0.75rem;
+    }
+
+    .rating-badge {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.3rem;
+        min-width: 3rem;
+        width: 3rem;
+        height: 1.75rem;
+        text-align: center;
+    }
+
+    .rating-container {
+        min-width: 70px;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .reviewsreporter-logo span {
+        font-size: 0.75rem;
+    }
+
+    /* Fix for Reviewsreporter rating badge */
+    .review-card:last-child .rating-badge {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 10;
+    }
+}
