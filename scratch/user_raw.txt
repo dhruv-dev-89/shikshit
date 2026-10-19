@@ -1,0 +1,17 @@
+<USER_REQUEST>
+change hero section to this in this make image comforTABLE IN FRAMES not crop or cut 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-10-19T10:44:35+05:30.
+
+The user's current state is as follows:
+Active Document: c:\Users\kesha\Desktop\Shikshit01\public_html (77)\index.html (LANGUAGE_HTML)
+Cursor is on line: 13
+Other open documents:
+- c:\Users\kesha\Desktop\Shikshit01\public_html (77)\index.html (LANGUAGE_HTML)
+Browser State:
+  Page 3FAC82660F27E23951E44505164C3156 (Shikshit – Educational Products & Skill Development Services) - http://localhost:3000/?refresh=v2 [ACTIVE]
+    Viewport: 502x719, Page Height: 24107
+  Page 3DBF3EE888C43E2F94C136500A234317 (Shikshit – Educational Products & Skill Development Services) - http://localhost:3000/
+    Viewport: 502x719, Page Height: 23741
+</ADDITIONAL_METADATA>

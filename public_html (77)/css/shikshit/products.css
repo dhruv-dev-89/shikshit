@@ -426,8 +426,8 @@ body.page-products #diploma-courses {
 .products-hero-bands {
   position: relative;
   z-index: 2;
-  height: 140px;
-  margin-top: 24px;
+  height: 175px;
+  margin-top: 28px;
   overflow: hidden;
 }
 
@@ -440,12 +440,14 @@ body.page-products #diploma-courses {
   white-space: nowrap;
   padding: 13px 0;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  line-height: 1.2;
   letter-spacing: -0.01em;
 }
 
 .products-hero-bands .bd div {
   display: inline-flex;
+  align-items: center;
   gap: 28px;
   animation: mqProducts 32s linear infinite;
 }
@@ -455,8 +457,8 @@ body.page-products #diploma-courses {
 }
 
 .products-hero-bands .bd.a {
-  top: 10px;
-  rotate: -1.2deg;
+  top: 20px;
+  rotate: -1.3deg;
   background: var(--signature-gradient);
   color: #FFFFFF;
   box-shadow: 0 14px 34px rgba(192, 38, 211, 0.25);
@@ -464,7 +466,7 @@ body.page-products #diploma-courses {
 }
 
 .products-hero-bands .bd.b {
-  top: 66px;
+  top: 86px;
   rotate: 1.3deg;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
@@ -1383,13 +1385,22 @@ body.page-products .footer-bottom {
   }
 
   .products-hero-bands {
-    height: 110px;
-    margin-top: 16px;
+    height: 135px;
+    margin-top: 18px;
   }
 
   .products-hero-bands .bd {
-    font-size: 0.98rem;
-    padding: 9px 0;
+    font-size: 0.95rem;
+    padding: 10px 0;
+    line-height: 1.2;
+  }
+
+  .products-hero-bands .bd.a {
+    top: 12px;
+  }
+
+  .products-hero-bands .bd.b {
+    top: 64px;
   }
 
   .products-cta-card {
