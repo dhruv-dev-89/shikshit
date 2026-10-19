@@ -422,72 +422,115 @@ body.page-products #diploma-courses {
   color: var(--ink);
 }
 
-/* Double Marquee Ribbons under Hero */
-.products-hero-bands {
+/* --------------------------------------------------------------------------
+   1. FULL-BLEED DUAL RIBBON MARQUEE (Under Hero)
+   -------------------------------------------------------------------------- */
+body.page-products .products-hero-bands {
   position: relative;
-  z-index: 2;
-  height: 175px;
-  margin-top: 28px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 36px;
+  height: 190px;
   overflow: hidden;
+  z-index: 10;
+  pointer-events: auto;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
 }
 
-.products-hero-bands .bd {
+body.page-products .products-hero-bands:hover .bd div {
+  animation-play-state: paused;
+}
+
+body.page-products .products-hero-bands .bd {
   position: absolute;
-  left: -8%;
-  right: -8%;
-  width: 116%;
+  left: -10vw;
+  width: 120vw;
+  height: 62px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
   white-space: nowrap;
-  padding: 13px 0;
   font-weight: 800;
-  font-size: 1.05rem;
-  line-height: 1.2;
+  font-size: 1.12rem;
   letter-spacing: -0.01em;
+  user-select: none;
 }
 
-.products-hero-bands .bd div {
+body.page-products .products-hero-bands .bd div {
   display: inline-flex;
   align-items: center;
   gap: 28px;
-  animation: mqProducts 32s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
 }
 
-@keyframes mqProducts {
-  to { transform: translateX(-50%); }
-}
-
-.products-hero-bands .bd.a {
-  top: 20px;
-  rotate: -1.3deg;
+/* Gradient Ribbon: on top, scrolls left, 40s */
+body.page-products .products-hero-bands .bd.a {
+  top: 24px;
+  rotate: -1.8deg;
   background: var(--signature-gradient);
   color: #FFFFFF;
-  box-shadow: 0 14px 34px rgba(192, 38, 211, 0.25);
-  z-index: 1;
+  box-shadow: 0 16px 40px rgba(192, 38, 211, 0.35);
+  z-index: 2;
 }
 
-.products-hero-bands .bd.b {
-  top: 86px;
-  rotate: 1.3deg;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+body.page-products .products-hero-bands .bd.a div {
+  animation: mqProductsLeft 40s linear infinite;
+}
+
+@keyframes mqProductsLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* White Ribbon: crossing beneath, scrolls right, 55s */
+body.page-products .products-hero-bands .bd.b {
+  top: 88px;
+  rotate: 1.5deg;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   color: var(--navy);
   box-shadow: 0 12px 32px rgba(124, 58, 237, 0.12);
   border-top: 1.5px solid rgba(124, 58, 237, 0.15);
   border-bottom: 1.5px solid rgba(124, 58, 237, 0.15);
-  z-index: 2;
+  z-index: 1;
 }
 
-.products-hero-bands .bd.b div {
-  animation-direction: reverse;
+body.page-products .products-hero-bands .bd.b div {
+  animation: mqProductsRight 55s linear infinite;
 }
 
-.products-hero-bands .bd span:nth-child(even) {
-  color: #F9A8D4;
+@keyframes mqProductsRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-.products-hero-bands .bd.b span:nth-child(even) {
+/* Aligned Separator Dots / Stars */
+body.page-products .products-hero-bands .bd span:nth-child(even) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+body.page-products .products-hero-bands .bd.a span:nth-child(even) {
+  color: #FBCFE8;
+}
+
+body.page-products .products-hero-bands .bd.b span:nth-child(even) {
   color: var(--violet);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-products .products-hero-bands .bd div {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -735,43 +778,113 @@ body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"] 
 }
 
 /* --------------------------------------------------------------------------
-   DIPLOMA COURSES SECTION & ANIMATED CARDS
+   8. UGC APPROVED DIPLOMA COURSES SECTION
    -------------------------------------------------------------------------- */
-#diploma-courses {
+body.page-products #diploma-courses {
   position: relative;
-  background: transparent !important;
-  padding: 90px 20px 110px !important;
+  padding: 100px 24px !important;
+  background: #F8FAFC !important;
   scroll-margin-top: 155px !important;
 }
 
-.diploma-cards-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important;
-  gap: 30px !important;
-  max-width: 1240px;
+body.page-products #diploma-courses > div {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* Heading Shimmer Animation on "Diploma Courses" */
+body.page-products #diploma-courses .hero-sig-phrase {
+  background: linear-gradient(135deg, #7C3AED 0%, #C026D3 35%, #EC4899 70%, #7C3AED 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: diplomaHeadingShimmer 6s linear infinite;
+}
+
+@keyframes diplomaHeadingShimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Centered Flexbox Layout: 3 cards in row 1, 2 cards centered in row 2 */
+body.page-products .diploma-cards-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 28px !important;
+  align-items: stretch !important;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.diploma-card {
-  position: relative;
-  background: #FFFFFF;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(124, 58, 237, 0.12);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+body.page-products .diploma-card {
+  flex: 0 0 calc((100% - 56px) / 3) !important;
+  max-width: calc((100% - 56px) / 3) !important;
+  background: #FFFFFF !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(124, 58, 237, 0.12) !important;
+  box-shadow: 0 12px 34px rgba(124, 58, 237, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, border-color 0.45s ease !important;
   cursor: pointer;
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-.diploma-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 50px rgba(124, 58, 237, 0.18);
-  border-color: rgba(124, 58, 237, 0.32);
+body.page-products .diploma-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Banner Gradients */
+/* Stagger entrance delays between cards */
+body.page-products .diploma-card:nth-child(1) { transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.06s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.06s, box-shadow 0.45s ease, border-color 0.45s ease !important; }
+body.page-products .diploma-card:nth-child(2) { transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.14s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.14s, box-shadow 0.45s ease, border-color 0.45s ease !important; }
+body.page-products .diploma-card:nth-child(3) { transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.22s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.22s, box-shadow 0.45s ease, border-color 0.45s ease !important; }
+body.page-products .diploma-card:nth-child(4) { transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.30s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.30s, box-shadow 0.45s ease, border-color 0.45s ease !important; }
+body.page-products .diploma-card:nth-child(5) { transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.38s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.38s, box-shadow 0.45s ease, border-color 0.45s ease !important; }
+
+/* Desktop Hover & Focus Effects */
+@media (hover: hover) and (pointer: fine) {
+  body.page-products .diploma-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 24px 50px rgba(124, 58, 237, 0.2) !important;
+    border-color: rgba(124, 58, 237, 0.35) !important;
+  }
+
+  body.page-products .diploma-card:hover .diploma-banner {
+    background-position: 100% 100%;
+  }
+
+  body.page-products .diploma-card:hover .diploma-icon-pod {
+    transform: scale(1.1) rotate(-8deg);
+    background: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  }
+
+  body.page-products .diploma-card:hover .diploma-banner::before {
+    transform: translate(-10px, 8px) scale(1.15);
+  }
+
+  body.page-products .diploma-card:hover .diploma-banner::after {
+    transform: translate(8px, -8px) scale(1.2);
+  }
+
+  body.page-products .diploma-card:hover .diploma-enroll-link {
+    background: var(--signature-gradient);
+    color: #FFFFFF;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(192, 38, 211, 0.35);
+  }
+
+  body.page-products .diploma-card:hover .diploma-enroll-link svg {
+    transform: translateX(4px);
+  }
+}
+
+/* Card Header Banner & Ambient Shapes */
 .diploma-banner {
   position: relative;
   height: 195px;
@@ -779,36 +892,64 @@ body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"] 
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-size: 150% 150%;
+  background-position: 0% 0%;
+  transition: background-position 0.8s ease;
 }
 
+.diploma-banner::before,
+.diploma-banner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0) 70%);
+  pointer-events: none;
+  transition: transform 0.6s ease;
+}
+
+.diploma-banner::before {
+  width: 140px;
+  height: 140px;
+  top: -25px;
+  right: -25px;
+}
+
+.diploma-banner::after {
+  width: 110px;
+  height: 110px;
+  bottom: -20px;
+  left: -20px;
+}
+
+/* Course Specific Saturated Gradient Headers */
 .diploma-card--marketing .diploma-banner {
-  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #EC4899 100%);
+  background-image: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #EC4899 100%);
 }
 
 .diploma-card--datascience .diploma-banner {
-  background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #06B6D4 100%);
+  background-image: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #06B6D4 100%);
 }
 
 .diploma-card--engineering .diploma-banner {
-  background: linear-gradient(135deg, #C2410C 0%, #EA580C 50%, #F59E0B 100%);
+  background-image: linear-gradient(135deg, #C2410C 0%, #EA580C 50%, #F59E0B 100%);
 }
 
 .diploma-card--webdev .diploma-banner {
-  background: linear-gradient(135deg, #9333EA 0%, #C026D3 50%, #F43F5E 100%);
+  background-image: linear-gradient(135deg, #9333EA 0%, #C026D3 50%, #F43F5E 100%);
 }
 
 .diploma-card--medical .diploma-banner {
-  background: linear-gradient(135deg, #047857 0%, #059669 50%, #10B981 100%);
+  background-image: linear-gradient(135deg, #047857 0%, #059669 50%, #10B981 100%);
 }
 
-/* Shimmer Sweep Animation */
+/* Diagonal Shine Sweep */
 .diploma-shimmer {
   position: absolute;
-  top: -50%;
-  left: -100%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.38) 50%, transparent 65%);
+  top: -60%;
+  left: -120%;
+  width: 240%;
+  height: 220%;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.42) 50%, transparent 65%);
   transform: translateX(-100%) skewX(-20deg);
   transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
@@ -819,87 +960,89 @@ body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"] 
   transform: translateX(100%) skewX(-20deg);
 }
 
-/* UGC Approved Pill Badge */
+/* UGC Approved Pill Badge: Solid white, legible 12px+ */
 .diploma-badge {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 5px 12px;
+  top: 16px;
+  left: 16px;
+  background: #FFFFFF;
+  padding: 6px 14px;
   border-radius: 100px;
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--navy);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   z-index: 2;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .diploma-badge-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background: #10B981;
-  box-shadow: 0 0 8px #10B981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.7);
 }
 
-/* Card Sequence Number in Top-Right */
+/* Card Sequence Number Badge: Top-right circular translucent white, >=28px */
 .diploma-card-num {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  font-size: 12px;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
   font-weight: 800;
   color: #FFFFFF;
-  background: rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 3px 10px;
-  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
   font-family: var(--font-display);
 }
 
-/* Center Frosted Icon Pod with Pulse & Float Animation */
+/* Center Frosted Icon Pod with Gentle Staggered Float */
 .diploma-icon-pod {
-  width: 76px;
-  height: 76px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   z-index: 1;
-  animation: diplomaIconFloat 4s ease-in-out infinite;
+  animation: diplomaIconFloat 5s ease-in-out infinite;
 }
+
+.diploma-card:nth-child(1) .diploma-icon-pod { animation-delay: 0s; }
+.diploma-card:nth-child(2) .diploma-icon-pod { animation-delay: 0.6s; }
+.diploma-card:nth-child(3) .diploma-icon-pod { animation-delay: 1.2s; }
+.diploma-card:nth-child(4) .diploma-icon-pod { animation-delay: 1.8s; }
+.diploma-card:nth-child(5) .diploma-icon-pod { animation-delay: 2.4s; }
 
 @keyframes diplomaIconFloat {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-.diploma-card:hover .diploma-icon-pod {
-  transform: scale(1.15) rotate(5deg) translateY(-2px);
-  background: rgba(255, 255, 255, 0.28);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+  50% { transform: translateY(-6px); }
 }
 
 /* Card Body Content */
 .diploma-body {
-  padding: 24px;
+  padding: 26px 26px 22px 26px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -907,7 +1050,7 @@ body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"] 
 }
 
 .diploma-category {
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: var(--violet);
@@ -916,65 +1059,107 @@ body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"] 
 }
 
 .diploma-title {
-  font-size: 20px;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--navy);
   line-height: 1.3;
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   letter-spacing: -0.015em;
 }
 
 .diploma-desc {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.65;
-  color: #4B5563;
-  margin: 0 0 20px 0;
+  color: #334155;
+  margin: 0 0 22px 0;
   flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .diploma-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 16px;
-  border-top: 1px solid rgba(124, 58, 237, 0.08);
+  padding-top: 18px;
+  border-top: 1px solid rgba(124, 58, 237, 0.1);
+  margin-top: auto;
 }
 
 .diploma-meta-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 12px;
+  gap: 7px;
+  font-size: 13px;
   font-weight: 600;
-  color: #6B7280;
+  color: #64748B;
 }
 
 .diploma-meta-pill svg {
   color: var(--violet);
 }
 
+/* "Enroll" Button: Pill, min 44px height, 14.5px text */
 .diploma-enroll-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
+  min-height: 44px;
+  padding: 10px 20px;
   border-radius: 100px;
-  font-size: 12.5px;
+  font-size: 14.5px;
   font-weight: 700;
   color: var(--violet);
-  background: rgba(124, 58, 237, 0.07);
-  border: 1px solid rgba(124, 58, 237, 0.16);
+  background: rgba(124, 58, 237, 0.08);
+  border: 1.5px solid rgba(124, 58, 237, 0.22);
   text-decoration: none;
-  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.28s ease;
 }
 
-.diploma-enroll-link:hover {
-  background: var(--signature-gradient);
-  color: #FFFFFF;
-  border-color: transparent;
-  box-shadow: 0 4px 14px rgba(192, 38, 211, 0.3);
-  transform: translateX(2px);
-}  letter-spacing: -0.01em !important;
+.diploma-enroll-link svg {
+  transition: transform 0.28s ease;
+}
+
+/* Accessibility Focus Rings */
+.diploma-card:focus-visible,
+.diploma-enroll-link:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 3px;
+}
+
+/* Responsive Breakdown for Diploma Cards */
+@media (max-width: 991px) {
+  body.page-products #diploma-courses {
+    padding: 70px 20px !important;
+  }
+  body.page-products .diploma-cards-grid {
+    gap: 24px !important;
+  }
+  body.page-products .diploma-card {
+    flex: 0 0 calc((100% - 24px) / 2) !important;
+    max-width: calc((100% - 24px) / 2) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body.page-products #diploma-courses {
+    padding: 60px 16px !important;
+  }
+  body.page-products .diploma-card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .diploma-body {
+    padding: 22px 20px 20px 20px;
+  }
+  .diploma-title {
+    font-size: 1.25rem;
+  }
+  .diploma-desc {
+    font-size: 14.5px;
+  }
 }
 
 body.page-products .scholarship-card p,
@@ -1384,23 +1569,24 @@ body.page-products .footer-bottom {
     font-size: 12.5px;
   }
 
-  .products-hero-bands {
-    height: 135px;
-    margin-top: 18px;
+  body.page-products .products-hero-bands {
+    height: 160px;
+    margin-top: 24px;
   }
 
-  .products-hero-bands .bd {
-    font-size: 0.95rem;
-    padding: 10px 0;
-    line-height: 1.2;
+  body.page-products .products-hero-bands .bd {
+    height: 52px;
+    font-size: 0.98rem;
   }
 
-  .products-hero-bands .bd.a {
-    top: 12px;
+  body.page-products .products-hero-bands .bd.a {
+    top: 20px;
+    rotate: -1.8deg;
   }
 
-  .products-hero-bands .bd.b {
-    top: 64px;
+  body.page-products .products-hero-bands .bd.b {
+    top: 76px;
+    rotate: 1.5deg;
   }
 
   .products-cta-card {
@@ -1439,6 +1625,26 @@ body.page-products .footer-bottom {
 
   .products-stat-badge-sub {
     font-size: 11px;
+  }
+
+  body.page-products .products-hero-bands {
+    height: 145px;
+    margin-top: 18px;
+  }
+
+  body.page-products .products-hero-bands .bd {
+    height: 48px;
+    font-size: 0.9rem;
+  }
+
+  body.page-products .products-hero-bands .bd.a {
+    top: 16px;
+    rotate: -1.6deg;
+  }
+
+  body.page-products .products-hero-bands .bd.b {
+    top: 68px;
+    rotate: 1.4deg;
   }
 }
 

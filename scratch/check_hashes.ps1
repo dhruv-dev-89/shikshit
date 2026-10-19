@@ -43,7 +43,8 @@ $modified = @(
     'donate.html',
     'contact.html',
     'css/shikshit/contact.css',
-    'css/shikshit/products.css'
+    'css/shikshit/products.css',
+    'js/shikshit/inner.js'
 )
 $allModMatch = $true
 foreach ($m in $modified) {

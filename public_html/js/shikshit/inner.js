@@ -219,6 +219,110 @@
   }
 
   /* ------------------------------------------------------------------------
+     6. Dynamic Scroll Velocity on Marquee Ribbons
+     ------------------------------------------------------------------------ */
+  function initMarqueeScrollVelocity() {
+    if (prefersReducedMotion) return;
+    const tracks = document.querySelectorAll('.products-hero-bands .bd div');
+    if (!tracks.length) return;
+
+    let lastScrollY = window.scrollY;
+    let scrollTimeout = null;
+
+    window.addEventListener('scroll', function () {
+      const currentScrollY = window.scrollY;
+      const delta = Math.abs(currentScrollY - lastScrollY);
+      lastScrollY = currentScrollY;
+
+      if (delta > 2) {
+        tracks.forEach(function (track) {
+          track.style.animationDuration = track.parentElement.classList.contains('a') ? '24s' : '34s';
+        });
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function () {
+          tracks.forEach(function (track) {
+            track.style.animationDuration = '';
+          });
+        }, 300);
+      }
+    }, { passive: true });
+  }
+
+  /* ------------------------------------------------------------------------
+     7. Diploma Cards Staggered Reveal, Number Count-Up & Soft 3D Tilt
+     ------------------------------------------------------------------------ */
+  function initDiplomaCardsInteraction() {
+    const cards = document.querySelectorAll('.diploma-card');
+    if (!cards.length) return;
+
+    // A. Staggered IntersectionObserver reveal & Number count-up
+    const observer = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+
+            // Count up sequence number badge if plain number
+            const numBadge = entry.target.querySelector('.diploma-card-num');
+            if (numBadge && !numBadge.dataset.counted) {
+              numBadge.dataset.counted = 'true';
+              const targetNum = parseInt(numBadge.textContent.trim(), 10);
+              if (!isNaN(targetNum)) {
+                let current = 0;
+                const duration = 600;
+                const stepTime = Math.max(20, Math.floor(duration / targetNum));
+                const timer = setInterval(function () {
+                  current += 1;
+                  numBadge.textContent = current < 10 ? '0' + current : '' + current;
+                  if (current >= targetNum) {
+                    clearInterval(timer);
+                  }
+                }, stepTime);
+              }
+            }
+
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px'
+      }
+    );
+
+    cards.forEach(function (card) {
+      observer.observe(card);
+    });
+
+    // B. Desktop Soft 3D Tilt (Max 6deg, desktop pointer:fine only)
+    if (!prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      cards.forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          if (e.target.closest('.diploma-enroll-link')) {
+            card.style.transform = 'translateY(-8px)';
+            return;
+          }
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -5.5;
+          const rotateY = ((x - centerX) / centerX) * 5.5;
+
+          card.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateY(-8px)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+          card.style.transform = '';
+        });
+      });
+    }
+  }
+
+  /* ------------------------------------------------------------------------
      Initialize on DOM Ready
      ------------------------------------------------------------------------ */
   document.addEventListener('DOMContentLoaded', function () {
@@ -227,5 +331,7 @@
     initCardTilt();
     initMouseParallaxBlobs();
     initScrollReveal();
+    initMarqueeScrollVelocity();
+    initDiplomaCardsInteraction();
   });
 })();
