@@ -1,0 +1,1450 @@
+/* ==========================================================================
+   SHIKSHIT PRODUCTS & SERVICES PAGE STYLESHEET
+   Scoped strictly under body.page-products
+   Aesthetic: Soft, warm, hopeful, modern editorial NGO.
+   Ticket/Pass-style bento cards, sticky pill section index,
+   cinema-style video carousel, and creative editorial hero.
+   ========================================================================== */
+
+body.page-products {
+  font-family: var(--font-body);
+  background: var(--page-bg-gradient);
+  color: var(--color-secondary-text);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient Background Pastel Blobs */
+.products-bg-blobs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.products-blob-1 {
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(192, 38, 211, 0.12) 0%, rgba(236, 72, 153, 0.05) 50%, transparent 70%);
+  filter: blur(60px);
+  border-radius: 50%;
+  animation: driftBlob1 24s ease-in-out infinite alternate;
+}
+
+.products-blob-2 {
+  position: absolute;
+  top: 40%;
+  left: -120px;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.11) 0%, rgba(139, 92, 246, 0.04) 50%, transparent 70%);
+  filter: blur(70px);
+  border-radius: 50%;
+  animation: driftBlob2 28s ease-in-out infinite alternate;
+}
+
+.products-blob-3 {
+  position: absolute;
+  bottom: 10%;
+  right: -100px;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, rgba(255, 233, 224, 0.06) 50%, transparent 70%);
+  filter: blur(65px);
+  border-radius: 50%;
+  animation: driftBlob1 30s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes driftBlob1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-40px, 60px) scale(1.08); }
+}
+
+@keyframes driftBlob2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(50px, -40px) scale(1.06); }
+}
+
+/* --------------------------------------------------------------------------
+   1. PRODUCTS & SERVICES HERO
+   -------------------------------------------------------------------------- */
+body.page-products .products-hero {
+  position: relative;
+  z-index: 1;
+  padding: 50px 0 30px;
+  overflow: hidden;
+}
+
+.products-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.products-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.products-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  border-radius: var(--radius-pill);
+  padding: 8px 20px;
+  color: var(--violet);
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.08);
+}
+
+.products-hero-title {
+  font-size: clamp(2.3rem, 4.8vw, 4.2rem);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin-bottom: 22px;
+}
+
+body.page-products .products-hero-title .gradient-text,
+body.page-products .hero-sig-phrase {
+  background: var(--signature-gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  display: inline-block !important;
+  position: relative !important;
+}
+
+body.page-products .editorial-sig-underline {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 14px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Navbar Buttons & Contrast Fixes */
+body.page-products .shikshit-nav-actions .btn-partner,
+body.page-products .btn-secondary-white {
+  color: var(--navy) !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(124, 58, 237, 0.18) !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.08) !important;
+}
+
+body.page-products .shikshit-nav-actions .btn-partner:hover,
+body.page-products .btn-secondary-white:hover {
+  color: var(--violet) !important;
+  border-color: rgba(124, 58, 237, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.16) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Mobile Nav Overrides */
+body.page-products .mobile-menu-toggle {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 4px !important;
+  width: 44px !important;
+  height: 44px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(124, 58, 237, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+}
+
+body.page-products .mobile-menu-toggle .hamburger-line {
+  display: block !important;
+  width: 22px !important;
+  height: 2.5px !important;
+  background-color: var(--navy) !important;
+  border-radius: 2px !important;
+  margin: 0 !important;
+}
+
+body.page-products .mobile-nav .btn-partner {
+  background: #FFFFFF !important;
+  color: var(--navy) !important;
+  border: 1.5px solid rgba(124, 58, 237, 0.25) !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.08) !important;
+  font-weight: 700 !important;
+}
+
+body.page-products .mobile-nav .btn-donate {
+  background: var(--signature-gradient) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 6px 20px rgba(192, 38, 211, 0.35) !important;
+  font-weight: 700 !important;
+}
+
+/* Smooth Scroll Margin for Sections */
+body.page-products section[id],
+body.page-products #scholarship-program,
+body.page-products #awareness-programs,
+body.page-products #olympiads,
+body.page-products #financial-aid,
+body.page-products #technical-training,
+body.page-products #video-ads,
+body.page-products #diploma-courses {
+  scroll-margin-top: 155px !important;
+}
+
+.products-hero-desc {
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 30px;
+  max-width: 580px;
+}
+
+/* Category Feature Pills Row */
+.products-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+.products-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.06);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.products-tag-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.products-tag-pill svg {
+  color: var(--violet);
+}
+
+.products-hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Hero Right Visuals: Arch Photo + Overlapping Round Photo + Glass Badge */
+.products-hero-visual {
+  position: relative;
+  height: 520px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-arch-frame {
+  width: 310px;
+  height: 440px;
+  border-radius: var(--radius-arch);
+  overflow: hidden;
+  border: 6px solid #FFFFFF;
+  box-shadow: 0 24px 56px rgba(124, 58, 237, 0.18);
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  background: var(--lav-50);
+  transition: transform 0.4s ease;
+}
+
+.products-arch-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform 0.6s ease;
+}
+
+.products-arch-frame:hover img {
+  transform: scale(1.05);
+}
+
+.products-blob-frame {
+  width: 220px;
+  height: 220px;
+  border-radius: 36px;
+  overflow: hidden;
+  border: 5px solid #FFFFFF;
+  box-shadow: 0 20px 48px rgba(192, 38, 211, 0.2);
+  position: absolute;
+  right: 15px;
+  bottom: 40px;
+  background: #FFFFFF;
+  transform: rotate(-3deg);
+  transition: transform 0.35s ease;
+}
+
+.products-blob-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.products-blob-frame:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+.products-arch-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 100px;
+  padding: 8px 16px;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.products-arch-tag svg {
+  color: #F472B6;
+}
+
+.products-blob-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  border-radius: 100px;
+  padding: 5px 12px;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+.products-blob-tag svg {
+  color: #F59E0B;
+}
+
+.products-stat-badge {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(124, 58, 237, 0.16);
+  border-radius: 20px;
+  padding: 16px 22px;
+  box-shadow: 0 16px 36px rgba(124, 58, 237, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 5;
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.products-stat-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--signature-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.products-stat-badge-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.products-stat-badge-sub {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Double Marquee Ribbons under Hero */
+.products-hero-bands {
+  position: relative;
+  z-index: 2;
+  height: 140px;
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.products-hero-bands .bd {
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  width: 116%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 13px 0;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.products-hero-bands .bd div {
+  display: inline-flex;
+  gap: 28px;
+  animation: mqProducts 32s linear infinite;
+}
+
+@keyframes mqProducts {
+  to { transform: translateX(-50%); }
+}
+
+.products-hero-bands .bd.a {
+  top: 10px;
+  rotate: -1.2deg;
+  background: var(--signature-gradient);
+  color: #FFFFFF;
+  box-shadow: 0 14px 34px rgba(192, 38, 211, 0.25);
+  z-index: 1;
+}
+
+.products-hero-bands .bd.b {
+  top: 66px;
+  rotate: 1.3deg;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--navy);
+  box-shadow: 0 12px 32px rgba(124, 58, 237, 0.12);
+  border-top: 1.5px solid rgba(124, 58, 237, 0.15);
+  border-bottom: 1.5px solid rgba(124, 58, 237, 0.15);
+  z-index: 2;
+}
+
+.products-hero-bands .bd.b div {
+  animation-direction: reverse;
+}
+
+.products-hero-bands .bd span:nth-child(even) {
+  color: #F9A8D4;
+}
+
+.products-hero-bands .bd.b span:nth-child(even) {
+  color: var(--violet);
+}
+
+/* --------------------------------------------------------------------------
+   2. STICKY PILL-SHAPED SECTION INDEX (Visual Only, Scrolls with Page)
+   -------------------------------------------------------------------------- */
+.sticky-section-index {
+  position: sticky;
+  top: 86px;
+  z-index: 90;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.index-pill-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 7px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(124, 58, 237, 0.16);
+  box-shadow: 0 14px 40px rgba(11, 11, 59, 0.1);
+  pointer-events: auto;
+  max-width: 95vw;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.index-pill-track::-webkit-scrollbar {
+  display: none;
+}
+
+.index-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--navy);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+}
+
+.index-pill:hover {
+  color: var(--violet);
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.index-pill.active {
+  background: var(--signature-gradient);
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 18px rgba(192, 38, 211, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   3. SECTION LAYOUT & BENTO "TICKET/PASS" STYLING
+   -------------------------------------------------------------------------- */
+body.page-products section {
+  position: relative;
+  z-index: 1;
+  padding: 70px 20px !important;
+  background: transparent !important;
+}
+
+body.page-products .section-header-box {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto 54px;
+}
+
+body.page-products .section-header-box h2 {
+  font-size: clamp(2rem, 3.8vw, 3rem) !important;
+  font-weight: 800 !important;
+  color: var(--navy) !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.16 !important;
+  margin-bottom: 16px !important;
+}
+
+body.page-products .section-header-box p {
+  font-size: clamp(1rem, 1.2vw, 1.15rem) !important;
+  color: var(--ink) !important;
+  line-height: 1.7 !important;
+  margin: 0 auto !important;
+}
+
+/* Category Subhead */
+body.page-products .category-subhead {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+body.page-products .category-subhead h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem) !important;
+  font-weight: 700 !important;
+  color: var(--navy) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Bento Ticket Grid for Service Cards */
+body.page-products .services-grid,
+body.page-products [style*="grid-template-columns"] {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 26px !important;
+  max-width: 1240px;
+  margin: 0 auto;
+  counter-reset: card-counter;
+}
+
+/* /* The Ticket / Pass Card */
+body.page-products section:not(#diploma-courses) .scholarship-card,
+body.page-products section:not(#diploma-courses) .awareness-card,
+body.page-products section:not(#diploma-courses) .olympiad-card,
+body.page-products section:not(#diploma-courses) .financial-aid-card,
+body.page-products section:not(#diploma-courses) .technical-training-card,
+body.page-products section:not(#diploma-courses) .service-ticket,
+body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"] {
+  position: relative !important;
+  background: #FFFFFF !important;
+  border-radius: 26px !important;
+  padding: 32px 28px !important;
+  border: 1px solid rgba(124, 58, 237, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.06) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+  cursor: pointer;
+  counter-increment: card-counter;
+  overflow: hidden !important;
+}
+
+/* Decorative Ticket Counter in Top-Right */
+body.page-products section:not(#diploma-courses) .scholarship-card::after,
+body.page-products section:not(#diploma-courses) .awareness-card::after,
+body.page-products section:not(#diploma-courses) .olympiad-card::after,
+body.page-products section:not(#diploma-courses) .financial-aid-card::after,
+body.page-products section:not(#diploma-courses) .technical-training-card::after,
+body.page-products section:not(#diploma-courses) .service-ticket::after,
+body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]::after {
+  content: counter(card-counter, decimal-leading-zero);
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(124, 58, 237, 0.18);
+  pointer-events: none;
+  font-family: var(--font-display);
+  transition: -webkit-text-stroke-color 0.3s ease;
+}
+
+/* Alternating Subtle Pastel Tints for Bento Variety */
+body.page-products section:not(#diploma-courses) .scholarship-card:nth-child(4n+1),
+body.page-products section:not(#diploma-courses) .awareness-card:nth-child(4n+1),
+body.page-products section:not(#diploma-courses) .olympiad-card:nth-child(4n+1),
+body.page-products section:not(#diploma-courses) .financial-aid-card:nth-child(4n+1),
+body.page-products section:not(#diploma-courses) .technical-training-card:nth-child(4n+1),
+body.page-products section:not(#diploma-courses) .service-ticket:nth-child(4n+1),
+body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:nth-child(4n+1) {
+  background: linear-gradient(180deg, rgba(237, 233, 254, 0.4) 0%, #FFFFFF 55%) !important;
+}
+
+body.page-products section:not(#diploma-courses) .scholarship-card:nth-child(4n+2),
+body.page-products section:not(#diploma-courses) .awareness-card:nth-child(4n+2),
+body.page-products section:not(#diploma-courses) .olympiad-card:nth-child(4n+2),
+body.page-products section:not(#diploma-courses) .financial-aid-card:nth-child(4n+2),
+body.page-products section:not(#diploma-courses) .technical-training-card:nth-child(4n+2),
+body.page-products section:not(#diploma-courses) .service-ticket:nth-child(4n+2),
+body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:nth-child(4n+2) {
+  background: linear-gradient(180deg, rgba(255, 246, 242, 0.5) 0%, #FFFFFF 55%) !important;
+}
+
+body.page-products section:not(#diploma-courses) .scholarship-card:nth-child(4n+3),
+body.page-products section:not(#diploma-courses) .awareness-card:nth-child(4n+3),
+body.page-products section:not(#diploma-courses) .olympiad-card:nth-child(4n+3),
+body.page-products section:not(#diploma-courses) .financial-aid-card:nth-child(4n+3),
+body.page-products section:not(#diploma-courses) .technical-training-card:nth-child(4n+3),
+body.page-products section:not(#diploma-courses) .service-ticket:nth-child(4n+3),
+body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:nth-child(4n+3) {
+  background: linear-gradient(180deg, rgba(255, 233, 224, 0.45) 0%, #FFFFFF 55%) !important;
+}
+
+body.page-products section:not(#diploma-courses) .scholarship-card:nth-child(4n+4),
+body.page-products section:not(#diploma-courses) .awareness-card:nth-child(4n+4),
+body.page-products section:not(#diploma-courses) .olympiad-card:nth-child(4n+4),
+body.page-products section:not(#diploma-courses) .financial-aid-card:nth-child(4n+4),
+body.page-products section:not(#diploma-courses) .technical-training-card:nth-child(4n+4),
+body.page-products section:not(#diploma-courses) .service-ticket:nth-child(4n+4),
+body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:nth-child(4n+4) {
+  background: linear-gradient(180deg, rgba(247, 245, 255, 0.6) 0%, #FFFFFF 55%) !important;
+}
+
+/* Hover States for Ticket Cards */
+body.page-products section:not(#diploma-courses) .scholarship-card:hover,
+body.page-products section:not(#diploma-courses) .awareness-card:hover,
+body.page-products section:not(#diploma-courses) .olympiad-card:hover,
+body.page-products section:not(#diploma-courses) .financial-aid-card:hover,
+body.page-products section:not(#diploma-courses) .technical-training-card:hover,
+body.page-products section:not(#diploma-courses) .service-ticket:hover,
+body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 24px 50px rgba(124, 58, 237, 0.16) !important;
+  border-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+body.page-products section:not(#diploma-courses) .scholarship-card:hover::after,
+body.page-products section:not(#diploma-courses) .awareness-card:hover::after,
+body.page-products section:not(#diploma-courses) .olympiad-card:hover::after,
+body.page-products section:not(#diploma-courses) .financial-aid-card:hover::after,
+body.page-products section:not(#diploma-courses) .technical-training-card:hover::after,
+body.page-products section:not(#diploma-courses) .service-ticket:hover::after,
+body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:hover::after {
+  -webkit-text-stroke-color: rgba(192, 38, 211, 0.35);
+}
+
+/* Typography inside Service Cards */
+body.page-products section:not(#diploma-courses) .scholarship-card h4,
+body.page-products section:not(#diploma-courses) .awareness-card h4,
+body.page-products section:not(#diploma-courses) .olympiad-card h4,
+body.page-products section:not(#diploma-courses) .financial-aid-card h4,
+body.page-products section:not(#diploma-courses) .technical-training-card h4,
+body.page-products section:not(#diploma-courses) .service-ticket h4,
+body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"] h4 {
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  color: var(--navy) !important;
+  margin-top: 14px !important;
+  margin-bottom: 10px !important;
+  line-height: 1.3 !important;
+}
+
+/* --------------------------------------------------------------------------
+   DIPLOMA COURSES SECTION & ANIMATED CARDS
+   -------------------------------------------------------------------------- */
+#diploma-courses {
+  position: relative;
+  background: transparent !important;
+  padding: 90px 20px 110px !important;
+  scroll-margin-top: 155px !important;
+}
+
+.diploma-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important;
+  gap: 30px !important;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.diploma-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+}
+
+.diploma-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(124, 58, 237, 0.18);
+  border-color: rgba(124, 58, 237, 0.32);
+}
+
+/* Banner Gradients */
+.diploma-banner {
+  position: relative;
+  height: 195px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.diploma-card--marketing .diploma-banner {
+  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #EC4899 100%);
+}
+
+.diploma-card--datascience .diploma-banner {
+  background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #06B6D4 100%);
+}
+
+.diploma-card--engineering .diploma-banner {
+  background: linear-gradient(135deg, #C2410C 0%, #EA580C 50%, #F59E0B 100%);
+}
+
+.diploma-card--webdev .diploma-banner {
+  background: linear-gradient(135deg, #9333EA 0%, #C026D3 50%, #F43F5E 100%);
+}
+
+.diploma-card--medical .diploma-banner {
+  background: linear-gradient(135deg, #047857 0%, #059669 50%, #10B981 100%);
+}
+
+/* Shimmer Sweep Animation */
+.diploma-shimmer {
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.38) 50%, transparent 65%);
+  transform: translateX(-100%) skewX(-20deg);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.diploma-card:hover .diploma-shimmer {
+  transform: translateX(100%) skewX(-20deg);
+}
+
+/* UGC Approved Pill Badge */
+.diploma-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 5px 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+  letter-spacing: 0.02em;
+}
+
+.diploma-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+}
+
+/* Card Sequence Number in Top-Right */
+.diploma-card-num {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 3px 10px;
+  border-radius: 100px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-family: var(--font-display);
+}
+
+/* Center Frosted Icon Pod with Pulse & Float Animation */
+.diploma-icon-pod {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+  position: relative;
+  z-index: 1;
+  animation: diplomaIconFloat 4s ease-in-out infinite;
+}
+
+@keyframes diplomaIconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.diploma-card:hover .diploma-icon-pod {
+  transform: scale(1.15) rotate(5deg) translateY(-2px);
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+}
+
+/* Card Body Content */
+.diploma-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: #FFFFFF;
+}
+
+.diploma-category {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--violet);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.diploma-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.3;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.015em;
+}
+
+.diploma-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #4B5563;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.diploma-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+.diploma-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.diploma-meta-pill svg {
+  color: var(--violet);
+}
+
+.diploma-enroll-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--violet);
+  background: rgba(124, 58, 237, 0.07);
+  border: 1px solid rgba(124, 58, 237, 0.16);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.diploma-enroll-link:hover {
+  background: var(--signature-gradient);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(192, 38, 211, 0.3);
+  transform: translateX(2px);
+}  letter-spacing: -0.01em !important;
+}
+
+body.page-products .scholarship-card p,
+body.page-products .awareness-card p,
+body.page-products .olympiad-card p,
+body.page-products .financial-aid-card p,
+body.page-products .technical-training-card p,
+body.page-products .service-ticket p,
+body.page-products [style*="border-radius: 16px"] p {
+  font-size: 14.5px !important;
+  color: var(--ink) !important;
+  line-height: 1.65 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Amount / Financial Pill Badge */
+body.page-products .scholarship-amount,
+body.page-products [style*="font-weight: 700"][style*="color: #6b46c1"] {
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  color: var(--violet) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px;
+  background: var(--lav-50);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   4. OUR VIDEO ADS (Cinema-Style Rounded Frames with Ambient Glow)
+   -------------------------------------------------------------------------- */
+body.page-products .video-carousel {
+  padding: 80px 20px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+body.page-products .video-carousel h2 {
+  font-size: clamp(2rem, 3.8vw, 3rem) !important;
+  font-weight: 800 !important;
+  color: var(--navy) !important;
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  letter-spacing: -0.03em !important;
+}
+
+body.page-products .carousel-track {
+  display: flex !important;
+  gap: 24px !important;
+  overflow-x: auto !important;
+  padding: 20px 10px 40px !important;
+  scroll-behavior: smooth !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+body.page-products .carousel-track::-webkit-scrollbar {
+  display: none !important;
+}
+
+body.page-products .video-item {
+  flex: 0 0 clamp(290px, 32vw, 380px) !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  background: #0B0B3B !important;
+  border: 3px solid rgba(124, 58, 237, 0.25) !important;
+  box-shadow: 0 18px 44px rgba(11, 11, 59, 0.22) !important;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease !important;
+}
+
+body.page-products .video-item:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: rgba(192, 38, 211, 0.6) !important;
+  box-shadow: 0 24px 56px rgba(192, 38, 211, 0.3) !important;
+}
+
+body.page-products .video-item video {
+  width: 100% !important;
+  height: 240px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Top Scroll Progress Bar */
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--signature-gradient);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 12px rgba(192, 38, 211, 0.5);
+}
+
+/* Scroll Reveal Animation Styles */
+.scroll-reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Header Typography and Spacing Overrides */
+body.page-products section > div > div:first-child {
+  text-align: center !important;
+  max-width: 860px !important;
+  margin: 0 auto 52px !important;
+}
+
+body.page-products section > div > div:first-child h2 {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem) !important;
+  font-weight: 800 !important;
+  color: var(--navy) !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.15 !important;
+  margin-bottom: 16px !important;
+}
+
+body.page-products section > div > div:first-child p {
+  font-size: clamp(1rem, 1.2vw, 1.14rem) !important;
+  color: var(--ink) !important;
+  line-height: 1.75 !important;
+  max-width: 760px !important;
+  margin: 0 auto !important;
+}
+
+body.page-products section > div > div:nth-child(2) h3 {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem) !important;
+  font-weight: 700 !important;
+  color: var(--violet) !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 30px !important;
+  text-align: center !important;
+}
+
+/* Card Icon Circles: Signature Gradient & Hover Dynamics */
+body.page-products .scholarship-card [style*="border-radius: 12px"],
+body.page-products .awareness-card [style*="border-radius: 12px"],
+body.page-products .olympiad-card [style*="border-radius: 12px"],
+body.page-products .financial-aid-card [style*="border-radius: 12px"],
+body.page-products .technical-training-card [style*="border-radius: 12px"] {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 16px !important;
+  background: var(--signature-gradient) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 16px !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.22) !important;
+  transition: transform 0.35s ease !important;
+}
+
+body.page-products .scholarship-card:hover [style*="border-radius: 12px"],
+body.page-products .awareness-card:hover [style*="border-radius: 12px"],
+body.page-products .olympiad-card:hover [style*="border-radius: 12px"],
+body.page-products .financial-aid-card:hover [style*="border-radius: 12px"],
+body.page-products .technical-training-card:hover [style*="border-radius: 12px"] {
+  transform: rotate(8deg) scale(1.08) !important;
+}
+
+/* Card Meta Bottom Dashed Separator */
+body.page-products .scholarship-amount,
+body.page-products .olympiad-meta,
+body.page-products .financial-aid-meta,
+body.page-products .technical-training-card > div:last-child {
+  margin-top: auto !important;
+  padding-top: 16px !important;
+  border-top: 1px dashed rgba(124, 58, 237, 0.14) !important;
+}
+
+/* Diploma Courses Specific Polish */
+body.page-products #diploma-courses [style*="border-radius: 16px"] {
+  padding: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.page-products #diploma-courses [style*="border-radius: 16px"] > div:first-child {
+  height: 190px !important;
+  background: var(--signature-gradient) !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.page-products #diploma-courses [style*="border-radius: 16px"] > div:last-child {
+  padding: 26px 24px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. CLOSING CTA BAND
+   -------------------------------------------------------------------------- */
+.products-cta-band {
+  max-width: 1200px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.products-cta-card {
+  background: var(--signature-gradient);
+  border-radius: var(--radius-container);
+  padding: 60px 44px;
+  color: #FFFFFF;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(192, 38, 211, 0.35);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.products-cta-card::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 240px;
+  height: 240px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.products-cta-card::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.products-cta-card h3 {
+  font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+}
+
+.products-cta-card p {
+  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto 32px;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.products-cta-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   6. EDITORIAL FOOTER (4-Column Layout, Lavender-to-Peach Gradient)
+   -------------------------------------------------------------------------- */
+body.page-products .footer-editorial {
+  background: linear-gradient(135deg, var(--lav-50) 0%, var(--blush) 50%, var(--peach) 100%) !important;
+  border-radius: 48px 48px 0 0 !important;
+  border-top: 1px solid rgba(124, 58, 237, 0.15) !important;
+  padding: 70px 24px 32px !important;
+  margin-top: 60px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body.page-products .footer-editorial .shikshit-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+body.page-products .footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr !important;
+  gap: 40px !important;
+  margin-bottom: 48px !important;
+  text-align: left !important;
+}
+
+body.page-products .footer-col h4 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--navy) !important;
+  margin-bottom: 18px !important;
+}
+
+body.page-products .footer-col ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+body.page-products .footer-col a {
+  color: var(--ink) !important;
+  font-size: 14.5px !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+body.page-products .footer-col a:hover {
+  color: var(--violet) !important;
+}
+
+body.page-products .footer-bottom {
+  border-top: 1px solid rgba(124, 58, 237, 0.12) !important;
+  padding-top: 24px !important;
+  text-align: center !important;
+  font-size: 13.5px !important;
+  color: var(--ink) !important;
+}
+
+/* --------------------------------------------------------------------------
+   7. RESPONSIVE BREAKPOINTS (360, 768, 1024, 1440px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  body.page-products .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
+  }
+
+  .products-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .products-hero-content {
+    align-items: center;
+  }
+
+  .products-hero-tags {
+    justify-content: center;
+  }
+
+  .products-hero-cta {
+    justify-content: center;
+  }
+
+  .products-hero-visual {
+    height: 420px;
+    margin-top: 10px;
+  }
+
+  .products-arch-frame {
+    width: 250px;
+    height: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .products-blob-frame {
+    right: 15%;
+    bottom: 20px;
+    width: 170px;
+    height: 170px;
+  }
+
+  .products-stat-badge {
+    right: 10%;
+    top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  body.page-products .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  body.page-products section {
+    padding: 50px 16px !important;
+  }
+
+  .sticky-section-index {
+    top: 76px;
+    padding: 8px 12px;
+  }
+
+  .index-pill {
+    padding: 7px 14px;
+    font-size: 12.5px;
+  }
+
+  .products-hero-bands {
+    height: 110px;
+    margin-top: 16px;
+  }
+
+  .products-hero-bands .bd {
+    font-size: 0.98rem;
+    padding: 9px 0;
+  }
+
+  .products-cta-card {
+    padding: 44px 24px;
+    border-radius: 28px;
+  }
+
+  .video-item video {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-hero-visual {
+    height: 340px;
+  }
+
+  .products-arch-frame {
+    width: 200px;
+    height: 290px;
+  }
+
+  .products-blob-frame {
+    display: none;
+  }
+
+  .products-stat-badge {
+    right: 5%;
+    top: 10px;
+    padding: 10px 14px;
+  }
+
+  .products-stat-badge-title {
+    font-size: 14px;
+  }
+
+  .products-stat-badge-sub {
+    font-size: 11px;
+  }
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  .products-blob-1,
+  .products-blob-2,
+  .products-blob-3,
+  .products-hero-bands .bd div,
+  .products-stat-badge {
+    animation: none !important;
+  }
+  .scholarship-card,
+  .video-item,
+  .scroll-reveal-item {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

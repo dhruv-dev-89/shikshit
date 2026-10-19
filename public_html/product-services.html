@@ -16,7 +16,18 @@ Academic guidance programs, Best education platform for students">
   <link rel="stylesheet" href="css/sikshitnavbar.css" />
   <link rel="stylesheet" href="css/floating-buttons.css" />
 
-  <!-- Tailwind CSS via CDN for footer styling -->
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Shikshit Design System Stylesheets -->
+  <link rel="stylesheet" href="css/shikshit/tokens.css">
+  <link rel="stylesheet" href="css/shikshit/base.css">
+  <link rel="stylesheet" href="css/shikshit/components.css">
+  <link rel="stylesheet" href="css/shikshit/products.css">
+
+  <!-- Tailwind CSS via CDN for existing utility compatibility -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Load script.js early to ensure includeHTML is available -->
@@ -1358,87 +1369,84 @@ Academic guidance programs, Best education platform for students">
   </style>
 </head>
 
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <!-- Brand Section -->
-        <a href="/" class="navbar-brand">
-          <img src="images/sikshitlogo.webp" alt="Sikshit Logo" class="navbar-logo-enlarged" />
+<body class="shikshit-editorial page-products">
+
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- Ambient Blurred Pastel Background Blobs -->
+  <div class="products-bg-blobs" aria-hidden="true">
+    <div class="products-blob-1"></div>
+    <div class="products-blob-2"></div>
+    <div class="products-blob-3"></div>
+  </div>
+
+  <!-- Reusable SVG Gradients Definition -->
+  <svg width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
+    <defs>
+      <linearGradient id="sigGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#7C3AED" />
+        <stop offset="60%" stop-color="#C026D3" />
+        <stop offset="100%" stop-color="#EC4899" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="shikshit-main-content">
+
+    <!-- ======================================================================
+         NAVBAR: Sticky Floating White-Glass Pill (Backdrop blur, soft shadow)
+         Items stay exactly: NS-MAS | Products and Services | Apply Now + 2 CTAs
+         ====================================================================== -->
+    <header class="shikshit-header" role="banner">
+      <nav class="shikshit-navbar navbar" aria-label="Main Navigation">
+        <!-- Brand Logo (Existing logo file unchanged) -->
+        <a href="/" class="shikshit-brand navbar-brand" aria-label="Shikshit Homepage">
+          <img src="images/sikshitlogo.webp" alt="Sikshit Logo" class="shikshit-logo navbar-logo-enlarged">
         </a>
 
-        <!-- Main Navigation -->
-        <ul class="navbar-nav">
+        <!-- Main Desktop Navigation -->
+        <ul class="shikshit-nav-menu navbar-nav">
           <li class="nav-item">
-            <a href="ns-mas.html" class="nav-link" onclick="navigateToHome(event)">
-              <svg class="nav-icon" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
-              NS-MAS
-            </a>
+            <a href="ns-mas.html" class="shikshit-nav-link nav-link">NS-MAS</a>
           </li>
           <li class="nav-item">
-            <a href="product-services.html" class="nav-link">
-              <svg class="nav-icon" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-              Products and Services
-            </a>
+            <a href="product-services.html" class="shikshit-nav-link nav-link active" style="color: var(--violet); font-weight: 700;">Products and Services</a>
           </li>
           <li class="nav-item">
-            <a href="registration.html" class="nav-link">
-              <svg class="nav-icon" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Apply Now
-            </a>
+            <a href="registration.html" class="shikshit-nav-link nav-link">Apply Now</a>
           </li>
         </ul>
 
         <!-- CTA Buttons -->
-        <div class="cta-buttons">
-          <a href="become-a-member.html" class="btn-partner">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
+        <div class="shikshit-nav-actions cta-buttons">
+          <a href="become-a-member.html" class="btn-pill btn-secondary-white btn-partner">
             Become a Member
           </a>
-          <a href="donate.html" class="btn-donate">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
+          <a href="donate.html" class="btn-pill btn-primary-gradient btn-donate">
             Donate Us
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <div class="mobile-menu-toggle" onclick="toggleMobileMenu(event)">
-          <div class="hamburger-line"></div>
-          <div class="hamburger-line"></div>
-          <div class="hamburger-line"></div>
-        </div>
+        <!-- Mobile Menu Toggle Button (Preserves toggleMobileMenu hook) -->
+        <button type="button" class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
 
-        <!-- Mobile Menu -->
+        <!-- Mobile Menu Dropdown (Preserves #mobileMenu id and exact 5 links) -->
         <div class="mobile-menu" id="mobileMenu">
-          <ul class="navbar-nav mobile-nav">
+          <ul class="mobile-nav">
             <li class="nav-item">
-              <a href="ns-mas.html" class="nav-link" onclick="navigateToHome(event)">NS-MAS</a>
+              <a href="ns-mas.html" class="nav-link">NS-MAS</a>
             </li>
             <li class="nav-item">
-              <a href="product-services.html" class="nav-link">Products and Services</a>
+              <a href="product-services.html" class="nav-link" style="color: var(--violet); font-weight: 700;">Products and Services</a>
             </li>
             <li class="nav-item">
               <a href="registration.html" class="nav-link">Apply Now</a>
             </li>
-
             <li class="nav-item">
               <a href="become-a-member.html" class="nav-link btn-partner">Become a Member</a>
             </li>
@@ -1447,176 +1455,191 @@ Academic guidance programs, Best education platform for students">
             </li>
           </ul>
         </div>
+      </nav>
+    </header>
+
+    <!-- ======================================================================
+         1. PRODUCTS & SERVICES CREATIVE HERO
+         Editorial title with self-drawing signature underline, photo windows,
+         feature pills, trust badge, and double tilted marquee ribbon.
+         ====================================================================== -->
+    <section class="products-hero">
+      <div class="products-hero-grid">
+        <!-- Left Content -->
+        <div class="products-hero-content">
+          <div class="products-hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+            <span>Comprehensive Educational Solutions</span>
+          </div>
+
+          <h1 class="products-hero-title">
+            Discover Our Complete Range of <span class="gradient-text hero-sig-phrase">Products &amp; Services<svg class="editorial-sig-underline" viewBox="0 0 260 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 11C70 4 175 3 256 9" stroke="url(#sigGradient)" stroke-width="4.5" stroke-linecap="round"/></svg></span>
+          </h1>
+
+          <p class="products-hero-desc">
+            From scholarships and diploma courses to olympiads and technical
+            training - explore our comprehensive educational ecosystem designed
+            to empower students at every stage of their academic journey.
+          </p>
+
+          <!-- Service Category Tags -->
+          <div class="products-hero-tags">
+            <span class="products-tag-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <span>Scholarship Programs</span>
+            </span>
+            <span class="products-tag-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+              <span>UGC Approved Diplomas</span>
+            </span>
+            <span class="products-tag-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+              <span>Technical Training</span>
+            </span>
+            <span class="products-tag-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              <span>Olympiad Competitions</span>
+            </span>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="products-hero-cta">
+            <a href="registration.html" class="btn-pill btn-primary-gradient">
+              <span>Apply Now</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14" />
+                <path d="M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#scholarship-program" class="btn-pill btn-secondary-white">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="10,8 16,12 10,16 10,8" />
+              </svg>
+              <span>Explore Services</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Content - Editorial Arch + Blob Photo Windows + Stat Badge -->
+        <div class="products-hero-visual" aria-hidden="true">
+          <div class="products-arch-frame">
+            <img src="images/products_hero_students.jpg" alt="Shikshit Education Students" loading="eager">
+            <div class="products-arch-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>Interactive Learning Hub</span>
+            </div>
+          </div>
+          <div class="products-blob-frame">
+            <img src="images/products_hero_diploma.jpg" alt="UGC Approved Diploma Graduate" loading="eager">
+            <div class="products-blob-tag">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span>UGC Certified</span>
+            </div>
+          </div>
+          <div class="products-stat-badge">
+            <div class="products-stat-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 12l2 2 4-4" />
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+            </div>
+            <div>
+              <div class="products-stat-badge-title">Trusted by 5000+</div>
+              <div class="products-stat-badge-sub">Students Nationwide</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tilted Double Ribbon Marquee -->
+      <div class="products-hero-bands" aria-hidden="true">
+        <div class="bd a">
+          <div>
+            <span>★ SCHOLARSHIPS UP TO ₹25,000</span>
+            <span>•</span>
+            <span>UGC APPROVED DIPLOMAS</span>
+            <span>•</span>
+            <span>NATIONAL OLYMPIADS</span>
+            <span>•</span>
+            <span>TECHNICAL &amp; VOCATIONAL TRAINING</span>
+            <span>•</span>
+            <span>FINANCIAL AID ASSISTANCE</span>
+            <span>•</span>
+            <span>COMMUNITY AWARENESS INITIATIVES</span>
+            <span>•</span>
+            <span>★ SCHOLARSHIPS UP TO ₹25,000</span>
+            <span>•</span>
+            <span>UGC APPROVED DIPLOMAS</span>
+            <span>•</span>
+            <span>NATIONAL OLYMPIADS</span>
+            <span>•</span>
+            <span>TECHNICAL &amp; VOCATIONAL TRAINING</span>
+            <span>•</span>
+            <span>FINANCIAL AID ASSISTANCE</span>
+            <span>•</span>
+            <span>COMMUNITY AWARENESS INITIATIVES</span>
+          </div>
+        </div>
+        <div class="bd b">
+          <div>
+            <span>MERIT SCHOLARSHIPS</span>
+            <span>•</span>
+            <span>DIGITAL MARKETING</span>
+            <span>•</span>
+            <span>WEB DEVELOPMENT</span>
+            <span>•</span>
+            <span>SCIENCE &amp; MATH OLYMPIADS</span>
+            <span>•</span>
+            <span>COMMUNITY EMPOWERMENT</span>
+            <span>•</span>
+            <span>AI &amp; CLOUD COMPUTING</span>
+            <span>•</span>
+            <span>MERIT SCHOLARSHIPS</span>
+            <span>•</span>
+            <span>DIGITAL MARKETING</span>
+            <span>•</span>
+            <span>WEB DEVELOPMENT</span>
+            <span>•</span>
+            <span>SCIENCE &amp; MATH OLYMPIADS</span>
+            <span>•</span>
+            <span>COMMUNITY EMPOWERMENT</span>
+            <span>•</span>
+            <span>AI &amp; CLOUD COMPUTING</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. STICKY PILL-SHAPED SECTION INDEX (Visual Only, Scrolls with Page)
+         Highlights active section on scroll; smooth scrolls on click
+         ====================================================================== -->
+    <nav class="sticky-section-index" aria-label="Services Navigation">
+      <div class="index-pill-track">
+        <a href="#scholarship-program" class="index-pill active">Scholarships</a>
+        <a href="#awareness-programs" class="index-pill">Awareness</a>
+        <a href="#olympiads" class="index-pill">Olympiads</a>
+        <a href="#financial-aid" class="index-pill">Financial Aid</a>
+        <a href="#technical-training" class="index-pill">Technical Training</a>
+        <a href="#video-ads" class="index-pill">Video Ads</a>
+        <a href="#diploma-courses" class="index-pill">Diploma Courses</a>
       </div>
     </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <!-- Animated Background Elements -->
-    <div class="floating-elements">
-      <div class="floating-element"></div>
-      <div class="floating-element"></div>
-      <div class="floating-element"></div>
-      <div class="floating-element"></div>
-      <div class="floating-element"></div>
-    </div>
-
-    <!-- Geometric Shapes -->
-    <div class="hero-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
-
-    <div class="hero-container">
-      <!-- Left Content -->
-      <div class="hero-content">
-        <div class="hero-badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-          </svg>
-          <span>Comprehensive Educational Solutions</span>
-        </div>
-
-        <h1 class="hero-title">
-          Discover Our Complete Range of
-          <span class="gradient-text">Products & Services</span>
-        </h1>
-
-        <p class="hero-description">
-          From scholarships and diploma courses to olympiads and technical
-          training - explore our comprehensive educational ecosystem designed
-          to empower students at every stage of their academic journey.
-        </p>
-
-        <!-- Service Categories -->
-        <div class="hero-features">
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            </div>
-            <span>Scholarship Programs</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                <line x1="8" y1="21" x2="16" y2="21" />
-                <line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
-            </div>
-            <span>UGC Approved Diplomas</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-              </svg>
-            </div>
-            <span>Technical Training</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                <line x1="12" y1="17" x2="12.01" y2="17" />
-              </svg>
-            </div>
-            <span>Olympiad Competitions</span>
-          </div>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="hero-cta">
-          <a href="registration.html" class="btn-primary">
-            <span>Apply Now</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14" />
-              <path d="M12 5l7 7-7 7" />
-            </svg>
-          </a>
-          <a href="#scholarship-program" class="btn-secondary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <polygon points="10,8 16,12 10,16 10,8" />
-            </svg>
-            <span>Explore Services</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Right Content - Service Preview Cards -->
-      <div class="hero-stats">
-        <div class="service-preview-grid">
-          <div class="service-preview-card">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            </div>
-            <h4>Scholarships</h4>
-            <p>Up to ₹25,000 financial aid</p>
-          </div>
-
-          <div class="service-preview-card">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                <line x1="8" y1="21" x2="16" y2="21" />
-                <line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
-            </div>
-            <h4>Diploma Courses</h4>
-            <p>UGC approved programs</p>
-          </div>
-
-          <div class="service-preview-card">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
-            </div>
-            <h4>Awareness</h4>
-            <p>Community programs</p>
-          </div>
-
-          <div class="service-preview-card">
-            <div class="service-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                <line x1="12" y1="17" x2="12.01" y2="17" />
-              </svg>
-            </div>
-            <h4>Olympiads</h4>
-            <p>National competitions</p>
-          </div>
-        </div>
-
-        <!-- Achievement Badge -->
-        <div class="achievement-badge">
-          <div class="badge-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 12l2 2 4-4" />
-              <circle cx="12" cy="12" r="10" />
-            </svg>
-          </div>
-          <div class="badge-content">
-            <div class="badge-title">Trusted by 5000+</div>
-            <div class="badge-subtitle">Students Nationwide</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Scholarship Program Section -->
   <section id="scholarship-program" style="background: #f8fafc; padding: 80px 20px">
@@ -2013,7 +2036,7 @@ Academic guidance programs, Best education platform for students">
   </section>
 
   <!-- Awareness Programs Section -->
-  <section style="background: white; padding: 80px 20px">
+  <section id="awareness-programs" style="background: white; padding: 80px 20px">
     <div style="max-width: 1200px; margin: 0 auto">
       <!-- Section Header -->
       <div style="text-align: center; margin-bottom: 60px">
@@ -2381,7 +2404,7 @@ Academic guidance programs, Best education platform for students">
   </section>
 
   <!-- Olympiads Section -->
-  <section style="background: #f8fafc; padding: 80px 20px">
+  <section id="olympiads" style="background: #f8fafc; padding: 80px 20px">
     <div style="max-width: 1200px; margin: 0 auto">
       <!-- Section Header -->
       <div style="text-align: center; margin-bottom: 60px">
@@ -2807,7 +2830,7 @@ Academic guidance programs, Best education platform for students">
   </section>
 
   <!-- Financial Aid Programs Section -->
-  <section style="background: white; padding: 80px 20px">
+  <section id="financial-aid" style="background: white; padding: 80px 20px">
     <div style="max-width: 1200px; margin: 0 auto">
       <!-- Section Header -->
       <div style="text-align: center; margin-bottom: 60px">
@@ -3228,7 +3251,7 @@ Academic guidance programs, Best education platform for students">
   </section>
 
   <!-- Technical Training Section -->
-  <section style="background: #f8fafc; padding: 80px 20px">
+  <section id="technical-training" style="background: #f8fafc; padding: 80px 20px">
     <div style="max-width: 1200px; margin: 0 auto">
       <!-- Section Header -->
       <div style="text-align: center; margin-bottom: 60px">
@@ -3642,7 +3665,7 @@ Academic guidance programs, Best education platform for students">
   </section>
 
   <!-- Video Section -->
-  <section class="video-carousel">
+  <section class="video-carousel" id="video-ads">
       <h2>Our Video Ads</h2>
       <div class="carousel-track">
         <div class="video-item">
@@ -3678,22 +3701,30 @@ Academic guidance programs, Best education platform for students">
       </div>
     </section>
   <!-- Diploma Courses Section -->
-  <section style="background: white; padding: 80px 20px">
-    <div style="max-width: 1200px; margin: 0 auto">
+  <section id="diploma-courses" class="diploma-section">
+    <div style="max-width: 1240px; margin: 0 auto">
       <!-- Section Header -->
-      <div style="text-align: center; margin-bottom: 60px">
+      <div style="text-align: center; margin-bottom: 50px">
+        <div class="products-hero-badge" style="display: inline-flex; margin-bottom: 14px; font-size: 12.5px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+          <span>Accredited Programs</span>
+        </div>
         <h2 style="
-              font-size: 42px;
+              font-size: clamp(2.1rem, 3.5vw, 2.85rem);
               font-weight: 800;
-              color: #1a202c;
-              margin-bottom: 20px;
+              color: var(--navy);
+              margin-bottom: 16px;
+              letter-spacing: -0.025em;
             ">
-          Diploma Courses
+          UGC Approved <span class="gradient-text hero-sig-phrase">Diploma Courses</span>
         </h2>
         <p style="
-              font-size: 18px;
-              color: #4a5568;
-              line-height: 1.6;
+              font-size: 16px;
+              color: var(--color-secondary-text);
+              line-height: 1.7;
               max-width: 800px;
               margin: 0 auto;
             ">
@@ -3702,351 +3733,293 @@ Academic guidance programs, Best education platform for students">
           academia alike. These intensive programs combine theoretical
           knowledge with practical application, offering students the
           opportunity to gain specialized expertise in high-demand fields.
-          Each diploma course is carefully designed to meet current industry
-          standards and prepare graduates for immediate employment or further
-          academic pursuits with internationally recognized credentials.
         </p>
       </div>
 
       <!-- Diploma Courses Grid -->
-      <div style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-          ">
+      <div class="diploma-cards-grid">
         <!-- Digital Marketing -->
-        <div style="
-              background: #f8fafc;
-              border-radius: 16px;
-              overflow: hidden;
-              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-              transition: all 0.3s ease;
-              position: relative;
-            ">
-          <div style="
-                height: 200px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              ">
-            <div style="
-                  position: absolute;
-                  top: 15px;
-                  left: 15px;
-                  background: rgba(255, 255, 255, 0.9);
-                  padding: 8px 12px;
-                  border-radius: 20px;
-                  font-size: 12px;
-                  font-weight: 600;
-                  color: #1a202c;
-                ">
+        <div class="diploma-card diploma-card--marketing" data-tilt>
+          <div class="diploma-banner">
+            <div class="diploma-shimmer"></div>
+            <div class="diploma-badge">
+              <span class="diploma-badge-dot"></span>
               UGC approved Diploma
             </div>
-            <div style="text-align: center; color: white">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            <span class="diploma-card-num">01</span>
+            <div class="diploma-icon-pod">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 <circle cx="12" cy="12" r="3" />
               </svg>
             </div>
           </div>
-          <div style="padding: 25px">
-            <h4 style="
-                  font-size: 20px;
-                  font-weight: 700;
-                  color: #1a202c;
-                  margin: 0 0 10px 0;
-                ">
-              Digital Marketing
-            </h4>
-            <p style="
-                  color: #4a5568;
-                  font-size: 14px;
-                  line-height: 1.6;
-                  margin: 0;
-                ">
-              Master online marketing strategies, SEO, social media, and
-              digital advertising techniques.
+          <div class="diploma-body">
+            <div class="diploma-category">GROWTH &amp; MARKETING</div>
+            <h4 class="diploma-title">Digital Marketing</h4>
+            <p class="diploma-desc">
+              Master online marketing strategies, SEO, social media algorithms, content marketing, and digital advertising techniques.
             </p>
+            <div class="diploma-footer">
+              <div class="diploma-meta-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>1 Year • Industry Ready</span>
+              </div>
+              <a href="registration.html" class="diploma-enroll-link">
+                <span>Enroll</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Data Science/Data Analysis -->
-        <div style="
-              background: #f8fafc;
-              border-radius: 16px;
-              overflow: hidden;
-              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-              transition: all 0.3s ease;
-              position: relative;
-            ">
-          <div style="
-                height: 200px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              ">
-            <div style="
-                  position: absolute;
-                  top: 15px;
-                  left: 15px;
-                  background: rgba(255, 255, 255, 0.9);
-                  padding: 8px 12px;
-                  border-radius: 20px;
-                  font-size: 12px;
-                  font-weight: 600;
-                  color: #1a202c;
-                ">
+        <div class="diploma-card diploma-card--datascience" data-tilt>
+          <div class="diploma-banner">
+            <div class="diploma-shimmer"></div>
+            <div class="diploma-badge">
+              <span class="diploma-badge-dot"></span>
               UGC approved Diploma
             </div>
-            <div style="text-align: center; color: white">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <span class="diploma-card-num">02</span>
+            <div class="diploma-icon-pod">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M3 3v18h18" />
                 <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
                 <circle cx="12" cy="12" r="2" />
               </svg>
             </div>
           </div>
-          <div style="padding: 25px">
-            <h4 style="
-                  font-size: 20px;
-                  font-weight: 700;
-                  color: #1a202c;
-                  margin: 0 0 10px 0;
-                ">
-              Data Science/Data Analysis
-            </h4>
-            <p style="
-                  color: #4a5568;
-                  font-size: 14px;
-                  line-height: 1.6;
-                  margin: 0;
-                ">
-              Learn advanced analytics, machine learning, and statistical
-              modeling for data-driven insights.
+          <div class="diploma-body">
+            <div class="diploma-category">DATA &amp; ARTIFICIAL INTELLIGENCE</div>
+            <h4 class="diploma-title">Data Science/Data Analysis</h4>
+            <p class="diploma-desc">
+              Learn advanced analytics, machine learning, Python, SQL, and statistical modeling for high-impact data-driven insights.
             </p>
+            <div class="diploma-footer">
+              <div class="diploma-meta-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>1 Year • Industry Ready</span>
+              </div>
+              <a href="registration.html" class="diploma-enroll-link">
+                <span>Enroll</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Production Engineering -->
-        <div style="
-              background: #f8fafc;
-              border-radius: 16px;
-              overflow: hidden;
-              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-              transition: all 0.3s ease;
-              position: relative;
-            ">
-          <div style="
-                height: 200px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              ">
-            <div style="
-                  position: absolute;
-                  top: 15px;
-                  left: 15px;
-                  background: rgba(255, 255, 255, 0.9);
-                  padding: 8px 12px;
-                  border-radius: 20px;
-                  font-size: 12px;
-                  font-weight: 600;
-                  color: #1a202c;
-                ">
+        <div class="diploma-card diploma-card--engineering" data-tilt>
+          <div class="diploma-banner">
+            <div class="diploma-shimmer"></div>
+            <div class="diploma-badge">
+              <span class="diploma-badge-dot"></span>
               UGC approved Diploma
             </div>
-            <div style="text-align: center; color: white">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path
-                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            <span class="diploma-card-num">03</span>
+            <div class="diploma-icon-pod">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
               </svg>
             </div>
           </div>
-          <div style="padding: 25px">
-            <h4 style="
-                  font-size: 20px;
-                  font-weight: 700;
-                  color: #1a202c;
-                  margin: 0 0 10px 0;
-                ">
-              Production Engineering
-            </h4>
-            <p style="
-                  color: #4a5568;
-                  font-size: 14px;
-                  line-height: 1.6;
-                  margin: 0;
-                ">
-              Master manufacturing processes, quality control, and industrial
-              production systems.
+          <div class="diploma-body">
+            <div class="diploma-category">MANUFACTURING &amp; SYSTEMS</div>
+            <h4 class="diploma-title">Production Engineering</h4>
+            <p class="diploma-desc">
+              Master modern manufacturing processes, quality control methodologies, automation standards, and industrial production systems.
             </p>
+            <div class="diploma-footer">
+              <div class="diploma-meta-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>1 Year • Industry Ready</span>
+              </div>
+              <a href="registration.html" class="diploma-enroll-link">
+                <span>Enroll</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Web Development -->
-        <div style="
-              background: #f8fafc;
-              border-radius: 16px;
-              overflow: hidden;
-              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-              transition: all 0.3s ease;
-              position: relative;
-            ">
-          <div style="
-                height: 200px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              ">
-            <div style="
-                  position: absolute;
-                  top: 15px;
-                  left: 15px;
-                  background: rgba(255, 255, 255, 0.9);
-                  padding: 8px 12px;
-                  border-radius: 20px;
-                  font-size: 12px;
-                  font-weight: 600;
-                  color: #1a202c;
-                ">
+        <div class="diploma-card diploma-card--webdev" data-tilt>
+          <div class="diploma-banner">
+            <div class="diploma-shimmer"></div>
+            <div class="diploma-badge">
+              <span class="diploma-badge-dot"></span>
               UGC approved Diploma
             </div>
-            <div style="text-align: center; color: white">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <span class="diploma-card-num">04</span>
+            <div class="diploma-icon-pod">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <polyline points="16 18 22 12 16 6" />
                 <polyline points="8 6 2 12 8 18" />
               </svg>
             </div>
           </div>
-          <div style="padding: 25px">
-            <h4 style="
-                  font-size: 20px;
-                  font-weight: 700;
-                  color: #1a202c;
-                  margin: 0 0 10px 0;
-                ">
-              Web Development
-            </h4>
-            <p style="
-                  color: #4a5568;
-                  font-size: 14px;
-                  line-height: 1.6;
-                  margin: 0;
-                ">
-              Build modern websites and applications using cutting-edge
-              technologies and frameworks.
+          <div class="diploma-body">
+            <div class="diploma-category">SOFTWARE &amp; WEB</div>
+            <h4 class="diploma-title">Web Development</h4>
+            <p class="diploma-desc">
+              Build modern websites and responsive applications using cutting-edge frontend and backend technologies, REST APIs, and frameworks.
             </p>
+            <div class="diploma-footer">
+              <div class="diploma-meta-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>1 Year • Industry Ready</span>
+              </div>
+              <a href="registration.html" class="diploma-enroll-link">
+                <span>Enroll</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Medical Coding -->
-        <div style="
-              background: #f8fafc;
-              border-radius: 16px;
-              overflow: hidden;
-              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-              transition: all 0.3s ease;
-              position: relative;
-            ">
-          <div style="
-                height: 200px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-              ">
-            <div style="
-                  position: absolute;
-                  top: 15px;
-                  left: 15px;
-                  background: rgba(255, 255, 255, 0.9);
-                  padding: 8px 12px;
-                  border-radius: 20px;
-                  font-size: 12px;
-                  font-weight: 600;
-                  color: #1a202c;
-                ">
+        <div class="diploma-card diploma-card--medical" data-tilt>
+          <div class="diploma-banner">
+            <div class="diploma-shimmer"></div>
+            <div class="diploma-badge">
+              <span class="diploma-badge-dot"></span>
               UGC approved Diploma
             </div>
-            <div style="text-align: center; color: white">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <span class="diploma-card-num">05</span>
+            <div class="diploma-icon-pod">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                 <path d="M12 2v20" />
               </svg>
             </div>
           </div>
-          <div style="padding: 25px">
-            <h4 style="
-                  font-size: 20px;
-                  font-weight: 700;
-                  color: #1a202c;
-                  margin: 0 0 10px 0;
-                ">
-              Medical Coding
-            </h4>
-            <p style="
-                  color: #4a5568;
-                  font-size: 14px;
-                  line-height: 1.6;
-                  margin: 0;
-                ">
-              Learn healthcare documentation, medical terminology, and coding
-              systems for healthcare industry.
+          <div class="diploma-body">
+            <div class="diploma-category">HEALTHCARE INFORMATICS</div>
+            <h4 class="diploma-title">Medical Coding</h4>
+            <p class="diploma-desc">
+              Learn healthcare documentation, ICD-10 and CPT coding systems, medical terminology, and clinical records for healthcare industry.
             </p>
+            <div class="diploma-footer">
+              <div class="diploma-meta-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>1 Year • Industry Ready</span>
+              </div>
+              <a href="registration.html" class="diploma-enroll-link">
+                <span>Enroll</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Include Sikshit Footer -->
-  <div include-html="components/sikshitfooter.html"></div>
-
-  <!-- Floating Action Buttons -->
-  <div class="floating-buttons-container">
-    <!-- WhatsApp Button -->
-    <div class="floating-button whatsapp-btn" id="whatsapp-btn">
-      <div class="floating-button-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787" />
-        </svg>
+    <!-- ======================================================================
+         5. CLOSING CTA BAND
+         Signature gradient container, secondary white button, clear value prop
+         ====================================================================== -->
+    <div class="products-cta-band">
+      <div class="products-cta-card">
+        <h3>Ready to Begin Your Educational Journey?</h3>
+        <p>Apply for our scholarships, diploma courses, and skill development programs today.</p>
+        <div class="products-cta-actions">
+          <a href="registration.html" class="btn-pill btn-secondary-white">Apply Now</a>
+          <a href="become-a-member.html" class="btn-pill" style="background: rgba(255,255,255,0.22); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.45); backdrop-filter: blur(8px);">Become a Member</a>
+        </div>
       </div>
-      <span class="floating-button-text">WhatsApp</span>
     </div>
 
-    <!-- Support Button -->
-    <div class="floating-button support-btn" id="support-btn">
-      <div class="floating-button-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          <path d="M8 9h8" />
-          <path d="M8 13h6" />
-        </svg>
+    <!-- ======================================================================
+         6. EDITORIAL FOOTER (Matching Homepage)
+         ====================================================================== -->
+    <footer class="footer-editorial" role="contentinfo">
+      <div class="shikshit-container">
+        <div class="footer-grid">
+          <div>
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+              <img src="images/sikshitlogo.webp" alt="Shikshit Logo" style="height: 64px; width: auto; margin: -10px 0;">
+            </div>
+            <p style="font-size: 14.5px; line-height: 1.65; color: var(--ink); max-width: 340px;">
+              Empowering students and institutions across India through educational scholarships, practical skill development, and career guidance.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="product-services.html">Programs &amp; Services</a></li>
+              <li><a href="ns-mas.html">NS-MAS Scholarship</a></li>
+              <li><a href="become-a-member.html">Become a Member</a></li>
+              <li><a href="donate.html">Donate</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms &amp; Conditions</a></li>
+              <li><a href="disclaimer.html">Disclaimer</a></li>
+              <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <p style="font-size: 14px; margin-bottom: 8px;">
+              Email: <a href="mailto:shikshiteducation@gmail.com" style="color: var(--violet); font-weight: 600;">shikshiteducation@gmail.com</a>
+            </p>
+            <p style="font-size: 14px; margin-bottom: 12px;">
+              Phone: <a href="tel:+917905044451" style="color: var(--violet); font-weight: 600;">+91 7905044451</a>
+            </p>
+            <div style="display: flex; gap: 10px; margin-top: 14px;">
+              <a href="https://wa.me/917905044451" target="_blank" rel="noopener noreferrer" class="btn-pill btn-primary-gradient" style="padding: 8px 18px; font-size: 13px;">
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          &copy; 2026 Shikshit Education. All Rights Reserved.
+        </div>
       </div>
-      <span class="floating-button-text">Contact Us</span>
+    </footer>
+
+    <!-- ======================================================================
+         FLOATING ACTION HUB (Preserving #whatsapp-btn, #support-btn, #donate-btn)
+         ====================================================================== -->
+    <div class="floating-hub" role="complementary" aria-label="Quick Contacts">
+      <!-- WhatsApp Button -->
+      <a href="https://wa.me/917905044451" target="_blank" rel="noopener noreferrer" class="floating-btn floating-btn-whatsapp" id="whatsapp-btn" aria-label="WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <!-- Support Button -->
+      <a href="tel:+917905044451" class="floating-btn floating-btn-support" id="support-btn" aria-label="Call Shikshit">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        <span>Contact Us</span>
+      </a>
+
+      <!-- Donate Button -->
+      <a href="donate.html" class="floating-btn floating-btn-donate" id="donate-btn" aria-label="Donate">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+        </svg>
+        <span>Donate for the Cause</span>
+      </a>
     </div>
 
-    <!-- Donate Button -->
-    <div class="floating-button donate-btn" id="donate-btn">
-      <div class="floating-button-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path
-            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-        </svg>
-      </div>
-      <span class="floating-button-text">Donate for the Cause</span>
-    </div>
   </div>
 
   <!-- JavaScript for Timeline Animation and Progress Bars -->
@@ -4204,6 +4177,9 @@ track.addEventListener('mouseleave', startAutoScroll);
 
 
     </script>
+
+  <!-- Inner Pages Interaction & Motion Script -->
+  <script src="js/shikshit/inner.js"></script>
 
 </body>
 
