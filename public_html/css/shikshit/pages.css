@@ -1,654 +1,1435 @@
 /* ==========================================================================
-   SHIKSHIT PAGES STYLING (Homepage Responsive Layouts — Light Theme)
+   SHIKSHIT PAGES STYLESHEET (Homepage Editorial Layout)
+   Soft, warm, hopeful, elegant, modern NGO aesthetic.
+   Airy, rounded, gently glowing.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
    1. HERO SECTION
    -------------------------------------------------------------------------- */
-.hero-section {
-  background: linear-gradient(180deg, var(--color-lavender-bg) 0%, var(--color-main-bg) 100%);
-  padding-top: clamp(2.5rem, 5vw, 4.5rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
-  border-bottom: 1px solid var(--color-border);
+.hero-editorial {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  position: relative;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
   align-items: center;
 }
 
-@media (min-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1.15fr 0.85fr;
-  }
-}
-
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  background-color: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  font-size: var(--fs-xs);
-  font-weight: 700;
-  color: var(--color-primary-purple);
-  margin-bottom: var(--sp-4);
-  box-shadow: var(--shadow-subtle);
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .hero-title {
-  font-size: var(--fs-4xl);
+  margin-bottom: 24px;
+}
+
+.hero-small-heading {
+  display: block;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 700;
+  color: var(--violet);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.hero-main-line {
+  display: block;
+  font-size: var(--h1-size);
   font-weight: 800;
-  color: var(--color-primary-text);
-  line-height: 1.15;
-  margin-bottom: var(--sp-4);
-  letter-spacing: -0.025em;
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  color: var(--navy);
 }
 
-.hero-title-accent {
-  color: var(--color-primary-purple);
+/* Hand-drawn curved underline on "Education" that animates on load */
+.hero-underline-wrapper {
+  position: relative;
+  display: inline-block;
 }
 
-.hero-lead {
-  font-size: var(--fs-md);
-  color: var(--color-secondary-text);
-  line-height: 1.65;
-  margin-bottom: var(--sp-6);
+.hero-underline-svg {
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  width: 100%;
+  height: 20px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-underline-path {
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  animation: drawUnderline 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.6s forwards;
+}
+
+@keyframes drawUnderline {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hero-paragraph {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 32px;
   max-width: 580px;
 }
 
-.hero-actions {
+.hero-btn-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-3);
-  margin-bottom: var(--sp-6);
-}
-
-.hero-trust-bar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: var(--sp-4);
-  border-top: 1px solid var(--color-border);
-}
-
-.hero-avatars {
-  display: flex;
-}
-
-.hero-avatar-img {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-full);
-  border: 2px solid #FFFFFF;
-  margin-left: -8px;
-  object-fit: cover;
-}
-
-.hero-avatar-img:first-child {
-  margin-left: 0;
-}
-
-.hero-trust-text {
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  color: var(--color-secondary-text);
-}
-
-.hero-trust-text strong {
-  color: var(--color-primary-text);
-}
-
-/* Hero Right Educational Visual */
-.hero-image-wrapper {
-  position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  background: #FFFFFF;
-  box-shadow: var(--shadow-card);
-}
-
-.hero-image {
-  width: 100%;
-  height: clamp(280px, 35vw, 420px);
-  object-fit: cover;
-}
-
-.hero-image-caption {
-  padding: var(--sp-4);
-  background: #FFFFFF;
-  border-top: 1px solid var(--color-border);
-}
-
-.hero-caption-title {
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  color: var(--color-primary-text);
-  margin-bottom: 2px;
-}
-
-.hero-caption-desc {
-  font-size: var(--fs-xs);
-  color: var(--color-secondary-text);
-}
-
-/* --------------------------------------------------------------------------
-   2. MISSION & VISION
-   -------------------------------------------------------------------------- */
-.mv-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(1.25rem, 3vw, 2rem);
-}
-
-@media (min-width: 768px) {
-  .mv-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.mv-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.5rem, 3vw, 2.25rem);
-  box-shadow: var(--shadow-subtle);
-  display: flex;
-  flex-direction: column;
-}
-
-.mv-header {
-  display: flex;
-  align-items: center;
   gap: 16px;
-  margin-bottom: var(--sp-3);
-}
-
-.mv-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-md);
-  object-fit: cover;
-  border: 1px solid var(--color-border);
-  flex-shrink: 0;
-}
-
-.mv-title {
-  font-size: var(--fs-lg);
-  font-weight: 700;
-  color: var(--color-primary-text);
-}
-
-.mv-body {
-  font-size: var(--fs-sm);
-  color: var(--color-secondary-text);
-  line-height: 1.65;
-  flex-grow: 1;
-}
-
-/* --------------------------------------------------------------------------
-   3. NS-MAS SPOTLIGHT BANNER (Light-Theme Preserved)
-   -------------------------------------------------------------------------- */
-.nsmas-banner {
-  background-color: var(--color-lavender-bg);
-  border: 2px solid var(--color-primary-purple);
-  border-radius: var(--radius-xl);
-  padding: clamp(1.75rem, 4vw, 3rem);
-  box-shadow: var(--shadow-card);
-}
-
-.nsmas-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: center;
-}
-
-@media (min-width: 992px) {
-  .nsmas-grid {
-    grid-template-columns: 1.3fr 0.7fr;
-  }
-}
-
-.nsmas-title {
-  font-size: var(--fs-2xl);
-  font-weight: 800;
-  color: var(--color-deep-purple);
-  margin-bottom: var(--sp-3);
-}
-
-.nsmas-desc {
-  font-size: var(--fs-base);
-  color: var(--color-secondary-text);
-  line-height: 1.65;
-  margin-bottom: var(--sp-5);
-}
-
-.nsmas-actions {
-  display: flex;
   flex-wrap: wrap;
-  gap: var(--sp-3);
+  align-items: center;
+  margin-bottom: 28px;
 }
 
-.nsmas-box {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--sp-4);
+/* Small tick row */
+.hero-tick-row {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  padding-top: 14px;
+  border-top: 1px solid rgba(124, 58, 237, 0.12);
+  width: 100%;
+  max-width: 520px;
 }
 
-.nsmas-box-title {
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  color: var(--color-deep-purple);
-  margin-bottom: var(--sp-3);
+.hero-tick-item {
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
 }
 
-.nsmas-checklist {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.nsmas-check-item {
-  font-size: var(--fs-xs);
-  color: var(--color-primary-text);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.nsmas-check-icon {
-  color: var(--color-success-green);
-  flex-shrink: 0;
-}
-
-/* --------------------------------------------------------------------------
-   4. PROGRAMS & SERVICES
-   -------------------------------------------------------------------------- */
-.programs-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-4);
-}
-
-@media (min-width: 640px) {
-  .programs-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .programs-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.program-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.25rem, 2.5vw, 1.75rem);
-  box-shadow: var(--shadow-subtle);
-  display: flex;
-  flex-direction: column;
-  transition: all var(--trans-fast);
-}
-
-.program-card:hover {
-  border-color: var(--color-primary-purple);
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
-}
-
-.program-icon-box {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background-color: var(--color-lavender-bg);
-  color: var(--color-primary-purple);
+.hero-tick-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--signature-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  margin-bottom: var(--sp-3);
-}
-
-.program-title {
-  font-size: var(--fs-md);
-  font-weight: 700;
-  color: var(--color-primary-text);
-  margin-bottom: var(--sp-2);
-}
-
-.program-desc {
-  font-size: var(--fs-sm);
-  color: var(--color-secondary-text);
-  line-height: 1.6;
-  margin-bottom: var(--sp-4);
-  flex-grow: 1;
-}
-
-.program-link {
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  color: var(--color-primary-purple);
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.program-link:hover {
-  color: var(--color-deep-purple);
-  gap: 8px;
+  color: white;
+  font-size: 10px;
+  flex-shrink: 0;
 }
 
 /* --------------------------------------------------------------------------
-   5. EDUCATIONAL JOURNEY / PROCESS
+   HERO PHOTO COMPOSITION (CSS GRID ~600px Fixed Height)
+   Arch Photo (left, 2 rows) + Round Photo (top-right) + Gradient Card (bottom-right)
+   Rotating circular badge overlapping
    -------------------------------------------------------------------------- */
-.journey-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-4);
-}
-
-@media (min-width: 640px) {
-  .journey-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .journey-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.journey-step-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--sp-5) var(--sp-4);
+.hero-composition {
   position: relative;
-}
-
-.journey-number {
-  font-family: var(--font-heading);
-  font-size: var(--fs-xs);
-  font-weight: 800;
-  color: var(--color-primary-purple);
-  background: var(--color-lavender-bg);
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
-  display: inline-block;
-  margin-bottom: var(--sp-2);
-}
-
-.journey-title {
-  font-size: var(--fs-base);
-  font-weight: 700;
-  color: var(--color-primary-text);
-  margin-bottom: 6px;
-}
-
-.journey-desc {
-  font-size: var(--fs-xs);
-  color: var(--color-secondary-text);
-  line-height: 1.55;
-}
-
-/* --------------------------------------------------------------------------
-   6. ACTIVITIES & GALLERY EDITORIAL PREVIEW
-   -------------------------------------------------------------------------- */
-.editorial-gallery {
+  height: 600px;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-4);
+  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-rows: 270px 300px;
+  gap: 20px;
+  perspective: 1000px;
 }
 
-@media (min-width: 640px) {
-  .editorial-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .editorial-gallery {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.gallery-item {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+/* Tall ARCH-shaped photo on left spanning 2 rows */
+.hero-photo-arch {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-arch);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  box-shadow: var(--shadow-soft-violet);
+  border: 4px solid var(--white);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
-.gallery-thumb-wrap {
-  height: 180px;
-  overflow: hidden;
-  background: var(--color-soft-bg);
-}
-
-.gallery-thumb {
+.hero-photo-arch img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--trans-fast);
+  transition: transform 0.6s ease;
 }
 
-.gallery-item:hover .gallery-thumb {
+.hero-photo-arch:hover img {
   transform: scale(1.04);
 }
 
-.gallery-caption {
-  padding: var(--sp-3) var(--sp-4);
-}
-
-.gallery-caption h4 {
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  color: var(--color-primary-text);
-  margin-bottom: 2px;
-}
-
-.gallery-caption p {
-  font-size: var(--fs-xs);
-  color: var(--color-secondary-text);
-}
-
-/* --------------------------------------------------------------------------
-   7. VIDEO SHOWCASE (Lazy Load with Poster)
-   -------------------------------------------------------------------------- */
-.video-showcase-card {
-  max-width: 840px;
-  margin: 0 auto;
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+/* Round photo (top right) */
+.hero-photo-round {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
   overflow: hidden;
-  box-shadow: var(--shadow-card);
-}
-
-.video-container {
+  align-self: center;
+  justify-self: center;
+  border: 5px solid var(--white);
+  box-shadow: 0 16px 36px rgba(124, 58, 237, 0.16);
   position: relative;
-  width: 100%;
-  background: #0F172A;
-  aspect-ratio: 16 / 9;
+  transition: transform 0.4s ease;
 }
 
-.video-player {
+.hero-photo-round img {
   width: 100%;
   height: 100%;
-  display: block;
-}
-
-.video-info {
-  padding: var(--sp-5) var(--sp-6);
-}
-
-.video-title {
-  font-size: var(--fs-lg);
-  font-weight: 700;
-  color: var(--color-primary-text);
-  margin-bottom: 4px;
-}
-
-.video-desc {
-  font-size: var(--fs-sm);
-  color: var(--color-secondary-text);
-}
-
-/* --------------------------------------------------------------------------
-   8. LEADERSHIP TEAM
-   -------------------------------------------------------------------------- */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-4);
-}
-
-@media (min-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.team-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--sp-4);
-  text-align: center;
-}
-
-.team-avatar-img {
-  width: 80px;
-  height: 80px;
-  border-radius: var(--radius-full);
-  margin: 0 auto var(--sp-3);
   object-fit: cover;
-  border: 2px solid var(--color-lavender-bg);
+  transition: transform 0.5s ease;
 }
 
-.team-name {
-  font-size: var(--fs-base);
-  font-weight: 700;
-  color: var(--color-primary-text);
-  margin-bottom: 2px;
+.hero-photo-round:hover {
+  transform: scale(1.05) rotate(2deg);
 }
 
-.team-role {
-  font-size: var(--fs-xs);
-  color: var(--color-primary-purple);
-  font-weight: 600;
+/* Gradient Impact Card (bottom right) */
+.hero-impact-card {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background: var(--signature-gradient);
+  border-radius: var(--radius-card-lg);
+  padding: 28px 24px;
+  color: var(--white);
+  box-shadow: 0 18px 42px rgba(192, 38, 211, 0.28);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.hero-impact-card::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+.hero-impact-stat {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  padding-bottom: 10px;
+}
+
+.hero-impact-stat:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hero-impact-num {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-impact-label {
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.92;
+}
+
+/* Overlapping Rotating Circular Badge */
+.hero-rotating-badge-pos {
+  position: absolute;
+  top: 42%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: var(--white);
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 12px 34px rgba(11, 11, 59, 0.14);
 }
 
 /* --------------------------------------------------------------------------
-   9. TESTIMONIALS
+   2. INTRO STATEMENT (3 Columns Under Hairline)
    -------------------------------------------------------------------------- */
-.testimonials-grid {
+.intro-statement-section {
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+
+.intro-statement-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-4);
+  grid-template-columns: 1fr 1fr 1.35fr;
+  gap: 40px;
+  padding-top: 48px;
+  border-top: 1px solid rgba(124, 58, 237, 0.15);
 }
 
-@media (min-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.testimonial-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--sp-5);
+.intro-statement-col {
   display: flex;
   flex-direction: column;
 }
 
-.testimonial-stars {
-  color: #D97706;
-  font-size: var(--fs-sm);
-  margin-bottom: var(--sp-2);
+.intro-statement-col p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink);
 }
 
-.testimonial-quote {
-  font-size: var(--fs-sm);
-  color: var(--color-secondary-text);
-  line-height: 1.6;
-  margin-bottom: var(--sp-4);
-  flex-grow: 1;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-top: var(--sp-3);
-  border-top: 1px solid var(--color-border);
-}
-
-.testimonial-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
-  object-fit: cover;
-}
-
-.author-name {
-  font-size: var(--fs-sm);
+.intro-statement-highlight p {
+  font-size: 20px;
   font-weight: 700;
-  color: var(--color-primary-text);
-}
-
-.author-city {
-  font-size: var(--fs-xs);
-  color: var(--color-secondary-text);
+  line-height: 1.6;
+  color: var(--navy);
 }
 
 /* --------------------------------------------------------------------------
-   10. FINAL CTA BANNER (Light Lavender Theme)
+   3. TWO FEATURE CARDS (NS-MAS Gradient Card + Support Education White Card)
    -------------------------------------------------------------------------- */
-.final-cta-card {
-  background-color: var(--color-lavender-bg);
-  border: 1px solid rgba(107, 70, 193, 0.25);
-  border-radius: var(--radius-xl);
-  padding: clamp(2.25rem, 5vw, 4rem) clamp(1.25rem, 3.5vw, 3rem);
-  text-align: center;
+.feature-cards-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  margin-top: 20px;
 }
 
-.cta-heading {
-  font-size: var(--fs-2xl);
+/* Card 1: NS-MAS Gradient Card */
+.feature-card-nsmas {
+  background: var(--signature-gradient);
+  border-radius: var(--radius-container);
+  padding: 48px 44px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-watermark-text {
+  position: absolute;
+  right: -20px;
+  bottom: -30px;
+  font-size: 140px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.14);
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+}
+
+.feature-card-nsmas h3 {
+  color: var(--white);
+  font-size: 32px;
   font-weight: 800;
-  color: var(--color-deep-purple);
-  margin-bottom: var(--sp-2);
+  margin-bottom: 8px;
 }
 
-.cta-subtext {
-  font-size: var(--fs-base);
-  color: var(--color-secondary-text);
-  max-width: 580px;
-  margin: 0 auto var(--sp-5);
+.feature-card-nsmas p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 16px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 480px;
+}
+
+.feature-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.feature-tag-chip {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Card 2: Support Education White Card */
+.feature-card-support {
+  background: var(--white);
+  border-radius: var(--radius-container);
+  padding: 48px 40px;
+  border: var(--hairline-border);
+  box-shadow: var(--shadow-soft-violet);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-card-support h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.feature-card-support p {
+  font-size: 15.5px;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.support-impact-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.support-impact-tile {
+  background: var(--lav-50);
+  border-radius: 18px;
+  padding: 16px 12px;
+  text-align: center;
+  border: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+.support-impact-tile-num {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--violet);
+  margin-bottom: 4px;
+}
+
+.support-impact-tile-lbl {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   4. OUR MISSION & OUR VISION
+   -------------------------------------------------------------------------- */
+.mission-vision-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.organic-blob-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.organic-blob-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 60px 20px 60px 20px;
+  box-shadow: var(--shadow-soft-violet);
+  border: 4px solid var(--white);
+  transition: transform 0.5s ease;
+}
+
+.organic-blob-image:hover {
+  transform: scale(1.02);
+}
+
+.insc-chip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  background: var(--white);
+  border-radius: var(--radius-pill);
+  border: var(--hairline-border);
+  box-shadow: 0 8px 24px rgba(11, 11, 59, 0.06);
+  margin-bottom: 20px;
+}
+
+.insc-chip-badge img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.insc-chip-text {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* Centred Big Quote */
+.quote-editorial-band {
+  text-align: center;
+  max-width: 840px;
+  margin: 70px auto;
+  position: relative;
+  padding: 20px 0;
+}
+
+.quote-mark-icon {
+  font-size: 80px;
+  line-height: 1;
+  background: var(--signature-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.quote-editorial-text {
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--navy);
+  font-style: italic;
+}
+
+/* Call to Action Band with Translucent Circles */
+.cta-band-revolution {
+  background: var(--signature-gradient);
+  border-radius: var(--radius-container);
+  padding: 60px 48px;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(124, 58, 237, 0.28);
+  margin-top: 40px;
+}
+
+.cta-band-revolution h3 {
+  color: var(--white);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.cta-band-revolution p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  max-width: 620px;
+  margin: 0 auto 32px;
   line-height: 1.6;
 }
 
-.cta-button-group {
+.cta-band-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.cta-band-circle-1 {
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.cta-band-circle-2 {
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   5. OUR JOURNEY (Sticky Outlined Year + Clean List)
+   -------------------------------------------------------------------------- */
+.journey-year-group {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 50px;
+  margin-bottom: 70px;
+  position: relative;
+}
+
+.journey-sticky-year {
+  position: sticky;
+  top: 130px;
+  height: fit-content;
+}
+
+.journey-huge-year {
+  font-size: clamp(4.5rem, 8vw, 6.5rem);
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2.5px rgba(124, 58, 237, 0.35);
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+
+.journey-entries-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.journey-entry-item {
+  display: flex;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+  transition: transform 0.25s ease;
+}
+
+.journey-entry-item:first-child {
+  padding-top: 0;
+}
+
+.journey-entry-item:last-child {
+  border-bottom: none;
+}
+
+.journey-entry-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--lav-50);
+  border: var(--hairline-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.06);
+}
+
+.journey-entry-item:hover .journey-entry-icon-circle {
+  background: var(--signature-gradient);
+  color: var(--white);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.25);
+}
+
+.journey-entry-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.journey-entry-content p {
+  font-size: 15.5px;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   6. TEAM (4-Column Grid with Arch Photo Frames)
+   -------------------------------------------------------------------------- */
+.team-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.team-member-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team-arch-photo {
+  width: 100%;
+  max-width: 220px;
+  height: 270px;
+  border-radius: 130px 130px 24px 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft-violet);
+  border: 4px solid var(--white);
+  margin-bottom: 18px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.team-arch-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-member-item:hover .team-arch-photo {
+  transform: translateY(-8px) rotate(-1deg);
+  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.2);
+}
+
+.team-member-item:hover .team-arch-photo img {
+  transform: scale(1.05);
+}
+
+.team-member-name {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.team-member-role {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--violet);
+  margin-bottom: 4px;
+}
+
+.team-member-note {
+  font-size: 12.5px;
+  color: var(--ink);
+  font-style: italic;
+  max-width: 200px;
+}
+
+/* --------------------------------------------------------------------------
+   7. ABOUT NS-MAS (Deep Violet Gradient Section)
+   -------------------------------------------------------------------------- */
+.nsmas-deep-section {
+  background: var(--deep-gradient);
+  border-radius: var(--radius-container);
+  padding: 80px 54px;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(11, 11, 59, 0.3);
+  margin: 40px 0;
+}
+
+.nsmas-deep-glow {
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.32) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.nsmas-two-col {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  margin-bottom: 48px;
+}
+
+.nsmas-deep-section h2 {
+  color: var(--white);
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.nsmas-deep-section p {
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
+}
+
+/* Checklist with gradient ticks */
+.gradient-tick-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.gradient-tick-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.gradient-tick-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--signature-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* 2x2 Frosted-Glass Cards for Key Highlights */
+.highlights-2x2-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.frosted-glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-card);
+  padding: 24px 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.frosted-glass-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.frosted-glass-card h4 {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.frosted-glass-card p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+/* Glass Pill Chips for Categories & Benefits */
+.glass-pills-row {
   display: flex;
   flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.glass-pill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* White CTA Band at bottom of About NS-MAS */
+.nsmas-white-cta-band {
+  background: var(--white);
+  border-radius: var(--radius-card-lg);
+  padding: 40px;
+  text-align: center;
+  margin-top: 48px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.nsmas-white-cta-band h3 {
+  color: var(--navy);
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.nsmas-white-cta-band p {
+  color: var(--ink);
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   8. PRODUCT & SERVICES (Restyled Large Pill Chips with Icon Circles)
+   -------------------------------------------------------------------------- */
+.services-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.service-editorial-card {
+  background: var(--white);
+  border-radius: var(--radius-card-lg);
+  padding: 32px 28px;
+  border: var(--hairline-border);
+  box-shadow: var(--shadow-soft-violet);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-editorial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.service-card-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--lav-50);
+  border: var(--hairline-border);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  gap: var(--sp-3);
+  font-size: 24px;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.08);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.service-editorial-card:hover .service-card-icon {
+  transform: scale(1.1);
+}
+
+.service-inner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.service-inner-item {
+  background: var(--lav-50);
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+.service-inner-item h5 {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.service-inner-item p {
+  font-size: 11px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   9. OPPORTUNITIES (Bento Grid with Varied Tile Sizes)
+   -------------------------------------------------------------------------- */
+.opportunities-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 20px;
+}
+
+.bento-tile {
+  border-radius: var(--radius-card);
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  border: var(--hairline-border);
+  box-shadow: var(--shadow-soft-violet);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* First tile large (photo background with violet overlay) */
+.bento-tile-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  color: var(--white);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.85), rgba(76, 29, 149, 0.9)), url('../images/opp1.webp') center/cover no-repeat;
+}
+
+.bento-tile-large h3 {
+  color: var(--white);
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.bento-tile-large p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Two wide tiles */
+.bento-tile-wide {
+  grid-column: span 2;
+  background: var(--lav-50);
+}
+
+/* Other small tinted tiles (lavender, peach, mint, pink) */
+.bento-tint-lavender {
+  background: var(--lav-100);
+}
+
+.bento-tint-peach {
+  background: var(--peach);
+}
+
+.bento-tint-pink {
+  background: #FCE7F3;
+}
+
+.bento-tint-mint {
+  background: #ECFDF5;
+}
+
+.bento-tile-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 2px solid var(--white);
+  box-shadow: 0 4px 12px rgba(11, 11, 59, 0.08);
+}
+
+.bento-tile h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.bento-tile p {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   10. OUR VIDEO ADS (3-Column Grid of 16:9 Cards with Gradient Frame)
+   -------------------------------------------------------------------------- */
+.videos-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.video-editorial-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 10px;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), var(--signature-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: var(--shadow-soft-violet);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.video-editorial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.video-aspect-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-aspect-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   11. OUR FEW PAST ACTIVITIES (Mosaic Gallery with Mixed Shapes)
+   One big arch, one wide tile, two with large pill corner
+   Captions slide up on hover
+   -------------------------------------------------------------------------- */
+.activities-mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 240px;
+  gap: 24px;
+}
+
+.mosaic-gallery-item {
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft-violet);
+  border: 4px solid var(--white);
+}
+
+.mosaic-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mosaic-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px;
+  background: linear-gradient(transparent, rgba(11, 11, 59, 0.88));
+  color: var(--white);
+  font-size: 14.5px;
+  font-weight: 600;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mosaic-gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.mosaic-gallery-item:hover .mosaic-caption {
+  transform: translateY(0);
+}
+
+/* Mixed Shapes */
+.mosaic-arch {
+  grid-column: span 2;
+  grid-row: span 2;
+  border-radius: 220px 220px 32px 32px;
+}
+
+.mosaic-wide {
+  grid-column: span 2;
+  border-radius: var(--radius-card);
+}
+
+.mosaic-pill-corner-top {
+  border-radius: 120px 32px 32px 32px;
+}
+
+.mosaic-pill-corner-bottom {
+  border-radius: 32px 32px 120px 32px;
+}
+
+.mosaic-standard {
+  border-radius: var(--radius-card);
+}
+
+/* --------------------------------------------------------------------------
+   12. PARTNERS (Infinite Marquee + Stats Row)
+   -------------------------------------------------------------------------- */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  padding: 30px 0;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 50px;
+  animation: marqueeLoop 35s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.partner-logo-item img {
+  max-height: 54px;
+  max-width: 150px;
+  object-fit: contain;
+  filter: grayscale(80%) opacity(0.85);
+  transition: all 0.3s ease;
+}
+
+.partner-logo-item:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
+}
+
+@keyframes marqueeLoop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Stats Row: Large Gradient Numbers with Thin Dividers */
+.partners-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 60px;
+  padding-top: 50px;
+  border-top: 1px solid rgba(124, 58, 237, 0.12);
+}
+
+.partner-stat-col {
+  text-align: center;
+  position: relative;
+}
+
+.partner-stat-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(124, 58, 237, 0.15);
+}
+
+.partner-stat-num {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 8px;
+  background: var(--signature-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-family: var(--font-display);
+}
+
+.partner-stat-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* --------------------------------------------------------------------------
+   13. FOOTER (Soft Lavender-to-Peach with Rounded Top Corners)
+   -------------------------------------------------------------------------- */
+.footer-editorial {
+  background: linear-gradient(135deg, var(--lav-50) 0%, var(--blush) 50%, var(--peach) 100%);
+  border-radius: 48px 48px 0 0;
+  border-top: var(--hairline-border);
+  padding: 70px 0 32px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 18px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col a {
+  color: var(--ink);
+  font-size: 14.5px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: var(--violet);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(124, 58, 237, 0.12);
+  padding-top: 24px;
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVENESS & BREAKPOINTS (360, 768, 1024, 1440)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-composition {
+    height: 480px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .intro-statement-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .feature-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nsmas-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunities-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .videos-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-composition {
+    height: 420px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 190px 210px;
+  }
+
+  .hero-photo-round {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero-impact-card {
+    padding: 18px 16px;
+  }
+
+  .hero-impact-num {
+    font-size: 20px;
+  }
+
+  .mission-vision-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .mission-vision-row.vision-row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .journey-year-group {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .journey-sticky-year {
+    position: static;
+  }
+
+  .journey-huge-year {
+    font-size: 3.5rem;
+  }
+
+  .activities-mosaic-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 180px;
+  }
+
+  .partners-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .partner-stat-col:not(:last-child)::after {
+    display: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-composition {
+    height: 380px;
+    gap: 12px;
+  }
+
+  .hero-photo-round {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-editorial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights-2x2-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activities-mosaic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-hub {
+    bottom: 16px;
+    right: 16px;
+    gap: 8px;
+  }
+
+  .floating-btn {
+    padding: 9px 14px;
+    font-size: 12.5px;
+  }
 }

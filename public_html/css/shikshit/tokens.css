@@ -1,80 +1,68 @@
 /* ==========================================================================
-   SHIKSHIT DESIGN SYSTEM — TOKENS (Light-Theme Education Identity)
+   SHIKSHIT EDITORIAL DESIGN SYSTEM — DESIGN TOKENS
+   Mood: Soft, warm, hopeful, elegant, modern NGO. Airy, rounded, gently glowing.
+   Scoped design system strictly for redesigned Shikshit pages.
    ========================================================================== */
 
 :root {
-  /* Exact Specified Color Palette */
-  --color-primary-purple: #6B46C1;
-  --color-primary-hover: #7C3AED;
-  --color-deep-purple: #4C1D95;
-  --color-education-blue: #2563EB;
-  --color-cyan-accent: #06B6D4;
-  --color-success-green: #059669;
-  
-  /* Backgrounds (Predominantly Light) */
-  --color-main-bg: #FFFFFF;
-  --color-soft-bg: #F8FAFC;
-  --color-lavender-bg: #F5F3FF;
-  --color-pale-cyan-bg: #ECFEFF;
-  
-  /* Text & Borders */
-  --color-primary-text: #0F172A;
-  --color-secondary-text: #475569;
-  --color-border: #E2E8F0;
+  /* Core Colour Tokens */
+  --navy: #0B0B3B;
+  --ink: #4B4A68;
+  --violet: #7C3AED;
+  --violet-2: #8B5CF6;
+  --magenta: #C026D3;
+  --pink: #EC4899;
+  --lav-100: #EDE9FE;
+  --lav-50: #F7F5FF;
+  --blush: #FFF6F2;
+  --peach: #FFE9E0;
+  --white: #FFFFFF;
 
-  /* Additional Subtle Tints */
-  --color-border-hover: #CBD5E1;
-  --color-border-focus: #7C3AED;
-  --color-purple-subtle: #FAF5FF;
-  --color-blue-subtle: #EFF6FF;
+  /* Semantic Aliases */
+  --color-primary-text: var(--navy);
+  --color-secondary-text: var(--ink);
+  --color-accent: var(--violet);
 
-  /* Typography */
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* Signature Gradients */
+  --signature-gradient: linear-gradient(135deg, #7C3AED 0%, #C026D3 60%, #EC4899 100%);
+  --signature-gradient-hover: linear-gradient(135deg, #6D28D9 0%, #A21CAF 60%, #DB2777 100%);
+  --page-bg-gradient: linear-gradient(135deg, #FFF6F2 0%, #FFE9E0 50%, #F7F5FF 100%);
+  --deep-gradient: linear-gradient(135deg, #1B0B4D 0%, #4C1D95 55%, #86198F 100%);
+  --glass-white: rgba(255, 255, 255, 0.85);
+  --glass-white-card: rgba(255, 255, 255, 0.92);
 
-  /* Controlled Fluid Type Scale using clamp() */
-  --fs-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
-  --fs-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.9375rem);
-  --fs-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
-  --fs-md: clamp(1.125rem, 1.06rem + 0.32vw, 1.25rem);
-  --fs-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
-  --fs-xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
-  --fs-2xl: clamp(1.875rem, 1.65rem + 1.1vw, 2.25rem);
-  --fs-3xl: clamp(2.25rem, 1.95rem + 1.5vw, 2.875rem);
-  --fs-4xl: clamp(2.75rem, 2.25rem + 2.2vw, 3.5rem);
-
-  /* Spacing Scale */
-  --sp-1: 0.25rem;
-  --sp-2: 0.5rem;
-  --sp-3: 0.75rem;
-  --sp-4: 1rem;
-  --sp-5: 1.25rem;
-  --sp-6: 1.5rem;
-  --sp-8: 2rem;
-  --sp-10: 2.5rem;
-  --sp-12: 3rem;
-  --sp-16: 4rem;
-  --sp-20: 5rem;
-  --sp-24: 6rem;
+  /* Shadows & Hairline Borders */
+  --shadow-soft-violet: 0 14px 44px rgba(124, 58, 237, 0.11);
+  --shadow-card-hover: 0 20px 48px rgba(124, 58, 237, 0.18);
+  --shadow-nav: 0 10px 30px rgba(11, 11, 59, 0.06);
+  --shadow-pill: 0 6px 20px rgba(124, 58, 237, 0.25);
+  --hairline-border: 1px solid rgba(124, 58, 237, 0.12);
+  --hairline-border-subtle: 1px solid rgba(124, 58, 237, 0.08);
 
   /* Border Radii */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-full: 9999px;
+  --radius-card: 28px;
+  --radius-card-lg: 36px;
+  --radius-container: 48px;
+  --radius-pill: 9999px;
+  --radius-circle: 50%;
+  --radius-blob: 40px 100px 40px 100px / 100px 40px 100px 40px;
+  --radius-arch: 240px 240px 32px 32px;
 
-  /* Restrained, Minimal Shadows (No heavy dark drop shadows) */
-  --shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.05);
-  --shadow-card: 0 4px 12px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.03);
-  --shadow-hover: 0 8px 24px rgba(107, 70, 193, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
-  --shadow-header: 0 2px 10px rgba(15, 23, 42, 0.04);
+  /* Typography */
+  --font-display: 'Plus Jakarta Sans', Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Container & Layout */
-  --container-max: 1240px;
-  --nav-height: 76px;
+  /* Headings & Text Fluid Scales */
+  --h1-size: clamp(2.6rem, 5.6vw, 4.6rem);
+  --h2-size: clamp(2rem, 4vw, 3.1rem);
+  --h3-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  --h4-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  --body-size: 17px;
+  --body-line-height: 1.7;
+  --heading-letter-spacing: -0.025em;
 
-  /* Transitions */
-  --trans-fast: 0.15s ease;
-  --trans-base: 0.25s ease;
+  /* Layout Rhythm */
+  --container-max: 1200px;
+  --container-padding: 24px;
+  --section-rhythm: 104px;
 }
