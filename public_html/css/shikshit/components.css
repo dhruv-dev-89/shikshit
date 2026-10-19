@@ -48,10 +48,18 @@
 }
 
 .shikshit-logo {
-  height: 44px;
+  height: 110px;
   width: auto;
   object-fit: contain;
+  margin: -28px 0;
+  display: block;
   transition: transform 0.25s ease;
+  filter: drop-shadow(0 2px 4px rgba(11, 11, 59, 0.08));
+}
+
+.shikshit-header.scrolled .shikshit-logo {
+  height: 90px;
+  margin: -20px 0;
 }
 
 .shikshit-brand:hover .shikshit-logo {
@@ -378,5 +386,10 @@
 
   .mobile-menu-toggle {
     display: flex;
+  }
+
+  .shikshit-logo {
+    height: 96px;
+    margin: -22px 0;
   }
 }
