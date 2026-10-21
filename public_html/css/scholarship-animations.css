@@ -405,3 +405,31 @@
     transform: none !important;
     transition: all 0.5s ease !important;
 }
+
+/* 20. Motion Preferences Guard */
+@media (prefers-reduced-motion: reduce) {
+    .floating-scholarship-icons,
+    .confetti-container {
+        display: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .scholarship-card-animated,
+    .slide-in-up,
+    .slide-in-left,
+    .slide-in-right,
+    .animate-fadeIn {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+

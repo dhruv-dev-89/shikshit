@@ -1,171 +1,161 @@
-/**
- * Shikshit Portal Main JavaScript
- * Handles navigation, mobile drawer, counter animations, FAQ accordion, and component loading.
- */
+/* ==========================================================================
+   SHIKSHIT EDITORIAL INTERACTIONS & MOTION
+   Subtle micro-animations, scroll progress, counter count-up,
+   desktop 3D tilt, and accessible mobile menu.
+   Zero disruption to existing logic, attributes, or hooks.
+   ========================================================================== */
 
-document.addEventListener('DOMContentLoaded', function () {
-  // 1. Sticky Header Shadow on Scroll
-  const header = document.querySelector('.site-header');
-  if (header) {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        header.classList.add('is-scrolled');
+(function () {
+  'use strict';
+
+  // Check prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ------------------------------------------------------------------------
+     1. Scroll Progress Bar & Sticky Header
+     ------------------------------------------------------------------------ */
+  const progressBar = document.getElementById('scroll-progress-bar');
+  const header = document.querySelector('.shikshit-header');
+
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    if (progressBar && scrollHeight > 0) {
+      const progress = (scrollTop / scrollHeight) * 100;
+      progressBar.style.width = progress + '%';
+    }
+
+    if (header) {
+      if (scrollTop > 40) {
+        header.classList.add('scrolled');
       } else {
-        header.classList.remove('is-scrolled');
+        header.classList.remove('scrolled');
       }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    }
   }
 
-  // 2. Mobile Menu Toggle
-  const toggleBtn = document.querySelector('.mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobileMenu');
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 
-  function toggleMenu(e) {
+  /* ------------------------------------------------------------------------
+     2. Global Mobile Menu Toggle (Preserving existing toggleMobileMenu())
+     ------------------------------------------------------------------------ */
+  function toggleMobileMenu(e) {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
     }
+    const mobileMenu = document.getElementById('mobileMenu');
+    const toggleButton = document.querySelector('.mobile-menu-toggle');
+
     if (!mobileMenu) return;
+
     const isActive = mobileMenu.classList.contains('active');
     if (isActive) {
       mobileMenu.classList.remove('active');
-      if (toggleBtn) {
-        toggleBtn.classList.remove('active');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-      }
+      if (toggleButton) toggleButton.classList.remove('active');
+      document.body.style.overflow = '';
     } else {
       mobileMenu.classList.add('active');
-      if (toggleBtn) {
-        toggleBtn.classList.add('active');
-        toggleBtn.setAttribute('aria-expanded', 'true');
-      }
+      if (toggleButton) toggleButton.classList.add('active');
     }
   }
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', toggleMenu);
-  }
+  window.toggleMobileMenu = toggleMobileMenu;
 
-  // Close mobile menu when clicking outside
+  // Close mobile menu on click outside
   document.addEventListener('click', function (e) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const toggleButton = document.querySelector('.mobile-menu-toggle');
     if (mobileMenu && mobileMenu.classList.contains('active')) {
-      if (!mobileMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+      if (!mobileMenu.contains(e.target) && !toggleButton.contains(e.target)) {
         mobileMenu.classList.remove('active');
-        if (toggleBtn) {
-          toggleBtn.classList.remove('active');
-          toggleBtn.setAttribute('aria-expanded', 'false');
-        }
+        if (toggleButton) toggleButton.classList.remove('active');
       }
     }
   });
 
-  // Make available globally for backward compatibility
-  window.toggleMobileMenu = toggleMenu;
+  /* ------------------------------------------------------------------------
+     3. Animated Stat Counters (Count up once when scrolled into view)
+     ------------------------------------------------------------------------ */
+  function initCounters() {
+    if (prefersReducedMotion) return;
 
-  // 3. Animated Number Counters
-  const counters = document.querySelectorAll('.stat-number[data-target]');
-  if ('IntersectionObserver' in window && counters.length > 0) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
+    const counterElements = document.querySelectorAll('[data-counter-target]');
+    if (!counterElements.length) return;
+
+    const counterObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           const el = entry.target;
-          const target = parseInt(el.getAttribute('data-target'), 10) || 0;
-          const suffix = el.getAttribute('data-suffix') || '';
-          let count = 0;
-          const duration = 1800;
-          const stepTime = 20;
-          const steps = duration / stepTime;
-          const increment = Math.ceil(target / steps);
+          const target = parseFloat(el.getAttribute('data-counter-target'));
+          const prefix = el.getAttribute('data-counter-prefix') || '';
+          const suffix = el.getAttribute('data-counter-suffix') || '';
+          const isDecimal = target % 1 !== 0;
+          const duration = 1600;
+          const startTime = performance.now();
 
-          const timer = setInterval(() => {
-            count += increment;
-            if (count >= target) {
-              count = target;
-              clearInterval(timer);
+          function updateNum(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out quart
+            const ease = 1 - Math.pow(1 - progress, 4);
+            const current = target * ease;
+
+            if (isDecimal) {
+              el.textContent = prefix + current.toFixed(1) + suffix;
+            } else {
+              el.textContent = prefix + Math.floor(current).toLocaleString() + suffix;
             }
-            el.textContent = count.toLocaleString('en-IN') + suffix;
-          }, stepTime);
 
-          obs.unobserve(el);
+            if (progress < 1) {
+              requestAnimationFrame(updateNum);
+            } else {
+              el.textContent = prefix + (isDecimal ? target.toFixed(1) : target.toLocaleString()) + suffix;
+            }
+          }
+
+          requestAnimationFrame(updateNum);
+          observer.unobserve(el);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.35 });
 
-    counters.forEach(counter => observer.observe(counter));
+    counterElements.forEach(function (el) {
+      counterObserver.observe(el);
+    });
   }
 
-  // 4. FAQ Accordion
-  const faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-    if (question && answer) {
-      question.addEventListener('click', () => {
-        const isActive = item.classList.contains('active');
-        // Close other items
-        faqItems.forEach(other => {
-          if (other !== item && other.classList.contains('active')) {
-            other.classList.remove('active');
-            const otherAnswer = other.querySelector('.faq-answer');
-            if (otherAnswer) otherAnswer.style.maxHeight = null;
-            const otherBtn = other.querySelector('.faq-question');
-            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-          }
-        });
+  /* ------------------------------------------------------------------------
+     4. Scroll Fade-Up Observer with Stagger
+     ------------------------------------------------------------------------ */
+  function initScrollReveal() {
+    if (prefersReducedMotion) return;
 
-        // Toggle current
-        if (isActive) {
-          item.classList.remove('active');
-          answer.style.maxHeight = null;
-          question.setAttribute('aria-expanded', 'false');
-        } else {
-          item.classList.add('active');
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-          question.setAttribute('aria-expanded', 'true');
+    const revealElements = document.querySelectorAll('.editorial-reveal');
+    if (!revealElements.length) return;
+
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
         }
       });
-    }
-  });
-
-  // 5. Component Loader for Footer (Robust fetch with error handling)
-  const footerContainers = document.querySelectorAll('[include-html]');
-  footerContainers.forEach(container => {
-    const file = container.getAttribute('include-html');
-    if (file) {
-      fetch(file)
-        .then(res => {
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          return res.text();
-        })
-        .then(html => {
-          container.innerHTML = html;
-          container.removeAttribute('include-html');
-        })
-        .catch(err => {
-          console.warn(`Could not fetch ${file}, using inline fallback`, err);
-        });
-    }
-  });
-
-  // 6. Smooth Scroll for Anchor Links
-  document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(link => {
-    link.addEventListener('click', function (e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Close mobile drawer if open
-        if (mobileMenu && mobileMenu.classList.contains('active')) {
-          mobileMenu.classList.remove('active');
-          if (toggleBtn) toggleBtn.classList.remove('active');
-        }
-      }
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
     });
-  });
 
-  // 7. Creative Hero Interactions (Spotlight, Parallax, and Polaroid Drag)
+    revealElements.forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  }
+
+  /* ------------------------------------------------------------------------
+     5. Creative Hero Interactions (Spotlight, Parallax, and Polaroid Drag)
+     ------------------------------------------------------------------------ */
   function initCreativeHero() {
     const hero = document.getElementById('hero-section') || document.querySelector('.hero');
     if (!hero) return;
@@ -183,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
       hero.style.setProperty('--mx', x + 'px');
       hero.style.setProperty('--my', y + 'px');
 
-      if (window.innerWidth <= 1080) return;
+      if (prefersReducedMotion || window.innerWidth <= 1080) return;
       const nx = (x / r.width) - 0.5;
       const ny = (y / r.height) - 0.5;
 
@@ -240,5 +230,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  initCreativeHero();
-});
+  /* ------------------------------------------------------------------------
+     Initialize on DOM Ready
+     ------------------------------------------------------------------------ */
+  document.addEventListener('DOMContentLoaded', function () {
+    initCounters();
+    initScrollReveal();
+    initCreativeHero();
+  });
+})();

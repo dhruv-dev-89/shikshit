@@ -12,8 +12,7 @@ Career guidance services for students, Student support services India Online cer
 Professional skill development training,
 Internship support services, Career counseling for students,
 Academic guidance programs, Best education platform for students">
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/sikshitnavbar.css" />
+    <link rel="stylesheet" href="css/sikshitnavbar.css" />
 
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1738,7 +1737,8 @@ Academic guidance programs, Best education platform for students">
          ====================================================================== -->
     <nav class="sticky-section-index" aria-label="Services Navigation">
       <div class="index-pill-track">
-        <a href="#scholarship-program" class="index-pill active">Scholarships</a>
+        <div class="index-pill-glider" aria-hidden="true"></div>
+        <a href="#scholarship-program" class="index-pill active" aria-current="true">Scholarships</a>
         <a href="#awareness-programs" class="index-pill">Awareness</a>
         <a href="#olympiads" class="index-pill">Olympiads</a>
         <a href="#financial-aid" class="index-pill">Financial Aid</a>
@@ -2126,10 +2126,10 @@ Academic guidance programs, Best education platform for students">
       <div class="shikshit-container">
         <div class="footer-grid">
           <div>
-            <div class="footer-brand" style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 28px;">
-              <img src="images/sikshitlogo.webp" alt="Shikshit Logo" class="footer-logo" style="width: 165px; max-width: 100%; height: auto; display: block; margin: 0; object-fit: contain;">
+            <div class="footer-brand" style="display: flex; align-items: flex-start; justify-content: flex-start; margin: 0; padding: 0; height: 56px;">
+              <img src="images/sikshitlogo.webp" alt="Shikshit Logo" class="footer-logo" style="height: 56px; width: auto; max-width: 100%; display: block; margin: 0; object-fit: contain;">
             </div>
-            <p style="font-size: 14.5px; line-height: 1.65; color: var(--ink); max-width: 340px;">
+            <p style="font-size: 14.5px; line-height: 1.65; color: var(--ink); max-width: 340px; margin-top: 16px; margin-bottom: 0;">
               Empowering students and institutions across India through educational scholarships, practical skill development, and career guidance.
             </p>
           </div>
@@ -2301,41 +2301,90 @@ Academic guidance programs, Best education platform for students">
       toggle.classList.toggle("active");
     }
   </script>
-  <script>const track = document.querySelector('.carousel-track');
-let scrollInterval;
+  <script>
+    (function () {
+      const track = document.querySelector('.carousel-track');
+      const section = document.getElementById('video-ads') || track;
+      if (!track) return;
 
-// Clone items to create seamless loop
-const items = document.querySelectorAll('.video-item');
-items.forEach(item => {
-  const clone = item.cloneNode(true);
-  track.appendChild(clone);
-});
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Auto-scroll function
-function startAutoScroll() {
-  scrollInterval = setInterval(() => {
-    track.scrollLeft += 1; // speed (px per tick)
-    // When reaching half (original + clones), reset smoothly
-    if (track.scrollLeft >= track.scrollWidth / 2) {
-      track.scrollLeft = 0;
-    }
-  }, 20); // adjust speed (lower = faster)
-}
+      // Clone items once to create seamless infinite loop
+      const items = Array.from(track.querySelectorAll('.video-item'));
+      if (items.length && !track.dataset.cloned) {
+        track.dataset.cloned = 'true';
+        items.forEach(function (item) {
+          const clone = item.cloneNode(true);
+          track.appendChild(clone);
+        });
+      }
 
-// Stop auto-scroll
-function stopAutoScroll() {
-  clearInterval(scrollInterval);
-}
+      if (prefersReducedMotion) return;
 
-// Start on load
-startAutoScroll();
+      let isPaused = false;
+      let isVisible = false;
+      let rafId = null;
+      let lastTime = performance.now();
+      const speedPxPerSec = 35; // smooth 35px/s drift
 
-// Pause on hover
-track.addEventListener('mouseenter', stopAutoScroll);
-track.addEventListener('mouseleave', startAutoScroll);
+      function step(currentTime) {
+        const delta = Math.min((currentTime - lastTime) / 1000, 0.1);
+        lastTime = currentTime;
 
+        if (!isPaused && isVisible) {
+          track.scrollLeft += speedPxPerSec * delta;
+          const halfWidth = track.scrollWidth / 2;
+          if (halfWidth > 0 && track.scrollLeft >= halfWidth) {
+            track.scrollLeft -= halfWidth;
+          }
+        }
 
-    </script>
+        rafId = requestAnimationFrame(step);
+      }
+
+      function start() {
+        if (!rafId && !prefersReducedMotion) {
+          lastTime = performance.now();
+          rafId = requestAnimationFrame(step);
+        }
+      }
+
+      function stop() {
+        if (rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      }
+
+      // Intersection Observer - only run when section is actually on-screen
+      if ('IntersectionObserver' in window && section) {
+        const obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            isVisible = entry.isIntersecting;
+            if (isVisible) {
+              start();
+            } else {
+              stop();
+            }
+          });
+        }, { threshold: 0.05 });
+        obs.observe(section);
+      } else {
+        isVisible = true;
+        start();
+      }
+
+      // Smooth interaction pauses
+      track.addEventListener('pointerenter', function () { isPaused = true; });
+      track.addEventListener('pointerleave', function () { isPaused = false; });
+      track.addEventListener('pointerdown', function () { isPaused = true; });
+      window.addEventListener('pointerup', function () { isPaused = false; });
+      track.addEventListener('touchstart', function () { isPaused = true; }, { passive: true });
+      track.addEventListener('touchend', function () { isPaused = false; }, { passive: true });
+      track.addEventListener('focusin', function () { isPaused = true; });
+      track.addEventListener('focusout', function () { isPaused = false; });
+    })();
+  </script>
 
   <!-- Inner Pages Interaction & Motion Script -->
   <script src="js/shikshit/inner.js"></script>

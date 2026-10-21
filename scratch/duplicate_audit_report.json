@@ -1,0 +1,1164 @@
+[
+  {
+    "hash": "8b48335c6333f79b2e6129479e82842f6cb2afdba2418fa80280aa542500c60c",
+    "size": 19479,
+    "files": [
+      "AUDIT.md",
+      "public_html/AUDIT.md"
+    ]
+  },
+  {
+    "hash": "223fc364adde8c4dbcc82c1ba63b6ac987f6b8515d741399a37ba2fc9b9b460d",
+    "size": 5577,
+    "files": [
+      "CHANGES.md",
+      "public_html/CHANGES.md"
+    ]
+  },
+  {
+    "hash": "2570c2b3c1dd68e7de9c1a0a4bec40ea5adb2dbcb677e329a40c11cc30e01f3b",
+    "size": 96817,
+    "files": [
+      "public_html/about-us.html",
+      "public_html (77)/about-us.html"
+    ]
+  },
+  {
+    "hash": "a2a32dde278ccd821a496d5b53b00facd16226e11c379044e2bf40cbd6bd1790",
+    "size": 95224,
+    "files": [
+      "public_html/become-a-member.html",
+      "public_html (77)/become-a-member.html"
+    ]
+  },
+  {
+    "hash": "bf2ee4b1c4595ea3e972f3e4006ec5bf27b32f493923d92190b98f7b4f554ed3",
+    "size": 16203,
+    "files": [
+      "public_html/components/footer.html",
+      "public_html (77)/components/footer.html"
+    ]
+  },
+  {
+    "hash": "71c5e938e9e90d2e9998487a9d53d91986e79304f5ac36a297d54a722a8d7232",
+    "size": 13916,
+    "files": [
+      "public_html/components/nsmas-floating-button.html",
+      "public_html (77)/components/nsmas-floating-button.html"
+    ]
+  },
+  {
+    "hash": "c1d205ec25a72f2e1087ce70d9f722e31a7ea2729207490e8a7bd3219ebe3a07",
+    "size": 15973,
+    "files": [
+      "public_html/components/nsmas_navbar.html",
+      "public_html (77)/components/nsmas_navbar.html"
+    ]
+  },
+  {
+    "hash": "17066cda0b528079be27301a0988992266fc0672ba967bb5c08f682f27f76aa5",
+    "size": 25333,
+    "files": [
+      "public_html/components/sikshitfooter.html",
+      "public_html (77)/components/sikshitfooter.html"
+    ]
+  },
+  {
+    "hash": "62a6fcee5ee71a1a412dd2feb5a5d7be3807490b2d96888ef83ef96ecfee7a3b",
+    "size": 90443,
+    "files": [
+      "public_html/contact.html",
+      "public_html (77)/contact.html"
+    ]
+  },
+  {
+    "hash": "8e31b2cd09bfde058427b90627bc08f6dad8c1e5e02a346eff958f19c56295f3",
+    "size": 6730,
+    "files": [
+      "public_html/cookie-policy.html",
+      "public_html (77)/cookie-policy.html"
+    ]
+  },
+  {
+    "hash": "c64954512c7dbfa791e1d2acff9517ce24cdfe6122307ae43458b40d9510c7ed",
+    "size": 7321,
+    "files": [
+      "public_html/css/become-a-member-animations.css",
+      "public_html (77)/css/become-a-member-animations.css"
+    ]
+  },
+  {
+    "hash": "297e703fb852b2297f38fadfe8ba2d5f4184c79ad4148e1a5261485a7b0b546b",
+    "size": 503,
+    "files": [
+      "public_html/css/fixed-styles.css",
+      "public_html (77)/css/fixed-styles.css"
+    ]
+  },
+  {
+    "hash": "cc477aa341ac07ba6354d8bef06a33465cd361e2bcbf6e4822d9db25247892f7",
+    "size": 4057,
+    "files": [
+      "public_html/css/floating-buttons.css",
+      "public_html (77)/css/floating-buttons.css"
+    ]
+  },
+  {
+    "hash": "7ed84bb064265d7d776db1fb8fa7ffa5cc48a2e2a137c1bbdb0309d3c3f27ef2",
+    "size": 4188,
+    "files": [
+      "public_html/css/heading-styles.css",
+      "public_html (77)/css/heading-styles.css"
+    ]
+  },
+  {
+    "hash": "2c08f19a39af1821defb3c258d8d8318498474d4fcd735708755c0c3f7320d47",
+    "size": 179605,
+    "files": [
+      "public_html/css/home.css",
+      "public_html (77)/css/home.css"
+    ]
+  },
+  {
+    "hash": "f15b5c4f20882be80f0402e2cd474caeb60e6da483439a616a8f55d2064f9eb8",
+    "size": 3976,
+    "files": [
+      "public_html/css/mobile-menu-fix.css",
+      "public_html (77)/css/mobile-menu-fix.css"
+    ]
+  },
+  {
+    "hash": "ad6745479383ae11d3403e0515223280a4ef13d9a0b0e12539361c209818ea6d",
+    "size": 36118,
+    "files": [
+      "public_html/css/responsive.css",
+      "public_html (77)/css/responsive.css"
+    ]
+  },
+  {
+    "hash": "e54dff8553f2a25c6f7cd3caf9717774671fc0c7b153f4ea67b14bc0135a99cc",
+    "size": 7978,
+    "files": [
+      "public_html/css/review-cards.css",
+      "public_html (77)/css/review-cards.css"
+    ]
+  },
+  {
+    "hash": "1cf23ba6bf316f148e638d3fdbd8e9802061624c68c8ba603e94b19b6f21cecf",
+    "size": 8301,
+    "files": [
+      "public_html/css/scholarship-animations.css",
+      "public_html (77)/css/scholarship-animations.css"
+    ]
+  },
+  {
+    "hash": "e3a5cea87404faa5fb1048788e03a2046d8c39d74961c6f87cc12b28f3c473f6",
+    "size": 5082,
+    "files": [
+      "public_html/css/shikshit/base.css",
+      "public_html (77)/css/shikshit/base.css"
+    ]
+  },
+  {
+    "hash": "aa9ad236a7803e3c02639fd44c20eb6eda73daf20067c9e7440b6737e87bc306",
+    "size": 10565,
+    "files": [
+      "public_html/css/shikshit/components.css",
+      "public_html (77)/css/shikshit/components.css"
+    ]
+  },
+  {
+    "hash": "d0da0c66eada13f5ccd1ea6f6cf43830d8569c7410a47460239ac5fdf5f8e1cd",
+    "size": 7121,
+    "files": [
+      "public_html/css/shikshit/contact.css",
+      "public_html (77)/css/shikshit/contact.css"
+    ]
+  },
+  {
+    "hash": "a9f8194312a91e811c9d179ced7f02a2465ae375cf43441eb68e561fae06eaa0",
+    "size": 8414,
+    "files": [
+      "public_html/css/shikshit/donate.css",
+      "public_html (77)/css/shikshit/donate.css"
+    ]
+  },
+  {
+    "hash": "f0170cb8b26516e9ba71b4c1070afbfe797a7b8292fa2648075db8bd28612791",
+    "size": 13177,
+    "files": [
+      "public_html/css/shikshit/member.css",
+      "public_html (77)/css/shikshit/member.css"
+    ]
+  },
+  {
+    "hash": "b54fb1c77aa6ea874082f5e8e9dad0bb59dedb814e2f4090a74500262c4cddb8",
+    "size": 38393,
+    "files": [
+      "public_html/css/shikshit/pages.css",
+      "public_html (77)/css/shikshit/pages.css"
+    ]
+  },
+  {
+    "hash": "681d6c3f81e4a0f4d393cef43282c5c60bda9c899a8b033fdb673ec15364786b",
+    "size": 84072,
+    "files": [
+      "public_html/css/shikshit/products.css",
+      "public_html (77)/css/shikshit/products.css"
+    ]
+  },
+  {
+    "hash": "aef1ec7a9e9e1d490dc67fd79b3120eb1acbd36b10132bd660d5c2f7b5c41606",
+    "size": 2515,
+    "files": [
+      "public_html/css/shikshit/tokens.css",
+      "public_html (77)/css/shikshit/tokens.css"
+    ]
+  },
+  {
+    "hash": "70da503e81f1428db0ca33ca74c6f3fe9efae88f84689e5722c6b11591a467af",
+    "size": 12836,
+    "files": [
+      "public_html/css/sikshitnavbar.css",
+      "public_html (77)/css/sikshitnavbar.css"
+    ]
+  },
+  {
+    "hash": "649e5c5caedcfbb18cb6930d2703e8aacf3bc8ba11140f5ea04b2a7f0d3db081",
+    "size": 1020,
+    "files": [
+      "public_html/css/toast.css",
+      "public_html (77)/css/toast.css"
+    ]
+  },
+  {
+    "hash": "b2443b893a95c4b59d7c25b84010c579f345ea795a4a3c1b54d9cf13f0670d03",
+    "size": 10593,
+    "files": [
+      "public_html/disclaimer.html",
+      "public_html (77)/disclaimer.html"
+    ]
+  },
+  {
+    "hash": "3a514658ca0aeb3cf617873a14639227f4726941913af09ab14e8d10eabf1dc8",
+    "size": 99794,
+    "files": [
+      "public_html/donate.html",
+      "public_html (77)/donate.html"
+    ]
+  },
+  {
+    "hash": "0c7ac0de4e617779c75bf84d782897d9ceeae0439a30ad3285a6e0265cf771d3",
+    "size": 162916,
+    "files": [
+      "public_html/how-it-works.html",
+      "public_html (77)/how-it-works.html"
+    ]
+  },
+  {
+    "hash": "ee84bfa5954335946827e1fe8031777d512ea995fd55c7435a1d32a98e8738c5",
+    "size": 85506,
+    "files": [
+      "public_html/images/acc1.jpg",
+      "public_html (77)/images/acc1.jpg"
+    ]
+  },
+  {
+    "hash": "154284e3741f09ad9aa3fcb192a41c05229292995d38cfe122f1293bf004a97c",
+    "size": 48244,
+    "files": [
+      "public_html/images/acc2.jpg",
+      "public_html (77)/images/acc2.jpg"
+    ]
+  },
+  {
+    "hash": "46874bf4bcc45c296ec736f1e74647a4a5ec18a5eaaac95c3ebf9e49d3b29d88",
+    "size": 53412,
+    "files": [
+      "public_html/images/acc3.jpg",
+      "public_html (77)/images/acc3.jpg"
+    ]
+  },
+  {
+    "hash": "7d6cc0bc7c15556da543bd49f554d200bedcabce32eaf18b97fd1f859ac10e6b",
+    "size": 51626,
+    "files": [
+      "public_html/images/acc4.jpg",
+      "public_html (77)/images/acc4.jpg"
+    ]
+  },
+  {
+    "hash": "e3956fd5eefb734c211a738febc4218241f7acd4b12b1a0f0c373dc7346e341c",
+    "size": 90146,
+    "files": [
+      "public_html/images/acc5.jpg",
+      "public_html (77)/images/acc5.jpg"
+    ]
+  },
+  {
+    "hash": "39de5eb43a824080159a4fdfd0c22898fecad1db946f04661087f2b4a0fdd785",
+    "size": 69402,
+    "files": [
+      "public_html/images/acc6.jpg",
+      "public_html (77)/images/acc6.jpg"
+    ]
+  },
+  {
+    "hash": "aca4d142617894987461b7ac919320bd462297a9c64d655e84ae4a2de0bfff6c",
+    "size": 46466,
+    "files": [
+      "public_html/images/acc7.jpg",
+      "public_html (77)/images/acc7.jpg"
+    ]
+  },
+  {
+    "hash": "4056731470ac31e78583248b0fe5012aa7ad4728bd14c15d3b74e0038b3e06bb",
+    "size": 82598,
+    "files": [
+      "public_html/images/acc_8.jpg",
+      "public_html (77)/images/acc_8.jpg"
+    ]
+  },
+  {
+    "hash": "620b79e5b3fb049226d678be44129a9dfad5f0048ec267420f053c44a0fd4f3a",
+    "size": 51852,
+    "files": [
+      "public_html/images/ad1.webp",
+      "public_html (77)/images/ad1.webp"
+    ]
+  },
+  {
+    "hash": "7d61f6139597cb19158fcac08c1a6570f79a2656e0d8c0fb8081082c1baa2d3a",
+    "size": 25944,
+    "files": [
+      "public_html/images/ad2.webp",
+      "public_html (77)/images/ad2.webp"
+    ]
+  },
+  {
+    "hash": "c03bd2712dfae0c12a194430a871656637f5a31c3529cb9b8aa4fe2b5008f21a",
+    "size": 26144,
+    "files": [
+      "public_html/images/ad3.webp",
+      "public_html (77)/images/ad3.webp"
+    ]
+  },
+  {
+    "hash": "f1d729a20f0e728cb5d1b51b37f61eade5441a3f3bfa2f7f45d3ef1eeda76e5d",
+    "size": 27460,
+    "files": [
+      "public_html/images/ad4.webp",
+      "public_html (77)/images/ad4.webp"
+    ]
+  },
+  {
+    "hash": "7a4084fefac6da2bca77bf476ef98d5fe8797fe9144778787d42392fde449688",
+    "size": 76748,
+    "files": [
+      "public_html/images/ad5.webp",
+      "public_html (77)/images/ad5.webp"
+    ]
+  },
+  {
+    "hash": "c7563d1e21ab072460c5db0f37e4df2db91d460717476301da41eb2eff87aa87",
+    "size": 35152,
+    "files": [
+      "public_html/images/ad6.webp",
+      "public_html (77)/images/ad6.webp"
+    ]
+  },
+  {
+    "hash": "05ed581b657d2bddb2621394e8c3ae735f3229b1df76721370bb1c753f1ec20f",
+    "size": 19066,
+    "files": [
+      "public_html/images/become a member.avif",
+      "public_html (77)/images/become a member.avif"
+    ]
+  },
+  {
+    "hash": "5efd131b6bec27ca850bfb3cf84d19b194819bfc4189b8713bef894ee2edbcc9",
+    "size": 7376,
+    "files": [
+      "public_html/images/client1.webp",
+      "public_html (77)/images/client1.webp"
+    ]
+  },
+  {
+    "hash": "8621e63c4ee3632b5cbc9ebcc4155908d617b807525361979b041d33ff5514b7",
+    "size": 4340,
+    "files": [
+      "public_html/images/client10.webp",
+      "public_html (77)/images/client10.webp"
+    ]
+  },
+  {
+    "hash": "65e6f90be93fbe2a84674a0d36383f3d486ffa339558858138a4c0a1f764bf21",
+    "size": 5326,
+    "files": [
+      "public_html/images/client11.webp",
+      "public_html (77)/images/client11.webp"
+    ]
+  },
+  {
+    "hash": "051f80f8a032d4b7ba5582de1e0d452ed5ab5153154ada2de52f675b53c6a414",
+    "size": 11082,
+    "files": [
+      "public_html/images/client2.webp",
+      "public_html (77)/images/client2.webp"
+    ]
+  },
+  {
+    "hash": "5dad939857467eaf9decc2119c57fc0ecaaa2c540d5a078ed511c9f225eb579c",
+    "size": 12010,
+    "files": [
+      "public_html/images/client3.webp",
+      "public_html (77)/images/client3.webp"
+    ]
+  },
+  {
+    "hash": "09d300fc38278053dd228123efcea270ca315138ed8556c491d6243199a1410d",
+    "size": 7132,
+    "files": [
+      "public_html/images/client4.webp",
+      "public_html (77)/images/client4.webp"
+    ]
+  },
+  {
+    "hash": "283d09d243a3edbe725f8c96b13f70cea4bd03f5b685175c7ac65ad43b244612",
+    "size": 7404,
+    "files": [
+      "public_html/images/client5.webp",
+      "public_html (77)/images/client5.webp"
+    ]
+  },
+  {
+    "hash": "703a647fceef58fd924eeffbd5394e73a4549d31ef47b8572b34a3d29f12ef99",
+    "size": 6662,
+    "files": [
+      "public_html/images/client6.webp",
+      "public_html (77)/images/client6.webp"
+    ]
+  },
+  {
+    "hash": "e4f283fd6590f588e4c392fc58d8896cd3f1302f47184a41173def28a7ccbb97",
+    "size": 10662,
+    "files": [
+      "public_html/images/client7.webp",
+      "public_html (77)/images/client7.webp"
+    ]
+  },
+  {
+    "hash": "2c4e2509c61e685ea17d29e983497818332ebf8c2fceee85528ae2599caeaf46",
+    "size": 12830,
+    "files": [
+      "public_html/images/client8.webp",
+      "public_html (77)/images/client8.webp"
+    ]
+  },
+  {
+    "hash": "f8dd9a0773b886a0cefd1252a933e4d6cb560882a5bbe3c4d68baae174300f92",
+    "size": 21988,
+    "files": [
+      "public_html/images/client9.webp",
+      "public_html/images/sikshitlogo.webp",
+      "public_html (77)/images/client9.webp",
+      "public_html (77)/images/sikshitlogo.webp"
+    ]
+  },
+  {
+    "hash": "3e378d22d2788a9449abf0108e4f871de041b9bb3e0584c78f4cd9dc25bc9bee",
+    "size": 2084,
+    "files": [
+      "public_html/images/coursereport.jpeg",
+      "public_html (77)/images/coursereport.jpeg"
+    ]
+  },
+  {
+    "hash": "35f388332037bda7a4e51ae0ff7a0df4545465d8ef0153480cb6378185bb4f2e",
+    "size": 157592,
+    "files": [
+      "public_html/images/coursesimg.jpg",
+      "public_html (77)/images/coursesimg.jpg"
+    ]
+  },
+  {
+    "hash": "84dbe7e5febacdc67c9a82e18690992d74c950ef06c366834631d1b4b048c60e",
+    "size": 16208,
+    "files": [
+      "public_html/images/Deepika sherawat.jpg",
+      "public_html (77)/images/Deepika sherawat.jpg"
+    ]
+  },
+  {
+    "hash": "cd6155a14484e4121e68ed30b2572aa3252a4935e32e99f3bc8a9083241b1df7",
+    "size": 4847,
+    "files": [
+      "public_html/images/edugorilla.jpeg",
+      "public_html (77)/images/edugorilla.jpeg"
+    ]
+  },
+  {
+    "hash": "a08fbb5343a9955438a79f8007ffe8e2a0bb70d0999c82a6d81a6c41ac507134",
+    "size": 2498,
+    "files": [
+      "public_html/images/gooverseas.webp",
+      "public_html (77)/images/gooverseas.webp"
+    ]
+  },
+  {
+    "hash": "97b81994b83a2fa0243fb942cbd120b5b6021288d75e0a18eb345bc6110b9949",
+    "size": 321565,
+    "files": [
+      "public_html/images/Home.html",
+      "public_html (77)/images/Home.html"
+    ]
+  },
+  {
+    "hash": "3ed065c27d149ab8b1e63b59b8d6727353927e89301e8f3546b7df9ddbad0c00",
+    "size": 2062651,
+    "files": [
+      "public_html/images/homeimage.jpg",
+      "public_html (77)/images/homeimage.jpg"
+    ]
+  },
+  {
+    "hash": "122bbc660090de22e49112bd7cb8c49511d84ef9c9e804e3e82d9cb735a6cc5e",
+    "size": 15898,
+    "files": [
+      "public_html/images/INSC logo.webp",
+      "public_html (77)/images/INSC logo.webp"
+    ]
+  },
+  {
+    "hash": "ca3c3a3e8a2f478b19fce590f7865046a3e6de20915a4622533e9ab2fc77b618",
+    "size": 2454,
+    "files": [
+      "public_html/images/justdial.png",
+      "public_html (77)/images/justdial.png"
+    ]
+  },
+  {
+    "hash": "f00b51fc32da1754984314bc2e982ff3f1aae3c87ad03366161b56b31d1f33d5",
+    "size": 79242,
+    "files": [
+      "public_html/images/Logos02.png",
+      "public_html (77)/images/Logos02.png"
+    ]
+  },
+  {
+    "hash": "ab9b797137168695c7b6b4a890a8ad9a7244b854fd34f0c9fa52cf5040c1470c",
+    "size": 22753,
+    "files": [
+      "public_html/images/mainimg.avif",
+      "public_html (77)/images/mainimg.avif"
+    ]
+  },
+  {
+    "hash": "4cc6b9493751b607d93e8875d4112dcf37fe5d511b6c0bce200ccee903c03184",
+    "size": 21674,
+    "files": [
+      "public_html/images/mission.webp",
+      "public_html (77)/images/mission.webp"
+    ]
+  },
+  {
+    "hash": "364af890b4d9302dd04322e88c9f02e8c91ab2e1aa460b900d8f3a82d662dd2f",
+    "size": 3818,
+    "files": [
+      "public_html/images/mouthshut.com",
+      "public_html (77)/images/mouthshut.com"
+    ]
+  },
+  {
+    "hash": "c4ef3071173c439ecff62602d90e84c6d584c86f2d98bc83ade0e21f8bce8b13",
+    "size": 25992,
+    "files": [
+      "public_html/images/opp1.webp",
+      "public_html (77)/images/opp1.webp"
+    ]
+  },
+  {
+    "hash": "e850a30b068eaa4903a9e1defa5554f7c929be49b88b56f9d30e383c9554fb10",
+    "size": 26304,
+    "files": [
+      "public_html/images/opp2.webp",
+      "public_html (77)/images/opp2.webp"
+    ]
+  },
+  {
+    "hash": "a8c53a02dc2757c47002731af9b3bfa705f3c05fb8cfab36096a124c01c5a777",
+    "size": 33282,
+    "files": [
+      "public_html/images/opp3.webp",
+      "public_html (77)/images/opp3.webp"
+    ]
+  },
+  {
+    "hash": "37975f82face85c6830ab6dbc88414d364041de2fe0ea185f71d2ac585f19c28",
+    "size": 41302,
+    "files": [
+      "public_html/images/opp4.webp",
+      "public_html (77)/images/opp4.webp"
+    ]
+  },
+  {
+    "hash": "d5f104618f54bf616fae13edb8648d04eda3f628e1cb48b8c108140f27d96fa5",
+    "size": 11166,
+    "files": [
+      "public_html/images/opp5.webp",
+      "public_html (77)/images/opp5.webp"
+    ]
+  },
+  {
+    "hash": "8835d668eb0567a560beaeb466488da1d99c1e02b1023fa6f00238422e03be06",
+    "size": 24778,
+    "files": [
+      "public_html/images/opp6.webp",
+      "public_html (77)/images/opp6.webp"
+    ]
+  },
+  {
+    "hash": "54988275df77c0196f7ffae77a3aaaae58f1a8a279752759f17ef33d51bb9b35",
+    "size": 17164,
+    "files": [
+      "public_html/images/opp7.webp",
+      "public_html (77)/images/opp7.webp"
+    ]
+  },
+  {
+    "hash": "7de3f21c71d6209ce2f74e8bb2c0959d95fafb295862d9a03b53339094684397",
+    "size": 6937,
+    "files": [
+      "public_html/images/org1.png",
+      "public_html (77)/images/org1.png"
+    ]
+  },
+  {
+    "hash": "93ee9846c942894f6bcfc62bdcc3f9d4edb45feae725dac1589c12b6f121b189",
+    "size": 15502,
+    "files": [
+      "public_html/images/org10.png",
+      "public_html (77)/images/org10.png"
+    ]
+  },
+  {
+    "hash": "2955b7f2e00b175144d4f2686ad9208ffcd91e011b064c2c3c52348ecc4074e2",
+    "size": 15089,
+    "files": [
+      "public_html/images/org11.png",
+      "public_html (77)/images/org11.png"
+    ]
+  },
+  {
+    "hash": "283161f75af2dded1e50aa23d20f80440045628e075deb36b632f047ec3786e6",
+    "size": 21379,
+    "files": [
+      "public_html/images/org12.png",
+      "public_html (77)/images/org12.png"
+    ]
+  },
+  {
+    "hash": "a9d71f1029a17d3eb2ac06938d9c424402f10ec1279a13c932d6efba14dd8bf7",
+    "size": 19505,
+    "files": [
+      "public_html/images/org13.png",
+      "public_html (77)/images/org13.png"
+    ]
+  },
+  {
+    "hash": "fd5209db775228f8ec1f520535a83e8ca8b86c7e0b9c666921e53312586133ee",
+    "size": 13106,
+    "files": [
+      "public_html/images/org14.jpg",
+      "public_html (77)/images/org14.jpg"
+    ]
+  },
+  {
+    "hash": "63a7f0b274e0341861409c48ec2d1bc2aca4c4e4e4b1e7f94876b31ff7a021c7",
+    "size": 21342,
+    "files": [
+      "public_html/images/org15.png",
+      "public_html (77)/images/org15.png"
+    ]
+  },
+  {
+    "hash": "7dfce368765164ec7d774c7b30e09f177f4a515c1f6af6eaa9768ad1446c4d1a",
+    "size": 4169,
+    "files": [
+      "public_html/images/org16.jpg",
+      "public_html (77)/images/org16.jpg"
+    ]
+  },
+  {
+    "hash": "7afe65f6df7f464ea7884951de75e522410e9a44dd7eb591df69f7fa53b5bf61",
+    "size": 14778,
+    "files": [
+      "public_html/images/org17.png",
+      "public_html (77)/images/org17.png"
+    ]
+  },
+  {
+    "hash": "d7b2898b75eede1f93e5b61bb2f2a7f136ae4ccbb23e7dbe3d0290b62bc2fe81",
+    "size": 4560,
+    "files": [
+      "public_html/images/org18.png",
+      "public_html (77)/images/org18.png"
+    ]
+  },
+  {
+    "hash": "c22111cb9db5cb88d0178e972584848bb8d4d4bf86b3f79c80fe3be7e6047523",
+    "size": 34330,
+    "files": [
+      "public_html/images/org2.png",
+      "public_html (77)/images/org2.png"
+    ]
+  },
+  {
+    "hash": "dbafaf1b8108ca30231b6d73c5ddb04378d6eb54afdc1de44d5466912da49204",
+    "size": 17091,
+    "files": [
+      "public_html/images/org3.png",
+      "public_html (77)/images/org3.png"
+    ]
+  },
+  {
+    "hash": "b661abecfdad08fdee3c6b66681086918bd2c7e4aeea0f90c0c391db4a1904a0",
+    "size": 5596,
+    "files": [
+      "public_html/images/org4.jpg",
+      "public_html (77)/images/org4.jpg"
+    ]
+  },
+  {
+    "hash": "2541a8db6bfc718eda0bc0dd5083bb17b0427861337c4925e17ca08d47a06d76",
+    "size": 12204,
+    "files": [
+      "public_html/images/org5.png",
+      "public_html (77)/images/org5.png"
+    ]
+  },
+  {
+    "hash": "a1fe0435b368bd1673455e8d8220a2a282407751b470c799f9f704636394250c",
+    "size": 9895,
+    "files": [
+      "public_html/images/org6.png",
+      "public_html (77)/images/org6.png"
+    ]
+  },
+  {
+    "hash": "962ce4775c589dd29367a87fafa2ccc136fd4bd62c88b99c31d37e06636e87e2",
+    "size": 17085,
+    "files": [
+      "public_html/images/org7.png",
+      "public_html (77)/images/org7.png"
+    ]
+  },
+  {
+    "hash": "3704bdb24e39af2053f0506898a874cf4cd38902077b1ea966a9004a70cafb5b",
+    "size": 6802,
+    "files": [
+      "public_html/images/org8.png",
+      "public_html (77)/images/org8.png"
+    ]
+  },
+  {
+    "hash": "02108b3e1826701434f27a30b77a4379e8e8b501b687288fd8680d71ead13691",
+    "size": 24798,
+    "files": [
+      "public_html/images/org9.png",
+      "public_html (77)/images/org9.png"
+    ]
+  },
+  {
+    "hash": "12ffcfeded6cef72bee37cdf3aaf3591f3b17c113fe2b1e9cecc79fd2548470b",
+    "size": 785270,
+    "files": [
+      "public_html/images/products_hero_diploma.jpg",
+      "public_html (77)/images/products_hero_diploma.jpg"
+    ]
+  },
+  {
+    "hash": "ca1b9b6ab50d7a674cdfa06fc1fade749fb7ffa4ba0a2e80552f869b92ba0d00",
+    "size": 835315,
+    "files": [
+      "public_html/images/products_hero_students.jpg",
+      "public_html (77)/images/products_hero_students.jpg"
+    ]
+  },
+  {
+    "hash": "f9593e264d4b853bcc716b49fe9f854b3615cb0bd2312d7d3ff9202ec98e3257",
+    "size": 59485,
+    "files": [
+      "public_html/images/scholarship.jpg",
+      "public_html (77)/images/scholarship.jpg"
+    ]
+  },
+  {
+    "hash": "dc6ede3f9773f17d3fdaf89c184b7f1977a82d5eecb53ba4617af02b0ae662fd",
+    "size": 152016,
+    "files": [
+      "public_html/images/scholarship_categories.jpg",
+      "public_html (77)/images/scholarship_categories.jpg"
+    ]
+  },
+  {
+    "hash": "3076b711e2a20a70dea00f7b26bdf414c4accbf5574b26f8fa0b1c18659fabc7",
+    "size": 124738,
+    "files": [
+      "public_html/images/siksha.webp",
+      "public_html (77)/images/siksha.webp"
+    ]
+  },
+  {
+    "hash": "1dc8e90d21216d6976f635c6f7358bda3f24e8f4aecadf8487ee612fc2cc52c2",
+    "size": 33506,
+    "files": [
+      "public_html/images/team1.webp",
+      "public_html (77)/images/team1.webp"
+    ]
+  },
+  {
+    "hash": "0e89c1bd3865947ff4ef4363075f790fe239ea1e25f0164cc584731fefc54df0",
+    "size": 46838,
+    "files": [
+      "public_html/images/team2.webp",
+      "public_html (77)/images/team2.webp"
+    ]
+  },
+  {
+    "hash": "767416f64bdd9e51d1f6c4aefd5d15e02d37c2eaedc0f638c53df0d822e6a81b",
+    "size": 17804,
+    "files": [
+      "public_html/images/team3.webp",
+      "public_html (77)/images/team3.webp"
+    ]
+  },
+  {
+    "hash": "3764f21db63c0eade2efd1a1c34d8ac3d5765cad528d0c72df2f65ff4008aecc",
+    "size": 40420,
+    "files": [
+      "public_html/images/team4.webp",
+      "public_html (77)/images/team4.webp"
+    ]
+  },
+  {
+    "hash": "f9acc5f86e4aebe2f3e9da7a025f1b733542ae96761833edf43705dd96b9da18",
+    "size": 180040,
+    "files": [
+      "public_html/images/team5.webp",
+      "public_html (77)/images/team5.webp"
+    ]
+  },
+  {
+    "hash": "3a4ec89d20673758303f80b47c36ab8e041c8261be416cbcf1298066282f4fd5",
+    "size": 21688,
+    "files": [
+      "public_html/images/team6.webp",
+      "public_html (77)/images/team6.webp"
+    ]
+  },
+  {
+    "hash": "5bd77a97c0d9f558950b79cee7b6c0947386db6ca5d563988ebd71988a3f5c4f",
+    "size": 16572,
+    "files": [
+      "public_html/images/team7.webp",
+      "public_html (77)/images/team7.webp"
+    ]
+  },
+  {
+    "hash": "f8f6e17427c509fc953ebf83b8dd306840391a71caab6d9c9e391f57421f4ecb",
+    "size": 36176,
+    "files": [
+      "public_html/images/team8.webp",
+      "public_html (77)/images/team8.webp"
+    ]
+  },
+  {
+    "hash": "c620e62809e15f38e439e9fc402eae7542b4d790065ee654ec8a18131d3a9b39",
+    "size": 4884,
+    "files": [
+      "public_html/images/urbanpro.jpeg",
+      "public_html (77)/images/urbanpro.jpeg"
+    ]
+  },
+  {
+    "hash": "6a4e47e8cfc08e9bcefbf058bb5d7090d85f40d04a5b70c6b638a0b89f2973bb",
+    "size": 18618885,
+    "files": [
+      "public_html/images/VID-20250603-WA0004.mp4",
+      "public_html (77)/images/VID-20250603-WA0004.mp4"
+    ]
+  },
+  {
+    "hash": "29ccdea9a576a7e53b440ac312d782fc05af259e02809031cef9425d5244dcbf",
+    "size": 23236063,
+    "files": [
+      "public_html/images/videoNS_Mass.mp4",
+      "public_html (77)/images/videoNS_Mass.mp4"
+    ]
+  },
+  {
+    "hash": "eb17da7b9cf101d1daa807524b76571ef58e8134e5ba0d20ac156fc6237252ef",
+    "size": 52230,
+    "files": [
+      "public_html/images/vision.webp",
+      "public_html (77)/images/vision.webp"
+    ]
+  },
+  {
+    "hash": "e54623a703f00dd21e3a8d4aafa6f635e69524e5b8d2a5ba0b0bebc196ee4c5a",
+    "size": 14537321,
+    "files": [
+      "public_html/images/WhatsApp Video 2025-06-09 at 12.06.54_0fd5514b.mp4",
+      "public_html (77)/images/WhatsApp Video 2025-06-09 at 12.06.54_0fd5514b.mp4"
+    ]
+  },
+  {
+    "hash": "dc24c2c141cb8f9d75de5d75f12cc560dee9f4d096ec55da62ee5dbbed0513b5",
+    "size": 24466544,
+    "files": [
+      "public_html/images/WhatsApp Video 2025-06-09 at 12.10.45_3cbb461d.mp4",
+      "public_html (77)/images/WhatsApp Video 2025-06-09 at 12.10.45_3cbb461d.mp4"
+    ]
+  },
+  {
+    "hash": "b3c4552407b9eba3870f62e3f2f0af2519b4545e2651897670c855969232bd4e",
+    "size": 2682,
+    "files": [
+      "public_html/images/_forbes.png",
+      "public_html (77)/images/_forbes.png"
+    ]
+  },
+  {
+    "hash": "075317388089b0d5dcc90d01dc68c4a65c07d04c5a2d7bb0b4ef6631f8978aac",
+    "size": 5691,
+    "files": [
+      "public_html/images/_mouthshut_1.jpeg",
+      "public_html (77)/images/_mouthshut_1.jpeg"
+    ]
+  },
+  {
+    "hash": "2e45fc71ad89f3db8c048f5dddbc3968443a0e5f168c74963bf02de69e520fc0",
+    "size": 72479,
+    "files": [
+      "public_html/index.html",
+      "public_html (77)/index.html"
+    ]
+  },
+  {
+    "hash": "f14f28d9dd475cefde703e9927d9c4543c8f3bdf3aca3459b6f3fa45ec570ab4",
+    "size": 4091,
+    "files": [
+      "public_html/js/animation-fix.js",
+      "public_html (77)/js/animation-fix.js"
+    ]
+  },
+  {
+    "hash": "10ea4ca2d68af7631d43410f8a3e7bfc2a879aecfe90f52410cca7298d904fe9",
+    "size": 12823,
+    "files": [
+      "public_html/js/become-a-member-animations.js",
+      "public_html (77)/js/become-a-member-animations.js"
+    ]
+  },
+  {
+    "hash": "23b7d5c41a96dcf63b6427b35d0db63e9b00e4119b998e9e5daa3038bcf4d66b",
+    "size": 6671,
+    "files": [
+      "public_html/js/floating-buttons.js",
+      "public_html (77)/js/floating-buttons.js"
+    ]
+  },
+  {
+    "hash": "ad739b960a33e85bd27cd496b963bd0a7c556f4912f7267713638a2e9065c741",
+    "size": 12849,
+    "files": [
+      "public_html/js/hamburger-menu-fix.js",
+      "public_html (77)/js/hamburger-menu-fix.js"
+    ]
+  },
+  {
+    "hash": "2c1b36e30ccb1581d9956d7a803849351c5c9dcbadad05050be446b2a01f517e",
+    "size": 12405,
+    "files": [
+      "public_html/js/heroRight.js",
+      "public_html (77)/js/heroRight.js"
+    ]
+  },
+  {
+    "hash": "d3cb83662de050f8999d2146ced380c9d6868902270330172673735870ebce6f",
+    "size": 89135,
+    "files": [
+      "public_html/js/home.js",
+      "public_html (77)/js/home.js"
+    ]
+  },
+  {
+    "hash": "72536f0e1d13b5e797f3eade229bf72df88d0651b06413383a015ee3a8cbe8d5",
+    "size": 10985,
+    "files": [
+      "public_html/js/payment-gateway.js",
+      "public_html (77)/js/payment-gateway.js"
+    ]
+  },
+  {
+    "hash": "e36b761e140a303444de72312f70b6d118b79e6f51e8d4fa62e8535e67495d97",
+    "size": 26513,
+    "files": [
+      "public_html/js/scholarship-animations.js",
+      "public_html (77)/js/scholarship-animations.js"
+    ]
+  },
+  {
+    "hash": "d4950e2691995598133d3d69b7692f65f93f884e7bea6b66a4e118de1a09947c",
+    "size": 30637,
+    "files": [
+      "public_html/js/script.js",
+      "public_html (77)/js/script.js"
+    ]
+  },
+  {
+    "hash": "acc5f2223a6ff6fa464195578e6057282f3aa5b0a272c2810e90cf4dad5b36d0",
+    "size": 2060,
+    "files": [
+      "public_html/js/search-dropdown.js",
+      "public_html (77)/js/search-dropdown.js"
+    ]
+  },
+  {
+    "hash": "8447843ac7efb96c7988e46503de111419b8c87b78a3c5bbb17f05ed5c6ff795",
+    "size": 20964,
+    "files": [
+      "public_html/js/shikshit/inner.js",
+      "public_html (77)/js/shikshit/inner.js"
+    ]
+  },
+  {
+    "hash": "0060ad59d7e862af59df0c04a03c6cd6da5626d46672cdbff462534d825e6d2f",
+    "size": 2507,
+    "files": [
+      "public_html/js/swipe-detector.js",
+      "public_html (77)/js/swipe-detector.js"
+    ]
+  },
+  {
+    "hash": "abc2f49d0f2278c23f6f9dd6fece175457e9eae4bb9d22c999e2e24fd9692471",
+    "size": 1660,
+    "files": [
+      "public_html/js/test-responsive.js",
+      "public_html (77)/js/test-responsive.js"
+    ]
+  },
+  {
+    "hash": "d0a52777daf786657f2354facb6faa5e710af583e89d175a0f1f6a1c86d64815",
+    "size": 5020,
+    "files": [
+      "public_html/js/video-check.js",
+      "public_html (77)/js/video-check.js"
+    ]
+  },
+  {
+    "hash": "aede023a9cdbe81d5b6d8a7f7b60f914d7de8810cc40d1039506bb854bbebeb1",
+    "size": 6518,
+    "files": [
+      "public_html/js/video-display-fix.js",
+      "public_html (77)/js/video-display-fix.js"
+    ]
+  },
+  {
+    "hash": "8da5cc6c1a9e84e67245cb17ff713fa5f23cadf1ab228efb56a5f36d2368ba36",
+    "size": 4923,
+    "files": [
+      "public_html/js/video-fix.js",
+      "public_html (77)/js/video-fix.js"
+    ]
+  },
+  {
+    "hash": "02e8053e727ceafa50c67eccc6c28053e7b5c0b16790b75d855cdedfa20e482a",
+    "size": 25907,
+    "files": [
+      "public_html/js/viewport-fix.js",
+      "public_html (77)/js/viewport-fix.js"
+    ]
+  },
+  {
+    "hash": "e3d16c427a11ab160243fdf6eb960d75c6ee6fee5e434a1a82f52e25d852371c",
+    "size": 326645,
+    "files": [
+      "public_html/ns-mas.html",
+      "public_html (77)/ns-mas.html"
+    ]
+  },
+  {
+    "hash": "79220339b0afab744b78334e7d22cf8a9b5b3704cb527c23bb5da8782aa239f8",
+    "size": 6624,
+    "files": [
+      "public_html/privacy-policy.html",
+      "public_html (77)/privacy-policy.html"
+    ]
+  },
+  {
+    "hash": "d0e218d7b2d563aff98992ad588f43d7af7a70d30c609b31775ddca2d9e76d69",
+    "size": 8608,
+    "files": [
+      "public_html/privacypolicy.html",
+      "public_html (77)/privacypolicy.html"
+    ]
+  },
+  {
+    "hash": "dff390f912518d5f112f703085bb6dc44fd7549fd3c086c45603673767578d81",
+    "size": 77848,
+    "files": [
+      "public_html/product-services.html",
+      "public_html (77)/product-services.html"
+    ]
+  },
+  {
+    "hash": "4c162c6e139198a19610878845d94570cb6f1aafdca21014aade7361ffd1fe6a",
+    "size": 30337,
+    "files": [
+      "public_html/registration.html",
+      "public_html (77)/registration.html"
+    ]
+  },
+  {
+    "hash": "361f5e0f369ef9f040b3dd73e77d5cf0a2c0de5dd6bda988402d3e3e7298e6b7",
+    "size": 58,
+    "files": [
+      "public_html/robots.txt",
+      "public_html (77)/robots.txt"
+    ]
+  },
+  {
+    "hash": "cdf0a4fd1a94cc5ff295e00d0bb0fab0e9fe2eae2a0172da64467f0c6a1afd20",
+    "size": 272560,
+    "files": [
+      "public_html/scholarship.html",
+      "public_html (77)/scholarship.html"
+    ]
+  },
+  {
+    "hash": "9b1f721886e8a93859918f3807b6e448145f325ce425de3e3718233840568ea7",
+    "size": 1518,
+    "files": [
+      "public_html/sitemap.xml",
+      "public_html (77)/sitemap.xml"
+    ]
+  },
+  {
+    "hash": "9985597f843624dee81ee35065b9f4d7f8199b09550e4ccfc010e73c2914c9ed",
+    "size": 9253,
+    "files": [
+      "public_html/terms.html",
+      "public_html (77)/terms.html"
+    ]
+  },
+  {
+    "hash": "be9df16b44a80580f873b13415a9ed6bd39b0d178a5c53df1ba99b1a5228c65d",
+    "size": 12124,
+    "files": [
+      "public_html/termsandservice.html",
+      "public_html (77)/termsandservice.html"
+    ]
+  }
+]

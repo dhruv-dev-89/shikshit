@@ -1509,23 +1509,48 @@
             // Add swipe gesture support for mobile devices
             const scholarshipSection = document.querySelector('.academic-levels-section');
             if (scholarshipSection) {
-                const swipeDetector = new SwipeDetector(scholarshipSection);
+                if (typeof SwipeDetector !== 'undefined') {
+                    const swipeDetector = new SwipeDetector(scholarshipSection);
+                    swipeDetector.onSwipeLeft = function(e) {
+                        pauseSlideshow();
+                        let nextIndex = (currentSlideIndex + 1) % academicLevelLinks.length;
+                        showSlide(nextIndex);
+                        setTimeout(resumeSlideshow, 10000);
+                    };
+                    swipeDetector.onSwipeRight = function(e) {
+                        pauseSlideshow();
+                        let prevIndex = (currentSlideIndex - 1 + academicLevelLinks.length) % academicLevelLinks.length;
+                        showSlide(prevIndex);
+                        setTimeout(resumeSlideshow, 10000);
+                    };
+                } else {
+                    let startX = 0, startY = 0;
+                    scholarshipSection.addEventListener('touchstart', function(e) {
+                        if (e.touches && e.touches.length === 1) {
+                            startX = e.touches[0].clientX;
+                            startY = e.touches[0].clientY;
+                        }
+                    }, { passive: true });
+                    scholarshipSection.addEventListener('touchend', function(e) {
+                        if (e.changedTouches && e.changedTouches.length === 1) {
+                            const diffX = e.changedTouches[0].clientX - startX;
+                            const diffY = e.changedTouches[0].clientY - startY;
+                            if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+                                pauseSlideshow();
+                                if (diffX < 0) {
+                                    let nextIndex = (currentSlideIndex + 1) % academicLevelLinks.length;
+                                    showSlide(nextIndex);
+                                } else {
+                                    let prevIndex = (currentSlideIndex - 1 + academicLevelLinks.length) % academicLevelLinks.length;
+                                    showSlide(prevIndex);
+                                }
+                                setTimeout(resumeSlideshow, 10000);
+                            }
+                        }
+                    }, { passive: true });
+                }
 
-                // Swipe left to go to next slide
-                swipeDetector.onSwipeLeft = function(e) {
-                    pauseSlideshow();
-                    let nextIndex = (currentSlideIndex + 1) % academicLevelLinks.length;
-                    showSlide(nextIndex);
-                    setTimeout(resumeSlideshow, 10000);
-                };
 
-                // Swipe right to go to previous slide
-                swipeDetector.onSwipeRight = function(e) {
-                    pauseSlideshow();
-                    let prevIndex = (currentSlideIndex - 1 + academicLevelLinks.length) % academicLevelLinks.length;
-                    showSlide(prevIndex);
-                    setTimeout(resumeSlideshow, 10000);
-                };
             }
 
             // Add toggle functionality for navigation help tooltip
@@ -1963,7 +1988,7 @@
 
             // Add scroll-based animation trigger
             const circularDiagram = document.querySelector('.circular-diagram');
-            const popularImgContainer = document.querySelector('.relative.h-110%.overflow-hidden');
+            const popularImgContainer = document.querySelector('.relative.overflow-hidden');
 
             if (circularDiagram && popularImgContainer) {
                 // Function to check if element is in viewport

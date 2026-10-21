@@ -1,167 +1,417 @@
 /**
  * Shikshit Design System - Scoped Styles for Become a Member Page
+ * Theme: "Empowering Education Community & Prestigious Network"
  * Scope: body.page-member
- * Strict Design Tokens & Accessible Icon Framework
+ * Distinct Palette: Electric Sapphire + Cobalt Blue + Deep Navy + Emerald/Teal
  */
 
-/* --------------------------------------------------------------------------
-   1. ICON CONTAINERS & POD CENTERING
-   -------------------------------------------------------------------------- */
-body.page-member .member-icon-pod,
-body.page-member .membership-card .w-20.h-20 {
-  display: grid !important;
-  place-items: center !important;
-  width: 80px !important;
-  height: 80px !important;
+/* ==========================================================================
+   1. GLOBAL CANVAS & AMBIENT BACKDROP
+   ========================================================================== */
+body.page-member {
+  background: #F8FAFD !important;
+  color: #0F172A !important;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11" !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Ambient gradient backdrop without distracting floating shapes */
+.member-ambient-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: radial-gradient(circle at 10% 12%, rgba(219, 234, 254, 0.55) 0%, transparent 40%),
+              radial-gradient(circle at 88% 35%, rgba(204, 251, 241, 0.5) 0%, transparent 45%),
+              radial-gradient(circle at 50% 88%, rgba(238, 242, 255, 0.6) 0%, transparent 50%);
+}
+
+.member-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.member-blob-1 {
+  top: -6%;
+  left: -4%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(79, 70, 229, 0.1) 60%, transparent 80%);
+}
+
+.member-blob-2 {
+  top: 35%;
+  right: -5%;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.2) 0%, rgba(37, 99, 235, 0.12) 60%, transparent 80%);
+}
+
+.member-blob-3 {
+  bottom: 0%;
+  left: 20%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(13, 148, 136, 0.1) 60%, transparent 80%);
+}
+
+/* Disable endless floating shapes */
+.member-floating-shape {
+  display: none !important;
+}
+
+/* ==========================================================================
+   2. HERO SECTION
+   ========================================================================== */
+body.page-member .hero-gradient {
+  background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 35%, #1E40AF 70%, #2563EB 100%) !important;
+  position: relative;
+  overflow: hidden;
+  padding-top: 5rem !important;
+  padding-bottom: 5.5rem !important;
+}
+
+body.page-member .hero-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(37, 99, 235, 0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+body.page-member .hero-gradient h1 {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+body.page-member .hero-gradient p {
+  color: #E0E7FF !important;
+  font-size: 1.2rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Hero CTA Button "Join Our Community Today" */
+body.page-member .hero-gradient a[href*="membership-form"],
+body.page-member .hero-gradient a.inline-flex {
+  background: #FFFFFF !important;
+  color: #1E3A8A !important;
+  font-weight: 700 !important;
   border-radius: 9999px !important;
-  margin: 0 auto 1.5rem !important;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease !important;
-  box-shadow: 0 8px 24px -4px rgba(124, 58, 237, 0.12) !important;
-  position: relative !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
 }
 
-body.page-member .membership-card:hover .member-icon-pod,
-body.page-member .membership-card:hover .w-20.h-20 {
-  transform: scale(1.1) rotate(3deg) !important;
-  box-shadow: 0 16px 32px -4px rgba(124, 58, 237, 0.22) !important;
+body.page-member .hero-gradient a[href*="membership-form"]:hover,
+body.page-member .hero-gradient a.inline-flex:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3) !important;
+  color: #1D4ED8 !important;
 }
 
-body.page-member .membership-card svg {
-  display: block !important;
-  margin: auto !important;
-  transition: transform 0.3s ease !important;
+/* ==========================================================================
+   3. MEMBERSHIP PLANS SECTION
+   ========================================================================== */
+body.page-member .py-20.bg-gradient-to-br {
+  background: #F8FAFD !important;
 }
 
-/* --------------------------------------------------------------------------
-   2. HEADING ACCENT PODS
-   -------------------------------------------------------------------------- */
-body.page-member .member-heading-accent {
-  display: inline-grid !important;
-  place-items: center !important;
-  width: 52px !important;
-  height: 52px !important;
-  border-radius: 16px !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  border: 1px solid rgba(124, 58, 237, 0.16) !important;
-  box-shadow: 0 8px 20px -4px rgba(124, 58, 237, 0.12) !important;
-  flex-shrink: 0 !important;
-  transition: transform 0.3s ease !important;
+body.page-member h2 {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
 }
 
-body.page-member .member-heading-accent:hover {
-  transform: scale(1.08) !important;
+/* Trust Strip Pill */
+body.page-member .benefits-card,
+body.page-member .py-20 .max-w-4xl.bg-white,
+body.page-member .py-20 .rounded-2xl.bg-white {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05) !important;
+  padding: 1rem 1.5rem !important;
 }
 
-/* --------------------------------------------------------------------------
-   3. KEY BENEFITS CHECKMARKS & ALIGNMENT
-   -------------------------------------------------------------------------- */
 body.page-member .benefit-item {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
+  font-weight: 600 !important;
+  color: #1E293B !important;
 }
 
 body.page-member .benefit-icon {
-  width: 20px !important;
-  height: 20px !important;
-  flex-shrink: 0 !important;
-  display: inline-block !important;
-  vertical-align: middle !important;
-  color: #10B981 !important;
+  color: #059669 !important;
   filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.2)) !important;
 }
 
-/* --------------------------------------------------------------------------
-   4. FORM LABEL ICONS & INPUT CENTERING
-   -------------------------------------------------------------------------- */
-body.page-member form label {
+/* Membership Plan Cards (Individual & Institutional) */
+body.page-member .membership-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 22px !important;
+  padding: 2.25rem 1.75rem !important;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease !important;
+  position: relative !important;
+  text-align: center !important;
+}
+
+body.page-member .membership-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 48px -6px rgba(37, 99, 235, 0.15) !important;
+  border-color: rgba(37, 99, 235, 0.35) !important;
+}
+
+/* Icon Pods inside Plan Cards */
+body.page-member .member-icon-pod,
+body.page-member .membership-card .w-20.h-20 {
+  display: grid !important;
+  place-items: center !important;
+  width: 76px !important;
+  height: 76px !important;
+  border-radius: 20px !important;
+  margin: 0 auto 1.5rem !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.12) !important;
+}
+
+body.page-member .membership-card:hover .member-icon-pod,
+body.page-member .membership-card:hover .w-20.h-20 {
+  transform: scale(1.08) rotate(2deg) !important;
+}
+
+/* Price Tags */
+body.page-member .membership-card .text-3xl,
+body.page-member .membership-card .text-4xl,
+body.page-member .membership-card [class*="text-purple-600 font-bold"] {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  font-size: 2.2rem !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Plan Titles & Subtitles */
+body.page-member .membership-card h3 {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+body.page-member .membership-card p {
+  color: #475569 !important;
+  font-size: 0.9rem !important;
+}
+
+/* ==========================================================================
+   4. FORM & "WHY CHOOSE US" SECTION (#membership-form)
+   ========================================================================== */
+body.page-member #membership-form {
+  background: #F1F5F9 !important;
+  position: relative;
+}
+
+/* Membership Form Card */
+body.page-member #membership-form .bg-white {
+  background: #FFFFFF !important;
+  border-radius: 24px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.12) !important;
+  padding: 2.5rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top Hairline accent */
+body.page-member #membership-form .bg-white::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2563EB, #4F46E5, #0D9488);
+}
+
+/* Form Labels */
+body.page-member #membership-form form label {
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
   font-weight: 600 !important;
-  color: #334155 !important;
-  margin-bottom: 0.5rem !important;
+  color: #1E293B !important;
+  font-size: 0.88rem !important;
+  margin-bottom: 0.45rem !important;
 }
 
-body.page-member form label svg {
-  width: 18px !important;
-  height: 18px !important;
-  flex-shrink: 0 !important;
-  color: #7C3AED !important;
+body.page-member #membership-form form label svg {
+  color: #2563EB !important;
+  width: 17px !important;
+  height: 17px !important;
 }
 
-body.page-member .select-wrapper {
-  position: relative !important;
+/* Form Inputs & Select */
+body.page-member #membership-form form input,
+body.page-member #membership-form form select,
+body.page-member #membership-form form textarea {
+  background: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  border-radius: 12px !important;
+  padding: 0.85rem 1rem !important;
+  font-size: 0.95rem !important;
+  color: #0F172A !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-body.page-member .select-chevron {
-  position: absolute !important;
-  right: 16px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  pointer-events: none !important;
-  width: 20px !important;
-  height: 20px !important;
-  color: #94A3B8 !important;
-  display: grid !important;
-  place-items: center !important;
+body.page-member #membership-form form input:focus,
+body.page-member #membership-form form select:focus,
+body.page-member #membership-form form textarea:focus {
+  border-color: #2563EB !important;
+  box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.16) !important;
+  background-color: #F8FAFD !important;
+  outline: none !important;
 }
 
-body.page-member button[type="submit"] {
-  display: inline-flex !important;
+/* Submit Application Button */
+body.page-member #membership-form button[type="submit"] {
+  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 50%, #4F46E5 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 1.1rem 1.5rem !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.35) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  cursor: pointer !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 8px !important;
+  gap: 0.6rem !important;
+  width: 100% !important;
 }
 
-/* --------------------------------------------------------------------------
-   5. "WHY CHOOSE US" TILE ICONS
-   -------------------------------------------------------------------------- */
-body.page-member .why-choose-icon-pod,
-body.page-member .w-14.h-14 {
-  display: grid !important;
-  place-items: center !important;
-  width: 56px !important;
-  height: 56px !important;
-  border-radius: 16px !important;
-  flex-shrink: 0 !important;
-  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.12) !important;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+body.page-member #membership-form button[type="submit"]:hover {
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 14px 36px rgba(37, 99, 235, 0.45) !important;
 }
 
-body.page-member .why-choose-icon-pod svg,
-body.page-member .w-14.h-14 svg {
-  width: 28px !important;
-  height: 28px !important;
+body.page-member #membership-form button[type="submit"]:active {
+  transform: translateY(0) scale(0.99) !important;
 }
 
-/* --------------------------------------------------------------------------
-   6. FLOATING BACKGROUND DECORATION SAFETY
-   -------------------------------------------------------------------------- */
-body.page-member .scholarship-icon {
-  pointer-events: none !important;
-  overflow: visible !important;
-  will-change: transform !important;
+/* Why Choose Us Tiles */
+body.page-member .why-choose-icon-pod {
+  border-radius: 14px !important;
+  transition: transform 0.25s ease !important;
 }
 
-body.page-member .scholarship-icon svg {
-  overflow: visible !important;
-  filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.15)) !important;
+body.page-member .group:hover .why-choose-icon-pod {
+  transform: scale(1.08) !important;
 }
 
-/* --------------------------------------------------------------------------
-   7. ACCESSIBILITY & REDUCED MOTION
-   -------------------------------------------------------------------------- */
+body.page-member #membership-form .space-y-8 h2 {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+}
+
+body.page-member #membership-form .space-y-8 p {
+  color: #334155 !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+}
+
+/* ==========================================================================
+   5. ADVISORY BOARD SECTION
+   ========================================================================== */
+body.page-member .py-20.bg-gradient-to-b {
+  background: #FFFFFF !important;
+}
+
+body.page-member .py-20.bg-gradient-to-b .group {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 20px !important;
+  padding: 1.75rem !important;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+body.page-member .py-20.bg-gradient-to-b .group:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.1) !important;
+  border-color: rgba(37, 99, 235, 0.25) !important;
+}
+
+body.page-member .py-20.bg-gradient-to-b h3 {
+  color: #0F172A !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+}
+
+body.page-member .py-20.bg-gradient-to-b p.text-yellow-600 {
+  color: #D97706 !important;
+  font-weight: 600 !important;
+}
+
+/* ==========================================================================
+   6. VIDEO ADS SECTION
+   ========================================================================== */
+body.page-member .video-carousel {
+  padding: 3rem 1rem !important;
+  background: #F8FAFD !important;
+  text-align: center;
+}
+
+body.page-member .video-carousel h2 {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* ==========================================================================
+   7. PURPOSEFUL MOTION & SCROLL REVEALS
+   ========================================================================== */
+body.page-member .scroll-reveal-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.page-member .scroll-reveal-ready {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.page-member .scroll-reveal-ready.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ==========================================================================
+   8. PREFERS-REDUCED-MOTION
+   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
-  body.page-member .animate-bounce-slow,
-  body.page-member .animate-pulse-slow,
-  body.page-member .animate-float,
-  body.page-member .scholarship-icon,
-  body.page-member .membership-card,
-  body.page-member .member-icon-pod,
-  body.page-member .why-choose-icon-pod {
+  body.page-member,
+  body.page-member *,
+  body.page-member *::before,
+  body.page-member *::after {
     animation: none !important;
-    transition: none !important;
+    transition-duration: 0.01ms !important;
     transform: none !important;
+    scroll-behavior: auto !important;
   }
 }
