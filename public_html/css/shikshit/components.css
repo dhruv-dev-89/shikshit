@@ -415,33 +415,40 @@
 }
 
 /* --------------------------------------------------------------------------
-   FOOTER EDITORIAL BRAND & LOGO
+   FOOTER EDITORIAL BRAND & LOGO (Part B Fixes)
    -------------------------------------------------------------------------- */
 .footer-editorial .footer-brand {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 28px;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 56px !important;
 }
 
 .footer-editorial .footer-logo,
 .footer-editorial img[src*="sikshitlogo"] {
-  width: 165px !important;
+  height: 56px !important;
+  width: auto !important;
   max-width: 100% !important;
-  height: auto !important;
   object-fit: contain !important;
   display: block !important;
   margin: 0 !important;
-  filter: drop-shadow(0 2px 8px rgba(11, 11, 59, 0.08));
+  filter: drop-shadow(0 2px 8px rgba(11, 11, 59, 0.08)) !important;
+}
+
+.footer-editorial .footer-grid > div:first-child p {
+  margin-top: 16px !important;
+  margin-bottom: 0 !important;
 }
 
 @media (max-width: 768px) {
   .footer-editorial .footer-brand {
-    margin-bottom: 24px !important;
+    height: 48px !important;
   }
 
   .footer-editorial .footer-logo,
   .footer-editorial img[src*="sikshitlogo"] {
-    width: 135px !important;
+    height: 48px !important;
   }
 }

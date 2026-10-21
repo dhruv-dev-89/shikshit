@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#7C3AED" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>
+      National Scholarship – Merit and Assistance Scheme Registration
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #e9d5ff;
+        background-image: linear-gradient(135deg, #e9d5ff 0%, #f3e8ff 100%);
+        min-height: 100vh;
+        padding-top: 64px;
+        margin: 0 !important;
+        overflow-x: hidden;
+        width: 100vw;
+        max-width: 100vw;
+      }
+      .form-container {
+        background-color: #f3e8ff;
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 700px;
+        padding: 1.5rem;
+        margin-top: 1rem;
+      }
+      .form-header {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .form-divider {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+      }
+      .form-divider-line {
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(to right, #a78bfa, #818cf8);
+      }
+      .form-divider-icon {
+        margin: 0 1rem;
+        color: #8b5cf6;
+      }
+      .form-group {
+        margin-bottom: 0.75rem;
+      }
+      .form-label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 0.25rem;
+      }
+      .form-input {
+        width: 100%;
+        padding: 0.625rem;
+        border: 1px solid #d1d5db;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: #8b5cf6;
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+      }
+      .form-section-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #6d28d9;
+        margin: 1.5rem 0 0.75rem 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .form-button {
+        width: 100%;
+        padding: 0.75rem;
+        background: linear-gradient(to right, #8b5cf6, #6366f1);
+        color: white;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 1.5rem;
+      }
+      .form-button:hover {
+        background: linear-gradient(to right, #7c3aed, #4f46e5);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .required {
+        color: #ef4444;
+      }
+      .input-error {
+        border-color: #ef4444 !important;
+        box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+      }
+      .error-message {
+        color: #ef4444;
+        font-size: 0.85em;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        display: block;
+      }
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 w-full overflow-x-hidden">
+    <script src="js/script.js"></script>
+    <script src="js/responsive-handler.js"></script>
+    <div include-html="components/nsmas-floating-button.html"></div>
+
+    <!-- Include NSMAS Navbar -->
+    <div include-html="components/nsmas_navbar.html"></div>
+
+    <div class="main-content">
+      <div class="form-container animate-fade-in">
+        <div class="form-header">
+          <div class="flex justify-center mb-3">
+            <div class="bg-purple-500 p-3 rounded-full shadow-md">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path
+                  d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+                />
+              </svg>
+            </div>
+          </div>
+          <h1 class="text-2xl font-bold text-gray-800">
+            Register for <span class="text-purple-600">Scholarship</span>
+          </h1>
+          <p class="text-gray-600 mt-1 text-sm">
+            Complete the form below to apply for National Scholarship – Merit
+            and Assistance Scheme
+          </p>
+        </div>
+
+        <div class="form-divider">
+          <div class="form-divider-line"></div>
+          <div class="form-divider-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path
+                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998a12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+              />
+            </svg>
+          </div>
+          <div class="form-divider-line"></div>
+        </div>
+
+        <form id="registration-form" novalidate>
+          <!-- Personal Information -->
+          <div class="form-section-title">Personal Information</div>
+          <div class="form-group">
+            <label for="name" class="form-label"
+              >Full Name <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="Enter your full name"
+              required
+            />
+            <span class="error-message" id="error-name"></span>
+          </div>
+
+          <div class="flex space-x-3">
+            <div class="w-1/3">
+              <label for="country-code" class="form-label">Code</label>
+              <div class="relative">
+                <select
+                  id="country-code"
+                  name="country-code"
+                  class="form-input appearance-none"
+                >
+                  <option value="+91">(+91)</option>
+                  <option value="+1">(+1)</option>
+                  <option value="+44">(+44)</option>
+                </select>
+                <div
+                  class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                >
+                  <svg
+                    class="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-2/3">
+              <label for="phone" class="form-label"
+                >Phone Number <span class="required">*</span></label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="form-input"
+                placeholder="Enter your phone number"
+                required
+              />
+              <span class="error-message" id="error-phone"></span>
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <label for="email" class="form-label"
+              >Email Address <span class="required">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="Enter your email address"
+              required
+            />
+            <span class="error-message" id="error-email"></span>
+          </div>
+
+          <!-- Parent Information -->
+          <div class="form-section-title">Parent Information</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="form-group">
+              <label for="father-name" class="form-label"
+                >Father's Name <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="father-name"
+                name="father-name"
+                class="form-input"
+                placeholder="Enter father's name"
+                required
+              />
+              <span class="error-message" id="error-father-name"></span>
+            </div>
+            <div class="form-group">
+              <label for="father-contact" class="form-label"
+                >Parent's Contact_No</label
+              >
+              <input
+                type="tel"
+                id="father-contact"
+                name="father-contact"
+                class="form-input"
+                placeholder="Enter parent's contact number"
+              />
+              <span class="error-message" id="error-father-contact"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="mother-name" class="form-label"
+              >Mother's Name <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="mother-name"
+              name="mother-name"
+              class="form-input"
+              placeholder="Enter mother's name"
+              required
+            />
+            <span class="error-message" id="error-mother-name"></span>
+          </div>
+
+          <!-- Academic Information -->
+          <div class="form-section-title">Academic Information</div>
+          <div class="form-group">
+            <label for="education-level" class="form-label"
+              >Education Level <span class="required">*</span></label
+            >
+            <div class="relative">
+              <select
+                id="education-level"
+                name="education-level"
+                class="form-input appearance-none"
+                required
+              >
+                <option value="" disabled selected>
+                  Select your education level
+                </option>
+                <option value="9-10">Class 9-10</option>
+                <option value="11-12">Class 11-12</option>
+                <option value="UG">Undergraduate (UG)</option>
+                <option value="PG">Postgraduate (PG)</option>
+              </select>
+              <div
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+              >
+                <svg
+                  class="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <span class="error-message" id="error-education-level"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="specific-course" class="form-label"
+              >Specific Course <span class="required">*</span></label
+            >
+            <div class="relative">
+              <select
+                id="specific-course"
+                name="specific-course"
+                class="form-input appearance-none"
+                required
+              >
+                <option value="" disabled selected>
+                  Select your specific course
+                </option>
+              </select>
+              <div
+                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+              >
+                <svg
+                  class="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <span class="error-message" id="error-specific-course"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="year" class="form-label">Year (Optional)</label>
+            <input
+              type="text"
+              id="year"
+              name="year"
+              class="form-input"
+              placeholder="Enter your current year of study"
+            />
+          </div>
+
+          <!-- Documents -->
+          <div class="form-section-title">Documents</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="form-group">
+              <label for="aadhar-number" class="form-label"
+                >Aadhar Card Number <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="aadhar-number"
+                name="aadhar-number"
+                class="form-input"
+                placeholder="Enter your Aadhar number"
+                required
+              />
+              <span class="error-message" id="error-aadhar-number"></span>
+            </div>
+            <div class="form-group">
+              <label for="pan-number" class="form-label"
+                >PAN Card Number <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="pan-number"
+                name="pan-number"
+                class="form-input"
+                placeholder="Enter your PAN number"
+                required
+              />
+              <span class="error-message" id="error-pan-number"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="school-id-number" class="form-label"
+              >School/College ID Number <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="school-id-number"
+              name="school-id-number"
+              class="form-input"
+              placeholder="Enter your School/College ID number"
+              required
+            />
+            <span class="error-message" id="error-school-id-number"></span>
+          </div>
+
+          <!-- Bank Details -->
+          <div class="form-section-title">Bank Details</div>
+          <div class="form-group">
+            <label for="account-holder-name" class="form-label"
+              >Account Holder Name <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="account-holder-name"
+              name="account-holder-name"
+              class="form-input"
+              placeholder="Enter account holder name"
+              required
+            />
+            <span class="error-message" id="error-account-holder-name"></span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="form-group">
+              <label for="account-number" class="form-label"
+                >Account Number <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="account-number"
+                name="account-number"
+                class="form-input"
+                placeholder="Enter your bank account number"
+                required
+              />
+              <span class="error-message" id="error-account-number"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="ifsc" class="form-label"
+                >IFSC Code <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="ifsc"
+                name="ifsc"
+                class="form-input"
+                placeholder="Enter IFSC code"
+                required
+              />
+              <span class="error-message" id="error-ifsc"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bank-name" class="form-label"
+              >Bank Name <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="bank-name"
+              name="bank-name"
+              class="form-input"
+              placeholder="Enter bank name"
+              required
+            />
+            <span class="error-message" id="error-bank-name"></span>
+          </div>
+
+          <button type="submit" class="form-button">Submit Registration</button>
+
+          <div class="flex items-center justify-center mt-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-red-500 mr-1"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span class="text-red-500 text-xs font-medium"
+              >Limited scholarships available</span
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Include Footer -->
+    <div include-html="components/footer.html"></div>
+
+    <script>
+      // Dynamic Course Dropdown Logic
+      window.onload = function () {
+        const educationLevelSelect = document.getElementById("education-level");
+        const specificCourseSelect = document.getElementById("specific-course");
+        const courseData = {
+          "9-10": ["General"],
+          "11-12": ["PCM", "PCB", "Commerce", "Arts"],
+          UG: [
+            "B.TECH/BCA",
+            "B.SC",
+            "LLB",
+            "B.ARCH",
+            "BHM/BTTM",
+            "B.COM",
+            "B.ED",
+            "BBA,BMS",
+            "Commerce B.A",
+            "Arts",
+          ],
+          PG: [
+            "M.TECH/ME/MCA",
+            "M.COM",
+            "M.SC",
+            "MA",
+            "LLM",
+            "M.ARCH",
+            "MHM/MTTM",
+            "MBA",
+            "M.ED",
+          ],
+        };
+        function populateAllCourses() {
+          specificCourseSelect.innerHTML = "";
+          const defaultOption = document.createElement("option");
+          defaultOption.value = "";
+          defaultOption.disabled = true;
+          defaultOption.selected = true;
+          defaultOption.textContent = "Select your specific course";
+          specificCourseSelect.appendChild(defaultOption);
+          Object.values(courseData).forEach((courses) => {
+            courses.forEach((course) => {
+              const option = document.createElement("option");
+              option.value = course;
+              option.textContent = course;
+              specificCourseSelect.appendChild(option);
+            });
+          });
+          specificCourseSelect.disabled = false;
+        }
+        populateAllCourses();
+        educationLevelSelect.addEventListener("change", function () {
+          specificCourseSelect.disabled = false;
+          specificCourseSelect.innerHTML = "";
+          const defaultOption = document.createElement("option");
+          defaultOption.value = "";
+          defaultOption.disabled = true;
+          defaultOption.selected = true;
+          defaultOption.textContent = "Select your specific course";
+          specificCourseSelect.appendChild(defaultOption);
+          const selectedLevel = this.value;
+          if (courseData[selectedLevel]) {
+            courseData[selectedLevel].forEach((course) => {
+              const option = document.createElement("option");
+              option.value = course;
+              option.textContent = course;
+              specificCourseSelect.appendChild(option);
+            });
+          } else {
+            populateAllCourses();
+          }
+        });
+      };
+
+      // Validation helpers
+      function getValidationMessage(name, value) {
+        switch (name) {
+          case "name":
+          case "father-name":
+          case "mother-name":
+          case "account-holder-name":
+            if (!/^[A-Za-z ]{2,}$/.test(value))
+              return "Enter a valid name (alphabets only)";
+            break;
+          case "phone":
+          case "father-contact":
+            if (value.trim() && !/^\d{10,15}$/.test(value))
+              return "Enter a valid phone number (10-15 digits)";
+            break;
+          case "email":
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
+              return "Enter a valid email address";
+            break;
+          case "education-level":
+            if (!value) return "Select education level";
+            break;
+          case "specific-course":
+            if (!value) return "Select specific course";
+            break;
+          case "aadhar-number":
+            if (!/^\d{12}$/.test(value))
+              return "Enter a valid 12-digit Aadhar number";
+            break;
+          case "pan-number":
+            if (!/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/i.test(value))
+              return "Enter a valid PAN number (e.g. ABCDE1234F)";
+            break;
+          case "school-id-number":
+            if (!value.trim()) return "Enter your School/College ID number";
+            break;
+          case "account-number":
+            if (!/^\d{9,18}$/.test(value))
+              return "Enter a valid account number";
+            break;
+          case "ifsc":
+            if (!/^[A-Z]{4}0[A-Z0-9]{6}$/i.test(value))
+              return "Enter a valid IFSC code (e.g. SBIN0123456)";
+            break;
+          case "bank-name":
+            if (value.trim().length < 3) return "Enter a valid bank name";
+            break;
+        }
+        return "";
+      }
+
+      function showFieldError(input, message) {
+        input.classList.add("input-error");
+        const errorSpan = document.getElementById(
+          "error-" + input.name.replace("_", "-")
+        );
+        if (errorSpan) errorSpan.textContent = message;
+      }
+
+      function clearFieldError(input) {
+        input.classList.remove("input-error");
+        const errorSpan = document.getElementById(
+          "error-" + input.name.replace("_", "-")
+        );
+        if (errorSpan) errorSpan.textContent = "";
+      }
+
+      function validateForm(form) {
+        let allValid = true;
+        form
+          .querySelectorAll(".input-error")
+          .forEach((el) => el.classList.remove("input-error"));
+        form.querySelectorAll(".error-message").forEach((el) => {
+          el.textContent = "";
+        });
+        const fields = [
+          "name",
+          "phone",
+          "email",
+          "father-name",
+          "father-contact",
+          "mother-name",
+          "education-level",
+          "specific-course",
+          "aadhar-number",
+          "pan-number",
+          "school-id-number",
+          "account-holder-name",
+          "account-number",
+          "ifsc",
+          "bank-name",
+        ];
+        fields.forEach(function (fieldName) {
+          const input = form[fieldName];
+          if (input) {
+            const msg = getValidationMessage(fieldName, input.value.trim());
+            if (msg) {
+              showFieldError(input, msg);
+              allValid = false;
+            } else {
+              clearFieldError(input);
+            }
+          }
+        });
+        return allValid;
+      }
+
+      // Real-time validation handlers
+      window.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("registration-form");
+        const fields = [
+          "name",
+          "phone",
+          "email",
+          "father-name",
+          "father-contact",
+          "mother-name",
+          "education-level",
+          "specific-course",
+          "aadhar-number",
+          "pan-number",
+          "school-id-number",
+          "account-holder-name",
+          "account-number",
+          "ifsc",
+          "bank-name",
+        ];
+        fields.forEach(function (fieldName) {
+          const input = form[fieldName];
+          if (input) {
+            input.addEventListener("input", function () {
+              const msg = getValidationMessage(fieldName, input.value.trim());
+              const errorSpan = document.getElementById("error-" + fieldName);
+              if (msg) {
+                input.classList.add("input-error");
+                errorSpan.textContent = msg;
+              } else {
+                input.classList.remove("input-error");
+                errorSpan.textContent = "";
+              }
+            });
+            input.addEventListener("blur", function () {
+              const msg = getValidationMessage(fieldName, input.value.trim());
+              const errorSpan = document.getElementById("error-" + fieldName);
+              if (msg) {
+                input.classList.add("input-error");
+                errorSpan.textContent = msg;
+              } else {
+                input.classList.remove("input-error");
+                errorSpan.textContent = "";
+              }
+            });
+          }
+        });
+      });
+
+      // Show success toast notification
+      function showSuccessToast() {
+        let toastContainer = document.getElementById("toast-container");
+        if (!toastContainer) {
+          toastContainer = document.createElement("div");
+          toastContainer.id = "toast-container";
+          toastContainer.style.position = "fixed";
+          toastContainer.style.top = "20px";
+          toastContainer.style.right = "20px";
+          toastContainer.style.zIndex = "9999";
+          document.body.appendChild(toastContainer);
+        }
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.style.backgroundColor = "#8952e0";
+        toast.style.color = "white";
+        toast.style.padding = "12px 20px";
+        toast.style.borderRadius = "8px";
+        toast.style.boxShadow = "0 4px 12px rgba(137, 82, 224, 0.3)";
+        toast.style.marginBottom = "10px";
+        toast.style.display = "flex";
+        toast.style.alignItems = "center";
+        toast.style.minWidth = "260px";
+        toast.style.opacity = "0";
+        toast.style.transform = "translateY(-20px)";
+        toast.style.transition = "all 0.3s ease-in";
+        toast.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px;">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+    <div style="flex: 1">
+      <div style="font-weight: bold">Success!</div>
+      <div style="font-size: 14px">Your application has been submitted successfully</div>
+    </div>
+  `;
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = "1";
+          toast.style.transform = "translateY(0)";
+        }, 50);
+        setTimeout(() => {
+          toast.style.opacity = "0";
+          toast.style.transform = "translateY(-20px)";
+          setTimeout(() => {
+            if (toastContainer.contains(toast))
+              toastContainer.removeChild(toast);
+          }, 300);
+        }, 5000);
+      }
+
+      // Form submission handler
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("registration-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            const form = e.target;
+            if (!validateForm(form)) {
+              const firstError = form.querySelector(".input-error");
+              if (firstError)
+                firstError.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              return;
+            }
+
+            try {
+              // Create hidden iframe for submission
+              const iframe = document.createElement("iframe");
+              iframe.name = "hidden-iframe";
+              iframe.style.display = "none";
+              document.body.appendChild(iframe);
+
+              form.action =
+                "https://script.google.com/macros/s/AKfycbzhLDDycEvkU_RCEw8zBiXWlRO0UuqAcaDNmbFVtRxt-og7cGA1qC14ZRtjY3bml9zn/exec";
+              form.method = "POST";
+              form.target = "hidden-iframe";
+
+              showSuccessToast();
+
+              form.submit();
+
+              setTimeout(() => {
+                form.reset();
+                if (document.body.contains(iframe))
+                  document.body.removeChild(iframe);
+              }, 1000);
+            } catch (error) {
+              console.error("Error!", error);
+              alert("Submission failed. Please try again.");
+            }
+          });
+      });
+    </script>
+  </body>
+</html>

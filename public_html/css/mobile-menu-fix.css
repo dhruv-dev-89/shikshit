@@ -172,11 +172,11 @@ body.mobile-menu-open {
     vertical-align: middle;
 }
 
-/* Smooth transitions for all mobile menu elements */
-.mobile-menu *,
-#mobile-menu *,
-#mobileMenu * {
-    transition: all 0.3s ease;
+/* Smooth transitions for mobile menu interactive elements */
+.mobile-menu a,
+#mobile-menu a,
+#mobileMenu a {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 /* Fix for potential z-index conflicts */
@@ -190,3 +190,24 @@ body.mobile-menu-open {
 .mobile-menu-button {
     z-index: 10000 !important;
 }
+
+/* Global Motion Preferences Guard */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .mobile-menu,
+    #mobile-menu,
+    #mobileMenu,
+    .mobile-menu-toggle,
+    .mobile-menu-button {
+        transition: none !important;
+    }
+}
+

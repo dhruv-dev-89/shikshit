@@ -626,6 +626,19 @@
     </style>
 </head>
 <body class="page-member">
+  <!-- Ambient Background Layer (Theme: "Join the Journey") -->
+  <div class="member-ambient-layer" aria-hidden="true">
+    <div class="member-blob member-blob-1"></div>
+    <div class="member-blob member-blob-2"></div>
+    <div class="member-blob member-blob-3"></div>
+    <!-- Floating Learning Shapes -->
+    <svg class="member-floating-shape" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+    <svg class="member-floating-shape" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+    <svg class="member-floating-shape" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+    <svg class="member-floating-shape" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+    <svg class="member-floating-shape" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+    <svg class="member-floating-shape" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+  </div>
     <!-- Navbar -->
     <header>
         <nav class="navbar">
@@ -1883,7 +1896,7 @@
     </script>
 
     <!-- Include Sikshit Footer -->
-    <div include-html="sikshitfooter.html"></div>
+    <div include-html="components/sikshitfooter.html"></div>
 
     <!-- Include HTML Script -->
     <script>
@@ -1958,5 +1971,6 @@ track.addEventListener('mouseleave', startAutoScroll);
 
     </script>
 
+  <script src="js/shikshit/inner.js"></script>
 </body>
 </html>
