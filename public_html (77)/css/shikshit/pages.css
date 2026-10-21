@@ -1782,3 +1782,24 @@
     font-size: 12.5px;
   }
 }
+
+
+/* Footer WhatsApp Specificity Fix & Brand Alignment */
+.footer-editorial a.btn-primary-gradient,
+.footer-editorial .btn-pill.btn-primary-gradient {
+  color: #FFFFFF !important;
+  background: var(--signature-gradient) !important;
+  box-shadow: 0 4px 16px rgba(192, 38, 211, 0.35) !important;
+}
+.footer-editorial .footer-brand {
+  height: 56px !important;
+  margin-bottom: 0 !important;
+}
+.footer-editorial .footer-logo {
+  height: 56px !important;
+  width: auto !important;
+}
+.footer-editorial .footer-brand + p,
+.footer-editorial .footer-grid > div:first-child p {
+  margin-top: 16px !important;
+}

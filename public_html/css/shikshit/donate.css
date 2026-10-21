@@ -1,0 +1,278 @@
+/**
+ * Shikshit Design System - Scoped Styles for Donate Page
+ * Theme: "Light of Learning"
+ * Scope: body.page-donate
+ */
+
+/* Sunrise Gradient Background */
+body.page-donate {
+  background: linear-gradient(135deg, #FFF7ED 0%, #F5F3FF 40%, #FDF2F8 80%, #FFF7ED 100%) !important;
+  background-size: 200% 200% !important;
+  animation: donateSunriseShift 40s ease-in-out infinite alternate !important;
+  min-height: 100vh;
+  position: relative;
+}
+
+@keyframes donateSunriseShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Fixed Ambient Layer */
+.donate-ambient-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  aria-hidden: true;
+}
+
+/* Large Blurred Sunrise Blobs */
+.donate-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.donate-blob-1 {
+  top: -8%;
+  left: -5%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(254, 215, 170, 0.45) 0%, rgba(236, 72, 153, 0.18) 60%, transparent 80%);
+  animation: donateBlobDrift1 36s ease-in-out infinite alternate;
+}
+
+.donate-blob-2 {
+  top: 35%;
+  right: -6%;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(237, 233, 254, 0.5) 0%, rgba(251, 207, 232, 0.25) 60%, transparent 80%);
+  animation: donateBlobDrift2 30s ease-in-out infinite alternate;
+}
+
+.donate-blob-3 {
+  bottom: -6%;
+  left: 25%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(254, 240, 138, 0.35) 0%, rgba(236, 72, 153, 0.20) 60%, transparent 80%);
+  animation: donateBlobDrift3 34s ease-in-out infinite alternate;
+}
+
+@keyframes donateBlobDrift1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(80px, 60px, 0) scale(1.08); }
+  100% { transform: translate3d(-50px, 100px, 0) scale(0.94); }
+}
+
+@keyframes donateBlobDrift2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-70px, -80px, 0) scale(1.1); }
+  100% { transform: translate3d(60px, -60px, 0) scale(0.92); }
+}
+
+@keyframes donateBlobDrift3 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(60px, -70px, 0) scale(1.05); }
+  100% { transform: translate3d(-70px, 50px, 0) scale(1.08); }
+}
+
+/* Rising Glowing Orbs & Floating Hearts */
+.donate-floating-orb {
+  position: absolute;
+  color: rgba(236, 72, 153, 0.25);
+  fill: currentColor;
+  pointer-events: none;
+  animation: donateOrbRise linear infinite;
+  will-change: transform, opacity;
+}
+
+.donate-floating-orb:nth-child(1) { left: 10%; width: 24px; height: 24px; animation-duration: 22s; animation-delay: 0s; }
+.donate-floating-orb:nth-child(2) { left: 26%; width: 32px; height: 32px; animation-duration: 28s; animation-delay: -7s; color: rgba(251, 146, 60, 0.25); }
+.donate-floating-orb:nth-child(3) { left: 48%; width: 20px; height: 20px; animation-duration: 19s; animation-delay: -14s; color: rgba(168, 85, 247, 0.25); }
+.donate-floating-orb:nth-child(4) { left: 68%; width: 28px; height: 28px; animation-duration: 25s; animation-delay: -5s; color: rgba(236, 72, 153, 0.25); }
+.donate-floating-orb:nth-child(5) { left: 85%; width: 26px; height: 26px; animation-duration: 21s; animation-delay: -18s; color: rgba(251, 146, 60, 0.25); }
+.donate-floating-orb:nth-child(6) { left: 92%; width: 30px; height: 30px; animation-duration: 26s; animation-delay: -10s; color: rgba(168, 85, 247, 0.25); }
+
+@keyframes donateOrbRise {
+  0% {
+    transform: translateY(110vh) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Mobile: show half shapes */
+@media (max-width: 768px) {
+  .donate-floating-orb:nth-child(even) {
+    display: none !important;
+  }
+  .donate-blob {
+    filter: blur(60px);
+    opacity: 0.45;
+  }
+}
+
+/* Hero Enhancements: Glass stickers float, headline shimmer */
+body.page-donate .floating-icon {
+  animation: donateIconFloat 5s ease-in-out infinite alternate !important;
+}
+
+@keyframes donateIconFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+/* Donation Card: Frosted Glass with Conic Gradient Border */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+body.page-donate #donate-form .bg-white {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-radius: 28px !important;
+  border: 1px solid rgba(124, 58, 237, 0.16) !important;
+  box-shadow: 0 20px 50px rgba(11, 11, 59, 0.08) !important;
+  position: relative !important;
+}
+
+/* Amount Chips: Spring scale, ripple, gradient fill on existing .selected class */
+body.page-donate .amount-button {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              background-color 0.2s ease,
+              color 0.2s ease !important;
+  border-radius: 14px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+body.page-donate .amount-button:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.15) !important;
+}
+
+/* Selected amount button (Existing class used by payment scripts) */
+body.page-donate .amount-button.selected,
+body.page-donate .amount-button.selected * {
+  background: linear-gradient(135deg, #7C3AED 0%, #C026D3 60%, #EC4899 100%) !important;
+  color: #FFFFFF !important;
+  border-color: transparent !important;
+  transform: scale(1.05) !important;
+  box-shadow: 0 8px 24px rgba(192, 38, 211, 0.35) !important;
+}
+
+/* Donate Button (#donateButton): Pulsing heart, breathing glow, shine sweep */
+body.page-donate #donateButton {
+  background: linear-gradient(135deg, #7C3AED 0%, #C026D3 50%, #EC4899 100%) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 30px rgba(192, 38, 211, 0.38) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  border-radius: 9999px !important;
+}
+
+body.page-donate #donateButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+body.page-donate #donateButton:hover::before {
+  left: 140%;
+}
+
+body.page-donate #donateButton:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 14px 40px rgba(192, 38, 211, 0.5) !important;
+}
+
+/* Heart Icon pulsing inside button */
+body.page-donate #donateButton svg {
+  animation: donateHeartPulse 2s ease-in-out infinite !important;
+}
+
+@keyframes donateHeartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* Payment Loading Shimmer */
+body.page-donate #paymentLoading {
+  animation: paymentLoadingPulse 1.5s ease-in-out infinite alternate !important;
+}
+
+@keyframes paymentLoadingPulse {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Soft animated entrance for success and error states */
+body.page-donate #paymentSuccess,
+body.page-donate #paymentError {
+  animation: paymentStateFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@keyframes paymentStateFadeIn {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Trust Strip & Intervention Cards Gentle Shimmer */
+body.page-donate .intervention-icon {
+  transition: transform 0.3s ease !important;
+}
+
+body.page-donate .intervention-card:hover .intervention-icon {
+  transform: scale(1.08) rotate(3deg) !important;
+}
+
+/* Tab Hidden Pause */
+body.page-animations-paused *,
+body.page-animations-paused *::before,
+body.page-animations-paused *::after {
+  animation-play-state: paused !important;
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  body.page-donate,
+  body.page-donate .donate-blob,
+  body.page-donate .donate-floating-orb,
+  body.page-donate .floating-icon,
+  body.page-donate #donateButton::before,
+  body.page-donate #donateButton svg,
+  body.page-donate #paymentLoading,
+  body.page-donate #paymentSuccess,
+  body.page-donate #paymentError {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
