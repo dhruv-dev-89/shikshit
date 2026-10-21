@@ -1,278 +1,493 @@
 /**
  * Shikshit Design System - Scoped Styles for Donate Page
- * Theme: "Light of Learning"
+ * Theme: "Warm Philanthropic Trust & Impact"
  * Scope: body.page-donate
+ * Brand Cohesive: Royal Violet + Warm Rose-Coral + Amber Trust + Emerald Verification
  */
 
-/* Sunrise Gradient Background */
+/* ==========================================================================
+   1. GLOBAL PAGE CANVAS & AMBIENT LAYER
+   ========================================================================== */
 body.page-donate {
-  background: linear-gradient(135deg, #FFF7ED 0%, #F5F3FF 40%, #FDF2F8 80%, #FFF7ED 100%) !important;
-  background-size: 200% 200% !important;
-  animation: donateSunriseShift 40s ease-in-out infinite alternate !important;
+  background: #FDFBFD !important;
+  color: #1E293B !important;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11" !important;
   min-height: 100vh;
   position: relative;
 }
 
-@keyframes donateSunriseShift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-/* Fixed Ambient Layer */
+/* Subtle, non-distracting ambient backdrop */
 .donate-ambient-layer {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
-  aria-hidden: true;
+  background: radial-gradient(circle at 15% 15%, rgba(254, 243, 199, 0.45) 0%, transparent 40%),
+              radial-gradient(circle at 85% 30%, rgba(253, 232, 242, 0.45) 0%, transparent 45%),
+              radial-gradient(circle at 50% 85%, rgba(245, 243, 255, 0.5) 0%, transparent 50%);
 }
 
-/* Large Blurred Sunrise Blobs */
+/* Static blurred warm orbs - NO endless drifting or screen pollution */
 .donate-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.55;
+  filter: blur(90px);
   pointer-events: none;
-  will-change: transform;
+  opacity: 0.6;
 }
 
 .donate-blob-1 {
-  top: -8%;
-  left: -5%;
-  width: 580px;
-  height: 580px;
-  background: radial-gradient(circle, rgba(254, 215, 170, 0.45) 0%, rgba(236, 72, 153, 0.18) 60%, transparent 80%);
-  animation: donateBlobDrift1 36s ease-in-out infinite alternate;
+  top: -5%;
+  left: -4%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(244, 63, 94, 0.12) 65%, transparent 80%);
 }
 
 .donate-blob-2 {
-  top: 35%;
-  right: -6%;
-  width: 620px;
-  height: 620px;
-  background: radial-gradient(circle, rgba(237, 233, 254, 0.5) 0%, rgba(251, 207, 232, 0.25) 60%, transparent 80%);
-  animation: donateBlobDrift2 30s ease-in-out infinite alternate;
+  top: 38%;
+  right: -5%;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.16) 0%, rgba(244, 63, 94, 0.12) 60%, transparent 80%);
 }
 
 .donate-blob-3 {
-  bottom: -6%;
-  left: 25%;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(254, 240, 138, 0.35) 0%, rgba(236, 72, 153, 0.20) 60%, transparent 80%);
-  animation: donateBlobDrift3 34s ease-in-out infinite alternate;
+  bottom: 0%;
+  left: 20%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(124, 58, 237, 0.1) 60%, transparent 80%);
 }
 
-@keyframes donateBlobDrift1 {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(80px, 60px, 0) scale(1.08); }
-  100% { transform: translate3d(-50px, 100px, 0) scale(0.94); }
-}
-
-@keyframes donateBlobDrift2 {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-70px, -80px, 0) scale(1.1); }
-  100% { transform: translate3d(60px, -60px, 0) scale(0.92); }
-}
-
-@keyframes donateBlobDrift3 {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(60px, -70px, 0) scale(1.05); }
-  100% { transform: translate3d(-70px, 50px, 0) scale(1.08); }
-}
-
-/* Rising Glowing Orbs & Floating Hearts */
+/* Disable old floating orbs so they don't clutter the screen */
 .donate-floating-orb {
+  display: none !important;
+}
+
+/* ==========================================================================
+   2. HERO SECTION ENHANCEMENTS
+   ========================================================================== */
+body.page-donate .hero-gradient {
+  background: linear-gradient(135deg, #0B0B3B 0%, #1E1B4B 32%, #4C1D95 72%, #6D28D9 100%) !important;
+  position: relative;
+  overflow: hidden;
+  padding-top: 5rem !important;
+  padding-bottom: 5.5rem !important;
+}
+
+body.page-donate .hero-gradient::before {
+  content: "";
   position: absolute;
-  color: rgba(236, 72, 153, 0.25);
-  fill: currentColor;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(244, 63, 94, 0.15) 0%, transparent 60%);
   pointer-events: none;
-  animation: donateOrbRise linear infinite;
-  will-change: transform, opacity;
 }
 
-.donate-floating-orb:nth-child(1) { left: 10%; width: 24px; height: 24px; animation-duration: 22s; animation-delay: 0s; }
-.donate-floating-orb:nth-child(2) { left: 26%; width: 32px; height: 32px; animation-duration: 28s; animation-delay: -7s; color: rgba(251, 146, 60, 0.25); }
-.donate-floating-orb:nth-child(3) { left: 48%; width: 20px; height: 20px; animation-duration: 19s; animation-delay: -14s; color: rgba(168, 85, 247, 0.25); }
-.donate-floating-orb:nth-child(4) { left: 68%; width: 28px; height: 28px; animation-duration: 25s; animation-delay: -5s; color: rgba(236, 72, 153, 0.25); }
-.donate-floating-orb:nth-child(5) { left: 85%; width: 26px; height: 26px; animation-duration: 21s; animation-delay: -18s; color: rgba(251, 146, 60, 0.25); }
-.donate-floating-orb:nth-child(6) { left: 92%; width: 30px; height: 30px; animation-duration: 26s; animation-delay: -10s; color: rgba(168, 85, 247, 0.25); }
-
-@keyframes donateOrbRise {
-  0% {
-    transform: translateY(110vh) scale(0.8);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.7;
-  }
-  85% {
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateY(-10vh) scale(1.2);
-    opacity: 0;
-  }
+body.page-donate .hero-gradient h1 {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25) !important;
 }
 
-/* Mobile: show half shapes */
-@media (max-width: 768px) {
-  .donate-floating-orb:nth-child(even) {
-    display: none !important;
-  }
-  .donate-blob {
-    filter: blur(60px);
-    opacity: 0.45;
-  }
+body.page-donate .hero-gradient p {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-size: 1.2rem !important;
+  line-height: 1.6 !important;
 }
 
-/* Hero Enhancements: Glass stickers float, headline shimmer */
-body.page-donate .floating-icon {
-  animation: donateIconFloat 5s ease-in-out infinite alternate !important;
+/* ATG Trust Seal / Badge */
+body.page-donate .hero-gradient .bg-white\/10,
+body.page-donate .hero-gradient [class*="bg-white/"] {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(245, 158, 11, 0.45) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
 }
 
-@keyframes donateIconFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
+body.page-donate .hero-gradient .text-yellow-400,
+body.page-donate .hero-gradient .text-yellow-300 {
+  color: #FBBF24 !important;
+  filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)) !important;
 }
 
-/* Donation Card: Frosted Glass with Conic Gradient Border */
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
+/* Hero CTA Button "Start Donating Now" */
+body.page-donate .hero-gradient a[href*="donate-form"],
+body.page-donate .hero-gradient a.inline-flex {
+  background: #FFFFFF !important;
+  color: #581C87 !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
 }
 
+body.page-donate .hero-gradient a[href*="donate-form"]:hover,
+body.page-donate .hero-gradient a.inline-flex:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3) !important;
+  color: #4C1D95 !important;
+}
+
+/* ==========================================================================
+   3. DONATION FORM SECTION (#donate-form)
+   ========================================================================== */
+body.page-donate #donate-form {
+  background: #F8FAFC !important;
+  position: relative;
+}
+
+/* Left Column Heading & Story */
+body.page-donate #donate-form h2 {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+}
+
+body.page-donate #donate-form p {
+  color: #334155 !important;
+  font-size: 1.03rem !important;
+  line-height: 1.75 !important;
+}
+
+/* 4 Impact Metric Cards */
+body.page-donate #donate-form .grid.grid-cols-2 > div {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 16px !important;
+  padding: 1.25rem !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+body.page-donate #donate-form .grid.grid-cols-2 > div:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px -4px rgba(124, 58, 237, 0.1) !important;
+  border-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+body.page-donate #donate-form .grid.grid-cols-2 h4 {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  font-size: 1.15rem !important;
+}
+
+body.page-donate #donate-form .grid.grid-cols-2 p {
+  color: #475569 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.5 !important;
+}
+
+/* ==========================================================================
+   4. DONATION FORM CARD (#donationForm)
+   ========================================================================== */
 body.page-donate #donate-form .bg-white {
-  background: rgba(255, 255, 255, 0.94) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-radius: 28px !important;
-  border: 1px solid rgba(124, 58, 237, 0.16) !important;
-  box-shadow: 0 20px 50px rgba(11, 11, 59, 0.08) !important;
+  background: #FFFFFF !important;
+  border-radius: 24px !important;
+  border: 1.5px solid #E2E8F0 !important;
+  box-shadow: 0 20px 50px -12px rgba(15, 23, 42, 0.1) !important;
+  padding: 2.25rem !important;
   position: relative !important;
 }
 
-/* Amount Chips: Spring scale, ripple, gradient fill on existing .selected class */
+/* Card Header */
+body.page-donate #donate-form h3 {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  font-size: 1.2rem !important;
+  margin-bottom: 1.5rem !important;
+  position: relative;
+  display: inline-block;
+}
+
+body.page-donate #donate-form h3::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, #E11D48, #7C3AED);
+  border-radius: 9999px;
+  margin-top: 6px;
+}
+
+/* Form Labels */
+body.page-donate #donationForm label {
+  color: #1E293B !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  margin-bottom: 0.45rem !important;
+  display: block !important;
+}
+
+/* Form Inputs */
+body.page-donate #donationForm input[type="text"],
+body.page-donate #donationForm input[type="email"],
+body.page-donate #donationForm input[type="tel"],
+body.page-donate #donationForm input[type="number"],
+body.page-donate #donationForm .custom-input {
+  background: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  border-radius: 12px !important;
+  padding: 0.85rem 1rem !important;
+  font-size: 0.96rem !important;
+  color: #0F172A !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+body.page-donate #donationForm input:focus,
+body.page-donate #donationForm .custom-input:focus {
+  border-color: #7C3AED !important;
+  box-shadow: 0 0 0 3.5px rgba(124, 58, 237, 0.16) !important;
+  background-color: #FAF5FF !important;
+  outline: none !important;
+}
+
+/* Preset Amount Chips (500, 3000, 6000, 12000) */
 body.page-donate .amount-button {
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow 0.25s ease,
-              background-color 0.2s ease,
-              color 0.2s ease !important;
-  border-radius: 14px !important;
-  position: relative !important;
-  overflow: hidden !important;
+  background: #F8FAFC !important;
+  border: 1.5px solid #E2E8F0 !important;
+  color: #1E293B !important;
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  border-radius: 12px !important;
+  padding: 0.85rem 0.5rem !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease !important;
+  cursor: pointer !important;
 }
 
 body.page-donate .amount-button:hover {
-  transform: translateY(-2px) scale(1.03) !important;
-  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.15) !important;
+  border-color: #C084FC !important;
+  background: #FAF5FF !important;
+  transform: translateY(-2px) !important;
+  color: #6D28D9 !important;
 }
 
-/* Selected amount button (Existing class used by payment scripts) */
-body.page-donate .amount-button.selected,
-body.page-donate .amount-button.selected * {
-  background: linear-gradient(135deg, #7C3AED 0%, #C026D3 60%, #EC4899 100%) !important;
+/* Selected Amount Chip (Active via existing payment logic) */
+body.page-donate .amount-button.selected {
+  background: linear-gradient(135deg, #7C3AED 0%, #C026D3 100%) !important;
   color: #FFFFFF !important;
   border-color: transparent !important;
-  transform: scale(1.05) !important;
-  box-shadow: 0 8px 24px rgba(192, 38, 211, 0.35) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.35) !important;
 }
 
-/* Donate Button (#donateButton): Pulsing heart, breathing glow, shine sweep */
+/* Payment Method Grid */
+body.page-donate .payment-methods h4 {
+  color: #1E293B !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+body.page-donate .payment-method-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 0.75rem !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 640px) {
+  body.page-donate .payment-method-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+body.page-donate .payment-method {
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 14px !important;
+  background: #FFFFFF !important;
+  padding: 0.85rem 0.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  min-height: 80px !important;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+body.page-donate .payment-method:hover {
+  border-color: #C084FC !important;
+  background: #FAF5FF !important;
+  transform: translateY(-2px) !important;
+}
+
+body.page-donate .payment-method.selected {
+  border-color: #7C3AED !important;
+  background: #FAF5FF !important;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.16) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.page-donate .payment-method.selected span,
+body.page-donate .payment-method.selected div {
+  color: #6D28D9 !important;
+  font-weight: 700 !important;
+}
+
+/* Impact Calculation Preview Bar */
+body.page-donate #donate-form .bg-gray-50,
+body.page-donate #donate-form [class*="bg-gray-50"] {
+  background: #F8FAFC !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 16px !important;
+  padding: 1rem 1.25rem !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
+
+body.page-donate #donationAmount {
+  color: #7C3AED !important;
+  font-weight: 800 !important;
+  font-size: 1.6rem !important;
+}
+
+/* Submit Donation Button (#donateButton) */
 body.page-donate #donateButton {
-  background: linear-gradient(135deg, #7C3AED 0%, #C026D3 50%, #EC4899 100%) !important;
-  position: relative !important;
-  overflow: hidden !important;
-  box-shadow: 0 10px 30px rgba(192, 38, 211, 0.38) !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-  border-radius: 9999px !important;
-}
-
-body.page-donate #donateButton::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 60%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.6s ease;
-  pointer-events: none;
-}
-
-body.page-donate #donateButton:hover::before {
-  left: 140%;
+  background: linear-gradient(135deg, #E11D48 0%, #C026D3 50%, #7C3AED 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 1.1rem 1.5rem !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 10px 28px rgba(225, 29, 72, 0.35) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  width: 100% !important;
 }
 
 body.page-donate #donateButton:hover {
-  transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 14px 40px rgba(192, 38, 211, 0.5) !important;
+  transform: translateY(-2px) scale(1.01) !important;
+  box-shadow: 0 14px 36px rgba(225, 29, 72, 0.45) !important;
 }
 
-/* Heart Icon pulsing inside button */
-body.page-donate #donateButton svg {
-  animation: donateHeartPulse 2s ease-in-out infinite !important;
+body.page-donate #donateButton:active {
+  transform: translateY(0) scale(0.99) !important;
 }
 
-@keyframes donateHeartPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
+/* ==========================================================================
+   5. SHIKSHA ON GROUND & INTERVENTIONS
+   ========================================================================== */
+body.page-donate .py-16.lg\:py-24.bg-white {
+  background: #FFFFFF !important;
 }
 
-/* Payment Loading Shimmer */
-body.page-donate #paymentLoading {
-  animation: paymentLoadingPulse 1.5s ease-in-out infinite alternate !important;
+body.page-donate .py-16.lg\:py-24.bg-white h2 {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
 }
 
-@keyframes paymentLoadingPulse {
-  0% { opacity: 0.7; }
-  100% { opacity: 1; }
+/* Intervention Section */
+body.page-donate .interventions-section {
+  background: #F8FAFC !important;
 }
 
-/* Soft animated entrance for success and error states */
-body.page-donate #paymentSuccess,
-body.page-donate #paymentError {
-  animation: paymentStateFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+body.page-donate .interventions-section h2 {
+  color: #0F172A !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
 }
 
-@keyframes paymentStateFadeIn {
-  0% { opacity: 0; transform: translateY(16px); }
-  100% { opacity: 1; transform: translateY(0); }
+body.page-donate .interventions-section h2 u {
+  text-decoration-color: #E11D48 !important;
+  text-underline-offset: 8px !important;
 }
 
-/* Trust Strip & Intervention Cards Gentle Shimmer */
+/* 8 Intervention Cards */
+body.page-donate .intervention-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 20px !important;
+  padding: 1.75rem 1.25rem !important;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease !important;
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+body.page-donate .intervention-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 36px rgba(124, 58, 237, 0.12) !important;
+  border-color: rgba(124, 58, 237, 0.3) !important;
+}
+
 body.page-donate .intervention-icon {
-  transition: transform 0.3s ease !important;
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 16px !important;
+  display: grid !important;
+  place-items: center !important;
+  margin-bottom: 1rem !important;
+  transition: transform 0.25s ease !important;
 }
 
 body.page-donate .intervention-card:hover .intervention-icon {
-  transform: scale(1.08) rotate(3deg) !important;
+  transform: scale(1.1) rotate(2deg) !important;
 }
 
-/* Tab Hidden Pause */
-body.page-animations-paused *,
-body.page-animations-paused *::before,
-body.page-animations-paused *::after {
-  animation-play-state: paused !important;
+body.page-donate .intervention-title,
+body.page-donate .intervention-card p {
+  color: #1E293B !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
 }
 
-/* Prefers Reduced Motion */
+/* ==========================================================================
+   6. PURPOSEFUL MOTION & ACCESSIBLE SCROLL REVEALS
+   ========================================================================== */
+body.page-donate .scroll-reveal-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.page-donate .scroll-reveal-ready {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body.page-donate .scroll-reveal-ready.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* ==========================================================================
+   7. PREFERS-REDUCED-MOTION
+   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   body.page-donate,
-  body.page-donate .donate-blob,
-  body.page-donate .donate-floating-orb,
-  body.page-donate .floating-icon,
-  body.page-donate #donateButton::before,
-  body.page-donate #donateButton svg,
-  body.page-donate #paymentLoading,
-  body.page-donate #paymentSuccess,
-  body.page-donate #paymentError {
+  body.page-donate *,
+  body.page-donate *::before,
+  body.page-donate *::after {
     animation: none !important;
-    transition: none !important;
+    transition-duration: 0.01ms !important;
     transform: none !important;
+    scroll-behavior: auto !important;
   }
 }
