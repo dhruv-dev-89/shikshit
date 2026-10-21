@@ -413,3 +413,35 @@
     display: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   FOOTER EDITORIAL BRAND & LOGO
+   -------------------------------------------------------------------------- */
+.footer-editorial .footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 28px;
+}
+
+.footer-editorial .footer-logo,
+.footer-editorial img[src*="sikshitlogo"] {
+  width: 165px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+  filter: drop-shadow(0 2px 8px rgba(11, 11, 59, 0.08));
+}
+
+@media (max-width: 768px) {
+  .footer-editorial .footer-brand {
+    margin-bottom: 24px !important;
+  }
+
+  .footer-editorial .footer-logo,
+  .footer-editorial img[src*="sikshitlogo"] {
+    width: 135px !important;
+  }
+}

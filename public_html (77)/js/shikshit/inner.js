@@ -322,6 +322,76 @@
     }
   }
 
+
+  /* ------------------------------------------------------------------------
+     8. Product & Services Section Motion (Heading reveal, Stagger, 3D Tilt, Cursor Glow)
+     ------------------------------------------------------------------------ */
+  function initProductServicesMotion() {
+    // A. Heading Word Slide & Underline Self-Draw
+    const heading = document.querySelector('.products-section-heading');
+    if (heading) {
+      const headingObs = new IntersectionObserver(
+        function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      headingObs.observe(heading);
+    }
+
+    // B. Cards Staggered Fade-Up on Viewport Entry
+    const cards = document.querySelectorAll('.service-editorial-card');
+    if (cards.length) {
+      const cardObs = new IntersectionObserver(
+        function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      cards.forEach(function (card) {
+        cardObs.observe(card);
+      });
+
+      // C. Desktop Cursor-Following Glow & Soft 3D Tilt (Max 5deg, pointer:fine only)
+      if (!prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        cards.forEach(function (card) {
+          card.addEventListener('pointermove', function (e) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Set CSS custom properties for radial glow
+            card.style.setProperty('--mouse-x', x + 'px');
+            card.style.setProperty('--mouse-y', y + 'px');
+
+            // Soft 3D Tilt (Max 5deg)
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -4.5;
+            const rotateY = ((x - centerX) / centerX) * 4.5;
+
+            card.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateY(-8px)';
+          });
+
+          card.addEventListener('pointerleave', function () {
+            card.style.transform = '';
+          });
+        });
+      }
+    }
+  }
+
   /* ------------------------------------------------------------------------
      Initialize on DOM Ready
      ------------------------------------------------------------------------ */
@@ -333,5 +403,6 @@
     initScrollReveal();
     initMarqueeScrollVelocity();
     initDiplomaCardsInteraction();
+    initProductServicesMotion();
   });
 })();

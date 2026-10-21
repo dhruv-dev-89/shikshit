@@ -17,6 +17,7 @@ body.page-products {
   color: var(--color-secondary-text);
   overflow-x: hidden;
   position: relative;
+  padding-top: 0 !important; /* resets 100px padding-top inherited from sikshitnavbar.css */
 }
 
 /* Ambient Background Pastel Blobs */
@@ -90,11 +91,11 @@ body.page-products #scroll-progress-bar {
 
 body.page-products .shikshit-header {
   position: sticky !important;
-  top: 14px !important;
+  top: 28px !important;
   z-index: 1000 !important;
   width: 100% !important;
   padding: 0 16px !important;
-  margin-top: 14px !important;
+  margin-top: 28px !important;
   margin-bottom: 0 !important;
   background: transparent !important;
   border: none !important;
@@ -115,7 +116,7 @@ body.page-products .shikshit-navbar {
   max-width: 1200px !important;
   margin: 0 auto !important;
   height: 64px !important;
-  padding: 10px 28px !important;
+  padding: 8px 24px !important;
   background: rgba(255, 255, 255, 0.90) !important;
   backdrop-filter: blur(16px) !important;
   -webkit-backdrop-filter: blur(16px) !important;
@@ -135,13 +136,14 @@ body.page-products .shikshit-navbar::after {
 }
 
 body.page-products .shikshit-logo {
-  height: 52px !important;
-  width: auto !important;
-  margin: 0 !important;
+  width: 110px !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: -22px 0 !important;
   object-fit: contain !important;
   display: block !important;
-  filter: drop-shadow(0 2px 4px rgba(11, 11, 59, 0.08)) !important;
-  transition: height 0.25s ease !important;
+  filter: drop-shadow(0 2px 6px rgba(11, 11, 59, 0.10)) !important;
+  transition: transform 0.25s ease, width 0.25s ease !important;
 }
 
 /* Header & Navbar Shrink After Scroll */
@@ -170,21 +172,26 @@ body.page-products .shikshit-logo {
 
 @keyframes logoShrink {
   to {
-    height: 44px;
+    width: 90px;
+    height: auto;
+    margin: -16px 0;
   }
+}
 }
 
 body.page-products .shikshit-header.scrolled .shikshit-navbar,
 body.page-products .shikshit-navbar.scrolled {
   height: 56px !important;
-  padding: 6px 22px !important;
+  padding: 6px 20px !important;
   background: rgba(255, 255, 255, 0.95) !important;
   box-shadow: 0 12px 32px rgba(11, 11, 59, 0.12) !important;
 }
 
 body.page-products .shikshit-header.scrolled .shikshit-logo,
 body.page-products .shikshit-navbar.scrolled .shikshit-logo {
-  height: 44px !important;
+  width: 90px !important;
+  height: auto !important;
+  margin: -16px 0 !important;
 }
 
 /* Desktop vs Mobile Nav Visibility (Strictly Never Together) */
@@ -195,7 +202,7 @@ body.page-products .shikshit-navbar.scrolled .shikshit-logo {
   body.page-products .shikshit-nav-menu {
     display: flex !important;
     align-items: center !important;
-    gap: 28px !important;
+    gap: 24px !important;
     list-style: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -203,11 +210,32 @@ body.page-products .shikshit-navbar.scrolled .shikshit-logo {
   body.page-products .shikshit-nav-actions {
     display: flex !important;
     align-items: center !important;
-    gap: 12px !important;
+    gap: 10px !important;
   }
 }
 
 @media (max-width: 979px) {
+  body.page-products .shikshit-header {
+    top: 18px !important;
+    margin-top: 18px !important;
+    padding: 0 12px !important;
+  }
+
+  body.page-products .shikshit-navbar {
+    height: 60px !important;
+    padding: 6px 18px !important;
+  }
+
+  body.page-products .shikshit-logo {
+    width: 95px !important;
+    height: auto !important;
+    margin: -18px 0 !important;
+  }
+
+  body.page-products .products-hero {
+    padding-top: 40px !important;
+  }
+
   body.page-products .shikshit-nav-menu {
     display: none !important;
   }
@@ -274,7 +302,7 @@ body.page-products #diploma-courses {
 body.page-products .products-hero {
   position: relative;
   z-index: 1;
-  padding: 56px 0 36px; /* comfortable top padding below sticky navbar (at least 56px) */
+  padding: 60px 0 36px; /* balanced 60px gap below navbar */
   overflow: visible; /* allows full-bleed child ribbons to extend past viewport edges */
 }
 
@@ -282,7 +310,7 @@ body.page-products .products-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
   gap: 36px;
-  align-items: center; /* vertically centered against photo collage */
+  align-items: start; /* align hero content, heading and right-side trust card neatly at top */
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 24px;
@@ -793,187 +821,550 @@ body.page-products .ribbon-white .track-half span:nth-child(even) {
   box-shadow: 0 6px 18px rgba(192, 38, 211, 0.3);
 }
 
-/* --------------------------------------------------------------------------
-   3. SECTION LAYOUT & BENTO "TICKET/PASS" STYLING
-   -------------------------------------------------------------------------- */
-body.page-products section {
-  position: relative;
-  z-index: 1;
-  padding: 70px 20px !important;
+
+/* ==========================================================================
+   PRODUCT & SERVICES RESTYLED SECTION (Strictly Scoped under body.page-products)
+   Layout: 3-column desktop grid (2 tablet, 1 mobile), 28px gap, same-height cards.
+   Card: 32px radius, 1px lavender border, 0 14px 44px soft violet shadow, 32px padding.
+   01-06 faded outlined numeral watermarks, 60px category gradient circles,
+   light 2-column sub-items (#F7F5FF fill, 18px radius, 14px padding, 36px icon circle,
+   amount pills), interactive cursor-following glow, border sweep, 3D tilt, and stagger.
+   ========================================================================== */
+
+body.page-products .products-services-section {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 100px 0 !important;
+  overflow: hidden !important;
   background: transparent !important;
 }
 
-body.page-products .section-header-box {
-  text-align: center;
-  max-width: 840px;
-  margin: 0 auto 54px;
+body.page-products .products-services-section::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, rgba(236, 72, 153, 0.04) 50%, transparent 70%);
+  filter: blur(80px);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: driftSectionBlob 24s ease-in-out infinite alternate;
 }
 
-body.page-products .section-header-box h2 {
-  font-size: clamp(2rem, 3.8vw, 3rem) !important;
-  font-weight: 800 !important;
-  color: var(--navy) !important;
-  letter-spacing: -0.03em !important;
-  line-height: 1.16 !important;
-  margin-bottom: 16px !important;
+@keyframes driftSectionBlob {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(45px, -35px) scale(1.09); }
 }
 
-body.page-products .section-header-box p {
-  font-size: clamp(1rem, 1.2vw, 1.15rem) !important;
-  color: var(--ink) !important;
-  line-height: 1.7 !important;
+body.page-products .products-services-section .shikshit-container {
+  max-width: 1200px !important;
+  padding: 0 24px !important;
   margin: 0 auto !important;
-}
-
-/* Category Subhead */
-body.page-products .category-subhead {
-  text-align: center;
-  margin-bottom: 34px;
-}
-
-body.page-products .category-subhead h3 {
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem) !important;
-  font-weight: 700 !important;
-  color: var(--navy) !important;
-  letter-spacing: -0.02em !important;
-}
-
-/* Bento Ticket Grid for Service Cards */
-body.page-products .services-grid,
-body.page-products [style*="grid-template-columns"] {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
-  gap: 26px !important;
-  max-width: 1240px;
-  margin: 0 auto;
-  counter-reset: card-counter;
-}
-
-/* /* The Ticket / Pass Card */
-body.page-products section:not(#diploma-courses) .scholarship-card,
-body.page-products section:not(#diploma-courses) .awareness-card,
-body.page-products section:not(#diploma-courses) .olympiad-card,
-body.page-products section:not(#diploma-courses) .financial-aid-card,
-body.page-products section:not(#diploma-courses) .technical-training-card,
-body.page-products section:not(#diploma-courses) .service-ticket,
-body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"] {
   position: relative !important;
-  background: #FFFFFF !important;
-  border-radius: 26px !important;
-  padding: 32px 28px !important;
-  border: 1px solid rgba(124, 58, 237, 0.1) !important;
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.06) !important;
+  z-index: 1 !important;
+}
+
+/* Section Header */
+body.page-products .products-services-section .shikshit-section-header {
+  text-align: center !important;
+  margin-bottom: 56px !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: space-between !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
-  cursor: pointer;
-  counter-increment: card-counter;
-  overflow: hidden !important;
+  align-items: center !important;
 }
 
-/* Decorative Ticket Counter in Top-Right */
-body.page-products section:not(#diploma-courses) .scholarship-card::after,
-body.page-products section:not(#diploma-courses) .awareness-card::after,
-body.page-products section:not(#diploma-courses) .olympiad-card::after,
-body.page-products section:not(#diploma-courses) .financial-aid-card::after,
-body.page-products section:not(#diploma-courses) .technical-training-card::after,
-body.page-products section:not(#diploma-courses) .service-ticket::after,
-body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]::after {
-  content: counter(card-counter, decimal-leading-zero);
+body.page-products .products-services-section .shikshit-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: #EDE9FE !important;
+  color: var(--violet) !important;
+  border: 1px solid rgba(124, 58, 237, 0.18) !important;
+  border-radius: var(--radius-pill) !important;
+  padding: 7px 18px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 18px !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.08) !important;
+}
+
+/* Heading with Word-Slide Mask & Self-Drawing Signature Underline */
+body.page-products .products-section-heading {
+  font-size: clamp(2.2rem, 4.4vw, 3.4rem) !important;
+  font-weight: 800 !important;
+  color: var(--navy) !important;
+  text-align: center !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 0 20px 0 !important;
+  position: relative !important;
+  display: inline-block !important;
+  padding-bottom: 12px !important;
+}
+
+body.page-products .products-section-heading .heading-line {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+body.page-products .products-section-heading .heading-word {
+  display: inline-block;
+  transform: translateY(115%);
+  opacity: 0;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease;
+}
+
+body.page-products .products-section-heading.in-view .heading-word {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+body.page-products .products-section-heading .heading-word:nth-child(1) { transition-delay: 0.05s; }
+body.page-products .products-section-heading .heading-word:nth-child(2) { transition-delay: 0.12s; }
+body.page-products .products-section-heading .heading-word:nth-child(3) { transition-delay: 0.19s; }
+
+body.page-products .editorial-heading-underline {
   position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -4px;
+  width: 280px;
+  height: 18px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+body.page-products .editorial-heading-underline path {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  transition: stroke-dashoffset 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+body.page-products .products-section-heading.in-view .editorial-heading-underline path {
+  stroke-dashoffset: 0;
+}
+
+body.page-products .products-services-section .shikshit-section-subtitle {
+  font-size: 1.1rem !important;
+  color: var(--ink) !important;
+  max-width: 640px !important;
+  margin: 0 auto !important;
+  line-height: 1.65 !important;
+  text-align: center !important;
+}
+
+/* 3-Column Desktop Grid */
+body.page-products .services-editorial-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 28px !important;
+  align-items: stretch !important;
+  margin-top: 48px !important;
+  perspective: 1200px;
+}
+
+@media (max-width: 1024px) {
+  body.page-products .services-editorial-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  body.page-products .services-editorial-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+}
+
+/* The Category Card */
+body.page-products .service-editorial-card {
+  position: relative !important;
+  background: #FFFFFF !important;
+  border-radius: 32px !important;
+  border: 1px solid rgba(124, 58, 237, 0.12) !important;
+  box-shadow: 0 14px 44px rgba(124, 58, 237, 0.11) !important;
+  padding: 32px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  isolation: isolate;
+  scroll-margin-top: 155px !important;
+  opacity: 0;
+  transform: translateY(34px) scale(0.97);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease !important;
+}
+
+body.page-products .service-editorial-card.in-view {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Stagger between cards on entry */
+body.page-products .service-editorial-card:nth-child(1) { transition-delay: 0.08s !important; }
+body.page-products .service-editorial-card:nth-child(2) { transition-delay: 0.16s !important; }
+body.page-products .service-editorial-card:nth-child(3) { transition-delay: 0.24s !important; }
+body.page-products .service-editorial-card:nth-child(4) { transition-delay: 0.32s !important; }
+body.page-products .service-editorial-card:nth-child(5) { transition-delay: 0.40s !important; }
+body.page-products .service-editorial-card:nth-child(6) { transition-delay: 0.48s !important; }
+
+/* Large Faded Outlined Numeral Watermark (01 to 06) */
+body.page-products .service-editorial-card::after {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(3.2rem, 4.8vw, 4.4rem);
   font-weight: 900;
   line-height: 1;
   color: transparent;
-  -webkit-text-stroke: 1.5px rgba(124, 58, 237, 0.18);
+  -webkit-text-stroke: 1.5px rgba(124, 58, 237, 0.16);
   pointer-events: none;
-  font-family: var(--font-display);
-  transition: -webkit-text-stroke-color 0.3s ease;
+  user-select: none;
+  z-index: 1;
+  transition: transform 0.35s ease, -webkit-text-stroke-color 0.35s ease;
 }
 
-/* Alternating Subtle Pastel Tints for Bento Variety */
-body.page-products section:not(#diploma-courses) .scholarship-card:nth-child(4n+1),
-body.page-products section:not(#diploma-courses) .awareness-card:nth-child(4n+1),
-body.page-products section:not(#diploma-courses) .olympiad-card:nth-child(4n+1),
-body.page-products section:not(#diploma-courses) .financial-aid-card:nth-child(4n+1),
-body.page-products section:not(#diploma-courses) .technical-training-card:nth-child(4n+1),
-body.page-products section:not(#diploma-courses) .service-ticket:nth-child(4n+1),
-body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:nth-child(4n+1) {
-  background: linear-gradient(180deg, rgba(237, 233, 254, 0.4) 0%, #FFFFFF 55%) !important;
+body.page-products .service-editorial-card[data-card="01"]::after { content: '01'; }
+body.page-products .service-editorial-card[data-card="02"]::after { content: '02'; }
+body.page-products .service-editorial-card[data-card="03"]::after { content: '03'; }
+body.page-products .service-editorial-card[data-card="04"]::after { content: '04'; }
+body.page-products .service-editorial-card[data-card="05"]::after { content: '05'; }
+body.page-products .service-editorial-card[data-card="06"]::after { content: '06'; }
+
+/* Cursor-Following Radial Glow & Sweeping Hairline Border */
+body.page-products .service-editorial-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
 }
 
-body.page-products section:not(#diploma-courses) .scholarship-card:nth-child(4n+2),
-body.page-products section:not(#diploma-courses) .awareness-card:nth-child(4n+2),
-body.page-products section:not(#diploma-courses) .olympiad-card:nth-child(4n+2),
-body.page-products section:not(#diploma-courses) .financial-aid-card:nth-child(4n+2),
-body.page-products section:not(#diploma-courses) .technical-training-card:nth-child(4n+2),
-body.page-products section:not(#diploma-courses) .service-ticket:nth-child(4n+2),
-body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:nth-child(4n+2) {
-  background: linear-gradient(180deg, rgba(255, 246, 242, 0.5) 0%, #FFFFFF 55%) !important;
+body.page-products .service-editorial-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(380px circle at var(--mouse-x) var(--mouse-y), rgba(124, 58, 237, 0.08), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
-body.page-products section:not(#diploma-courses) .scholarship-card:nth-child(4n+3),
-body.page-products section:not(#diploma-courses) .awareness-card:nth-child(4n+3),
-body.page-products section:not(#diploma-courses) .olympiad-card:nth-child(4n+3),
-body.page-products section:not(#diploma-courses) .financial-aid-card:nth-child(4n+3),
-body.page-products section:not(#diploma-courses) .technical-training-card:nth-child(4n+3),
-body.page-products section:not(#diploma-courses) .service-ticket:nth-child(4n+3),
-body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:nth-child(4n+3) {
-  background: linear-gradient(180deg, rgba(255, 233, 224, 0.45) 0%, #FFFFFF 55%) !important;
+body.page-products .card-border-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: 33px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.4), rgba(192, 38, 211, 0.4), rgba(236, 72, 153, 0.4), rgba(124, 58, 237, 0.4));
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.3;
+  transition: opacity 0.35s ease;
+  z-index: 2;
 }
 
-body.page-products section:not(#diploma-courses) .scholarship-card:nth-child(4n+4),
-body.page-products section:not(#diploma-courses) .awareness-card:nth-child(4n+4),
-body.page-products section:not(#diploma-courses) .olympiad-card:nth-child(4n+4),
-body.page-products section:not(#diploma-courses) .financial-aid-card:nth-child(4n+4),
-body.page-products section:not(#diploma-courses) .technical-training-card:nth-child(4n+4),
-body.page-products section:not(#diploma-courses) .service-ticket:nth-child(4n+4),
-body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:nth-child(4n+4) {
-  background: linear-gradient(180deg, rgba(247, 245, 255, 0.6) 0%, #FFFFFF 55%) !important;
+@media (hover: hover) and (pointer: fine) {
+  body.page-products .service-editorial-card:hover,
+  body.page-products .service-editorial-card:focus-within {
+    transform: translateY(-8px) scale(1.01) !important;
+    box-shadow: 0 24px 60px rgba(124, 58, 237, 0.2) !important;
+    border-color: rgba(124, 58, 237, 0.32) !important;
+  }
+
+  body.page-products .service-editorial-card:hover::before {
+    opacity: 1;
+  }
+
+  body.page-products .service-editorial-card:hover .card-border-glow,
+  body.page-products .service-editorial-card:focus-within .card-border-glow {
+    opacity: 1;
+    animation: borderSweep 4s linear infinite;
+  }
+
+  body.page-products .service-editorial-card:hover .service-card-icon {
+    transform: rotate(-8deg) scale(1.1) !important;
+  }
+
+  body.page-products .service-editorial-card:hover::after {
+    transform: translate(-4px, -4px);
+    -webkit-text-stroke-color: rgba(124, 58, 237, 0.45);
+  }
 }
 
-/* Hover States for Ticket Cards */
-body.page-products section:not(#diploma-courses) .scholarship-card:hover,
-body.page-products section:not(#diploma-courses) .awareness-card:hover,
-body.page-products section:not(#diploma-courses) .olympiad-card:hover,
-body.page-products section:not(#diploma-courses) .financial-aid-card:hover,
-body.page-products section:not(#diploma-courses) .technical-training-card:hover,
-body.page-products section:not(#diploma-courses) .service-ticket:hover,
-body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:hover {
-  transform: translateY(-8px) scale(1.01) !important;
-  box-shadow: 0 24px 50px rgba(124, 58, 237, 0.16) !important;
-  border-color: rgba(124, 58, 237, 0.3) !important;
+@keyframes borderSweep {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-body.page-products section:not(#diploma-courses) .scholarship-card:hover::after,
-body.page-products section:not(#diploma-courses) .awareness-card:hover::after,
-body.page-products section:not(#diploma-courses) .olympiad-card:hover::after,
-body.page-products section:not(#diploma-courses) .financial-aid-card:hover::after,
-body.page-products section:not(#diploma-courses) .technical-training-card:hover::after,
-body.page-products section:not(#diploma-courses) .service-ticket:hover::after,
-body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"]:hover::after {
-  -webkit-text-stroke-color: rgba(192, 38, 211, 0.35);
+/* Card Header */
+body.page-products .service-card-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 10px !important;
+  position: relative !important;
+  z-index: 3 !important;
 }
 
-/* Typography inside Service Cards */
-body.page-products section:not(#diploma-courses) .scholarship-card h4,
-body.page-products section:not(#diploma-courses) .awareness-card h4,
-body.page-products section:not(#diploma-courses) .olympiad-card h4,
-body.page-products section:not(#diploma-courses) .financial-aid-card h4,
-body.page-products section:not(#diploma-courses) .technical-training-card h4,
-body.page-products section:not(#diploma-courses) .service-ticket h4,
-body.page-products section:not(#diploma-courses) [style*="border-radius: 16px"] h4 {
-  font-size: 19px !important;
+body.page-products .service-card-icon {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.22) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: gentleIconFloat 5s ease-in-out infinite alternate !important;
+}
+
+@keyframes gentleIconFloat {
+  0% { transform: translateY(-5px); }
+  100% { transform: translateY(5px); }
+}
+
+/* Category Gradient Variations */
+body.page-products .icon-grad-1 { background: linear-gradient(135deg, #7C3AED, #C026D3) !important; animation-delay: 0s !important; }
+body.page-products .icon-grad-2 { background: linear-gradient(135deg, #EC4899, #F97316) !important; animation-delay: 0.8s !important; }
+body.page-products .icon-grad-3 { background: linear-gradient(135deg, #6366F1, #06B6D4) !important; animation-delay: 1.6s !important; }
+body.page-products .icon-grad-4 { background: linear-gradient(135deg, #C026D3, #EC4899) !important; animation-delay: 2.4s !important; }
+body.page-products .icon-grad-5 { background: linear-gradient(135deg, #0B0B3B, #7C3AED) !important; animation-delay: 3.2s !important; }
+body.page-products .icon-grad-6 { background: linear-gradient(135deg, #7C3AED, #06B6D4) !important; animation-delay: 4.0s !important; }
+
+body.page-products .card-header-emoji {
+  font-size: 26px !important;
+  line-height: 1 !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+body.page-products .service-card-title {
+  font-size: 1.4rem !important;
+  font-weight: 800 !important;
+  color: var(--navy) !important;
+  line-height: 1.22 !important;
+  margin: 0 0 4px !important;
+  letter-spacing: -0.02em !important;
+}
+
+body.page-products .service-card-subtitle {
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  font-weight: 700 !important;
+  color: var(--violet) !important;
+  margin: 0 !important;
+}
+
+body.page-products .card-accent-line {
+  width: 0;
+  height: 3px;
+  background: var(--signature-gradient);
+  border-radius: 999px;
+  margin: 8px 0 20px;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+body.page-products .service-editorial-card.in-view .card-accent-line {
+  width: 48px;
+}
+
+/* Sub-Items: Clean 2-Column Grid of Light Items */
+body.page-products .service-inner-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 3 !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 480px) {
+  body.page-products .service-inner-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+body.page-products .service-inner-item {
+  background: #F7F5FF !important;
+  border: none !important;
+  border-radius: 18px !important;
+  padding: 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              box-shadow 0.25s ease !important;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+body.page-products .service-editorial-card.in-view .service-inner-item {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Cascading stagger per sub-item (60ms) after card appears */
+body.page-products .service-editorial-card.in-view .service-inner-item:nth-child(1) { transition-delay: 0.12s !important; }
+body.page-products .service-editorial-card.in-view .service-inner-item:nth-child(2) { transition-delay: 0.18s !important; }
+body.page-products .service-editorial-card.in-view .service-inner-item:nth-child(3) { transition-delay: 0.24s !important; }
+body.page-products .service-editorial-card.in-view .service-inner-item:nth-child(4) { transition-delay: 0.30s !important; }
+body.page-products .service-editorial-card.in-view .service-inner-item:nth-child(5) { transition-delay: 0.36s !important; }
+body.page-products .service-editorial-card.in-view .service-inner-item:nth-child(6) { transition-delay: 0.42s !important; }
+
+body.page-products .service-inner-item:hover {
+  transform: translateX(4px) !important;
+  background: linear-gradient(135deg, #EDE9FE 0%, #F5F3FF 100%) !important;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.09) !important;
+}
+
+body.page-products .item-icon-circle {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: rgba(124, 58, 237, 0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 17px !important;
+  flex-shrink: 0 !important;
+  margin-bottom: 10px !important;
+  transition: background 0.25s ease, transform 0.25s ease !important;
+}
+
+body.page-products .service-inner-item:hover .item-icon-circle {
+  background: var(--signature-gradient) !important;
+  transform: scale(1.08) !important;
+}
+
+body.page-products .item-body {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body.page-products .service-inner-item h5 {
+  font-size: 15.5px !important;
   font-weight: 700 !important;
   color: var(--navy) !important;
-  margin-top: 14px !important;
-  margin-bottom: 10px !important;
+  margin: 0 0 6px !important;
   line-height: 1.3 !important;
 }
 
+body.page-products .service-inner-item p {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: var(--ink) !important;
+  margin: 0 0 auto !important;
+}
+
+/* Amount Pill Chip */
+body.page-products .service-amount-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+  padding: 4px 12px !important;
+  border-radius: var(--radius-pill) !important;
+  background: #EDE9FE !important;
+  color: var(--violet) !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  border: 1px solid rgba(124, 58, 237, 0.16) !important;
+  transition: transform 0.25s ease !important;
+}
+
+body.page-products .service-inner-item:hover .service-amount-pill {
+  animation: amountChipPulse 0.5s ease-in-out 1 !important;
+}
+
+@keyframes amountChipPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* Shorter Card (Diploma Courses, 2 items) Balanced with Decorative Glow & Badge */
+body.page-products .service-editorial-card.card-diploma {
+  background: radial-gradient(circle at 85% 85%, rgba(124, 58, 237, 0.07) 0%, rgba(192, 38, 211, 0.03) 50%, #FFFFFF 85%) !important;
+}
+
+body.page-products .diploma-balance-ornament {
+  margin-top: auto !important;
+  padding-top: 18px !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+body.page-products .diploma-ornament-badge {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 14px 18px !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(237, 233, 254, 0.75), rgba(247, 245, 255, 0.9)) !important;
+  border: 1.5px dashed rgba(124, 58, 237, 0.28) !important;
+  color: var(--navy) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.06) !important;
+}
+
+body.page-products .diploma-ornament-badge svg {
+  color: var(--violet) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Visible Focus Rings (3px violet) */
+body.page-products .service-editorial-card:focus-visible,
+body.page-products .service-inner-item:focus-visible,
+body.page-products a:focus-visible,
+body.page-products button:focus-visible {
+  outline: 3px solid var(--violet) !important;
+  outline-offset: 3px !important;
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  body.page-products .products-services-section::before,
+  body.page-products .service-editorial-card,
+  body.page-products .service-inner-item,
+  body.page-products .service-card-icon,
+  body.page-products .card-accent-line,
+  body.page-products .heading-word,
+  body.page-products .editorial-heading-underline path,
+  body.page-products .card-border-glow {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    stroke-dashoffset: 0 !important;
+    width: 48px !important;
+  }
+}
 /* --------------------------------------------------------------------------
    8. UGC APPROVED DIPLOMA COURSES SECTION
    -------------------------------------------------------------------------- */
@@ -1803,13 +2194,24 @@ body.page-products .footer-bottom {
 }
 
 @media (max-width: 480px) {
+  body.page-products .shikshit-header {
+    top: 16px !important;
+    margin-top: 16px !important;
+  }
+
   body.page-products .shikshit-navbar {
-    height: 58px !important;
-    padding: 8px 16px !important;
+    height: 56px !important;
+    padding: 6px 14px !important;
   }
 
   body.page-products .shikshit-logo {
-    height: 44px !important;
+    width: 88px !important;
+    height: auto !important;
+    margin: -16px 0 !important;
+  }
+
+  body.page-products .products-hero {
+    padding-top: 32px !important;
   }
 
   .products-hero-visual {
@@ -1878,5 +2280,33 @@ body.page-products .footer-bottom {
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
+  }
+}
+
+body.page-products .footer-editorial .footer-brand {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  margin-bottom: 28px !important;
+}
+
+body.page-products .footer-editorial .footer-logo,
+body.page-products .footer-editorial img[src*="sikshitlogo"] {
+  width: 165px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+  body.page-products .footer-editorial .footer-brand {
+    margin-bottom: 24px !important;
+  }
+
+  body.page-products .footer-editorial .footer-logo,
+  body.page-products .footer-editorial img[src*="sikshitlogo"] {
+    width: 135px !important;
   }
 }
