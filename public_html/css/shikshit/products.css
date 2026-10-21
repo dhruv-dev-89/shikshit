@@ -118,7 +118,7 @@ body.page-products .shikshit-header {
   top: 28px !important;
   z-index: 1000 !important;
   width: 100% !important;
-  padding: 0 16px !important;
+  padding: 0 !important;
   margin-top: 28px !important;
   margin-bottom: 0 !important;
   background: transparent !important;
@@ -136,9 +136,12 @@ body.page-products .shikshit-header::after {
 body.page-products .shikshit-navbar {
   pointer-events: auto !important;
   position: relative !important;
-  width: calc(var(--container) + 2rem) !important;
-  max-width: calc(100% - 2rem) !important;
-  margin: 0 auto !important; margin-inline: auto !important;
+  width: var(--container) !important;
+  max-width: var(--container) !important;
+  margin: 0 auto !important;
+  margin-inline: auto !important;
+  left: 0 !important;
+  right: 0 !important;
   height: 4rem !important;
   padding: 0.5rem 1.5rem !important;
   background: rgba(255, 255, 255, 0.90) !important;
@@ -150,8 +153,7 @@ body.page-products .shikshit-navbar {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  transition: height 0.25s ease, padding 0.25s ease, background 0.25s ease, box-shadow 0.25s ease !important;
-  overflow: visible !important;
+  box-sizing: border-box !important;
 }
 
 body.page-products .shikshit-navbar::before,
@@ -786,14 +788,7 @@ body.page-products .ribbon-white .track-half span:nth-child(even) {
   color: var(--violet) !important;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  body.page-products .ribbon-track {
-    animation: none !important;
-    transform: none !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
-}
+/* Marquee ribbon animations preserved */
 
 
 /* ==========================================================================
@@ -1321,12 +1316,15 @@ body.page-products .service-editorial-card {
   flex-direction: column !important;
   justify-content: flex-start !important;
   height: 100% !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
   isolation: isolate;
   scroll-margin-top: 155px !important;
-  opacity: 0;
-  transform: translateY(34px) scale(0.97);
+  opacity: 1 !important;
+  transform: none !important;
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.4s ease,
@@ -1674,38 +1672,35 @@ body.page-products button:focus-visible {
 }
 
 /* Prefers Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  body.page-products .products-services-section::before,
-  body.page-products .service-editorial-card,
-  body.page-products .service-inner-item,
-  body.page-products .service-card-icon,
-  body.page-products .card-accent-line,
-  body.page-products .heading-word,
-  body.page-products .editorial-heading-underline path,
-  body.page-products .card-border-glow {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-    stroke-dashoffset: 0 !important;
-    width: 48px !important;
-  }
-}
+/* Card transitions & animations preserved */
 /* --------------------------------------------------------------------------
    8. UGC APPROVED DIPLOMA COURSES SECTION
    -------------------------------------------------------------------------- */
-body.page-products #diploma-courses {
-  position: relative;
-  padding: 100px 24px !important;
-  background: #F8FAFC !important;
+/* Card 06 Diploma Courses retains uniform editorial card styling */
+body.page-products #diploma-courses.service-editorial-card {
+  position: relative !important;
+  background: #FFFFFF !important;
+  border-radius: 32px !important;
+  border: 1px solid rgba(124, 58, 237, 0.12) !important;
+  box-shadow: 0 14px 44px rgba(124, 58, 237, 0.11) !important;
+  padding: 32px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  height: 100% !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
   scroll-margin-top: 155px !important;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 body.page-products #diploma-courses > div {
-  width: 100% !important;
-  max-width: var(--container) !important;
-  margin: 0 auto !important;
-  margin-inline: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
 }
 
 /* Heading Shimmer Animation on "Diploma Courses" */
@@ -2588,25 +2583,7 @@ body.page-products .footer-bottom {
 }
 
 /* Reduced Motion Safety */
-@media (prefers-reduced-motion: reduce) {
-  .products-blob-1,
-  .products-blob-2,
-  .products-blob-3,
-  .products-hero-bands .ribbon-track,
-  .products-stat-badge,
-  .products-arch-frame,
-  .products-blob-frame {
-    animation: none !important;
-    transform: none !important;
-  }
-  .scholarship-card,
-  .video-item,
-  .scroll-reveal-item {
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
+/* Ambient blob and frame animations preserved */
 
 
 body.page-products .footer-editorial .footer-brand {
@@ -2639,3 +2616,140 @@ body.page-products .footer-editorial img[src*="sikshitlogo"] {
   }
 }
 
+
+/* ==========================================================================
+   GUARANTEED HARDWARE-ACCELERATED MOTION & ANIMATIONS ON PRODUCT-SERVICES
+   ========================================================================== */
+body.page-products .products-blob-1 {
+  animation: driftBlob1 24s ease-in-out infinite alternate !important;
+  animation-duration: 24s !important;
+  animation-iteration-count: infinite !important;
+  will-change: transform;
+}
+
+body.page-products .products-blob-2 {
+  animation: driftBlob2 28s ease-in-out infinite alternate !important;
+  animation-duration: 28s !important;
+  animation-iteration-count: infinite !important;
+  will-change: transform;
+}
+
+body.page-products .products-blob-3 {
+  animation: driftBlob1 30s ease-in-out infinite alternate-reverse !important;
+  animation-duration: 30s !important;
+  animation-iteration-count: infinite !important;
+  will-change: transform;
+}
+
+body.page-products .products-arch-frame {
+  animation: collageFloat1 6s ease-in-out infinite alternate !important;
+  animation-duration: 6s !important;
+  animation-iteration-count: infinite !important;
+  will-change: transform;
+}
+
+body.page-products .products-blob-frame {
+  animation: collageFloat2 6s ease-in-out infinite alternate 1.5s !important;
+  animation-duration: 6s !important;
+  animation-iteration-count: infinite !important;
+  will-change: transform;
+}
+
+body.page-products .products-stat-badge {
+  animation: gentleFloat 6s ease-in-out infinite !important;
+  animation-duration: 6s !important;
+  animation-iteration-count: infinite !important;
+  will-change: transform;
+}
+
+body.page-products .ribbon-track.track-left {
+  animation: mqRibbonLeft 40s linear infinite !important;
+  animation-duration: 40s !important;
+  animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
+  will-change: transform;
+}
+
+body.page-products .ribbon-track.track-right {
+  animation: mqRibbonRight 55s linear infinite !important;
+  animation-duration: 55s !important;
+  animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
+  will-change: transform;
+}
+
+body.page-products .products-hero-bands:hover .ribbon-track {
+  animation-play-state: paused !important;
+}
+
+body.page-products .service-card-icon {
+  animation: gentleIconFloat 4s ease-in-out infinite alternate !important;
+  animation-duration: 4s !important;
+  animation-iteration-count: infinite !important;
+}
+
+body.page-products .card-border-glow {
+  animation: borderSweep 8s linear infinite !important;
+  animation-duration: 8s !important;
+  animation-iteration-count: infinite !important;
+}
+
+body.page-products .footer-editorial {
+  animation: footerBgDrift 20s ease-in-out infinite alternate !important;
+  animation-duration: 20s !important;
+  animation-iteration-count: infinite !important;
+}
+
+/* Service cards grid full width & item safety */
+body.page-products .services-editorial-grid {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+body.page-products .service-editorial-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.page-products .service-card-header {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+body.page-products .service-inner-grid {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+
+/* Responsive single-column hero grid on tablets and mobile */
+@media (max-width: 991px) {
+  body.page-products .products-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    min-height: auto !important;
+  }
+
+  body.page-products .products-hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+  }
+
+  body.page-products .products-hero-badge,
+  body.page-products .products-hero-tags,
+  body.page-products .products-hero-cta {
+    justify-content: center !important;
+  }
+
+  body.page-products .products-hero-visual {
+    width: 100% !important;
+    max-width: 330px !important;
+    margin: 24px auto 0 !important;
+    overflow: visible !important;
+  }
+}
