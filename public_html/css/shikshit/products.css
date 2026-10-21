@@ -90,13 +90,13 @@ body.page-products {
 }
 
 @keyframes driftBlob1 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-40px, 60px) scale(1.08); }
+  0% { transform: translate(0, 0) scale(1); translate: 0 0; }
+  100% { transform: translate(-40px, 60px) scale(1.08); translate: -40px 60px; }
 }
 
 @keyframes driftBlob2 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(50px, -40px) scale(1.06); }
+  0% { transform: translate(0, 0) scale(1); translate: 0 0; }
+  100% { transform: translate(50px, -40px) scale(1.06); translate: 50px -40px; }
 }
 
 /* --------------------------------------------------------------------------
@@ -546,13 +546,13 @@ body.page-products .editorial-sig-underline {
 }
 
 @keyframes collageFloat1 {
-  0% { transform: translateY(0) rotate(-3deg); }
-  100% { transform: translateY(-8px) rotate(-3deg); }
+  0% { transform: translateY(0) rotate(-3deg); translate: 0 0; }
+  100% { transform: translateY(-8px) rotate(-3deg); translate: 0 -8px; }
 }
 
 @keyframes collageFloat2 {
-  0% { transform: translateY(0) rotate(3deg); }
-  100% { transform: translateY(8px) rotate(3deg); }
+  0% { transform: translateY(0) rotate(3deg); translate: 0 0; }
+  100% { transform: translateY(8px) rotate(3deg); translate: 0 8px; }
 }
 
 /* Badges & Labels sit bottom-left inside their cards, solid frosted-white, never clipped */
@@ -635,8 +635,9 @@ body.page-products .editorial-sig-underline {
 }
 
 @keyframes gentleFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
+  0% { transform: translateY(0); translate: 0 0; }
+  50% { transform: translateY(-6px); translate: 0 -6px; }
+  100% { transform: translateY(0); translate: 0 0; }
 }
 
 .products-stat-badge-icon {
@@ -684,7 +685,7 @@ body.page-products .products-hero-bands {
   height: 6.25rem !important;
   overflow: hidden !important;
   z-index: 10 !important;
-  pointer-events: auto !important;
+  pointer-events: none !important;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
   mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%) !important;
 }
@@ -746,18 +747,28 @@ body.page-products .track-right {
 }
 
 @keyframes mqRibbonLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+    translate: 0 0;
+  }
+  100% {
+    transform: translateX(-50%);
+    translate: -50% 0;
+  }
 }
 
 @keyframes mqRibbonRight {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+    translate: -50% 0;
+  }
+  100% {
+    transform: translateX(0);
+    translate: 0 0;
+  }
 }
 
-body.page-products .products-hero-bands:hover .ribbon-track {
-  animation-play-state: paused !important;
-}
+/* Continuous ribbon motion - hover pause removed */
 
 body.page-products .track-half {
   display: inline-flex !important;
@@ -1460,8 +1471,8 @@ body.page-products .service-card-icon {
 }
 
 @keyframes gentleIconFloat {
-  0% { transform: translateY(-5px); }
-  100% { transform: translateY(5px); }
+  0% { transform: translateY(0) scale(1); translate: 0 0; }
+  100% { transform: translateY(-4px) scale(1.04); translate: 0 -4px; }
 }
 
 /* Category Gradient Variations */
@@ -2624,80 +2635,90 @@ body.page-products .products-blob-1 {
   animation: driftBlob1 24s ease-in-out infinite alternate !important;
   animation-duration: 24s !important;
   animation-iteration-count: infinite !important;
-  will-change: transform;
+  animation-play-state: running !important;
+  will-change: translate, transform;
 }
 
 body.page-products .products-blob-2 {
   animation: driftBlob2 28s ease-in-out infinite alternate !important;
   animation-duration: 28s !important;
   animation-iteration-count: infinite !important;
-  will-change: transform;
+  animation-play-state: running !important;
+  will-change: translate, transform;
 }
 
 body.page-products .products-blob-3 {
   animation: driftBlob1 30s ease-in-out infinite alternate-reverse !important;
   animation-duration: 30s !important;
   animation-iteration-count: infinite !important;
-  will-change: transform;
+  animation-play-state: running !important;
+  will-change: translate, transform;
 }
 
 body.page-products .products-arch-frame {
   animation: collageFloat1 6s ease-in-out infinite alternate !important;
   animation-duration: 6s !important;
   animation-iteration-count: infinite !important;
-  will-change: transform;
+  animation-play-state: running !important;
+  will-change: translate, transform;
 }
 
 body.page-products .products-blob-frame {
   animation: collageFloat2 6s ease-in-out infinite alternate 1.5s !important;
   animation-duration: 6s !important;
   animation-iteration-count: infinite !important;
-  will-change: transform;
+  animation-play-state: running !important;
+  will-change: translate, transform;
 }
 
 body.page-products .products-stat-badge {
   animation: gentleFloat 6s ease-in-out infinite !important;
   animation-duration: 6s !important;
   animation-iteration-count: infinite !important;
-  will-change: transform;
+  animation-play-state: running !important;
+  will-change: translate, transform;
+}
+
+body.page-products .products-hero-bands {
+  pointer-events: none !important;
 }
 
 body.page-products .ribbon-track.track-left {
-  animation: mqRibbonLeft 40s linear infinite !important;
-  animation-duration: 40s !important;
+  animation: mqRibbonLeft 35s linear infinite !important;
+  animation-duration: 35s !important;
   animation-iteration-count: infinite !important;
   animation-play-state: running !important;
-  will-change: transform;
+  will-change: translate, transform !important;
 }
 
 body.page-products .ribbon-track.track-right {
-  animation: mqRibbonRight 55s linear infinite !important;
-  animation-duration: 55s !important;
+  animation: mqRibbonRight 45s linear infinite !important;
+  animation-duration: 45s !important;
   animation-iteration-count: infinite !important;
   animation-play-state: running !important;
-  will-change: transform;
-}
-
-body.page-products .products-hero-bands:hover .ribbon-track {
-  animation-play-state: paused !important;
+  will-change: translate, transform !important;
 }
 
 body.page-products .service-card-icon {
   animation: gentleIconFloat 4s ease-in-out infinite alternate !important;
   animation-duration: 4s !important;
   animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
+  will-change: translate, transform;
 }
 
 body.page-products .card-border-glow {
   animation: borderSweep 8s linear infinite !important;
   animation-duration: 8s !important;
   animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
 }
 
 body.page-products .footer-editorial {
   animation: footerBgDrift 20s ease-in-out infinite alternate !important;
   animation-duration: 20s !important;
   animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
 }
 
 /* Service cards grid full width & item safety */
@@ -2724,7 +2745,6 @@ body.page-products .service-inner-grid {
   width: 100% !important;
   min-width: 0 !important;
 }
-
 
 /* Responsive single-column hero grid on tablets and mobile */
 @media (max-width: 991px) {
