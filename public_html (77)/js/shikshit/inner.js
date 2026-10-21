@@ -29,13 +29,13 @@
     updateProgress();
   }
 
-    /* ------------------------------------------------------------------------
-     2. Sticky Section Index Scroll-Spy & Gliding Navigation (Part A Fixes)
+            /* ------------------------------------------------------------------------
+     2. Sticky Section Index Scroll-Spy & Gliding Navigation
      ------------------------------------------------------------------------ */
   function initSectionIndex() {
     const bar = document.querySelector('.sticky-section-index');
     const track = document.querySelector('.index-pill-track');
-    const pills = document.querySelectorAll('.index-pill');
+    const pills = Array.from(document.querySelectorAll('.index-pill'));
     let glider = document.querySelector('.index-pill-glider');
 
     if (!bar || !track || !pills.length) return;
@@ -59,41 +59,46 @@
     let activePill = null;
     let isClickScrolling = false;
     let clickTimeout = null;
+    let lastClickedTarget = null;
+    let lastClickedScrollY = -1;
 
     function moveGlider(pill, immediate) {
       if (!pill) {
-        glider.style.opacity = '0';
+        glider.style.setProperty('opacity', '0', 'important');
         return;
       }
-      if (immediate) {
-        glider.style.transition = 'none';
+      if (immediate || prefersReducedMotion) {
+        glider.style.setProperty('transition', 'none', 'important');
       } else {
-        glider.style.transition = 'transform 350ms cubic-bezier(0.16, 1, 0.3, 1), width 350ms cubic-bezier(0.16, 1, 0.3, 1), opacity 250ms ease';
+        glider.style.setProperty('transition', 'transform 320ms cubic-bezier(0.16, 1, 0.3, 1), width 320ms cubic-bezier(0.16, 1, 0.3, 1), opacity 200ms ease', 'important');
       }
-      glider.style.width = pill.offsetWidth + 'px';
-      glider.style.transform = 'translateX(' + pill.offsetLeft + 'px)';
-      glider.style.opacity = '1';
-      if (immediate) {
-        glider.offsetHeight;
-        glider.style.transition = '';
+
+      const w = pill.offsetWidth;
+      const left = pill.offsetLeft;
+      glider.style.setProperty('width', w + 'px', 'important');
+      glider.style.setProperty('transform', 'translateX(' + left + 'px)', 'important');
+      glider.style.setProperty('opacity', '1', 'important');
+
+      if (immediate || prefersReducedMotion) {
+        glider.offsetHeight; // force reflow
+        glider.style.removeProperty('transition');
       }
     }
 
     function scrollPillInsideTrack(pill) {
       if (!track || !pill) return;
       const trackRect = track.getBoundingClientRect();
-      const pillRect = pill.getBoundingClientRect();
-      const targetScroll = pill.offsetLeft - (trackRect.width / 2) + (pillRect.width / 2);
+      const targetScroll = pill.offsetLeft - (trackRect.width / 2) + (pill.offsetWidth / 2);
       track.scrollTo({
-        left: targetScroll,
+        left: Math.max(0, targetScroll),
         behavior: prefersReducedMotion ? 'auto' : 'smooth'
       });
     }
 
-    function setActivePill(pill, scrollTrack = true) {
+    function setActivePill(pill, scrollTrack = true, immediate = false) {
       if (!pill) return;
       if (pill === activePill) {
-        moveGlider(pill);
+        moveGlider(pill, immediate);
         return;
       }
       activePill = pill;
@@ -106,13 +111,13 @@
           p.removeAttribute('aria-current');
         }
       });
-      moveGlider(pill);
+      moveGlider(pill, immediate);
       if (scrollTrack) {
         scrollPillInsideTrack(pill);
       }
     }
 
-    // Map targets
+    // Map targets from hrefs
     const pillMap = [];
     pills.forEach(pill => {
       const href = pill.getAttribute('href');
@@ -124,103 +129,103 @@
       }
     });
 
-    // IntersectionObserver with rootMargin around "-40% 0px -55% 0px"
-    const observer = new IntersectionObserver(
-      function (entries) {
-        if (isClickScrolling) return;
+    if (!pillMap.length) return;
 
-        // Near top of page (hero section): clear highlight
-        if (window.scrollY < 280) {
-          if (activePill) {
-            pills.forEach(p => { p.classList.remove('active'); p.removeAttribute('aria-current'); });
-            activePill = null;
-            glider.style.opacity = '0';
-          }
-          return;
-        }
-
-        // Near bottom of page: activate last pill
-        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60)) {
-          const lastItem = pillMap[pillMap.length - 1];
-          if (lastItem) setActivePill(lastItem.pill);
-          return;
-        }
-
-        // Find intersecting elements
-        const winH = window.innerHeight;
-        const topBound = winH * 0.40;
-        const bottomBound = winH * 0.45;
-
-        const visibleTargets = pillMap.filter(item => {
-          const rect = item.target.getBoundingClientRect();
-          return rect.top <= bottomBound && rect.bottom >= topBound;
-        });
-
-        if (visibleTargets.length > 0) {
-          // If the currently active pill is among the visible targets, keep it!
-          const stillActive = visibleTargets.find(item => item.pill === activePill);
-          if (stillActive) {
-            setActivePill(stillActive.pill, false);
-          } else {
-            // Pick the first target in DOM sequence
-            setActivePill(visibleTargets[0].pill);
-          }
-        }
-      },
-      {
-        rootMargin: '-40% 0px -55% 0px',
-        threshold: 0
-      }
-    );
-
-    pillMap.forEach(item => {
-      observer.observe(item.target);
-    });
-
-    // Global scroll listener for fast scroll & boundary checks
-    function onScrollCheck() {
+    // Detect active section on scroll
+    function determineActivePill() {
       if (isClickScrolling) return;
 
-      if (window.scrollY < 280) {
-        if (activePill) {
-          pills.forEach(p => { p.classList.remove('active'); p.removeAttribute('aria-current'); });
-          activePill = null;
-          glider.style.opacity = '0';
-        }
+      const scrollY = window.scrollY;
+      const winH = window.innerHeight;
+      const docH = document.documentElement.scrollHeight;
+
+      // Bottom of page: activate last item
+      if (scrollY + winH >= docH - 60) {
+        setActivePill(pillMap[pillMap.length - 1].pill);
         return;
       }
 
-      if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60)) {
-        const lastItem = pillMap[pillMap.length - 1];
-        if (lastItem) setActivePill(lastItem.pill);
+      // If user recently clicked a section, keep that section active while near it
+      if (lastClickedTarget && Math.abs(scrollY - lastClickedScrollY) < 140) {
+        return;
+      } else {
+        lastClickedTarget = null;
+      }
+
+      const header = document.querySelector('.shikshit-header') || document.querySelector('.shikshit-navbar');
+      const headerH = header ? header.offsetHeight : 72;
+      const barH = bar.offsetHeight || 54;
+      const topBarBottom = headerH + barH;
+      const triggerLine = topBarBottom + 130;
+
+      // Above the first section: keep first pill active
+      const firstRect = pillMap[0].target.getBoundingClientRect();
+      if (firstRect.top > triggerLine) {
+        setActivePill(pillMap[0].pill);
+        return;
+      }
+
+      // Find targets currently containing the trigger line
+      const activeTargets = pillMap.filter(item => {
+        const r = item.target.getBoundingClientRect();
+        return r.top <= triggerLine && r.bottom > triggerLine;
+      });
+
+      if (activeTargets.length === 1) {
+        setActivePill(activeTargets[0].pill);
+        return;
+      } else if (activeTargets.length > 1) {
+        // Multi-column row sharing the same vertical space (desktop 3-column grid)
+        const rowTop = activeTargets[0].target.getBoundingClientRect().top;
+        const rowBottom = activeTargets[0].target.getBoundingClientRect().bottom;
+        const rowHeight = Math.max(rowBottom - rowTop, 100);
+        const progress = Math.max(0, Math.min(0.999, (triggerLine - rowTop) / rowHeight));
+        const idx = Math.floor(progress * activeTargets.length);
+        setActivePill(activeTargets[idx].pill);
+        return;
+      }
+
+      // Fallback: pick the section whose top is closest to triggerLine
+      let closest = pillMap[0];
+      let minDistance = Infinity;
+      pillMap.forEach(item => {
+        const r = item.target.getBoundingClientRect();
+        const dist = Math.abs(r.top - triggerLine);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closest = item;
+        }
+      });
+      if (closest) {
+        setActivePill(closest.pill);
       }
     }
-    window.addEventListener('scroll', onScrollCheck, { passive: true });
 
-    // Handle hash on page load or reload mid-page
+    let scrollRafId = null;
+    function onScrollThrottled() {
+      if (scrollRafId) return;
+      scrollRafId = requestAnimationFrame(() => {
+        scrollRafId = null;
+        determineActivePill();
+      });
+    }
+
+    window.addEventListener('scroll', onScrollThrottled, { passive: true });
+
+    // Handle hash on page load or reload
     function handleInitialPosition() {
       updateNavbarHeight();
       if (window.location.hash) {
         const match = pillMap.find(item => '#' + item.id === window.location.hash);
         if (match) {
-          setActivePill(match.pill, true);
+          setActivePill(match.pill, true, true);
           return;
         }
       }
-
-      if (window.scrollY < 280) {
-        glider.style.opacity = '0';
-      } else {
-        const winH = window.innerHeight;
-        const visible = pillMap.filter(item => {
-          const rect = item.target.getBoundingClientRect();
-          return rect.top <= winH * 0.6 && rect.bottom >= winH * 0.2;
-        });
-        if (visible.length > 0) {
-          setActivePill(visible[0].pill, true);
-        } else {
-          setActivePill(pillMap[0].pill, true);
-        }
+      determineActivePill();
+      const initialActive = document.querySelector('.index-pill.active') || pills[0];
+      if (initialActive) {
+        setActivePill(initialActive, true, true);
       }
     }
 
@@ -240,15 +245,17 @@
         e.preventDefault();
         isClickScrolling = true;
         clearTimeout(clickTimeout);
+        lastClickedTarget = target;
+        lastClickedScrollY = window.scrollY;
 
-        // Update URL hash without jumping
+        // Update URL hash cleanly
         if (history.pushState) {
           history.pushState(null, '', href);
         } else {
           window.location.hash = href;
         }
 
-        setActivePill(pill);
+        setActivePill(pill, true);
 
         // Native smooth scroll respecting scroll-margin-top
         target.scrollIntoView({
@@ -256,13 +263,14 @@
           block: 'start'
         });
 
-        // Move focus to section heading (tabindex=-1)
+        // Accessible focus management: move focus to section heading
         const heading = target.querySelector('h2, h3, h4, h5') || target;
         heading.setAttribute('tabindex', '-1');
         heading.focus({ preventScroll: true });
 
         clickTimeout = setTimeout(() => {
           isClickScrolling = false;
+          lastClickedScrollY = window.scrollY;
         }, prefersReducedMotion ? 50 : 800);
       });
     });
@@ -686,7 +694,7 @@
   /* ------------------------------------------------------------------------
      Initialize on DOM Ready
      ------------------------------------------------------------------------ */
-  document.addEventListener('DOMContentLoaded', function () {
+  function initAll() {
     initProgressBar();
     initSectionIndex();
     initCardTilt();
@@ -698,5 +706,11 @@
     initFooterMotion();
     initMemberAnimations();
     initDonateAnimations();
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
 })();
