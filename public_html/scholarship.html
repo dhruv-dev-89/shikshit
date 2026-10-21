@@ -37,8 +37,7 @@ Education funding support India, Student financial aid program" >
     </script>
 
     <!-- Custom CSS -->
-    <!-- <link href="css/styles.css" rel="stylesheet"> -->
-    <!-- <link href="css/responsive.css" rel="stylesheet">
+        <!-- <link href="css/responsive.css" rel="stylesheet">
     <link href="css/heading-styles.css" rel="stylesheet"> -->
     <link href="css/scholarship-animations.css" rel="stylesheet">
 
@@ -2825,7 +2824,7 @@ Education funding support India, Student financial aid program" >
                         // If navbar has been loaded, adjust hero height
                         console.log("Navbar loaded via include-html");
                         setTimeout(setHeroHeight, 0);
-                        setTimeout(setHeroHeight, 100);
+                        if (typeof setHeroHeight === 'function') setTimeout(setHeroHeight, 100);
                     }
                 });
             });
@@ -2844,22 +2843,15 @@ Education funding support India, Student financial aid program" >
     <script>
         // Function to set hero height to exactly viewport height minus navbar
         function setHeroHeight() {
-            // Get the navbar element or its container
             const navbar = document.querySelector('nav') || document.querySelector('header') || document.querySelector('.navbar-container');
-            // Get the actual navbar height, default to 70px if not found
             const navbarHeight = navbar ? navbar.offsetHeight : 70;
-            // Get the hero section
             const heroSection = document.querySelector('.hero-section');
 
-            // Check if we're on a mobile or tablet device
             const isMobile = window.innerWidth <= 767;
             const isTablet = window.innerWidth > 767 && window.innerWidth <= 1024;
 
             if (heroSection) {
-                // Set the hero section height to exactly fill the remaining viewport
                 const exactHeight = window.innerHeight - navbarHeight;
-
-                // Set consistent 100vh height for all devices
                 heroSection.style.height = '100vh';
                 heroSection.style.minHeight = '100vh';
                 heroSection.style.maxHeight = '100vh';
@@ -2869,68 +2861,50 @@ Education funding support India, Student financial aid program" >
                 heroSection.style.justifyContent = 'center';
                 heroSection.style.padding = '0';
 
-                // Use CSS custom property for additional height control
-                document.documentElement.style.setProperty('--hero-height', `${exactHeight}px`);
-
-                // Add data attributes for potential CSS targeting
+                document.documentElement.style.setProperty('--hero-height', exactHeight + 'px');
                 heroSection.setAttribute('data-viewport-adjusted', 'true');
                 heroSection.setAttribute('data-mobile-view', isMobile ? 'true' : 'false');
                 heroSection.setAttribute('data-tablet-view', isTablet ? 'true' : 'false');
-
-                let deviceType = isMobile ? 'mobile' : (isTablet ? 'tablet' : 'desktop');
-                let heightValue = (isMobile || isTablet) ? 'auto (min-height: ' + exactHeight + 'px)' : exactHeight + 'px';
-                console.log(`Set hero height for ${deviceType}: ${heightValue} (viewport: ${window.innerHeight}px, navbar: ${navbarHeight}px)`);
             }
         }
+        window.setHeroHeight = setHeroHeight;
 
-        // Run on page load with higher priority
-        if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            setTimeout(setHeroHeight, 0);
-        } else {
-            document.addEventListener('DOMContentLoaded', () => setTimeout(setHeroHeight, 0));
-        }
-
-        window.addEventListener('load', setHeroHeight);
-
-        // Run on window resize with debounce to prevent excessive calculations
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(setHeroHeight, 100);
-        });
-
-        // Run multiple times to ensure it catches any delayed rendering
-        for (let delay of [0, 100, 300, 500, 1000, 2000]) {
-            setTimeout(setHeroHeight, delay);
-        }
-
-        // Use MutationObserver to detect when the navbar is fully loaded
-        // This is especially important for dynamically loaded navbars
-        const observer = new MutationObserver((mutations) => {
-            setHeroHeight();
-        });
-
-        // Start observing the document body for DOM changes
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-            attributes: true,
-            attributeFilter: ['style', 'class', 'height', 'offsetHeight']
-        });
-
-        // Additional event listeners for potential viewport changes
-        window.addEventListener('orientationchange', function() {
-            setTimeout(setHeroHeight, 200);
-        });
-
-        // Fix for mobile browsers address bar showing/hiding
-        let lastVh = window.innerHeight;
-        window.addEventListener('scroll', function() {
-            if (Math.abs(lastVh - window.innerHeight) > 20) {
-                setHeroHeight();
-                lastVh = window.innerHeight;
+        (function () {
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                if (typeof setHeroHeight === 'function') setTimeout(setHeroHeight, 0);
+            } else {
+                document.addEventListener('DOMContentLoaded', () => setTimeout(setHeroHeight, 0));
             }
-        });
+
+            window.addEventListener('load', setHeroHeight);
+
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(setHeroHeight, 100);
+            });
+
+            [0, 100, 300, 500, 1000].forEach(d => setTimeout(setHeroHeight, d));
+
+            const observer = new MutationObserver(() => setHeroHeight());
+            observer.observe(document.body, {
+                childList: true,
+                subtree: false,
+                attributes: false
+            });
+
+            window.addEventListener('orientationchange', function() {
+                setTimeout(setHeroHeight, 200);
+            });
+
+            let scholarshipLastVh = window.innerHeight;
+            window.addEventListener('scroll', function() {
+                if (Math.abs(scholarshipLastVh - window.innerHeight) > 20) {
+                    setHeroHeight();
+                    scholarshipLastVh = window.innerHeight;
+                }
+            }, { passive: true });
+        })();
     </script>
 
     <!-- Hero Section for Scholarship Page -->

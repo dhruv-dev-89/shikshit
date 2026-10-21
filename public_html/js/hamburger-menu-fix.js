@@ -118,8 +118,9 @@
                     // Show menu
                     mobileMenu.classList.remove('hidden');
                     mobileMenu.style.display = 'block';
-                    mobileMenu.style.opacity = '1';
                     mobileMenu.style.visibility = 'visible';
+                    mobileMenu.offsetHeight; // force reflow for smooth transition
+                    mobileMenu.style.opacity = '1';
                     mobileMenu.style.transform = 'translateY(0)';
 
                     // Toggle icons if they exist
@@ -141,11 +142,15 @@
                     console.log("Comprehensive Hamburger Menu Fix: Menu opened (hidden class)");
                 } else {
                     // Hide menu
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.style.display = 'none';
                     mobileMenu.style.opacity = '0';
-                    mobileMenu.style.visibility = 'hidden';
                     mobileMenu.style.transform = 'translateY(-8px)';
+                    setTimeout(() => {
+                        if (mobileMenu.style.opacity === '0') {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.style.display = 'none';
+                            mobileMenu.style.visibility = 'hidden';
+                        }
+                    }, 250);
 
                     // Toggle icons if they exist
                     if (menuOpenIcon && menuCloseIcon) {

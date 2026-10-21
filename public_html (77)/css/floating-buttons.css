@@ -123,22 +123,33 @@
     box-shadow: 0 8px 30px rgba(239, 68, 68, 0.4);
 }
 
-/* Pulse Animation */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+/* Pulse Animation - Gentle and non-distracting */
+@keyframes floatingButtonPulse {
+    0%, 100% {
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
     }
-    70% {
-        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    50% {
+        box-shadow: 0 4px 20px rgba(107, 70, 193, 0.25);
     }
 }
 
 .floating-button {
-    animation: pulse 2s infinite;
+    animation: floatingButtonPulse 4s ease-in-out infinite;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-button,
+    .floating-button::before,
+    .floating-button-icon,
+    .floating-button-text {
+        animation: none !important;
+        transition: none !important;
+    }
+    .floating-button:hover {
+        transform: none !important;
+    }
+}
+
 
 /* Mobile Responsive */
 @media (max-width: 768px) {

@@ -519,8 +519,9 @@ body {
 .carousel-track {
   display: flex;
   overflow-x: auto;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
 }
 .carousel-track::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
@@ -561,4 +562,17 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   background-color: #000; /* force black background */
 }
+
+/* Motion Preferences Guard */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 
