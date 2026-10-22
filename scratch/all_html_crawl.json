@@ -1,0 +1,414 @@
+[
+  {
+    "file": "%23grain",
+    "pages": [
+      "donate.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "%23grid",
+    "pages": [
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "components/become-a-member.html",
+    "pages": [
+      "components/sikshitfooter.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "components/contact.html",
+    "pages": [
+      "components/nsmas_navbar.html",
+      "components/sikshitfooter.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "components/donate.html",
+    "pages": [
+      "components/sikshitfooter.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "components/how-it-works.html",
+    "pages": [
+      "components/nsmas_navbar.html"
+    ],
+    "onlyFrozen": true,
+    "anyFrozen": true
+  },
+  {
+    "file": "components/images/Logos02.png",
+    "pages": [
+      "components/footer.html",
+      "components/nsmas_navbar.html"
+    ],
+    "onlyFrozen": true,
+    "anyFrozen": true
+  },
+  {
+    "file": "components/ns-mas.html",
+    "pages": [
+      "components/footer.html",
+      "components/nsmas_navbar.html"
+    ],
+    "onlyFrozen": true,
+    "anyFrozen": true
+  },
+  {
+    "file": "components/privacypolicy.html",
+    "pages": [
+      "components/footer.html"
+    ],
+    "onlyFrozen": true,
+    "anyFrozen": true
+  },
+  {
+    "file": "components/registration.html",
+    "pages": [
+      "components/nsmas_navbar.html"
+    ],
+    "onlyFrozen": true,
+    "anyFrozen": true
+  },
+  {
+    "file": "components/scholarship.html",
+    "pages": [
+      "components/nsmas_navbar.html",
+      "components/sikshitfooter.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "components/termsandservice.html",
+    "pages": [
+      "components/footer.html"
+    ],
+    "onlyFrozen": true,
+    "anyFrozen": true
+  },
+  {
+    "file": "images/contact.html",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/floating-buttons.css",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/footer.html",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/hamburger-menu-fix.js",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/heading-styles.css",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/home.css",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/home.js",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/images/homeimage.jpg",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/images/scholarship_categories.jpg",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/images/VID-20250603-WA0004.mp4",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/images/video-poster.jpg",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/images/videoNS_Mass.mp4",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/images/WhatsApp Video 2025-06-09 at 12.06.54_0fd5514b.mp4",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/images/WhatsApp Video 2025-06-09 at 12.10.45_3cbb461d.mp4",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/mobile-menu-fix.css",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/nsmas_navbar.html",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/nsmas+floating-button.html",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/registration.html",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/responsive.css",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/review-cards.css",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/scholarship.html",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/script.js",
+    "pages": [
+      "images/Home.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "images/video-poster.jpg",
+    "pages": [
+      "ns-mas.html"
+    ],
+    "onlyFrozen": true,
+    "anyFrozen": true
+  },
+  {
+    "file": "scholarships.html",
+    "pages": [
+      "about-us.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": false
+  },
+  {
+    "file": "thumb1.jpg",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "thumb2.jpg",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "thumb3.jpg",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "thumb4.jpg",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "thumb5.jpg",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "thumb6.jpg",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "video1.mp4",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "video2.mp4",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "video3.mp4",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "video4.mp4",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "video5.mp4",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  },
+  {
+    "file": "video6.mp4",
+    "pages": [
+      "become-a-member.html",
+      "ns-mas.html",
+      "product-services.html"
+    ],
+    "onlyFrozen": false,
+    "anyFrozen": true
+  }
+]

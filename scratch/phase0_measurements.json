@@ -1,0 +1,501 @@
+{
+  "base_prm_block": "@media (prefers-reduced-motion: reduce) {\n  html {\n    scroll-behavior: auto;\n  }\n  *, *::before, *::after {\n    animation-duration: 0.001ms !important;\n    animation-iteration-count: 1 !important;\n    transition-duration: 0.001ms !important;\n    transform: none !important;\n  }\n  .editorial-reveal {\n    opacity: 1 !important;\n    transform: none !important;\n  }\n}",
+  "base_prm_transform_none": true,
+  "base_prm_iteration_count": true,
+  "editorial_reveal_rule": ".editorial-reveal {\n  opacity: 0;\n  transform: translateY(28px);\n  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);\n  will-change: opacity, transform;\n}",
+  "editorial_reveal_has_html_js_gate": false,
+  "css_stats": {
+    "base.css": {
+      "importantCount": 6,
+      "keyframesCount": 0,
+      "infiniteCount": 0,
+      "backdropFilterCount": 0,
+      "blurCount": 3,
+      "willChangeCount": 4,
+      "v100vwCount": 1,
+      "v100vhCount": 2,
+      "breakpoints": [
+        "@media (prefers-reduced-motion: reduce)"
+      ]
+    },
+    "components.css": {
+      "importantCount": 18,
+      "keyframesCount": 1,
+      "infiniteCount": 1,
+      "backdropFilterCount": 6,
+      "blurCount": 6,
+      "willChangeCount": 0,
+      "v100vwCount": 0,
+      "v100vhCount": 0,
+      "breakpoints": [
+        "@media (max-width: 992px)",
+        "@media (max-width: 768px)"
+      ]
+    },
+    "contact.css": {
+      "importantCount": 3,
+      "keyframesCount": 0,
+      "infiniteCount": 0,
+      "backdropFilterCount": 2,
+      "blurCount": 2,
+      "willChangeCount": 0,
+      "v100vwCount": 0,
+      "v100vhCount": 0,
+      "breakpoints": [
+        "@media (max-width: 900px)",
+        "@media (max-width: 768px)",
+        "@media (prefers-reduced-motion: reduce)"
+      ]
+    },
+    "donate.css": {
+      "importantCount": 210,
+      "keyframesCount": 0,
+      "infiniteCount": 0,
+      "backdropFilterCount": 2,
+      "blurCount": 3,
+      "willChangeCount": 0,
+      "v100vwCount": 0,
+      "v100vhCount": 1,
+      "breakpoints": [
+        "@media (max-width: 640px)",
+        "@media (prefers-reduced-motion: reduce)"
+      ]
+    },
+    "member.css": {
+      "importantCount": 156,
+      "keyframesCount": 0,
+      "infiniteCount": 0,
+      "backdropFilterCount": 0,
+      "blurCount": 1,
+      "willChangeCount": 0,
+      "v100vwCount": 0,
+      "v100vhCount": 1,
+      "breakpoints": [
+        "@media (prefers-reduced-motion: reduce)"
+      ]
+    },
+    "pages.css": {
+      "importantCount": 25,
+      "keyframesCount": 9,
+      "infiniteCount": 5,
+      "backdropFilterCount": 12,
+      "blurCount": 13,
+      "willChangeCount": 0,
+      "v100vwCount": 0,
+      "v100vhCount": 0,
+      "breakpoints": [
+        "@media (max-width: 1080px)",
+        "@media (max-width: 600px)",
+        "@media (prefers-reduced-motion: reduce)",
+        "@media (max-width: 1024px)",
+        "@media (max-width: 768px)",
+        "@media (max-width: 480px)"
+      ]
+    },
+    "products.css": {
+      "importantCount": 1003,
+      "keyframesCount": 16,
+      "infiniteCount": 36,
+      "backdropFilterCount": 18,
+      "blurCount": 22,
+      "willChangeCount": 12,
+      "v100vwCount": 1,
+      "v100vhCount": 0,
+      "breakpoints": [
+        "@media (min-width: 1920px)",
+        "@media (min-width: 2560px)",
+        "@media (min-width: 3200px)",
+        "@media (min-width: 3840px)",
+        "@media (min-width: 980px)",
+        "@media (max-width: 979px)",
+        "@media (prefers-reduced-motion: reduce)",
+        "@media (max-width: 768px)",
+        "@media (max-width: 1024px)",
+        "@media (max-width: 640px)",
+        "@media (max-width: 720px)",
+        "@media (hover: hover) and (pointer: fine)",
+        "@media (max-width: 480px)",
+        "@media (max-width: 991px)"
+      ]
+    },
+    "tokens.css": {
+      "importantCount": 4,
+      "keyframesCount": 0,
+      "infiniteCount": 0,
+      "backdropFilterCount": 0,
+      "blurCount": 0,
+      "willChangeCount": 0,
+      "v100vwCount": 0,
+      "v100vhCount": 0,
+      "breakpoints": [
+        "@media (prefers-reduced-motion: reduce)"
+      ]
+    }
+  },
+  "tokens_has_spacing_scale": false,
+  "js_analysis": {
+    "main_raf_throttle": "Uses rAF in counters / drag / scroll",
+    "main_drag_property": "Uses translate3d in transform",
+    "main_parallax_pointerleave": false,
+    "main_counters_end_text": true,
+    "inner_scroll_spy_logic": {
+      "uses_last_entry_wins": true,
+      "uses_scrollIntoView": true,
+      "hardcoded_offset": []
+    },
+    "inner_anim_duration_change": true
+  },
+  "server": {
+    "startsWith_without_sep": true,
+    "decodeURIComponent_has_try_catch": false,
+    "range_validation": "Basic or Missing 416 validation",
+    "bind_address": ".listen(PORT, '0.0.0.0', ()"
+  },
+  "contact_phones": [
+    "9-5-9-5-9 5 9 5",
+    "2 2 0 01-2-2",
+    "2 2 0 012-2",
+    "2 2 0 012 2",
+    "2 2 0 01-2 2",
+    "998 0 01-2",
+    "8 8 0 1111",
+    "3 3 0 11-6 0 3 3 0 016 0",
+    "3 3 0 00-5",
+    "2 2 0 11-4 0 2 2 0 014 0",
+    "9 9 0 11-18 0 9 9 0 0118 0",
+    "4 4 0 01-5",
+    "0 0 1440 320",
+    "716 21 3 14",
+    "+919560307205",
+    "+91 9560307205",
+    "2 2 0 002-2",
+    "2 2 0 00-2-2",
+    "2 2 0 00-2 2",
+    "2 2 0 002 2",
+    "+91 98765 43210",
+    "4 4 0 11-8 0 4 4 0 018 0",
+    "7 7 0 00-7 7",
+    "7 7 0 00-7-7",
+    "9 2-9-18-9 18 9-2",
+    "8 8 0 11-16 0 8 8 0 0116 0",
+    "1 1 0 11-2 0 1 1 0 012 0",
+    "1 1 0 000 2",
+    "1 1 0 001 1",
+    "1 1 0 100-2",
+    "1522202176988-66273",
+    "952 0 0012 20",
+    "952 0 00-6",
+    "1 1 0 011-1",
+    "1 1 0 011 1",
+    "9261811878513",
+    "20998431508102",
+    "61798998242458",
+    "1625661099513",
+    "1 1 0 0121 8",
+    "1 1 0 01-1",
+    "917905044451",
+    "2 2 0 01-2",
+    "5 0 01-6-6 19",
+    "2 2 0 012 1",
+    "81 2 2 0 01",
+    "16 16 0 006 6",
+    "2 2 0 0122 16",
+    "+917905044451"
+  ],
+  "donate.html_stylesheets": [
+    "css/sikshitnavbar.css",
+    "css/shikshit/donate.css"
+  ],
+  "become-a-member.html_stylesheets": [
+    "css/sikshitnavbar.css",
+    "css/shikshit/member.css"
+  ],
+  "product-services.html_stylesheets": [
+    "css/sikshitnavbar.css",
+    "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap",
+    "css/shikshit/tokens.css",
+    "css/shikshit/base.css",
+    "css/shikshit/components.css",
+    "css/shikshit/products.css"
+  ],
+  "shikshit_donate_css_exists": true,
+  "ps_has_footer_markup": true,
+  "tailwind_pages": [
+    "about-us.html",
+    "become-a-member.html",
+    "contact.html",
+    "donate.html",
+    "how-it-works.html",
+    "ns-mas.html",
+    "privacypolicy.html",
+    "product-services.html",
+    "registration.html",
+    "scholarship.html",
+    "termsandservice.html"
+  ],
+  "meta_desc_canonical": {
+    "about-us.html": {
+      "has_meta_desc": false,
+      "desc": null,
+      "has_canonical": false,
+      "canonical": null
+    },
+    "become-a-member.html": {
+      "has_meta_desc": false,
+      "desc": null,
+      "has_canonical": false,
+      "canonical": null
+    },
+    "contact.html": {
+      "has_meta_desc": false,
+      "desc": null,
+      "has_canonical": false,
+      "canonical": null
+    },
+    "cookie-policy.html": {
+      "has_meta_desc": true,
+      "desc": "Cookie Policy for Shikshit - Learn how we use cookies and similar technologies",
+      "has_canonical": false,
+      "canonical": null
+    },
+    "disclaimer.html": {
+      "has_meta_desc": true,
+      "desc": "Disclaimer for Shikshit - Important information about the use of our educational content",
+      "has_canonical": false,
+      "canonical": null
+    },
+    "donate.html": {
+      "has_meta_desc": true,
+      "desc": "Make a difference today by supporting quality education for children in need. Your donation helps provide scholarships and educational opportunities.",
+      "has_canonical": false,
+      "canonical": null
+    },
+    "how-it-works.html": {
+      "has_meta_desc": false,
+      "desc": null,
+      "has_canonical": false,
+      "canonical": null
+    },
+    "index.html": {
+      "has_meta_desc": true,
+      "desc": "Shikshit offers skill development courses, educational resources and career guidance services to empower students for a successful future.",
+      "has_canonical": true,
+      "canonical": "https://www.shikshit.in"
+    },
+    "ns-mas.html": {
+      "has_meta_desc": true,
+      "desc": "Apply for NS-MAS Scholarship 2026 and receive merit-based financial assistance for Class 9 to postgraduate students in India. apply online today.\n",
+      "has_canonical": false,
+      "canonical": null
+    },
+    "privacy-policy.html": {
+      "has_meta_desc": true,
+      "desc": "Privacy Policy for Shikshit - Learn how we collect, use, and protect your information",
+      "has_canonical": false,
+      "canonical": null
+    },
+    "privacypolicy.html": {
+      "has_meta_desc": false,
+      "desc": null,
+      "has_canonical": false,
+      "canonical": null
+    },
+    "product-services.html": {
+      "has_meta_desc": false,
+      "desc": null,
+      "has_canonical": true,
+      "canonical": "https://www.shikshit.in/product-services.html"
+    },
+    "registration.html": {
+      "has_meta_desc": false,
+      "desc": null,
+      "has_canonical": false,
+      "canonical": null
+    },
+    "scholarship.html": {
+      "has_meta_desc": false,
+      "desc": null,
+      "has_canonical": false,
+      "canonical": null
+    },
+    "terms.html": {
+      "has_meta_desc": true,
+      "desc": "Terms & Conditions for Shikshit - Rules and guidelines for using our educational platform",
+      "has_canonical": false,
+      "canonical": null
+    },
+    "termsandservice.html": {
+      "has_meta_desc": false,
+      "desc": null,
+      "has_canonical": false,
+      "canonical": null
+    }
+  },
+  "images_without_dims": {
+    "about-us.html": {
+      "total": 0,
+      "missingDims": 0
+    },
+    "become-a-member.html": {
+      "total": 7,
+      "missingDims": 7
+    },
+    "contact.html": {
+      "total": 1,
+      "missingDims": 1
+    },
+    "cookie-policy.html": {
+      "total": 0,
+      "missingDims": 0
+    },
+    "disclaimer.html": {
+      "total": 0,
+      "missingDims": 0
+    },
+    "donate.html": {
+      "total": 2,
+      "missingDims": 2
+    },
+    "how-it-works.html": {
+      "total": 1,
+      "missingDims": 1
+    },
+    "index.html": {
+      "total": 64,
+      "missingDims": 64
+    },
+    "ns-mas.html": {
+      "total": 2,
+      "missingDims": 2
+    },
+    "privacy-policy.html": {
+      "total": 0,
+      "missingDims": 0
+    },
+    "privacypolicy.html": {
+      "total": 0,
+      "missingDims": 0
+    },
+    "product-services.html": {
+      "total": 4,
+      "missingDims": 4
+    },
+    "registration.html": {
+      "total": 0,
+      "missingDims": 0
+    },
+    "scholarship.html": {
+      "total": 27,
+      "missingDims": 27
+    },
+    "terms.html": {
+      "total": 0,
+      "missingDims": 0
+    },
+    "termsandservice.html": {
+      "total": 0,
+      "missingDims": 0
+    }
+  },
+  "scripts_without_defer": {
+    "about-us.html": {
+      "total": 4,
+      "noDefer": 4
+    },
+    "become-a-member.html": {
+      "total": 2,
+      "noDefer": 2
+    },
+    "contact.html": {
+      "total": 2,
+      "noDefer": 2
+    },
+    "cookie-policy.html": {
+      "total": 0,
+      "noDefer": 0
+    },
+    "disclaimer.html": {
+      "total": 0,
+      "noDefer": 0
+    },
+    "donate.html": {
+      "total": 6,
+      "noDefer": 6
+    },
+    "how-it-works.html": {
+      "total": 6,
+      "noDefer": 6
+    },
+    "index.html": {
+      "total": 1,
+      "noDefer": 1
+    },
+    "ns-mas.html": {
+      "total": 4,
+      "noDefer": 4
+    },
+    "privacy-policy.html": {
+      "total": 0,
+      "noDefer": 0
+    },
+    "privacypolicy.html": {
+      "total": 2,
+      "noDefer": 2
+    },
+    "product-services.html": {
+      "total": 3,
+      "noDefer": 3
+    },
+    "registration.html": {
+      "total": 2,
+      "noDefer": 2
+    },
+    "scholarship.html": {
+      "total": 7,
+      "noDefer": 7
+    },
+    "terms.html": {
+      "total": 0,
+      "noDefer": 0
+    },
+    "termsandservice.html": {
+      "total": 2,
+      "noDefer": 2
+    }
+  },
+  "top_4_largest_files": [
+    {
+      "path": "images/WhatsApp Video 2025-06-09 at 12.10.45_3cbb461d.mp4",
+      "size_bytes": 24466544,
+      "size_mb": "23.33 MB"
+    },
+    {
+      "path": "images/videoNS_Mass.mp4",
+      "size_bytes": 23236063,
+      "size_mb": "22.16 MB"
+    },
+    {
+      "path": "images/VID-20250603-WA0004.mp4",
+      "size_bytes": 18618885,
+      "size_mb": "17.76 MB"
+    },
+    {
+      "path": "images/WhatsApp Video 2025-06-09 at 12.06.54_0fd5514b.mp4",
+      "size_bytes": 14537321,
+      "size_mb": "13.86 MB"
+    }
+  ],
+  "floating_hub_in_non_frozen": {
+    "index.html": false,
+    "about-us.html": false,
+    "contact.html": true,
+    "product-services.html": false,
+    "become-a-member.html": true,
+    "donate.html": false,
+    "cookie-policy.html": false,
+    "disclaimer.html": false,
+    "privacy-policy.html": false,
+    "terms.html": false
+  },
+  "contact_has_quick_connect": true
+}
