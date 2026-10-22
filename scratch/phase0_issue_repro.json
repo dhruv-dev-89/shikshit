@@ -1,0 +1,79 @@
+{
+  "logos_1440": {
+    "headerLogo": {
+      "w": 112,
+      "h": 110,
+      "src": "http://localhost:3000/images/sikshitlogo.webp"
+    },
+    "footerLogo": {
+      "w": 57,
+      "h": 56,
+      "src": "http://localhost:3000/images/sikshitlogo.webp"
+    }
+  },
+  "ribbonMotion": {
+    "t0": [],
+    "t15": [],
+    "moves": false
+  },
+  "marqueeMotion": {
+    "t0": [
+      {
+        "class": "marquee-container",
+        "transform": "none"
+      },
+      {
+        "class": "marquee-track",
+        "transform": "matrix(1, 0, 0, 1, -213.1, 0)"
+      }
+    ],
+    "t15": [
+      {
+        "class": "marquee-container",
+        "transform": "none"
+      },
+      {
+        "class": "marquee-track",
+        "transform": "matrix(1, 0, 0, 1, -306.706, 0)"
+      }
+    ],
+    "moves": true
+  },
+  "polaroidDrag": {
+    "before": {
+      "x": 31.602075576782227,
+      "y": 120.46852111816406,
+      "w": 209.48333740234375,
+      "h": 241.4535675048828,
+      "transform": "matrix(1, 0, 0, 1, 0, 0)"
+    },
+    "after": {
+      "x": 127.32563018798828,
+      "y": 161.83758544921875,
+      "w": 229.48406982421875,
+      "h": 257.1523742675781,
+      "transform": "matrix(0.994522, -0.104528, 0.104528, 0.994522, 100, 60)"
+    },
+    "moved": true
+  },
+  "ps_footer": {
+    "exists": true,
+    "tag": "FOOTER",
+    "display": "block",
+    "visibility": "visible",
+    "opacity": "1",
+    "height": 485.96875,
+    "innerHTML_length": 3891,
+    "children": 1
+  },
+  "ps_section_index": {
+    "count": 0,
+    "pills": [],
+    "activeText": null
+  },
+  "reduced_motion_on": {
+    "revealCount": 51,
+    "revealsWithIsRevealed": 0,
+    "runningAnimationCount": 7
+  }
+}

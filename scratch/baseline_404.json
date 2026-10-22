@@ -1,0 +1,118 @@
+{
+  "timestamp": "2026-10-22T04:44:29.608Z",
+  "primaryPages": [
+    {
+      "path": "/",
+      "statusCode": 200
+    },
+    {
+      "path": "/index",
+      "statusCode": 200
+    },
+    {
+      "path": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/about-us",
+      "statusCode": 200
+    },
+    {
+      "path": "/about-us.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/contact",
+      "statusCode": 200
+    },
+    {
+      "path": "/contact.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/product-services",
+      "statusCode": 200
+    },
+    {
+      "path": "/product-services.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/become-a-member",
+      "statusCode": 200
+    },
+    {
+      "path": "/become-a-member.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/donate",
+      "statusCode": 200
+    },
+    {
+      "path": "/donate.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/ns-mas",
+      "statusCode": 200
+    },
+    {
+      "path": "/ns-mas.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/scholarship",
+      "statusCode": 200
+    },
+    {
+      "path": "/scholarship.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/registration",
+      "statusCode": 200
+    },
+    {
+      "path": "/registration.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/how-it-works",
+      "statusCode": 200
+    },
+    {
+      "path": "/how-it-works.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/privacypolicy",
+      "statusCode": 200
+    },
+    {
+      "path": "/privacypolicy.html",
+      "statusCode": 200
+    },
+    {
+      "path": "/termsandservice",
+      "statusCode": 200
+    },
+    {
+      "path": "/termsandservice.html",
+      "statusCode": 200
+    }
+  ],
+  "page404Count": 0,
+  "page404List": [],
+  "assetTotalCount": 128,
+  "asset404Count": 7,
+  "asset404List": [
+    "/scholarships.html",
+    "/video1.mp4",
+    "/video2.mp4",
+    "/video3.mp4",
+    "/video4.mp4",
+    "/video5.mp4",
+    "/video6.mp4"
+  ]
+}
