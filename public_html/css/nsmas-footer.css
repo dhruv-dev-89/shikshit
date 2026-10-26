@@ -22,9 +22,14 @@
 
 .nsmas-footer__main {
   display: grid;
-  grid-template-columns: 1.35fr repeat(3, 1fr);
+  grid-template-columns: minmax(0, 1.35fr) repeat(3, minmax(0, 1fr));
   gap: 44px;
   padding-bottom: 42px;
+}
+
+.nsmas-footer__main > section,
+.nsmas-footer__details > section {
+  min-width: 0;
 }
 
 .nsmas-footer__brand {
@@ -133,7 +138,7 @@
 
 .nsmas-footer__details {
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
   gap: 56px;
   padding: 30px 0;
   border-top: 1px solid #e5e2ec;
