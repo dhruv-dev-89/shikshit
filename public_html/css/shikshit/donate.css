@@ -461,6 +461,47 @@ body.page-donate .py-16.lg\:py-24.bg-white h2 {
   letter-spacing: 0.04em !important;
 }
 
+body.page-donate .learning-image-shade {
+  background: linear-gradient(
+    180deg,
+    rgba(8, 12, 30, 0.04) 25%,
+    rgba(8, 12, 30, 0.28) 58%,
+    rgba(8, 12, 30, 0.88) 100%
+  ) !important;
+  pointer-events: none;
+}
+
+body.page-donate .learning-image-caption {
+  box-sizing: border-box;
+  padding: 5rem 2rem 2rem !important;
+  z-index: 1;
+}
+
+body.page-donate .learning-image-title {
+  color: #FFFFFF !important;
+  font-size: clamp(1.5rem, 3vw, 2.25rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  margin: 0 0 0.6rem !important;
+  max-width: 42rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65) !important;
+}
+
+body.page-donate .learning-image-description {
+  color: rgba(255, 255, 255, 0.96) !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  max-width: 42rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7) !important;
+}
+
+@media (max-width: 640px) {
+  body.page-donate .learning-image-caption {
+    padding: 4rem 1.25rem 1.25rem !important;
+  }
+}
+
 /* Intervention Section */
 body.page-donate .interventions-section {
   background: #F8FAFC !important;
