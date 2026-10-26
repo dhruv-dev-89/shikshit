@@ -2702,16 +2702,16 @@ body.page-products .products-hero-bands {
 }
 
 body.page-products .ribbon-track.track-left {
-  animation: mqRibbonLeft 55s linear infinite !important;
-  animation-duration: 55s !important;
+  animation: mqRibbonLeft 65s linear infinite !important;
+  animation-duration: 65s !important;
   animation-iteration-count: infinite !important;
   animation-play-state: running !important;
   will-change: translate, transform !important;
 }
 
 body.page-products .ribbon-track.track-right {
-  animation: mqRibbonLeft 55s linear infinite !important;
-  animation-duration: 55s !important;
+  animation: mqRibbonLeft 65s linear infinite !important;
+  animation-duration: 65s !important;
   animation-direction: reverse !important;
   animation-iteration-count: infinite !important;
   animation-play-state: running !important;
