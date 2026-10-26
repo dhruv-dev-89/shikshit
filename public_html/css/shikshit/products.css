@@ -1307,7 +1307,7 @@ body.page-products .products-services-section .shikshit-section-subtitle {
 /* 3-Column Desktop Grid */
 body.page-products .services-editorial-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-columns: repeat(1, 1fr) !important;
   gap: 28px !important;
   align-items: stretch !important;
   margin-top: 48px !important;
