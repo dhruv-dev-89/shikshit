@@ -10,6 +10,8 @@
             font-family: 'Inter', sans-serif;
         }
     </style>
+    <link rel="stylesheet" href="css/nsmas-footer.css">
+    <script src="js/nsmas-footer.js" defer></script>
 </head>
 <body class="bg-gradient-to-b from-purple-100 via-pink-50 to-white text-gray-800 min-h-screen flex flex-col">
         <!-- Navbar -->
@@ -136,9 +138,7 @@
 
     </script>
     <!-- Footer -->
-    <footer class="w-full">
-        <div include-html="components/footer.html"></div>
-    </footer>
+    
 
     <!-- Scripts -->
     <script>
@@ -168,6 +168,7 @@
         window.onload = () => { window.scrollTo({ top: 0, behavior: 'smooth' }); };
     </script>
     <script src="js/hamburger-menu-fix.js"></script>
+    <div include-html="components/footer.html"></div>
 
-</body>
+    </body>
 </html>

@@ -1,0 +1,281 @@
+/* ==========================================================================
+   SHIKSHIT CENTRALIZED EDITORIAL FOOTER COMPONENT STYLES
+   Source of Truth: public_html/index.html
+   Scoped strictly to .footer-editorial to guarantee visual fidelity.
+   ========================================================================== */
+
+/* Design Token Fallbacks (ensure standalone correctness even without tokens.css) */
+:root {
+  --shikshit-footer-navy: #0B0B3B;
+  --shikshit-footer-ink: #4B4A68;
+  --shikshit-footer-violet: #7C3AED;
+  --shikshit-footer-violet-2: #8B5CF6;
+  --shikshit-footer-magenta: #C026D3;
+  --shikshit-footer-pink: #EC4899;
+  --shikshit-footer-lav-50: #F7F5FF;
+  --shikshit-footer-blush: #FFF6F2;
+  --shikshit-footer-peach: #FFE9E0;
+  --shikshit-footer-white: #FFFFFF;
+  --shikshit-footer-gradient: linear-gradient(135deg, #7C3AED 0%, #C026D3 60%, #EC4899 100%);
+  --shikshit-footer-hairline: 1px solid rgba(124, 58, 237, 0.12);
+  --shikshit-footer-font: 'Plus Jakarta Sans', Poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Ensure font is loaded */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* Main Footer Container */
+.footer-editorial {
+  background: linear-gradient(
+    135deg,
+    var(--lav-50, var(--shikshit-footer-lav-50)) 0%,
+    var(--blush, var(--shikshit-footer-blush)) 50%,
+    var(--peach, var(--shikshit-footer-peach)) 100%
+  ) !important;
+  border-radius: 48px 48px 0 0 !important;
+  border-top: var(--hairline-border, var(--shikshit-footer-hairline)) !important;
+  padding: 70px 0 32px !important;
+  margin-top: 60px !important;
+  position: relative !important;
+  z-index: 2 !important;
+  font-family: var(--font-body, var(--shikshit-footer-font)) !important;
+  color: var(--ink, var(--shikshit-footer-ink)) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  clear: both !important;
+}
+
+/* Scoped Box-Sizing Reset inside Footer */
+.footer-editorial,
+.footer-editorial *,
+.footer-editorial *::before,
+.footer-editorial *::after {
+  box-sizing: border-box !important;
+}
+
+/* Max-Width Content Wrapper */
+.footer-editorial .shikshit-container {
+  max-width: var(--container-max, 1200px) !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--container-padding, 24px) !important;
+  padding-right: var(--container-padding, 24px) !important;
+  box-sizing: border-box !important;
+}
+
+/* 4-Column Responsive Layout Grid */
+.footer-editorial .footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr !important;
+  gap: 40px !important;
+  margin-bottom: 48px !important;
+  align-items: start !important;
+}
+
+/* Ensure all footer grid columns and elements are always 100% visible across all pages */
+.footer-editorial .footer-grid > div {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* Brand Column (Column 1) */
+.footer-editorial .footer-brand {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 56px !important;
+}
+
+.footer-editorial .footer-logo,
+.footer-editorial img[src*="sikshitlogo"] {
+  height: 56px !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+  filter: drop-shadow(0 2px 8px rgba(11, 11, 59, 0.08)) !important;
+}
+
+.footer-editorial .footer-grid > div:first-child p {
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  color: var(--ink, var(--shikshit-footer-ink)) !important;
+  max-width: 340px !important;
+  margin-top: 16px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Column Headings */
+.footer-editorial .footer-col h4 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--navy, var(--shikshit-footer-navy)) !important;
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+}
+
+/* Link Lists */
+.footer-editorial .footer-col ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.footer-editorial .footer-col ul li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-editorial .footer-col ul li a,
+.footer-editorial .footer-col a {
+  color: var(--ink, var(--shikshit-footer-ink)) !important;
+  font-size: 14.5px !important;
+  line-height: 1.5 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease, transform 0.2s ease !important;
+  display: inline-block !important;
+}
+
+.footer-editorial .footer-col ul li a:hover,
+.footer-editorial .footer-col a:hover {
+  color: var(--violet, var(--shikshit-footer-violet)) !important;
+  transform: translateX(2px) !important;
+}
+
+/* Contact Column Paragraphs & Inline Links */
+.footer-editorial .footer-col p {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  color: var(--ink, var(--shikshit-footer-ink)) !important;
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+.footer-editorial .footer-col p a {
+  color: var(--violet, var(--shikshit-footer-violet)) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.footer-editorial .footer-col p a:hover {
+  text-decoration: underline !important;
+}
+
+/* Chat on WhatsApp Pill Button */
+.footer-editorial a.btn-primary-gradient,
+.footer-editorial .btn-pill.btn-primary-gradient {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 8px 18px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  background: var(--signature-gradient, var(--shikshit-footer-gradient)) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 16px rgba(192, 38, 211, 0.35) !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  border: none !important;
+  outline: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin-top: 6px !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.footer-editorial a.btn-primary-gradient::before,
+.footer-editorial .btn-pill.btn-primary-gradient::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 60% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent) !important;
+  transform: skewX(-20deg) !important;
+  transition: left 0.75s ease !important;
+  pointer-events: none !important;
+}
+
+.footer-editorial a.btn-primary-gradient:hover,
+.footer-editorial .btn-pill.btn-primary-gradient:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(192, 38, 211, 0.5) !important;
+  color: #FFFFFF !important;
+}
+
+.footer-editorial a.btn-primary-gradient:hover::before,
+.footer-editorial .btn-pill.btn-primary-gradient:hover::before {
+  left: 140% !important;
+}
+
+.footer-editorial a.btn-primary-gradient:active,
+.footer-editorial .btn-pill.btn-primary-gradient:active {
+  transform: scale(0.97) !important;
+}
+
+/* Footer Bottom Hairline & Copyright */
+.footer-editorial .footer-bottom {
+  border-top: 1px solid rgba(124, 58, 237, 0.12) !important;
+  padding-top: 24px !important;
+  margin-top: 0 !important;
+  text-align: center !important;
+  font-size: 13.5px !important;
+  color: var(--ink, var(--shikshit-footer-ink)) !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (Desktop, Tablet, Mobile)
+   ========================================================================== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .footer-editorial .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 36px !important;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .footer-editorial {
+    padding: 48px 0 28px !important;
+    border-radius: 32px 32px 0 0 !important;
+    margin-top: 40px !important;
+  }
+
+  .footer-editorial .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .footer-editorial .footer-brand {
+    height: 48px !important;
+  }
+
+  .footer-editorial .footer-logo,
+  .footer-editorial img[src*="sikshitlogo"] {
+    height: 48px !important;
+  }
+
+  .footer-editorial .footer-grid > div:first-child p {
+    max-width: 100% !important;
+  }
+}
+

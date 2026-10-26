@@ -382,6 +382,30 @@ body.page-member .video-carousel h2 {
   margin-bottom: 2rem !important;
 }
 
+body.page-member .carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.page-member .carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+body.page-member .video-item {
+  min-width: 300px;
+  margin: 0 10px;
+}
+
+body.page-member .video-item video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #000;
+}
+
 /* ==========================================================================
    7. PURPOSEFUL MOTION & SCROLL REVEALS
    ========================================================================== */

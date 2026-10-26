@@ -1,574 +1,236 @@
-<!-- NSMAS Responsive Navbar Component -->
-<nav
-  class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-lg"
->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16 md:h-20">
-      <!-- Logo and Brand Section -->
-      <div class="flex items-center space-x-3">
-        <a href="ns-mas.html" class="flex items-center space-x-3 group">
-          <img
-            src="./images/Logos02.png"
-            alt="Sikshit Logo"
-            class="h-10 w-10 md:h-12 md:w-12 object-contain transition-transform duration-300 group-hover:scale-110"
-          />
-          <div class="block">
-            <div
-              class="text-sm md:text-lg lg:text-xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors duration-300"
-            >
-              National Scholarship
-            </div>
-            <div class="text-xs md:text-sm text-gray-600">
-              Merit and Assistance Scheme
-            </div>
-          </div>
-        </a>
-      </div>
+<!-- Shared NS-MAS navigation. Keep this component separate from Shikshit pages. -->
+<header class="nsmas-header">
+  <nav class="nsmas-navbar" aria-label="Main navigation">
+    <a class="nsmas-brand" href="ns-mas.html" aria-label="National Scholarship Merit and Assistance Scheme home">
+      <img src="./images/Logos02.png" alt="Shikshit logo" />
+      <span class="nsmas-brand-copy">
+        <strong>National Scholarship</strong>
+        <small>Merit and Assistance Scheme</small>
+      </span>
+    </a>
 
-      <!-- Desktop Navigation Links -->
-      <div class="hidden xl:flex items-center space-x-8" id="desktop-nav">
-        <a
-          href="/"
-          class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300 relative group"
-        >
-          Shikshit
-          <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
-          ></span>
-        </a>
-        <a
-          href="scholarship.html"
-          class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300 relative group"
-        >
-          Scholarships
-          <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
-          ></span>
-        </a>
-        <a
-          href="how-it-works.html"
-          class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300 relative group"
-        >
-          How it works
-          <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
-          ></span>
-        </a>
-        <a
-          href="contact.html"
-          class="text-gray-700 hover:text-purple-600 font-medium transition-colors duration-300 relative group"
-        >
-          Contact us
-          <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-300 group-hover:w-full"
-          ></span>
-        </a>
-      </div>
-
-      <!-- Search Bar and Apply Button -->
-      <div class="hidden xl:flex items-center space-x-4">
-        <!-- Search Bar -->
-        <div class="relative">
-          <input
-            type="text"
-            placeholder="Search scholarships..."
-            class="w-48 lg:w-64 px-4 py-2 pl-12 text-sm border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
-          />
-          <svg
-            class="absolute left-4 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            ></path>
-          </svg>
-        </div>
-
-        <!-- Apply Now Button -->
-        <a
-          href="registration.html"
-          class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-full font-semibold hover:from-purple-700 hover:to-indigo-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-        >
-          Apply Now
-        </a>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <div class="xl:hidden">
-        <button
-          id="mobile-menu-button"
-          class="mobile-menu-button p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 transition-colors duration-300"
-          aria-label="Toggle mobile menu"
-          aria-expanded="false"
-        >
-          <svg
-            id="menu-open-icon"
-            class="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-          <svg
-            id="menu-close-icon"
-            class="h-6 w-6 hidden"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </button>
-      </div>
+    <div class="nsmas-desktop-links" id="desktop-nav">
+      <a href="index.html">Shikshit</a>
+      <a href="scholarship.html">Scholarships</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="contact.html">Contact us</a>
     </div>
-  </div>
 
-  <!-- Mobile Menu -->
-  <div
-    id="mobile-menu"
-    class="xl:hidden hidden bg-white border-t border-gray-200 shadow-lg"
-    style="display: none"
-  >
-    <div class="px-4 py-6 space-y-4 ml-4">
-      <!-- Mobile Search -->
-      <div class="relative mb-4">
-        <input
-          type="text"
-          placeholder="Search scholarships..."
-          class="mobile-search-input w-full px-4 py-3 pl-12 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-        />
-        <svg
-          class="mobile-search-icon absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-          ></path>
-        </svg>
-      </div>
-
-      <!-- Mobile Navigation Links -->
-      <a
-        href="/"
-        class="block py-3 px-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-300"
-      >
-        Shikshit
-      </a>
-      <a
-        href="scholarship.html"
-        class="block py-3 px-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-300"
-      >
-        Scholarships
-      </a>
-      <a
-        href="how-it-works.html"
-        class="block py-3 px-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-300"
-      >
-        How it works
-      </a>
-      <a
-        href="contact.html"
-        class="block py-3 px-4 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-lg font-medium transition-all duration-300"
-      >
-        Contact us
-      </a>
-
-      <!-- Mobile Apply Button -->
-      <div class="pt-4 border-t border-gray-200">
-        <a
-          href="registration.html"
-          class="block w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-center py-3 px-4 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 shadow-lg"
-        >
-          Apply Now
-        </a>
-      </div>
+    <div class="nsmas-nav-actions">
+      <label class="nsmas-search" style="display:flex!important;flex:0 1 320px!important;align-items:center!important;gap:12px!important;width:clamp(220px,18vw,320px)!important;min-width:220px!important;height:48px!important;min-height:48px!important;padding:0 16px!important;border:1px solid #d1d5db!important;border-radius:999px!important;background:#fff!important;color:#929bad!important;box-shadow:none!important">
+        <svg viewBox="0 0 24 24" aria-hidden="true" style="display:block!important;flex:0 0 18px!important;width:18px!important;height:18px!important;fill:none!important;stroke:#929bad!important;stroke-width:1.8!important;stroke-linecap:round!important;stroke-linejoin:round!important"><circle cx="11" cy="11" r="7" fill="none" stroke="#929bad"></circle><path d="m20 20-4-4" fill="none" stroke="#929bad"></path></svg>
+          <input type="search" placeholder="Search scholarships..." aria-label="Search scholarships"
+            style="display:block!important;flex:1 1 auto!important;width:0!important;min-width:0!important;height:auto!important;min-height:0!important;padding:0!important;border:0!important;border-radius:0!important;outline:none!important;box-shadow:none!important;background:transparent!important;appearance:none!important;-webkit-appearance:none!important;color:#201d42!important;font:inherit!important;font-size:15px!important;line-height:1.4!important" />
+      </label>
+      <a class="nsmas-apply" href="registration.html" role="button"
+        style="display:inline-flex!important;flex:0 0 auto!important;align-items:center!important;justify-content:center!important;min-width:132px!important;min-height:48px!important;padding:0 22px!important;border:0!important;border-radius:999px!important;background:linear-gradient(110deg,#843be8,#c53eb7)!important;box-shadow:0 8px 18px rgba(139,60,240,.2)!important;color:#fff!important;font-size:14px!important;font-weight:700!important;line-height:1!important;text-decoration:none!important;white-space:nowrap!important">Apply Now</a>
     </div>
-  </div>
-</nav>
 
-<!-- Mobile Menu JavaScript - Simplified to avoid conflicts -->
+    <button id="mobile-menu-button" class="nsmas-menu-button mobile-menu-button" type="button"
+      aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+      <svg id="menu-open-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      <svg id="menu-close-icon" class="hidden" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+    </button>
+
+    <div id="mobile-menu" class="nsmas-mobile-menu hidden" style="display: none">
+      <label class="nsmas-mobile-search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+        <input class="mobile-search-input" type="search" placeholder="Search scholarships..." aria-label="Search scholarships" />
+      </label>
+      <a href="index.html">Shikshit</a>
+      <a href="scholarship.html">Scholarships</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="contact.html">Contact us</a>
+      <a class="nsmas-mobile-apply" href="registration.html">Apply Now</a>
+    </div>
+  </nav>
+</header>
+
 <script>
-  // Simplified Mobile Menu - Defers to main script.js for functionality
   (function () {
-    "use strict";
-
-    console.log(
-      "NSMAS Navbar: Loaded - Mobile menu functionality handled by script.js"
-    );
-
-    // Mark that navbar is loaded so script.js can initialize mobile menu
     window.navbarLoaded = true;
-
-    // Dispatch event to notify that navbar is ready
     document.dispatchEvent(new CustomEvent("navbar:loaded"));
   })();
 </script>
 
-<!-- Responsive Styles -->
 <style>
-  /* Ensure body has top padding for fixed navbar */
-  body {
-    padding-top: 64px; /* Default for mobile */
-  }
-
-  @media (min-width: 768px) {
-    body {
-      padding-top: 80px; /* Larger padding for desktop */
-    }
-  }
-
-  /* Smooth transitions for mobile menu */
-  #mobile-menu {
-    transition: all 0.3s ease-in-out;
-  }
-
-  /* Hover effects for desktop navigation */
-  @media (min-width: 1024px) {
-    .navbar-link {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .navbar-link::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: -100%;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(to right, #7c3aed, #6366f1);
-      transition: left 0.3s ease;
-    }
-
-    .navbar-link:hover::before {
-      left: 0;
-    }
-  }
-
-  /* Search bar focus effects and mobile search styling */
-  .search-input:focus,
-  .mobile-search-input:focus {
-    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
-    border-color: #7c3aed;
-    outline: none;
-  }
-
-  /* Base mobile search input styling */
-  .mobile-search-input {
-    -webkit-appearance: none;
-    appearance: none;
-    background-clip: padding-box;
-    transition: all 0.3s ease;
-  }
-
-  /* Base mobile search icon styling */
-  .mobile-search-icon {
-    pointer-events: none;
-    z-index: 10;
-  }
-
-  /* Apply button hover effects */
-  .apply-btn {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .apply-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
+  body { padding-top: 88px; }
+  .nsmas-header, .nsmas-header * { box-sizing: border-box; }
+  .nsmas-header {
+    position: fixed;
+    z-index: 1000;
+    top: 16px;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
-    transition: left 0.5s;
+    padding: 0 24px;
+    font-family: inherit;
+    height: auto !important;
+    min-height: 0 !important;
   }
-
-  .apply-btn:hover::before {
-    left: 100%;
+  .nsmas-navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 48px);
+    width: min(100%, 1500px);
+    min-height: 76px;
+    margin: 0 auto;
+    padding: 10px 16px 10px 24px;
+    border: 1px solid rgba(124, 58, 237, .16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .98);
+    box-shadow: 0 14px 38px rgba(35, 25, 83, .16), 0 2px 8px rgba(35, 25, 83, .05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    height: 76px !important;
+    min-height: 76px !important;
+    max-height: 76px !important;
+    flex-flow: row nowrap !important;
+    overflow: visible !important;
   }
-
-  /* Responsive adjustments */
-  @media (max-width: 640px) {
-    .navbar-brand-text {
-      display: none;
-    }
-
-    body {
-      padding-top: 64px;
-    }
+  .nsmas-brand {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 10px;
+    color: #17163f;
+    text-decoration: none;
   }
-
-  /* Enhanced search input spacing for all mobile dimensions */
-
-  /* Default mobile search spacing (all mobile devices) */
-  @media (max-width: 1023px) {
-    .mobile-search-input {
-      padding-left: 4rem !important; /* Increased padding for better spacing */
-      padding-right: 1.5rem !important;
-      padding-top: 1rem !important;
-      padding-bottom: 1rem !important;
-      font-size: 16px !important; /* Prevents zoom on iOS */
-      min-height: 52px !important;
-      border-radius: 12px !important;
-    }
-
-    .mobile-search-icon {
-      left: 1.25rem !important; /* Better positioning for icon */
-      width: 1.25rem !important;
-      height: 1.25rem !important;
-    }
+  .nsmas-brand img { display: block; width: 50px !important; height: 50px !important; max-width: 50px !important; object-fit: contain; }
+  .nsmas-brand-copy { display: grid; gap: 2px; white-space: nowrap; }
+  .nsmas-brand-copy strong { font-size: 15px; line-height: 1.2; font-weight: 750; }
+  .nsmas-brand-copy small { color: #67657d; font-size: 11px; line-height: 1.2; }
+  .nsmas-desktop-links {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 2.3vw, 36px);
   }
-
-  /* Small mobile devices (320px - 480px) */
-  @media (max-width: 480px) {
-    .mobile-search-input {
-      padding-left: 4.25rem !important; /* Extra padding for small screens */
-      padding-right: 1.25rem !important;
-      padding-top: 0.875rem !important;
-      padding-bottom: 0.875rem !important;
-      min-height: 48px !important;
-      border-radius: 10px !important;
-    }
-
-    .mobile-search-icon {
-      left: 1.125rem !important;
-      width: 1.125rem !important;
-      height: 1.125rem !important;
-    }
+  .nsmas-desktop-links a {
+    position: relative;
+    padding: 10px 0;
+    color: #17163f;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color .2s ease;
   }
-
-  /* Extra small mobile devices (≤360px) */
-  @media (max-width: 360px) {
-    .mobile-search-input {
-      padding-left: 4.5rem !important; /* Maximum padding for very small screens */
-      padding-right: 1rem !important;
-      padding-top: 0.75rem !important;
-      padding-bottom: 0.75rem !important;
-      min-height: 44px !important;
-      border-radius: 8px !important;
-    }
-
-    .mobile-search-icon {
-      left: 1rem !important;
-      width: 1rem !important;
-      height: 1rem !important;
-    }
+  .nsmas-desktop-links a::after {
+    position: absolute;
+    right: 0;
+    bottom: 3px;
+    left: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #8b3cf0, #d044b6);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .22s ease;
   }
-
-  /* Large mobile and small tablets (481px - 767px) */
-  @media (min-width: 481px) and (max-width: 767px) {
-    .mobile-search-input {
-      padding-left: 4.5rem !important;
-      padding-right: 1.75rem !important;
-      padding-top: 1.125rem !important;
-      padding-bottom: 1.125rem !important;
-      min-height: 56px !important;
-      border-radius: 14px !important;
-    }
-
-    .mobile-search-icon {
-      left: 1.375rem !important;
-      width: 1.375rem !important;
-      height: 1.375rem !important;
-    }
+  .nsmas-desktop-links a:hover, .nsmas-desktop-links a:focus-visible { color: #7737d8; }
+  .nsmas-desktop-links a:hover::after, .nsmas-desktop-links a:focus-visible::after { transform: scaleX(1); }
+  .nsmas-nav-actions { display: flex !important; flex: 0 0 auto; align-items: center; gap: 12px; }
+  .nsmas-search, .nsmas-mobile-search {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 190px;
+    padding: 11px 14px;
+    border: 1px solid #e8e3f2;
+    border-radius: 999px;
+    background: rgba(255,255,255,.75);
+    color: #77738c;
   }
-
-  /* Tablets (768px - 1023px) */
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .mobile-search-input {
-      padding-left: 5rem !important;
-      padding-right: 2rem !important;
-      padding-top: 1.25rem !important;
-      padding-bottom: 1.25rem !important;
-      min-height: 60px !important;
-      border-radius: 16px !important;
-      font-size: 17px !important;
-    }
-
-    .mobile-search-icon {
-      left: 1.5rem !important;
-      width: 1.5rem !important;
-      height: 1.5rem !important;
-    }
+  .nsmas-search { width: clamp(220px, 18vw, 320px) !important; min-width: 220px !important; min-height: 48px !important; }
+  .nsmas-search svg, .nsmas-mobile-search svg { width: 17px; height: 17px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.8; }
+  .nsmas-search input, .nsmas-mobile-search input { width: 100%; min-width: 0; padding: 0; border: 0; outline: 0; background: transparent; color: #201d42; font: inherit; font-size: 13px; }
+  .nsmas-search:focus-within, .nsmas-mobile-search:focus-within { border-color: #a984ee; box-shadow: 0 0 0 3px rgba(139,60,240,.1); }
+  .nsmas-apply, .nsmas-mobile-apply {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 999px;
+    background: linear-gradient(110deg, #843be8, #c53eb7);
+    box-shadow: 0 8px 18px rgba(139,60,240,.2);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform .2s ease, box-shadow .2s ease;
   }
-
-  @media (min-width: 641px) and (max-width: 768px) {
-    body {
-      padding-top: 72px;
-    }
+  .nsmas-apply {
+    min-width: 132px;
+    min-height: 48px;
+    padding: 0 22px;
+    border: 0;
+    color: #fff !important;
+    background: linear-gradient(110deg, #843be8, #c53eb7) !important;
+    box-shadow: 0 8px 18px rgba(139,60,240,.2) !important;
+    line-height: 1;
   }
-
-  @media (min-width: 769px) {
-    body {
-      padding-top: 80px;
-    }
+  .nsmas-apply:hover, .nsmas-mobile-apply:hover { box-shadow: 0 11px 22px rgba(139,60,240,.28); transform: translateY(-1px); }
+  .nsmas-header .nsmas-menu-button { display: none !important; flex: 0 0 46px !important; width: 46px !important; min-width: 46px !important; max-width: 46px !important; height: 46px !important; min-height: 46px !important; max-height: 46px !important; align-items: center; justify-content: center; padding: 0 !important; border: 1px solid #eee8f7; border-radius: 50%; background: #fff; color: #302552; cursor: pointer; box-shadow: none !important; }
+  .nsmas-header .nsmas-menu-button svg { display: block; width: 22px !important; height: 22px !important; max-width: 22px !important; max-height: 22px !important; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+  .nsmas-mobile-menu { display: none !important; }
+  @media (max-width: 1200px) {
+    body { padding-top: 84px; }
+    .nsmas-header { padding: 0 18px; }
+    .nsmas-navbar { height: 70px !important; min-height: 70px !important; max-height: 70px !important; padding: 9px 12px 9px 20px; gap: 18px; }
+    .nsmas-desktop-links { gap: 18px; }
+    .nsmas-desktop-links a { font-size: 14px; }
+    .nsmas-search { min-width: 160px; }
   }
-
-  /* Additional responsive fixes for all laptop dimensions */
-  @media (min-width: 1024px) and (max-width: 1366px) {
-    .max-w-7xl {
-      max-width: 1280px;
-    }
-  }
-
-  @media (min-width: 1367px) and (max-width: 1920px) {
-    .max-w-7xl {
-      max-width: 1536px;
-    }
-  }
-
-  @media (min-width: 1921px) {
-    .max-w-7xl {
-      max-width: 1792px;
-    }
-  }
-
-  /* Mobile menu improvements */
-  @media (max-width: 1023px) {
-    #mobile-menu {
-      max-height: calc(100vh - 64px);
+  @media (max-width: 1100px) {
+    .nsmas-navbar { height: 70px !important; min-height: 70px !important; max-height: 70px !important; justify-content: space-between; border-radius: 28px; }
+    .nsmas-desktop-links, .nsmas-nav-actions { display: none !important; }
+    .nsmas-header .nsmas-menu-button { display: inline-flex !important; }
+    .nsmas-mobile-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      left: 0;
+      display: none !important;
+      max-height: calc(100vh - 120px);
       overflow-y: auto;
+      padding: 18px;
+      border: 1px solid rgba(124,58,237,.12);
+      border-radius: 24px;
+      background: rgba(255,255,255,.97);
+      box-shadow: 0 20px 42px rgba(35,25,83,.17);
+      backdrop-filter: blur(18px);
     }
+    #mobile-menu:not(.hidden) { display: grid !important; gap: 5px; }
+    .nsmas-mobile-search { margin-bottom: 8px; border-radius: 14px; }
+    .nsmas-mobile-search input { min-height: 26px; font-size: 16px; }
+    .nsmas-mobile-menu > a:not(.nsmas-mobile-apply) { padding: 12px 13px; border-radius: 12px; color: #201d42; font-weight: 600; text-decoration: none; }
+    .nsmas-mobile-menu > a:not(.nsmas-mobile-apply):hover { background: #f5f0ff; color: #7737d8; }
+    .nsmas-mobile-apply { margin-top: 8px; }
   }
-
-  /* Desktop specific adjustments - XL breakpoint and above */
-  @media (min-width: 1280px) {
-    /* Ensure desktop navigation is visible from xl breakpoint */
-    .hidden.xl\\:flex {
-      display: flex !important;
-    }
-
-    /* Hide mobile menu button from xl breakpoint */
-    .xl\\:hidden {
-      display: none !important;
-    }
-
-    /* Ensure mobile menu is hidden from xl breakpoint */
-    #mobile-menu.xl\\:hidden {
-      display: none !important;
-    }
+  @media (max-width: 520px) {
+    body { padding-top: 78px; }
+    .nsmas-header { top: 9px; padding: 0 10px; }
+    .nsmas-navbar { min-height: 62px; padding: 7px 9px 7px 14px; border-radius: 22px; }
+    .nsmas-brand { gap: 7px; }
+    .nsmas-brand img { width: 42px; height: 42px; }
+    .nsmas-brand-copy strong { font-size: 13px; }
+    .nsmas-brand-copy small { font-size: 9px; }
+    .nsmas-menu-button { width: 42px; height: 42px; }
+    .nsmas-mobile-menu { padding: 14px; border-radius: 20px; }
   }
-
-  /* Mobile and Tablet range - Show hamburger menu */
-  @media (max-width: 1279px) {
-    /* Ensure mobile menu button is visible */
-    .xl\\:hidden {
-      display: block !important;
-    }
-
-    /* Ensure desktop navigation is hidden */
-    .hidden.xl\\:flex {
-      display: none !important;
-    }
-
-    /* Ensure mobile menu can be shown when activated */
-    #mobile-menu.xl\\:hidden {
-      display: none; /* Will be toggled by JavaScript */
-    }
-
-    /* Show mobile menu when active */
-    #mobile-menu.xl\\:hidden.show {
-      display: block !important;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    .nsmas-header *, .nsmas-header *::before, .nsmas-header *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
   }
-
-  /* Tablet specific adjustments for better mobile menu display */
-  @media (min-width: 768px) and (max-width: 1279px) {
-    /* Optimize brand text for tablet */
-    .text-sm.md\\:text-lg.lg\\:text-xl {
-      font-size: 1rem !important;
-    }
-
-    .text-xs.md\\:text-sm {
-      font-size: 0.8rem !important;
-    }
-
-    /* Ensure hamburger menu button is properly sized */
-    .xl\\:hidden button {
-      padding: 0.5rem;
-    }
-
-    /* Mobile menu styling for tablet */
-    #mobile-menu {
-      max-height: calc(100vh - 80px);
-      overflow-y: auto;
-    }
-  }
-
-  /* Large laptop/desktop range - Still show hamburger menu */
-  @media (min-width: 1024px) and (max-width: 1279px) {
-    /* Keep hamburger menu visible */
-    .xl\\:hidden {
-      display: block !important;
-    }
-
-    /* Keep desktop navigation hidden */
-    .hidden.xl\\:flex {
-      display: none !important;
-    }
-
-    /* Optimize brand text for large tablet/small laptop */
-    .text-sm.md\\:text-lg.lg\\:text-xl {
-      font-size: 1.1rem !important;
-    }
-
-    .text-xs.md\\:text-sm {
-      font-size: 0.85rem !important;
-    }
-  }
-
-  /* Desktop layout - XL and above (1280px+) */
-  @media (min-width: 1280px) {
-    /* Force desktop navigation to be visible */
-    #desktop-nav {
-      display: flex !important;
-      gap: 2rem;
-    }
-
-    /* Hide hamburger menu */
-    .xl\\:hidden {
-      display: none !important;
-    }
-
-    /* Show search bar and apply button */
-    .hidden.xl\\:flex {
-      display: flex !important;
-    }
-
-    /* Optimize for desktop */
-    .text-sm.md\\:text-lg.lg\\:text-xl {
-      font-size: 1.25rem !important;
-    }
-
-    .text-xs.md\\:text-sm {
-      font-size: 0.875rem !important;
-    }
-  }
+  /* Let the Contact and NS-MAS home hero backgrounds extend behind the fixed nav,
+     while keeping their first content below the floating bar. */
+  body.page-contact,
+  body.page-nsmas-home { padding-top: 0 !important; }
+  body.page-contact main > .hero-section { padding-top: 112px !important; }
+  body.page-nsmas-home #hero-section { padding-top: 112px !important; }
+  @media print { .nsmas-header { display: none !important; } body { padding-top: 0 !important; } }
 </style>

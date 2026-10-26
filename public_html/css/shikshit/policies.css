@@ -1,0 +1,356 @@
+/* Shared, accessible legal-document layout. Scoped to the four policy pages. */
+.shikshit-editorial .policy-layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 760px);
+  justify-content: center;
+  align-items: start;
+  gap: clamp(28px, 5vw, 64px);
+  width: min(1180px, calc(100% - 48px));
+  margin: 42px auto 64px;
+}
+
+.shikshit-editorial .policy-layout > .container {
+  width: auto;
+  max-width: 760px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  counter-reset: legal-section;
+}
+
+.shikshit-editorial .policy-sidebar {
+  position: sticky;
+  top: 126px;
+  padding: 4px 0;
+}
+
+.shikshit-editorial .policy-contents {
+  padding: 17px 14px;
+  border: 1px solid rgba(11, 11, 59, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(11, 11, 59, 0.045);
+}
+
+.shikshit-editorial .policy-contents summary {
+  color: var(--navy, #0b0b3b);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.shikshit-editorial .policy-contents summary::marker {
+  color: #7c3aed;
+}
+
+.shikshit-editorial .policy-contents-list {
+  display: grid;
+  gap: 2px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shikshit-editorial .policy-contents-list li,
+.shikshit-editorial .policy-contents-list li::before {
+  margin: 0;
+  padding: 0;
+  content: none !important;
+  list-style: none;
+}
+
+.shikshit-editorial .policy-contents-list a {
+  display: block;
+  padding: 8px 9px;
+  border-left: 2px solid transparent;
+  border-radius: 6px;
+  color: var(--ink, #4b4a68);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.shikshit-editorial .policy-contents-list a:hover,
+.shikshit-editorial .policy-contents-list a:focus-visible,
+.shikshit-editorial .policy-contents-list a[aria-current="location"] {
+  border-left-color: #7c3aed;
+  background: #f7f5ff;
+  color: #5227a8;
+  outline: none;
+}
+
+.shikshit-editorial .policy-layout > .container > header {
+  margin: 0 0 22px;
+  padding: 0 0 21px;
+  border: 0;
+  border-bottom: 1px solid rgba(11, 11, 59, 0.14);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink, #4b4a68);
+}
+
+.shikshit-editorial .policy-layout > .container > header h1 {
+  margin: 0 0 9px;
+  color: var(--navy, #0b0b3b);
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.16;
+}
+
+.shikshit-editorial .policy-layout > .container > header .website-link {
+  color: var(--ink, #4b4a68);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.shikshit-editorial .policy-layout > .container .policy-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 5px 14px;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: #5b5f6b !important;
+}
+
+.shikshit-editorial .policy-layout > .container .policy-meta p {
+  margin: 0 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+
+.shikshit-editorial .policy-layout > .container .policy-meta a {
+  color: #6d36d5;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.shikshit-editorial .policy-layout > .container .intro {
+  margin: 0 0 25px;
+  padding: 0 0 20px;
+  border: 0;
+  border-bottom: 1px solid rgba(11, 11, 59, 0.1);
+  border-radius: 0;
+  background: transparent;
+}
+
+.shikshit-editorial .policy-layout > .container p,
+.shikshit-editorial .policy-layout > .container li {
+  color: var(--ink, #4b4a68);
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.shikshit-editorial .policy-layout > .container p {
+  margin: 0 0 13px;
+}
+
+.shikshit-editorial .policy-layout > .container .section {
+  margin: 0;
+  padding: 22px 0 24px;
+  border: 0;
+  border-bottom: 1px solid rgba(11, 11, 59, 0.1);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  counter-increment: legal-section;
+  scroll-margin-top: 124px;
+}
+
+.shikshit-editorial .policy-layout > .container .section h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 0 10px;
+  padding: 0;
+  border: 0;
+  color: var(--navy, #0b0b3b);
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.3rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  scroll-margin-top: 124px;
+}
+
+.shikshit-editorial .policy-layout > .container .section h2::before {
+  flex: 0 0 auto;
+  color: #7c3aed;
+  content: counter(legal-section) ".";
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.shikshit-editorial .policy-layout > .container h3 {
+  margin: 18px 0 8px;
+  color: var(--navy, #0b0b3b);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.45;
+  scroll-margin-top: 124px;
+}
+
+.shikshit-editorial .policy-layout > .container ul {
+  margin: 10px 0 14px 22px;
+  padding: 0;
+  list-style: disc;
+}
+
+.shikshit-editorial .policy-layout > .container li {
+  margin: 6px 0;
+  padding: 0;
+}
+
+.shikshit-editorial .policy-layout > .container li::before {
+  content: none !important;
+}
+
+.shikshit-editorial .policy-layout > .container .info-box,
+.shikshit-editorial .policy-layout > .container .important-notice,
+.shikshit-editorial .policy-layout > .container .warning-box,
+.shikshit-editorial .policy-layout > .container .critical-box,
+.shikshit-editorial .policy-layout > .container .key-points,
+.shikshit-editorial .policy-layout > .container .contact-section,
+.shikshit-editorial .policy-layout > .container .alert-banner,
+.shikshit-editorial .policy-layout > .container .acceptance-box {
+  margin: 14px 0 0;
+  padding: 15px 18px;
+  border: 1px solid rgba(11, 11, 59, 0.1);
+  border-left: 3px solid #7c3aed;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.shikshit-editorial .policy-layout > .container .contact-section {
+  margin-top: 28px;
+  padding: 22px;
+  border-left: 0;
+  background: #f4f6fa;
+}
+
+.shikshit-editorial .policy-layout > .container .legal-contact h2 {
+  margin: 0 0 10px;
+  color: var(--navy, #0b0b3b);
+  font-family: var(--font-display, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 750;
+}
+
+.shikshit-editorial .policy-layout > .container .policy-anchor {
+  margin-left: auto;
+  color: #7c3aed;
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0;
+  text-decoration: none;
+}
+
+.shikshit-editorial .policy-layout > .container h2:hover .policy-anchor,
+.shikshit-editorial .policy-layout > .container h3:hover .policy-anchor,
+.shikshit-editorial .policy-layout > .container .policy-anchor:focus-visible {
+  opacity: 1;
+}
+
+.shikshit-editorial .policy-layout > .container .policy-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 8px;
+}
+
+.shikshit-editorial .policy-layout > .container .policy-contact-links a {
+  color: #6d36d5;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .shikshit-editorial .policy-layout {
+    display: flex;
+    flex-direction: column;
+    width: min(760px, calc(100% - 32px));
+    gap: 16px;
+    margin: 28px auto 48px;
+  }
+
+  .shikshit-editorial .policy-sidebar {
+    position: static;
+    width: 100%;
+    padding: 0;
+  }
+
+  .shikshit-editorial .policy-contents {
+    padding: 14px 16px;
+  }
+
+  .shikshit-editorial .policy-contents[open] .policy-contents-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shikshit-editorial .policy-layout > .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .shikshit-editorial .policy-layout {
+    width: calc(100% - 28px);
+    margin-top: 20px;
+  }
+
+  .shikshit-editorial .policy-contents[open] .policy-contents-list {
+    grid-template-columns: 1fr;
+  }
+
+  .shikshit-editorial .policy-layout > .container > header {
+    padding-bottom: 17px;
+  }
+
+  .shikshit-editorial .policy-layout > .container .section {
+    padding: 18px 0 20px;
+  }
+
+  .shikshit-editorial .policy-layout > .container .policy-anchor {
+    opacity: 1;
+  }
+}
+
+@media print {
+  .shikshit-editorial .shikshit-header,
+  .shikshit-editorial .policy-sidebar,
+  .shikshit-editorial #shikshit-footer-container,
+  .shikshit-editorial .policy-anchor {
+    display: none !important;
+  }
+
+  .shikshit-editorial,
+  .shikshit-editorial .policy-layout > .container {
+    color: #000 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .shikshit-editorial .policy-layout {
+    display: block;
+    width: auto;
+    margin: 0;
+  }
+
+  .shikshit-editorial .policy-layout > .container {
+    max-width: 100%;
+  }
+
+  .shikshit-editorial .policy-layout > .container .section {
+    break-inside: avoid;
+  }
+}
