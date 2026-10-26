@@ -218,6 +218,71 @@ body.page-donate #donate-form h3::after {
   margin-top: 6px;
 }
 
+body.page-donate #donate-form .donation-impact-title {
+  color: #1E1B4B !important;
+  font-size: 1.25rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.3 !important;
+  margin: 0 0 1.5rem !important;
+  text-align: left !important;
+  text-transform: none !important;
+}
+
+body.page-donate #donate-form .donation-impact-title::after {
+  display: none !important;
+}
+
+body.page-donate #donate-form .donation-impact-card {
+  align-items: flex-start !important;
+  background: #FFFFFF !important;
+  border: 1px solid #E8EAF4 !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 14px rgba(30, 27, 75, 0.05) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.9rem !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  padding: 1.25rem !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease !important;
+}
+
+body.page-donate #donate-form .donation-impact-card:hover {
+  border-color: rgba(124, 58, 237, 0.28) !important;
+  box-shadow: 0 10px 24px rgba(30, 27, 75, 0.09) !important;
+  transform: translateY(-2px) !important;
+}
+
+body.page-donate #donate-form .donation-impact-icon {
+  flex: 0 0 3rem !important;
+  height: 3rem !important;
+  width: 3rem !important;
+}
+
+body.page-donate #donate-form .donation-impact-copy {
+  align-self: stretch !important;
+  margin-left: 0 !important;
+  min-width: 0 !important;
+  width: auto !important;
+}
+
+body.page-donate #donate-form .donation-impact-copy h4 {
+  color: #172554 !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.4 !important;
+  margin: 0 0 0.4rem !important;
+}
+
+body.page-donate #donate-form .donation-impact-copy p {
+  color: #475569 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+
 /* Form Labels */
 body.page-donate #donationForm label {
   color: #1E293B !important;
