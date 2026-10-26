@@ -826,27 +826,58 @@ body.page-products .sticky-section-index {
   transition: top 0.25s ease !important;
 }
 
+body.page-products .index-pill-viewport {
+  position: relative !important;
+  display: block !important;
+  width: max-content !important;
+  max-width: 95vw !important;
+  border-radius: 9999px !important;
+}
+
+body.page-products .index-pill-viewport::before,
+body.page-products .index-pill-viewport::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  z-index: 4 !important;
+  width: 36px !important;
+  pointer-events: none !important;
+}
+
+body.page-products .index-pill-viewport::before {
+  left: 0 !important;
+  border-radius: 9999px 0 0 9999px !important;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0)) !important;
+}
+
+body.page-products .index-pill-viewport::after {
+  right: 0 !important;
+  border-radius: 0 9999px 9999px 0 !important;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0)) !important;
+}
+
 body.page-products .index-pill-track {
-  display: inline-flex !important;
+  display: flex !important;
+  width: max-content !important;
+  max-width: 95vw !important;
+  box-sizing: border-box !important;
   align-items: center !important;
   gap: 6px !important;
   background: rgba(255, 255, 255, 0.96) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
-  padding: 6px 8px !important;
+  padding: 6px 36px !important;
   border-radius: 9999px !important;
   border: 1px solid rgba(124, 58, 237, 0.18) !important;
   box-shadow: 0 14px 40px rgba(11, 11, 59, 0.12) !important;
   pointer-events: auto !important;
-  max-width: 95vw !important;
   overflow-x: auto !important;
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
   scroll-snap-type: x mandatory !important;
   -webkit-overflow-scrolling: touch !important;
   position: relative !important;
-  mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 20px, black calc(100% - 20px), transparent);
 }
 
 body.page-products .index-pill-track::-webkit-scrollbar {
@@ -933,6 +964,10 @@ body.page-products #diploma-courses {
     padding: 6px 10px !important;
     margin-bottom: 16px !important;
   }
+  body.page-products .index-pill-track {
+    padding-inline: 36px !important;
+  }
+
   body.page-products .index-pill {
     padding: 6px 14px !important;
     font-size: 13px !important;
