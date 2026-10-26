@@ -27,7 +27,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
-        header {
+        .container > header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 30px 40px;
@@ -75,22 +75,22 @@
             border-bottom: 2px solid #e0e0e0;
         }
 
-        p {
+        .container p {
             margin-bottom: 15px;
             text-align: justify;
         }
 
-        ul {
+        .container ul {
             margin: 15px 0 20px 20px;
         }
 
-        li {
+        .container li {
             margin-bottom: 10px;
             padding-left: 10px;
             position: relative;
         }
 
-        li:before {
+        .container li:before {
             content: "▹";
             color: #667eea;
             font-weight: bold;
@@ -136,7 +136,7 @@
             color: #17a2b8;
         }
 
-        footer {
+        .container > footer {
             margin-top: 50px;
             padding-top: 20px;
             border-top: 2px solid #e0e0e0;
@@ -185,7 +185,7 @@
                 padding: 20px;
             }
 
-            header {
+            .container > header {
                 padding: 20px;
                 margin: -20px -20px 20px -20px;
             }
@@ -204,26 +204,108 @@
             }
         }
     </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shikshit/tokens.css">
+  <link rel="stylesheet" href="css/shikshit/base.css">
+  <link rel="stylesheet" href="css/shikshit/components.css">
+  <link rel="stylesheet" href="css/shikshit/footer.css">
+  <link rel="stylesheet" href="css/shikshit/policies.css">
+
+
 </head>
-<body>
-    <div class="container">
+<body class="shikshit-editorial">
+  <div class="shikshit-main-content">
+<header class="shikshit-header" role="banner">
+      <nav class="shikshit-navbar navbar" aria-label="Main Navigation">
+        <!-- Brand Logo (Existing logo file unchanged) -->
+        <a href="index.html" class="shikshit-brand navbar-brand" aria-label="Shikshit Homepage">
+          <img src="images/sikshitlogo.webp" alt="Sikshit Logo" class="shikshit-logo navbar-logo-enlarged">
+        </a>
+
+        <!-- Main Desktop Navigation -->
+        <ul class="shikshit-nav-menu navbar-nav">
+          <li class="nav-item">
+            <a href="ns-mas.html" class="shikshit-nav-link nav-link">NS-MAS</a>
+          </li>
+          <li class="nav-item">
+            <a href="product-services.html" class="shikshit-nav-link nav-link">Products and Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="registration.html" class="shikshit-nav-link nav-link">Apply Now</a>
+          </li>
+        </ul>
+
+        <!-- CTA Buttons -->
+        <div class="shikshit-nav-actions cta-buttons">
+          <a href="become-a-member.html" class="btn-pill btn-secondary-white btn-partner">
+            Become a Member
+          </a>
+          <a href="donate.html" class="btn-pill btn-primary-gradient btn-donate">
+            Donate Us
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button (Preserves toggleMobileMenu hook) -->
+        <button type="button" class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <!-- Mobile Menu Dropdown (Preserves #mobileMenu id and exact 5 links) -->
+        <div class="mobile-menu" id="mobileMenu">
+          <ul class="mobile-nav">
+            <li class="nav-item">
+              <a href="ns-mas.html" class="nav-link">NS-MAS</a>
+            </li>
+            <li class="nav-item">
+              <a href="product-services.html" class="nav-link">Products and Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="registration.html" class="nav-link">Apply Now</a>
+            </li>
+            <li style="margin-top: 6px;">
+              <a href="become-a-member.html" class="btn-pill btn-secondary-white" style="width: 100%; text-align: center;">Become a Member</a>
+            </li>
+            <li class="nav-item">
+              <a href="donate.html" class="btn-pill btn-primary-gradient" style="width: 100%; text-align: center;">Donate Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="policy-layout">
+      <aside class="policy-sidebar" aria-label="Policy navigation">
+        <details class="policy-contents" open>
+          <summary>On this page</summary>
+          <ul class="policy-contents-list"></ul>
+        </details>
+      </aside>
+      <article class="container">
         <header>
             <h1>Terms & Conditions</h1>
+            <div class="policy-meta">
+            <p>Last Updated: <span id="lastUpdated"></span></p>
+            <p hidden>&copy; <span id="currentYear"></span> Shikshit. All rights reserved.</p>
+        </div>
+
             <a href="https://www.shikshit.in/" class="website-link">https://www.shikshit.in/</a>
         </header>
 
         <div class="intro">
-            <p><strong>⚠️ Important:</strong> By accessing and using Shikshit, you agree to comply with the following terms and conditions.</p>
+            <p><strong>Important:</strong> By accessing and using Shikshit, you agree to comply with the following terms and conditions.</p>
         </div>
 
         <div class="acceptance-box">
-            <p>📋 Please read these terms carefully before using our website</p>
+            <p>Please read these terms carefully before using our website</p>
         </div>
 
         <div class="section">
             <h2>Website Usage</h2>
             <p>The content available on this website is intended for informational and educational purposes only. Users should use the information responsibly and independently verify important details before relying on it.</p>
-            
+
             <div class="info-box">
                 <p><strong>Educational Purpose:</strong> All materials are designed to support learning and should be used as supplementary resources alongside formal education.</p>
             </div>
@@ -232,7 +314,7 @@
         <div class="section">
             <h2>Intellectual Property</h2>
             <p>All content on this website, including text, design, graphics, and other materials, is the property of Shikshit unless otherwise stated. Unauthorized reproduction or distribution of this content is prohibited.</p>
-            
+
             <div class="important-notice">
                 <p><strong>Copyright Protection:</strong> Copying, distributing, or reproducing any content without explicit permission is strictly prohibited and may result in legal action.</p>
             </div>
@@ -241,7 +323,7 @@
         <div class="section">
             <h2>External Links</h2>
             <p>Our website may contain links to third-party websites. These links are provided for informational purposes, and we do not control the content or policies of those external sites.</p>
-            
+
             <div class="info-box">
                 <p><strong>Disclaimer:</strong> We are not responsible for the content, accuracy, or practices of external websites. Please review their terms and privacy policies independently.</p>
             </div>
@@ -250,7 +332,7 @@
         <div class="section">
             <h2>Limitation of Liability</h2>
             <p>Shikshit will not be held liable for any losses or damages arising from the use of this website or reliance on its content.</p>
-            
+
             <div class="important-notice">
                 <p><strong>Use at Your Own Risk:</strong> While we strive to provide accurate information, users should verify critical information independently before making decisions based on website content.</p>
             </div>
@@ -259,30 +341,30 @@
         <div class="section">
             <h2>Changes to Terms</h2>
             <p>We reserve the right to update these Terms & Conditions at any time without prior notice.</p>
-            
+
             <div class="info-box">
                 <p><strong>Stay Updated:</strong> We recommend reviewing this page periodically to stay informed of any changes. Continued use of the website constitutes acceptance of modified terms.</p>
             </div>
         </div>
 
-        <footer>
-            <p>Last Updated: <span id="lastUpdated"></span></p>
-            <p>&copy; <span id="currentYear"></span> Shikshit. All rights reserved.</p>
-            
-            <div class="footer-links">
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <span>|</span>
-                <a href="cookie-policy.html">Cookie Policy</a>
-                <span>|</span>
-                <a href="https://www.shikshit.in/">Return to Homepage</a>
+
+            <section class="contact-section legal-contact">
+            <h2>Contact us</h2>
+            <div class="policy-contact-links">
+                <a href="mailto:shikshiteducation@gmail.com">shikshiteducation@gmail.com</a>
+                <a href="tel:+917905044451">+91 7905044451</a>
             </div>
-        </footer>
-    </div>
+        </section>
+    </article>
+</main>
+<!-- Centralized Shikshit Footer Container -->
+    <div id="shikshit-footer-container"></div>
+  </div>
 
     <script>
         // Set current year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
+
         // Set last updated date
         document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', {
             year: 'numeric',
@@ -290,5 +372,10 @@
             day: 'numeric'
         });
     </script>
+  <script src="js/shikshit/policies.js" defer></script>
+  <!-- Shared Shikshit interactions, matching index.html -->
+  <script src="js/shikshit/main.js"></script>
+  <!-- Centralized Shikshit Footer Component Loader -->
+  <script src="js/shikshit-footer.js" defer></script>
 </body>
 </html>

@@ -2150,6 +2150,7 @@ body.page-products .video-carousel h2 {
 
 body.page-products .carousel-track {
   display: flex !important;
+  align-items: flex-start !important;
   gap: 24px !important;
   overflow-x: auto !important;
   padding: 20px 10px 40px !important;
@@ -2164,6 +2165,10 @@ body.page-products .carousel-track::-webkit-scrollbar {
 
 body.page-products .video-item {
   flex: 0 0 clamp(290px, 32vw, 380px) !important;
+  max-width: clamp(290px, 32vw, 380px) !important;
+  height: auto !important;
+  align-self: flex-start !important;
+  margin: 0 !important;
   border-radius: 28px !important;
   overflow: hidden !important;
   background: #0B0B3B !important;
@@ -2212,13 +2217,13 @@ body.page-products .video-item video {
 }
 
 /* Section Header Typography and Spacing Overrides */
-body.page-products section:not(.products-hero) > div > div:first-child {
+body.page-products section:not(.products-hero):not(.video-carousel) > div > div:first-child {
   text-align: center !important;
   max-width: 860px !important;
   margin: 0 auto 52px !important;
 }
 
-body.page-products section:not(.products-hero) > div > div:first-child h2 {
+body.page-products section:not(.products-hero):not(.video-carousel) > div > div:first-child h2 {
   font-size: clamp(2.2rem, 3.8vw, 3.2rem) !important;
   font-weight: 800 !important;
   color: var(--navy) !important;
@@ -2227,7 +2232,7 @@ body.page-products section:not(.products-hero) > div > div:first-child h2 {
   margin-bottom: 16px !important;
 }
 
-body.page-products section:not(.products-hero) > div > div:first-child p {
+body.page-products section:not(.products-hero):not(.video-carousel) > div > div:first-child p {
   font-size: clamp(1rem, 1.2vw, 1.14rem) !important;
   color: var(--ink) !important;
   line-height: 1.75 !important;

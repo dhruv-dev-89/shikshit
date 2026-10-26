@@ -1,300 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fixed Footer Component</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom styles for better visual presentation */
-    .bg-gradient-custom {
-      background: linear-gradient(135deg,
-          #f8fafc 0%,
-          #e0f2fe 50%,
-          #f3e8ff 100%);
-    }
-
-    /* Smooth scrolling for back to top */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Enhanced hover effects */
-    .social-link:hover {
-      transform: translateY(-2px) scale(1.05);
-    }
-
-    .scholarship-link:hover {
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-  </style>
-</head>
-
-<body class="bg-gray-100">
-  <!-- Fixed Footer Component -->
-  <footer class="bg-gradient-custom text-gray-800 py-8 sm:py-12 relative overflow-hidden border-t border-gray-200">
-    <!-- Background decoration elements -->
-    <div class="absolute top-0 right-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 blur-3xl pointer-events-none">
-    </div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-blue-200 rounded-full opacity-20 blur-3xl pointer-events-none">
-    </div>
-    <div class="absolute top-1/3 left-1/4 w-40 h-40 bg-indigo-200 rounded-full opacity-20 blur-3xl pointer-events-none">
-    </div>
-
-    <div class="container mx-auto px-4 sm:px-6 relative z-10">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        <!-- Column 1: Logo and About -->
-        <div class="space-y-4">
-          <div class="transform hover:translate-y-[-3px] transition-transform duration-300">
-            <a href="ns-mas.html" class="inline-block" aria-label="National Scholarship Portal Home">
-              <div
-                class="h-18 sm:h-24 mb-4 items-center justify-center text-white font-bold text-sm sm:text-base hover:scale-105 transition-transform duration-300">
-                <img src="./images/Logos02.png" alt="Scholarship Logo" class="h-12 sm:h-14 object-contain" />
-              </div>
-            </a>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Empowering students to achieve their academic dreams through
-              accessible scholarship opportunities.
-            </p>
-          </div>
-          <div class="flex space-x-3">
-            <a href="https://www.facebook.com/profile.php?id=61585718603669&sk=followers" target="_blank" rel="noopener noreferrer"
-              class="social-link bg-white p-3 rounded-full hover:bg-purple-500 hover:text-white text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md"
-              aria-label="Follow us on Facebook">
-
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd"
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </a>
-
-            <a href="https://www.linkedin.com/company/ns-mas?trk=similar-pages" target="_blank" rel="noopener noreferrer"
-              class="social-link bg-white p-3 rounded-full hover:bg-purple-500 hover:text-white text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md"
-              aria-label="Follow us on LinkedIn">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 
-         2.239 5 5 5h14c2.761 0 5-2.239 
-         5-5V5c0-2.761-2.239-5-5-5zM7.12 
-         20.452H3.56V9h3.56v11.452zM5.34 
-         7.433a2.063 2.063 0 110-4.126 
-         2.063 2.063 0 010 4.126zM20.452 
-         20.452h-3.56v-5.605c0-1.337-.025-3.059-1.864-3.059-1.866 
-         0-2.152 1.456-2.152 2.963v5.701h-3.56V9h3.418v1.561h.049c.476-.9 
-         1.637-1.848 3.37-1.848 3.603 0 4.268 2.372 4.268 5.455v6.284z"></path>
-              </svg>
-            </a>
-
-            <a href="https://twitter.com/nationalscholarship" target="_blank" rel="noopener noreferrer"
-              class="social-link bg-white p-3 rounded-full hover:bg-purple-500 hover:text-white text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md"
-              aria-label="Follow us on Twitter">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
-                </path>
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/shikshit_0?igsh=MWdvOGdscWQ1Znk1Mg==" target="_blank" rel="noopener noreferrer"
-              class="social-link bg-white p-3 rounded-full hover:bg-purple-500 hover:text-white text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md"
-              aria-label="Follow us on linkedin">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill-rule="evenodd"
-                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Column 2: School Level Scholarships -->
-        <div>
-          <h3 class="text-lg sm:text-xl font-bold mb-4 text-gray-800">
-            School Level Scholarships
-          </h3>
-          <ul class="space-y-2">
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Shandilya Scholarship</span>
-            </li>
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Asita Scholarship</span>
-            </li>
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Maitreya Scholarship</span>
-            </li>
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Angiras Scholarship</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 3: Undergraduate Level Scholarships -->
-        <div>
-          <h3 class="text-lg sm:text-xl font-bold mb-4 text-gray-800">
-            Undergraduate Level scholarship
-          </h3>
-          <ul class="space-y-2">
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Bharadvaja Scholarship</span>
-            </li>
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Atri Scholarship</span>
-            </li>
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Valmiki Scholarship</span>
-            </li>
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Narada Scholarship</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Postgraduate Level Scholarships -->
-        <div>
-          <h3 class="text-lg sm:text-xl font-bold mb-4 text-gray-800">
-            Postgraduate Level scholarship
-          </h3>
-          <ul class="space-y-2">
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Vishwamitra Scholarship</span>
-            </li>
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Narada Scholarship</span>
-            </li>
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Gautama Scholarship</span>
-            </li>
-            <li>
-              <span class="text-gray-600 cursor-default text-sm sm:text-base">Maharishi Patanjali Scholarship</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Newsletter and Contact Section -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 pt-8 border-t border-gray-300">
-        <!-- Stay Updated -->
-        <div>
-          <h3 class="text-lg sm:text-xl font-bold mb-4 text-gray-800">
-            Stay Updated
-          </h3>
-          <p class="text-gray-600 mb-4 text-sm sm:text-base">
-            Subscribe to our newsletter for the latest scholarship
-            opportunities and updates.
-          </p>
-          <form class="flex gap-2" onsubmit="handleNewsletterSubmit(event)" novalidate>
-            <div class="flex-1">
-              <label for="newsletter-email" class="sr-only">Email address</label>
-              <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address..." required
-                class="bg-white border border-gray-300 rounded-lg px-3 py-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-800 placeholder-gray-500 transition-all duration-300 text-sm" />
-            </div>
-            <button type="submit"
-              class="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 transform hover:scale-105 flex items-center justify-center min-w-[100px] font-semibold text-sm">
-              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
-              Submit
-            </button>
-          </form>
-        </div>
-
-        <!-- Contact Information -->
-        <div>
-          <h3 class="text-lg sm:text-xl font-bold mb-4 text-gray-800">
-            Contact Information
-          </h3>
-          <div class="space-y-3">
-            <p class="text-gray-600 flex items-center text-sm sm:text-base">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-purple-600 flex-shrink-0" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <a href="mailto:contact@shikshit.in"
-                class="hover:text-purple-600 transition-colors duration-300">contact@shikshit.in</a>
-            </p>
-            <p class="text-gray-600 flex items-center text-sm sm:text-base">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-purple-600 flex-shrink-0" fill="none"
-                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <a href="tel:+919560307205" class="hover:text-purple-600 transition-colors duration-300">+91
-                9560307205</a>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Back to Top Button -->
-      <div class="flex justify-center mt-8">
-        <a href="#top"
-          class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full transition-all duration-300 flex items-center hover:shadow-lg hover:shadow-purple-500/20 transform hover:translate-y-[-2px] font-medium text-sm">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"
-            aria-hidden="true">
-            <path fill-rule="evenodd"
-              d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z"
-              clip-rule="evenodd" />
-          </svg>
-          Back to Top
+<footer class="nsmas-footer" id="site-footer">
+  <div class="nsmas-footer__inner">
+    <div class="nsmas-footer__main">
+      <section class="nsmas-footer__about" aria-label="About NS-MAS">
+        <a class="nsmas-footer__brand" href="ns-mas.html" aria-label="National Scholarship Portal Home">
+          <img src="./images/Logos02.png" alt="Scholarship Logo" />
         </a>
-      </div>
-
-      <!-- Copyright -->
-      <div class="border-t border-gray-300 mt-6 sm:mt-8 pt-4 sm:pt-6 text-center text-gray-500">
-        <p class="text-sm sm:text-base">
-          &copy; 2025 National Scholarship – Merit and Assistance Scheme
-          Portal. All rights reserved.
+        <p class="nsmas-footer__description">
+          Empowering students to achieve their academic dreams through accessible scholarship opportunities.
         </p>
-        <div class="flex flex-wrap justify-center gap-3 sm:gap-6 mt-3">
-          <a href="privacypolicy.html"
-            class="text-gray-500 hover:text-purple-600 transition-colors duration-300 text-sm">Privacy Policy</a>
-          <a href="termsandservice.html"
-            class="text-gray-500 hover:text-purple-600 transition-colors duration-300 text-sm">Terms of Service</a>
-            <a href="../cookie-policy.html"
-            class="text-gray-500 hover:text-purple-600 transition-colors duration-300 text-sm">Cookie Policy</a>
-            <a href="../disclaimer.html"
-            class="text-gray-500 hover:text-purple-600 transition-colors duration-300 text-sm">Disclaimer</a>
+        <div class="nsmas-footer__socials" aria-label="Social media">
+          <a href="https://www.facebook.com/profile.php?id=61585718603669&amp;sk=followers" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+            <span class="nsmas-footer__icon" aria-hidden="true">f</span>
+          </a>
+          <a href="https://www.linkedin.com/company/ns-mas?trk=similar-pages" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
+            <span class="nsmas-footer__icon" aria-hidden="true">in</span>
+          </a>
+          <a href="https://twitter.com/nationalscholarship" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+            <span class="nsmas-footer__icon" aria-hidden="true">X</span>
+          </a>
+          <a href="https://www.instagram.com/shikshit_0?igsh=MWdvOGdscWQ1Znk1Mg==" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+            <span class="nsmas-footer__icon" aria-hidden="true">◎</span>
+          </a>
         </div>
-      </div>
+      </section>
+
+      <section class="nsmas-footer__column">
+        <h2>School Level Scholarships</h2>
+        <ul>
+          <li><span>Maharishi Shandilya Scholarship</span></li>
+          <li><span>Maharishi Asita Scholarship</span></li>
+          <li><span>Maharishi Maitreya Scholarship</span></li>
+          <li><span>Maharishi Angiras Scholarship</span></li>
+        </ul>
+      </section>
+
+      <section class="nsmas-footer__column">
+        <h2>Undergraduate Level scholarship</h2>
+        <ul>
+          <li><span>Maharishi Bharadvaja Scholarship</span></li>
+          <li><span>Maharishi Atri Scholarship</span></li>
+          <li><span>Maharishi Valmiki Scholarship</span></li>
+          <li><span>Maharishi Narada Scholarship</span></li>
+        </ul>
+      </section>
+
+      <section class="nsmas-footer__column">
+        <h2>Postgraduate Level scholarship</h2>
+        <ul>
+          <li><span>Maharishi Vishwamitra Scholarship</span></li>
+          <li><span>Maharishi Narada Scholarship</span></li>
+          <li><span>Maharishi Gautama Scholarship</span></li>
+          <li><span>Maharishi Patanjali Scholarship</span></li>
+        </ul>
+      </section>
     </div>
-  </footer>
 
-  <script>
-    function handleNewsletterSubmit(event) {
-      event.preventDefault();
-      const email = event.target.email.value;
+    <div class="nsmas-footer__details">
+      <section class="nsmas-footer__newsletter">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for the latest scholarship opportunities and updates.</p>
+        <form class="nsmas-footer__form" onsubmit="handleNewsletterSubmit(event)" novalidate>
+          <label class="nsmas-footer__sr-only" for="newsletter-email">Email address</label>
+          <input type="email" id="newsletter-email" name="email" placeholder="Enter your email address..." required />
+          <button type="submit">
+            <span class="nsmas-footer__icon" aria-hidden="true">↗</span>
+            Submit
+          </button>
+        </form>
+      </section>
 
-      // Basic email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
-        return;
-      }
+      <section class="nsmas-footer__contact">
+        <h2>Contact Information</h2>
+        <p><span class="nsmas-footer__icon" aria-hidden="true">✉</span><a href="mailto:contact@shikshit.in">contact@shikshit.in</a></p>
+        <p><span class="nsmas-footer__icon" aria-hidden="true">☎</span><a href="tel:+919560307205">+91 9560307205</a></p>
+      </section>
+    </div>
 
-      // Simulate form submission
-      alert(
-        "Thank you for subscribing! You will receive updates about scholarship opportunities."
-      );
-      event.target.reset();
-    }
+    <div class="nsmas-footer__back-top">
+      <a href="#top">
+        <span class="nsmas-footer__icon" aria-hidden="true">↑</span>
+        Back to Top
+      </a>
+    </div>
 
-    // Smooth scroll enhancement for better UX
-    document.addEventListener("DOMContentLoaded", function () {
-      const backToTopButton = document.querySelector('a[href="#top"]');
-      if (backToTopButton) {
-        backToTopButton.addEventListener("click", function (e) {
-          e.preventDefault();
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        });
-      }
-    });
-  </script>
-</body>
-
-</html>
+    <div class="nsmas-footer__bottom">
+      <p>&copy; 2025 National Scholarship – Merit and Assistance Scheme Portal. All rights reserved.</p>
+      <nav aria-label="Legal links">
+        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="termsandservice.html">Terms of Service</a>
+        <a href="../cookie-policy.html">Cookie Policy</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+      </nav>
+    </div>
+  </div>
+</footer>
