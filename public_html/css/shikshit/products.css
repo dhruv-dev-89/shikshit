@@ -2750,19 +2750,91 @@ body.page-products .service-editorial-card {
   width: 100% !important;
   min-width: 0 !important;
   max-width: 100% !important;
+  padding: clamp(24px, 2.5vw, 36px) !important;
   box-sizing: border-box !important;
   opacity: 1 !important;
   transform: none !important;
 }
 
 body.page-products .service-card-header {
+  display: grid !important;
+  grid-template-columns: 60px minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 16px !important;
+  margin-bottom: 8px !important;
   width: 100% !important;
   min-width: 0 !important;
+}
+
+body.page-products .service-card-header > div:not(.service-card-icon) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+}
+
+body.page-products .service-card-header .service-card-title {
+  margin: 0 !important;
+}
+
+body.page-products .service-card-header .service-card-subtitle {
+  line-height: 1.4 !important;
+}
+
+body.page-products .card-accent-line {
+  margin: 8px 0 16px !important;
 }
 
 body.page-products .service-inner-grid {
   width: 100% !important;
   min-width: 0 !important;
+  gap: 16px !important;
+}
+
+body.page-products .service-inner-item {
+  padding: 18px !important;
+}
+
+body.page-products #diploma-courses.service-editorial-card {
+  padding: clamp(24px, 2.5vw, 36px) !important;
+}
+
+body.page-products #diploma-courses .service-card-header {
+  margin-bottom: 0 !important;
+}
+
+body.page-products #diploma-courses .card-accent-line {
+  margin: 8px 0 16px !important;
+}
+
+@media (max-width: 720px) {
+  body.page-products .service-editorial-card {
+    padding: 24px !important;
+  }
+
+  body.page-products #diploma-courses.service-editorial-card {
+    padding: 24px !important;
+  }
+
+  body.page-products .service-inner-grid {
+    gap: 12px !important;
+  }
+
+  body.page-products .service-inner-item {
+    padding: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body.page-products .service-editorial-card {
+    padding: 20px !important;
+  }
+
+  body.page-products #diploma-courses.service-editorial-card {
+    padding: 20px !important;
+  }
 }
 
 /* Responsive single-column hero grid on tablets and mobile */
