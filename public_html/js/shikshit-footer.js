@@ -89,6 +89,7 @@
               <li><a href="${base}ns-mas.html">NS-MAS Scholarship</a></li>
               <li><a href="${base}become-a-member.html">Become a Member</a></li>
               <li><a href="${base}registration.html">Student Registration</a></li>
+              <li><a href="${base}careers.html">Career</a></li>
               <li><a href="${base}donate.html">Donate</a></li>
               <li><a href="${base}contact.html">Contact</a></li>
             </ul>

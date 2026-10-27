@@ -1,0 +1,86 @@
+.careers-main {
+  min-height: 65vh;
+}
+
+.careers-hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: clamp(72px, 10vw, 128px) 24px clamp(88px, 12vw, 144px);
+}
+
+.careers-hero-content {
+  max-width: 790px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.careers-hero-content .shikshit-chip {
+  justify-content: center;
+}
+
+.careers-hero-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 20px;
+}
+
+.careers-hero-content > p {
+  max-width: 670px;
+  margin: 0 auto;
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+}
+
+.careers-openings {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 48px);
+  border: var(--hairline-border);
+  border-radius: var(--radius-card-lg);
+  background: var(--glass-white-card);
+  box-shadow: var(--shadow-soft-violet);
+}
+
+.careers-status-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 18px;
+  background: var(--lav-100);
+  color: var(--violet);
+  font-size: 26px;
+}
+
+.careers-status-label {
+  margin-bottom: 8px;
+  color: var(--violet);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.careers-openings h2 {
+  margin-bottom: 12px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.careers-openings > div > p:not(.careers-status-label) {
+  max-width: 600px;
+}
+
+.careers-contact-link {
+  margin-top: 24px;
+  white-space: normal;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .careers-openings {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
