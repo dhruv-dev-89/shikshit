@@ -328,16 +328,16 @@ body.page-products #diploma-courses {
 body.page-products .products-hero {
   position: relative;
   z-index: 1;
-  padding: 60px 0 36px; /* balanced 60px gap below navbar */
+  padding: 28px 0 16px; /* tightened hero padding */
   overflow: visible; /* allows full-bleed child ribbons to extend past viewport edges */
 }
 
 .products-hero-grid {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 4rem !important;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.96fr) !important;
+  gap: 2.25rem !important;
   align-items: center !important;
-  min-height: min(78vh, 52rem) !important;
+  min-height: auto !important;
   width: 100% !important;
   max-width: var(--container) !important;
   margin: 0 auto !important;
@@ -365,18 +365,18 @@ body.page-products .products-hero {
   color: var(--violet);
   font-weight: 700;
   font-size: 0.92rem;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   box-shadow: 0 8px 24px rgba(124, 58, 237, 0.08);
 }
 
 .products-hero-title {
   text-align: left !important;
-  font-size: clamp(2.4rem, 3.4vw + 1rem, 5rem) !important;
+  font-size: clamp(2rem, 2.7vw + 0.5rem, 3.65rem) !important;
   font-weight: 800;
   color: var(--navy);
-  line-height: 1.14;
-  letter-spacing: -0.035em;
-  margin-bottom: 20px;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
 }
 
 body.page-products .products-hero-title .gradient-text,
@@ -400,11 +400,11 @@ body.page-products .editorial-sig-underline {
 }
 
 .products-hero-desc {
-  font-size: max(1.125rem, 1.15vw) !important;
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.05vw, 1.125rem) !important;
+  line-height: 1.55;
   color: var(--ink);
-  margin-bottom: 30px !important; /* 28 to 32px space between paragraph and pill row */
-  max-width: 42rem;
+  margin-bottom: 18px !important;
+  max-width: 38rem;
   text-align: left !important;
 }
 
@@ -413,7 +413,7 @@ body.page-products .editorial-sig-underline {
   display: flex !important;
   flex-wrap: wrap !important;
   gap: 10px !important;
-  margin-bottom: 32px !important; /* 32px between the pills and the buttons */
+  margin-bottom: 20px !important;
   justify-content: flex-start !important;
 }
 
@@ -679,8 +679,8 @@ body.page-products .products-hero-bands {
   width: 100% !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  margin-top: 4rem !important;
-  margin-bottom: 4rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 2rem !important;
   padding: 0 !important;
   height: 6.25rem !important;
   overflow: hidden !important;
