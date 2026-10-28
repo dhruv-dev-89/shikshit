@@ -87,6 +87,7 @@
               <li><a href="${base}how-it-works.html">How It Works</a></li>
               <li><a href="${base}scholarship.html">Scholarships</a></li>
               <li><a href="${base}ns-mas.html">NS-MAS Scholarship</a></li>
+              <li><a href="${base}blogs.html">Blogs</a></li>
               <li><a href="${base}become-a-member.html">Become a Member</a></li>
               <li><a href="${base}registration.html">Student Registration</a></li>
               <li><a href="${base}careers.html">Career</a></li>

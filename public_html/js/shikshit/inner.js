@@ -538,29 +538,55 @@
         cardObs.observe(card);
       });
 
-      // C. Desktop Cursor-Following Glow & Soft 3D Tilt (Max 5deg, pointer:fine only)
+      // C. Desktop Cursor-Following Glow & Physics-Damped 3D Tilt
       if (!prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
         cards.forEach(function (card) {
+          let targetX = 0;
+          let targetY = 0;
+          let currentX = 0;
+          let currentY = 0;
+          let isMoving = false;
+
+          function updateTilt() {
+            currentX += (targetX - currentX) * 0.12;
+            currentY += (targetY - currentY) * 0.12;
+
+            card.style.transform = 'perspective(1100px) rotateX(' + currentX.toFixed(2) + 'deg) rotateY(' + currentY.toFixed(2) + 'deg) translateY(-8px) scale(1.01)';
+
+            if (Math.abs(targetX - currentX) > 0.04 || Math.abs(targetY - currentY) > 0.04) {
+              requestAnimationFrame(updateTilt);
+            } else {
+              isMoving = false;
+            }
+          }
+
           card.addEventListener('pointermove', function (e) {
             const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            const px = e.clientX - rect.left;
+            const py = e.clientY - rect.top;
 
             // Set CSS custom properties for radial glow
-            card.style.setProperty('--mouse-x', x + 'px');
-            card.style.setProperty('--mouse-y', y + 'px');
+            card.style.setProperty('--mouse-x', px + 'px');
+            card.style.setProperty('--mouse-y', py + 'px');
 
-            // Soft 3D Tilt (Max 5deg)
+            // Soft 3D Tilt (clamped to max 4.5deg)
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -4.5;
-            const rotateY = ((x - centerX) / centerX) * 4.5;
+            targetX = ((py - centerY) / centerY) * -4.2;
+            targetY = ((px - centerX) / centerX) * 4.2;
 
-            card.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateY(-8px)';
+            if (!isMoving) {
+              isMoving = true;
+              requestAnimationFrame(updateTilt);
+            }
           });
 
           card.addEventListener('pointerleave', function () {
+            targetX = 0;
+            targetY = 0;
             card.style.transform = '';
+            card.style.removeProperty('--mouse-x');
+            card.style.removeProperty('--mouse-y');
           });
         });
       }

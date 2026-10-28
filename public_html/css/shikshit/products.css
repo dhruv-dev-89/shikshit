@@ -203,7 +203,6 @@ body.page-products .shikshit-logo {
     margin: -16px 0;
   }
 }
-}
 
 body.page-products .shikshit-header.scrolled .shikshit-navbar,
 body.page-products .shikshit-navbar.scrolled {
@@ -734,37 +733,35 @@ body.page-products .ribbon-track {
   display: flex !important;
   align-items: center !important;
   width: max-content !important;
+  min-width: max-content !important;
+  flex-shrink: 0 !important;
   background: transparent !important;
   will-change: transform !important;
 }
 
 body.page-products .track-left {
-  animation: mqRibbonLeft 40s linear infinite !important;
+  animation: mqRibbonLeft 80s linear infinite !important;
 }
 
 body.page-products .track-right {
-  animation: mqRibbonRight 55s linear infinite !important;
+  animation: mqRibbonRight 92s linear infinite !important;
 }
 
 @keyframes mqRibbonLeft {
   0% {
     transform: translateX(0);
-    translate: 0 0;
   }
   100% {
-    transform: translateX(-50%);
-    translate: -50% 0;
+    transform: translateX(-25%);
   }
 }
 
 @keyframes mqRibbonRight {
   0% {
-    transform: translateX(-50%);
-    translate: -50% 0;
+    transform: translateX(-25%);
   }
   100% {
     transform: translateX(0);
-    translate: 0 0;
   }
 }
 
@@ -773,6 +770,8 @@ body.page-products .track-right {
 body.page-products .track-half {
   display: inline-flex !important;
   align-items: center !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
   gap: 1.75rem !important;
   white-space: nowrap !important;
   font-weight: 800 !important;
@@ -1383,7 +1382,6 @@ body.page-products .service-editorial-card {
   isolation: isolate;
   scroll-margin-top: 155px !important;
   opacity: 1 !important;
-  transform: none !important;
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.4s ease,
@@ -1392,7 +1390,6 @@ body.page-products .service-editorial-card {
 
 body.page-products .service-editorial-card.in-view {
   opacity: 1 !important;
-  transform: translateY(0) scale(1) !important;
 }
 
 /* Stagger between cards on entry */
@@ -1464,7 +1461,7 @@ body.page-products .card-border-glow {
 @media (hover: hover) and (pointer: fine) {
   body.page-products .service-editorial-card:hover,
   body.page-products .service-editorial-card:focus-within {
-    transform: translateY(-8px) scale(1.01) !important;
+    transform: translateY(-8px) scale(1.01);
     box-shadow: 0 24px 60px rgba(124, 58, 237, 0.2) !important;
     border-color: rgba(124, 58, 237, 0.32) !important;
   }
@@ -2737,20 +2734,19 @@ body.page-products .products-hero-bands {
 }
 
 body.page-products .ribbon-track.track-left {
-  animation: mqRibbonLeft 65s linear infinite !important;
-  animation-duration: 65s !important;
+  animation: mqRibbonLeft 80s linear infinite !important;
+  animation-duration: 80s !important;
   animation-iteration-count: infinite !important;
   animation-play-state: running !important;
-  will-change: translate, transform !important;
+  will-change: transform !important;
 }
 
 body.page-products .ribbon-track.track-right {
-  animation: mqRibbonLeft 65s linear infinite !important;
-  animation-duration: 65s !important;
-  animation-direction: reverse !important;
+  animation: mqRibbonRight 92s linear infinite !important;
+  animation-duration: 92s !important;
   animation-iteration-count: infinite !important;
   animation-play-state: running !important;
-  will-change: translate, transform !important;
+  will-change: transform !important;
 }
 
 body.page-products .service-card-icon {
@@ -2898,4 +2894,380 @@ body.page-products #diploma-courses .card-accent-line {
     margin: 24px auto 0 !important;
     overflow: visible !important;
   }
+}
+
+
+/* ==========================================================================
+   CREATIVE & PROFESSIONAL MOVING ANIMATIONS (PRODUCTS & SERVICES)
+   Continuous floating motion, travelling border neon beam, periodic glass sheen,
+   flowing accent gradients, rippling badge halos, and drifting ambient orbs.
+   ========================================================================== */
+
+/* --- A. Moving Ambient Gradient Background Orbs behind Cards Section --- */
+body.page-products .products-services-section {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+body.page-products .products-services-section::before,
+body.page-products .products-services-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+body.page-products .products-services-section::before {
+  top: 6%;
+  left: -8%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.16) 0%, rgba(192, 38, 211, 0.08) 50%, transparent 70%);
+  animation: orbDriftViolet 15s ease-in-out infinite alternate !important;
+}
+
+body.page-products .products-services-section::after {
+  bottom: 8%;
+  right: -8%;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.14) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 70%);
+  animation: orbDriftPink 18s ease-in-out infinite alternate !important;
+}
+
+@keyframes orbDriftViolet {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(70px, 90px) scale(1.15); }
+  100% { transform: translate(-35px, 140px) scale(0.92); }
+}
+
+@keyframes orbDriftPink {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-90px, -70px) scale(1.18); }
+  100% { transform: translate(45px, -120px) scale(0.95); }
+}
+
+/* Ensure grid sits cleanly above the background orbs */
+body.page-products .services-editorial-grid,
+body.page-products .shikshit-section-header {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- B. Continuous Moving Floating Motion on the 6 Cards --- */
+body.page-products .service-editorial-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: cardAmbientFloat 6.8s ease-in-out infinite alternate !important;
+}
+
+/* Organic staggered floating rhythm so cards breathe naturally */
+body.page-products .service-editorial-card:nth-child(1) { animation-delay: 0s !important; }
+body.page-products .service-editorial-card:nth-child(2) { animation-delay: 1.1s !important; }
+body.page-products .service-editorial-card:nth-child(3) { animation-delay: 2.2s !important; }
+body.page-products .service-editorial-card:nth-child(4) { animation-delay: 0.7s !important; }
+body.page-products .service-editorial-card:nth-child(5) { animation-delay: 1.8s !important; }
+body.page-products .service-editorial-card:nth-child(6) { animation-delay: 2.9s !important; }
+
+@keyframes cardAmbientFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.4deg);
+  }
+  100% {
+    transform: translateY(2px) rotate(-0.35deg);
+  }
+}
+
+/* Pause ambient float on hover so cursor tilt/elevation takes over cleanly */
+body.page-products .service-editorial-card:hover {
+  animation-play-state: paused !important;
+}
+
+/* Cursor radial glow on card */
+body.page-products .service-editorial-card::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(124, 58, 237, 0.12), transparent 60%) !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  z-index: 1 !important;
+}
+
+body.page-products .service-editorial-card:hover::before {
+  opacity: 1 !important;
+}
+
+/* --- C. Continuous Moving Border Glow (Travelling Neon Beam) --- */
+body.page-products .card-border-glow {
+  position: absolute !important;
+  inset: -1.5px !important;
+  border-radius: 33px !important;
+  padding: 2px !important;
+  background: linear-gradient(135deg, #7C3AED, #C026D3, #EC4899, #6366F1, #7C3AED) !important;
+  background-size: 300% 300% !important;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  pointer-events: none !important;
+  opacity: 0.65 !important;
+  z-index: 2 !important;
+  overflow: hidden !important;
+  animation: movingBorderGlow 6s linear infinite !important;
+}
+
+body.page-products .service-editorial-card:nth-child(1) .card-border-glow { animation-delay: 0s !important; }
+body.page-products .service-editorial-card:nth-child(2) .card-border-glow { animation-delay: 1.0s !important; }
+body.page-products .service-editorial-card:nth-child(3) .card-border-glow { animation-delay: 2.0s !important; }
+body.page-products .service-editorial-card:nth-child(4) .card-border-glow { animation-delay: 3.0s !important; }
+body.page-products .service-editorial-card:nth-child(5) .card-border-glow { animation-delay: 4.0s !important; }
+body.page-products .service-editorial-card:nth-child(6) .card-border-glow { animation-delay: 5.0s !important; }
+
+@keyframes movingBorderGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body.page-products .service-editorial-card:hover .card-border-glow {
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 6px rgba(124, 58, 237, 0.4)) !important;
+}
+
+/* --- D. Continuous Periodic Glass Light Sheen Sweep --- */
+body.page-products .card-border-glow::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -140% !important;
+  width: 75% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.38) 45%,
+    rgba(237, 233, 254, 0.7) 50%,
+    transparent 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  pointer-events: none !important;
+  z-index: 3 !important;
+  opacity: 0 !important;
+  animation: continuousCardSheen 7s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+}
+
+/* Stagger the light sheen sweep across the 6 cards in a continuous wave */
+body.page-products .service-editorial-card:nth-child(1) .card-border-glow::after { animation-delay: 0s !important; }
+body.page-products .service-editorial-card:nth-child(2) .card-border-glow::after { animation-delay: 1.2s !important; }
+body.page-products .service-editorial-card:nth-child(3) .card-border-glow::after { animation-delay: 2.4s !important; }
+body.page-products .service-editorial-card:nth-child(4) .card-border-glow::after { animation-delay: 3.6s !important; }
+body.page-products .service-editorial-card:nth-child(5) .card-border-glow::after { animation-delay: 4.8s !important; }
+body.page-products .service-editorial-card:nth-child(6) .card-border-glow::after { animation-delay: 6.0s !important; }
+
+@keyframes continuousCardSheen {
+  0%, 65% {
+    left: -140%;
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.75;
+  }
+  92%, 100% {
+    left: 175%;
+    opacity: 0;
+  }
+}
+
+body.page-products .service-editorial-card:hover .card-border-glow::after {
+  left: 175% !important;
+  opacity: 1 !important;
+  transition: opacity 0.2s ease, left 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* --- E. Continuous Floating & Rippling Category Badges --- */
+body.page-products .service-card-icon {
+  position: relative !important;
+  animation: continuousIconFloat 4.8s ease-in-out infinite alternate !important;
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s ease !important;
+}
+
+@keyframes continuousIconFloat {
+  0% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-5px) scale(1.04) rotate(2deg); }
+  100% { transform: translateY(2px) scale(0.98) rotate(-2deg); }
+}
+
+body.page-products .service-card-icon::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: -6px !important;
+  border-radius: 50% !important;
+  border: 2px solid rgba(124, 58, 237, 0.45) !important;
+  pointer-events: none !important;
+  animation: cardIconContinuousRipple 3.2s cubic-bezier(0.16, 1, 0.3, 1) infinite !important;
+}
+
+@keyframes cardIconContinuousRipple {
+  0% { transform: scale(0.92); opacity: 0.85; }
+  100% { transform: scale(1.48); opacity: 0; }
+}
+
+body.page-products .service-editorial-card:hover .service-card-icon {
+  transform: rotate(-8deg) scale(1.12) !important;
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.35) !important;
+}
+
+/* --- F. Continuous Shimmering Gradient Flow on Accent Line --- */
+body.page-products .service-editorial-card .card-accent-line {
+  width: 56px !important;
+  background: linear-gradient(90deg, #7C3AED, #EC4899, #6366F1, #7C3AED) !important;
+  background-size: 250% 100% !important;
+  animation: cardAccentLineFlow 3.2s linear infinite !important;
+}
+
+@keyframes cardAccentLineFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* --- G. Sub-Items Tactile 3D Elevation & Slide-in Arrow --- */
+body.page-products .service-inner-item {
+  position: relative !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(124, 58, 237, 0.08) !important;
+  cursor: pointer !important;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease !important;
+}
+
+body.page-products .service-inner-item:hover,
+body.page-products .service-inner-item:focus-within {
+  transform: translateY(-4px) scale(1.02) !important;
+  background: linear-gradient(135deg, #F5F1FF 0%, #FFFFFF 100%) !important;
+  border-color: rgba(124, 58, 237, 0.32) !important;
+  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.14), 0 2px 8px rgba(124, 58, 237, 0.06) !important;
+}
+
+/* Interactive sliding micro-arrow */
+body.page-products .service-inner-item::after {
+  content: '→';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #7C3AED;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+body.page-products .service-inner-item:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Sub-item icon circle bounce & pulse */
+body.page-products .item-icon-circle {
+  transition: background 0.3s ease, transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease !important;
+}
+
+body.page-products .service-inner-item:hover .item-icon-circle {
+  background: var(--signature-gradient) !important;
+  transform: scale(1.16) rotate(-8deg) !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35) !important;
+}
+
+/* --- H. Moving Shimmer on Amount Pills --- */
+body.page-products .service-amount-pill {
+  position: relative !important;
+  overflow: hidden !important;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+body.page-products .service-amount-pill::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 80% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent) !important;
+  transform: skewX(-20deg) !important;
+  animation: pillGlintSweep 5s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+
+body.page-products .service-inner-item:nth-child(even) .service-amount-pill::after {
+  animation-delay: 2.5s !important;
+}
+
+@keyframes pillGlintSweep {
+  0%, 75% { left: -100%; opacity: 0; }
+  80% { opacity: 0.8; }
+  100% { left: 160%; opacity: 0; }
+}
+
+body.page-products .service-inner-item:hover .service-amount-pill {
+  transform: translateY(-2px) scale(1.04) !important;
+  background: linear-gradient(135deg, #EDE9FE 0%, #F5D0FE 100%) !important;
+  border-color: rgba(124, 58, 237, 0.3) !important;
+  box-shadow: 0 3px 10px rgba(124, 58, 237, 0.15) !important;
+}
+
+/* --- I. Numeral Watermark Interactive Lift --- */
+body.page-products .service-editorial-card:hover::after {
+  transform: translate(-6px, -4px) scale(1.06) !important;
+  -webkit-text-stroke-color: rgba(124, 58, 237, 0.45) !important;
+}
+
+/* --- J. Reduced Motion Accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+  body.page-products .service-editorial-card,
+  body.page-products .service-inner-item,
+  body.page-products .service-card-icon,
+  body.page-products .card-accent-line,
+  body.page-products .card-border-glow,
+  body.page-products .card-border-glow::after,
+  body.page-products .service-amount-pill::after,
+  body.page-products .products-services-section::before,
+  body.page-products .products-services-section::after {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+
+/* Vibrant Cloud SVG Icon for Item 4 (Cloud Computing Essentials) */
+body.page-products .item-icon-circle .item-cloud-svg {
+  width: 22px !important;
+  height: 22px !important;
+  color: #7C3AED !important;
+  display: block !important;
+  filter: drop-shadow(0 2px 4px rgba(124, 58, 237, 0.25));
+  transition: color 0.3s ease, transform 0.3s ease !important;
+}
+
+body.page-products .service-inner-item:hover .item-icon-circle .item-cloud-svg {
+  color: #FFFFFF !important;
+  filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.4));
+}
+
+body.page-products .service-inner-item:hover .item-icon-circle .item-cloud-svg path {
+  fill: #FFFFFF !important;
+  fill-opacity: 0.3 !important;
 }
