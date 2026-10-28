@@ -78,11 +78,13 @@
     const nextMsg = messages[speechIndex];
 
     // Smooth ~300ms fade transition
+    speechBubble.classList.remove('bubble-flipped');
     speechBubble.style.opacity = '0';
     speechBubble.style.transform = 'translateX(-50%) translateY(4px) scale(0.95)';
 
     setTimeout(function () {
       speechBubble.textContent = nextMsg;
+      speechBubble.classList.remove('bubble-flipped');
       speechBubble.style.opacity = '1';
       speechBubble.style.transform = 'translateX(-50%) translateY(0) scale(1)';
     }, 280);
@@ -373,11 +375,11 @@
         clickCount = 0;
         if (clickHint) clickHint.classList.remove('visible');
         triggerConfettiStorm();
-        showSpeechBubble("🎉 SUPER EASTER EGG UNLOCKED! You're awesome! 🚀");
+        showSpeechBubble("Super Easter Egg Unlocked! 🚀✨");
       } else {
         const msg = currentMood === 'excited'
-          ? "Check out the roles below! 💼"
-          : "Want to volunteer and support kids like me? 🎒";
+          ? "Check out our open roles! 💼"
+          : "Want to volunteer and support kids? 🎒";
         showSpeechBubble(msg);
       }
     }
@@ -390,18 +392,6 @@
         handleAvatarClick(e);
       }
     });
-
-    // Handle window resize to auto-adjust speech bubble
-    window.addEventListener('resize', function () {
-      if (speechBubble && speechBubble.classList.contains('active')) {
-        const rect = speechBubble.getBoundingClientRect();
-        if (rect.left < 16) {
-          speechBubble.classList.add('bubble-flipped');
-        } else {
-          speechBubble.classList.remove('bubble-flipped');
-        }
-      }
-    }, { passive: true });
   }
 
   /* ------------------------------------------------------------------------

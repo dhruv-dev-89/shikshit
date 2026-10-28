@@ -16,17 +16,17 @@ window.SHIKSHIT_CAREERS_CONFIG = {
   speechMessages: {
     calm: [
       "No openings today, check back soon!",
-      "Learning never stops 📚",
-      "Want to volunteer? We'd love your support! 💜",
-      "Big changes start with small steps ✨",
-      "Books don't read themselves 🎒"
+      "Learning never stops\u00A0📚",
+      "Want to volunteer? We'd love your support!\u00A0💜",
+      "Big changes start with small steps\u00A0✨",
+      "Books don't read themselves\u00A0🎒"
     ],
     excited: [
-      "We're hiring! Come join us 🎉",
-      "New openings are live! Check them out! 🚀",
-      "Be a mentor, inspire a child 🌟",
-      "Help us transform education across India! 📐",
-      "Big dreams start with passionate educators! ✨"
+      "We're hiring! Come join us\u00A0🎉",
+      "New openings are live! Check them out!\u00A0🚀",
+      "Be a mentor, inspire a child\u00A0🌟",
+      "Help us transform education across India!\u00A0📐",
+      "Big dreams start with passionate educators!\u00A0✨"
     ],
     loading: [
       "Checking for openings..."

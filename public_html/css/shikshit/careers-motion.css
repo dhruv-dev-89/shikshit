@@ -176,17 +176,17 @@
   50% { background-position: 100% 100%; }
 }
 
-/* Two-Column Balanced Grid: Left ~56% / Right ~44% */
+/* Two-Column Balanced Grid: Left ~58% / Right ~42% */
 .careers-card-columns {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   min-height: 520px;
   align-items: stretch;
 }
 
 /* Left Column: Primary Content & Actions (~58%) */
 .careers-card-left {
-  padding: 44px 36px 40px 44px;
+  padding: 40px 32px 36px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -479,21 +479,22 @@
   line-height: 1.6;
 }
 
-/* CTA Cluster: Primary Gradient Button + Secondary Text Link (Side by Side on One Row) */
+/* CTA Cluster: Primary Gradient Button + Secondary Text Link (Strictly Side-by-Side on Desktop) */
 .careers-cta-cluster {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 16px;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .careers-contact-link {
   position: relative;
   overflow: hidden;
   will-change: transform;
-  padding: 13px 28px;
-  font-size: 14.5px;
+  padding: 12px 22px;
+  font-size: 14px;
   font-weight: 700;
   border-radius: 9999px;
   display: inline-flex;
@@ -532,7 +533,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 700;
   color: #7C3AED;
   text-decoration: none;
@@ -540,6 +541,7 @@
   border: none;
   padding: 4px 0;
   white-space: nowrap;
+  flex-shrink: 0;
   transition: color 0.2s ease;
 }
 
@@ -563,27 +565,29 @@
   border-radius: 2px;
 }
 
-/* Culture & Focus Tags: Single Row on Desktop with Consistent Chip Size */
+/* Culture & Focus Tags: Single Row on Desktop (Clean Full Width, Zero Overflow) */
 .careers-card-perks {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-top: 0;
-  padding-top: 18px;
+  padding-top: 16px;
   border-top: 1px solid rgba(124, 58, 237, 0.08);
+  width: 100%;
+  max-width: 100%;
 }
 
 .perk-tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 12px;
+  gap: 5px;
+  font-size: 11px;
   font-weight: 600;
   color: #4B5563;
   background: rgba(124, 58, 237, 0.05);
   border: 1px solid rgba(124, 58, 237, 0.12);
-  padding: 5px 12px;
+  padding: 5px 10px;
   border-radius: 9999px;
   white-space: nowrap;
   flex: 0 0 auto;
@@ -592,6 +596,8 @@
 }
 
 .perk-tag svg {
+  width: 13px;
+  height: 13px;
   color: #7C3AED;
   flex-shrink: 0;
 }
@@ -669,7 +675,7 @@
   100% { transform: translateX(-50%) scale(1.12); opacity: 0.9; }
 }
 
-/* 5 Icons on an Elliptical Orbit (Strictly Kept Inside the Scene Panel) */
+/* 5 Floating Constellation Icons (Positioned in Clear Zones Around the Avatar) */
 .scene-orbit-system {
   position: absolute;
   inset: 0;
@@ -679,67 +685,96 @@
 
 .scene-orbit-ring {
   position: absolute;
-  left: 50%;
-  bottom: 195px;
-  width: 270px;
-  height: 330px;
-  margin-left: -135px;
-  margin-bottom: -165px;
-  border-radius: 50%;
-  animation: orbitSpin 45s linear infinite;
-  transform-origin: center center;
-}
-
-@keyframes orbitSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  inset: 0;
+  pointer-events: none;
 }
 
 .scene-orbit-slot {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -25px;
-  margin-left: -25px;
-  width: 50px;
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: auto;
+  will-change: transform;
 }
 
-/* 5 Evenly Distributed Positions on Ellipse (Rx = 135px, Ry = 165px) - Clear of Character & Inside Panel */
-.slot-cap    { transform: translate(65px, -145px); }
-.slot-bulb   { transform: translate(132px, 15px); }
-.slot-star   { transform: translate(45px, 155px); }
-.slot-pencil { transform: translate(-105px, 105px); }
-.slot-book   { transform: translate(-115px, -85px); }
+/* 5 Clear Floating Zones - Guaranteed ZERO Overlap with Shoes, Arms, or Body */
+.slot-cap {
+  top: 25%;
+  left: 8%;
+  animation: floatCap 6s ease-in-out infinite;
+}
 
-/* Counter-Rotation Keeps Icons Upright while Orbiting */
+.slot-bulb {
+  top: 22%;
+  right: 9%;
+  animation: floatBulb 6.5s ease-in-out infinite;
+}
+
+.slot-book {
+  top: 56%;
+  left: 7%;
+  animation: floatBook 7s ease-in-out infinite;
+}
+
+.slot-star {
+  top: 52%;
+  right: 8%;
+  animation: floatStar 5.5s ease-in-out infinite;
+}
+
+.slot-pencil {
+  bottom: 12%;
+  right: 12%;
+  animation: floatPencil 7.5s ease-in-out infinite;
+}
+
+/* Organic Floating & Swaying Animations */
+@keyframes floatCap {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes floatBulb {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-9px) rotate(-3deg); }
+}
+
+@keyframes floatBook {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(9px) rotate(2deg); }
+}
+
+@keyframes floatStar {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.08); }
+}
+
+@keyframes floatPencil {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(9px) rotate(-3deg); }
+}
+
+/* Crisp & Prominent Icon Badges */
 .scene-orbit-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: #ffffff;
-  border: 1.5px solid rgba(124, 58, 237, 0.24);
-  box-shadow: 0 6px 16px -2px rgba(124, 58, 237, 0.22), 0 2px 6px rgba(11, 11, 59, 0.08);
-  animation: orbitCounterSpin 45s linear infinite;
+  border: 1.5px solid rgba(124, 58, 237, 0.22);
+  box-shadow: 0 8px 20px -2px rgba(124, 58, 237, 0.22), 0 2px 6px rgba(11, 11, 59, 0.08);
   user-select: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
 }
 
 .scene-orbit-icon:hover {
-  transform: scale(1.12);
-  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.32);
+  transform: scale(1.14);
+  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.32);
 }
 
-@keyframes orbitCounterSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
-}
-
-/* Crisp & Prominent Icon Colors (42px - 50px) */
+/* Vivid Brand Icon Colors */
 .icon-cap    { width: 50px; height: 50px; color: #7C3AED; }
 .icon-book   { width: 48px; height: 48px; color: #4F46E5; }
 .icon-bulb   { width: 46px; height: 46px; color: #D97706; }
@@ -749,11 +784,11 @@
 /* Visible Floor Platform under Feet */
 .avatar-ground-platform {
   position: absolute;
-  bottom: 12px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 220px;
-  height: 28px;
+  width: 210px;
+  height: 26px;
   border-radius: 50%;
   background: radial-gradient(
     ellipse at center,
@@ -770,11 +805,11 @@
 /* Soft Contact Ground Shadow under Feet */
 .avatar-ground-shadow {
   position: absolute;
-  bottom: -4px;
+  bottom: -3px;
   left: 50%;
   transform: translateX(-50%);
-  width: 160px;
-  height: 16px;
+  width: 155px;
+  height: 15px;
   background: radial-gradient(ellipse at center, rgba(11, 11, 59, 0.44) 0%, rgba(124, 58, 237, 0.18) 50%, transparent 75%);
   border-radius: 50%;
   filter: blur(3px);
@@ -783,14 +818,14 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Student Mascot Avatar Container (~395px Tall, Centered, Perfectly Balanced in 520px Panel) */
+/* Student Mascot Avatar Container (~385px Tall, Centered, Perfectly Balanced in 520px Panel) */
 .student-avatar-container {
   position: relative;
   left: auto;
   bottom: auto;
-  width: 220px;
-  height: 425px;
-  margin-bottom: 20px;
+  width: 210px;
+  height: 415px;
+  margin-bottom: 16px;
   pointer-events: auto;
   cursor: pointer;
   display: flex;
@@ -810,11 +845,11 @@
   transform: translateY(2px) scale(0.98);
 }
 
-/* 3D Avatar Image Stage: 395px Pure Character Height */
+/* 3D Avatar Image Stage: 385px Pure Character Height */
 .avatar-stage {
   position: relative;
   width: 100%;
-  height: 395px;
+  height: 385px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -827,7 +862,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: auto;
-  height: 395px;
+  height: 385px;
   max-width: 100%;
   object-fit: contain;
   object-position: bottom center;
@@ -927,10 +962,10 @@
 /* Speech Bubble (Anchored Directly Above Head, Centered, 10px Gap) */
 .avatar-speech-bubble {
   position: absolute;
-  bottom: calc(100% + 10px);
+  bottom: calc(100% + 12px);
   left: 50%;
   transform: translateX(-50%) translateY(6px) scale(0.95);
-  max-width: 86%;
+  max-width: min(290px, 92vw);
   width: max-content;
   background: rgba(255, 255, 255, 0.98);
   border: 1.5px solid rgba(124, 58, 237, 0.22);
@@ -943,6 +978,9 @@
   border-radius: 16px;
   text-align: center;
   white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+  box-sizing: border-box;
   box-shadow: 0 8px 24px rgba(124, 58, 237, 0.16), 0 2px 6px rgba(11, 11, 59, 0.04);
   pointer-events: none;
   opacity: 0;
@@ -969,18 +1007,6 @@
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0) scale(1);
-}
-
-.avatar-speech-bubble.bubble-flipped {
-  left: auto;
-  right: 10px;
-  transform: translateY(0) scale(1);
-}
-
-.avatar-speech-bubble.bubble-flipped::after {
-  left: auto;
-  right: 25px;
-  transform: none;
 }
 
 /* Easter Egg Click Streak Counter Hint */
@@ -1523,10 +1549,17 @@
     height: 355px;
   }
 
-  .scene-orbit-ring {
-    transform: scale(0.88);
-    bottom: 175px;
-  }
+  .slot-cap    { top: 25%; left: 5%; }
+  .slot-bulb   { top: 22%; right: 6%; }
+  .slot-book   { top: 56%; left: 5%; }
+  .slot-star   { top: 52%; right: 6%; }
+  .slot-pencil { bottom: 12%; right: 8%; }
+
+  .icon-cap    { width: 44px; height: 44px; }
+  .icon-book   { width: 42px; height: 42px; }
+  .icon-bulb   { width: 40px; height: 40px; }
+  .icon-pencil { width: 38px; height: 38px; }
+  .icon-star   { width: 36px; height: 36px; }
 
   .scene-glow-circle {
     bottom: 95px;
@@ -1618,10 +1651,17 @@
     height: 190px;
   }
 
-  .scene-orbit-ring {
-    transform: scale(0.72);
-    bottom: 140px;
-  }
+  .slot-cap    { top: 20%; left: 6%; }
+  .slot-bulb   { top: 18%; right: 6%; }
+  .slot-book   { top: 52%; left: 6%; }
+  .slot-star   { top: 48%; right: 6%; }
+  .slot-pencil { bottom: 10%; right: 8%; }
+
+  .icon-cap    { width: 40px; height: 40px; }
+  .icon-book   { width: 38px; height: 38px; }
+  .icon-bulb   { width: 36px; height: 36px; }
+  .icon-pencil { width: 34px; height: 34px; }
+  .icon-star   { width: 32px; height: 32px; }
 
   .avatar-speech-bubble {
     font-size: 11.5px;
@@ -1821,10 +1861,17 @@
     height: 235px;
   }
 
-  .scene-orbit-ring {
-    transform: scale(0.60);
-    bottom: 120px;
-  }
+  .slot-cap    { top: 18%; left: 4%; }
+  .slot-bulb   { top: 16%; right: 4%; }
+  .slot-book   { top: 50%; left: 4%; }
+  .slot-star   { top: 48%; right: 4%; }
+  .slot-pencil { bottom: 8%; right: 6%; }
+
+  .icon-cap    { width: 36px; height: 36px; }
+  .icon-book   { width: 34px; height: 34px; }
+  .icon-bulb   { width: 32px; height: 32px; }
+  .icon-pencil { width: 30px; height: 30px; }
+  .icon-star   { width: 28px; height: 28px; }
 }
 
 /* --------------------------------------------------------------------------
