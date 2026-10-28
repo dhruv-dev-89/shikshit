@@ -19,14 +19,53 @@
   <link rel="stylesheet" href="css/shikshit/base.css">
   <link rel="stylesheet" href="css/shikshit/components.css">
   <link rel="stylesheet" href="css/shikshit/careers.css">
+  <link rel="stylesheet" href="css/shikshit/careers-motion.css">
   <link rel="stylesheet" href="css/shikshit/footer.css">
 </head>
 
-<body class="shikshit-editorial">
-  <div class="shikshit-bg-blobs" aria-hidden="true">
-    <div class="shikshit-blob-1"></div>
-    <div class="shikshit-blob-2"></div>
-    <div class="shikshit-blob-3"></div>
+<body class="shikshit-editorial careers-page">
+  <!-- Subtle ambient background experience -->
+  <div class="shikshit-bg-blobs" aria-hidden="true" id="bgBlobsContainer">
+    <div class="shikshit-blob-1" id="blob1"></div>
+    <div class="shikshit-blob-2" id="blob2"></div>
+    <div class="shikshit-blob-3" id="blob3"></div>
+    <div class="shikshit-blob-4" id="blob4"></div>
+    <div class="careers-bg-grid" aria-hidden="true"></div>
+    <div class="careers-floating-elements" aria-hidden="true">
+      <!-- Floating Book 1 -->
+      <svg class="floating-item item-book-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+      </svg>
+      <!-- Floating Cap 1 (Matches Shikshit Graduation Cap) -->
+      <svg class="floating-item item-cap-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+      </svg>
+      <!-- Floating Star 1 -->
+      <svg class="floating-item item-star-1" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+      <!-- Floating Pencil 1 -->
+      <svg class="floating-item item-pencil-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+      </svg>
+      <!-- Floating Lightbulb 1 -->
+      <svg class="floating-item item-lightbulb-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="9" y1="18" x2="15" y2="18"/>
+        <line x1="10" y1="22" x2="14" y2="22"/>
+        <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+      </svg>
+      <!-- Floating Star 2 -->
+      <svg class="floating-item item-star-2" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+      <!-- Floating Book 2 -->
+      <svg class="floating-item item-book-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+      </svg>
+    </div>
   </div>
 
   <div class="shikshit-main-content">
@@ -85,36 +124,530 @@
     <main id="main-content" class="careers-main">
       <section class="careers-hero" aria-labelledby="careers-title">
         <div class="careers-hero-content">
-          <div class="shikshit-chip">Grow with us</div>
-          <h1 id="careers-title">Make a difference <span class="shikshit-gradient-text">through education.</span></h1>
-          <p>
+          <!-- Animated Chip / Badge -->
+          <div class="shikshit-chip careers-hero-chip" id="heroChip">
+            <span class="chip-sparkle" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z"/>
+              </svg>
+            </span>
+            <span>Grow with us</span>
+          </div>
+
+          <!-- Staggered word-by-word reveal heading -->
+          <h1 id="careers-title" class="careers-heading">
+            <span class="heading-line line-1">
+              <span class="word-wrap"><span class="word-inner">Make</span></span>
+              <span class="word-wrap"><span class="word-inner">a</span></span>
+              <span class="word-wrap"><span class="word-inner">difference</span></span>
+            </span>
+            <span class="heading-line line-2">
+              <span class="gradient-reveal-wrap">
+                <span class="shikshit-gradient-text animated-shimmer-text">through education.</span>
+              </span>
+            </span>
+          </h1>
+
+          <!-- Delayed supporting paragraph -->
+          <p class="careers-hero-desc">
             Join a team working to make quality education and opportunity more accessible to students and communities
             across India.
           </p>
         </div>
 
-        <section class="careers-openings" aria-labelledby="openings-title">
-          <div class="careers-status-icon" aria-hidden="true">✦</div>
-          <div>
-            <p class="careers-status-label">Career opportunities</p>
-            <h2 id="openings-title">No open positions right now</h2>
-            <p>
-              We’ll post new openings on this page as soon as they become available. Please check back for future
-              opportunities to work with Shikshit.
+        <!-- Connector visual accent linking hero to card -->
+        <div class="careers-connector" aria-hidden="true"></div>
+
+        <!-- Unified Career Card Stage (Two-Column Balanced Layout) -->
+        <div class="careers-card-stage" id="careersCardStage">
+          <!-- Career Opportunity Card -->
+          <section class="careers-openings" aria-labelledby="openings-title" id="careerCard">
+            <!-- Glassmorphism layered illumination -->
+            <div class="card-ambient-glow" aria-hidden="true"></div>
+            <div class="card-gloss-highlight" aria-hidden="true"></div>
+            <div class="card-border-sweep" aria-hidden="true"></div>
+
+            <div class="careers-card-columns">
+              <!-- Left Column: Primary Content & Actions (~58%) -->
+              <div class="careers-card-left careers-card-body">
+                <!-- Branded Floating Icon Tile -->
+                <div class="careers-brand-tile" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                  </svg>
+                </div>
+
+                <!-- Live Beacon & Opportunities Label -->
+                <div class="careers-card-header-bar">
+                  <div class="careers-label-row">
+                    <span class="careers-live-beacon" id="careersBeacon" aria-hidden="true">
+                      <span class="beacon-dot"></span>
+                      <span class="beacon-ring"></span>
+                    </span>
+                    <p class="careers-status-label" id="careersStatusLabel">Career opportunities</p>
+                  </div>
+                </div>
+
+                <!-- Typewriter Status Line with Animated Notification Bell -->
+                <div class="careers-typewriter-bar" aria-live="polite">
+                  <span class="typewriter-bell-icon" id="typewriterBellIcon" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                      <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                  </span>
+                  <span class="typewriter-text" id="careersTypewriterText">We’ll post new openings here soon.</span>
+                  <span class="typewriter-cursor" aria-hidden="true"></span>
+                </div>
+
+                <h2 id="openings-title">No open positions right now</h2>
+                <p class="openings-count-line" id="openingsCountLine"></p>
+                
+                <p class="careers-card-text" id="careersCardText">
+                  We’ll post new openings on this page as soon as they become available. Please check back for future
+                  opportunities to work with Shikshit.
+                </p>
+
+                <!-- Dynamic Job Openings Section (Shown when hiring) -->
+                <div class="openings-list-wrapper" id="openingsListWrapper" aria-hidden="true">
+                  <div class="openings-list-intro">
+                    <span class="openings-count-badge">✨ 3 Open Roles</span>
+                    <p class="openings-subtext">Click any role to express interest or apply directly via email.</p>
+                  </div>
+                  <div class="openings-list">
+                    <a class="job-card" href="mailto:shikshiteducation@gmail.com?subject=Application%20for%20Lead%20STEM%20Educator">
+                      <div class="job-card-header">
+                        <span class="job-tag tag-purple">Full-Time</span>
+                        <span class="job-location">Jaipur / Lucknow • On-site</span>
+                      </div>
+                      <h3 class="job-title">Lead STEM Educator</h3>
+                      <p class="job-desc">Deliver interactive science and math modules to primary & middle school students in underserved areas.</p>
+                      <div class="job-footer">
+                        <span class="job-perk">Non-Profit Band</span>
+                        <span class="job-action">Apply Now →</span>
+                      </div>
+                    </a>
+
+                    <a class="job-card" href="mailto:shikshiteducation@gmail.com?subject=Application%20for%20Curriculum%20Specialist">
+                      <div class="job-card-header">
+                        <span class="job-tag tag-pink">Hybrid</span>
+                        <span class="job-location">Delhi NCR • Hybrid</span>
+                      </div>
+                      <h3 class="job-title">Curriculum & Content Specialist</h3>
+                      <p class="job-desc">Design bilingual vernacular worksheets, teacher guides, and creative STEM kits.</p>
+                      <div class="job-footer">
+                        <span class="job-perk">Non-Profit Band</span>
+                        <span class="job-action">Apply Now →</span>
+                      </div>
+                    </a>
+
+                    <a class="job-card" href="mailto:shikshiteducation@gmail.com?subject=Application%20for%20Student%20Outreach%20Lead">
+                      <div class="job-card-header">
+                        <span class="job-tag tag-amber">Remote</span>
+                        <span class="job-location">All India • Remote</span>
+                      </div>
+                      <h3 class="job-title">Student Outreach Coordinator</h3>
+                      <p class="job-desc">Manage volunteer recruitment, partner school relationships, and scholarship campaigns.</p>
+                      <div class="job-footer">
+                        <span class="job-perk">Non-Profit Band</span>
+                        <span class="job-action">Apply Now →</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Balanced CTA Cluster: Primary Button + Secondary Link -->
+                <div class="careers-cta-cluster">
+                  <a class="btn-pill btn-primary-gradient careers-contact-link"
+                    href="mailto:shikshiteducation@gmail.com?subject=Career%20opportunities%20at%20Shikshit"
+                    id="careersMailBtn">
+                    <span id="careersMailBtnText">Get in touch about careers</span>
+                    <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+
+                  <a href="become-a-member.html" class="careers-volunteer-link">
+                    <span>Volunteer with us</span>
+                    <svg class="volunteer-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+                </div>
+
+                <!-- Culture & Focus Tags with Icons and Hover Lift -->
+                <div class="careers-card-perks">
+                  <span class="perk-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Student Mentorship
+                  </span>
+                  <span class="perk-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    Educational Equity
+                  </span>
+                  <span class="perk-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    Community Impact
+                  </span>
+                </div>
+              </div>
+
+              <!-- Right Column: Illustrated Scene Panel (~42%) -->
+              <div class="careers-card-right">
+                <div class="careers-scene-panel" id="careersScenePanel">
+                  <!-- Subtle Dotted Matrix Pattern -->
+                  <div class="scene-pattern-dots" aria-hidden="true"></div>
+                  <!-- Gradient Mesh Background -->
+                  <div class="scene-gradient-mesh" aria-hidden="true"></div>
+                  <!-- Ambient Glowing Aura Circle centered on torso -->
+                  <div class="scene-glow-circle" aria-hidden="true"></div>
+
+                  <!-- 5 Floating Orbiting Icons on Elliptical Track with Counter-Rotation -->
+                  <div class="scene-orbit-system" aria-hidden="true">
+                    <div class="scene-orbit-ring">
+                      <!-- 1. Graduation Cap (Top-Right) -->
+                      <div class="scene-orbit-slot slot-cap">
+                        <span class="scene-orbit-icon icon-cap" title="Education">
+                          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                          </svg>
+                        </span>
+                      </div>
+                      <!-- 2. Lightbulb (Right) -->
+                      <div class="scene-orbit-slot slot-bulb">
+                        <span class="scene-orbit-icon icon-bulb" title="Ideas">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="9" y1="18" x2="15" y2="18"/>
+                            <line x1="10" y1="22" x2="14" y2="22"/>
+                            <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+                          </svg>
+                        </span>
+                      </div>
+                      <!-- 3. Star (Bottom-Right) -->
+                      <div class="scene-orbit-slot slot-star">
+                        <span class="scene-orbit-icon icon-star" title="Impact">
+                          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                          </svg>
+                        </span>
+                      </div>
+                      <!-- 4. Pencil (Bottom-Left) -->
+                      <div class="scene-orbit-slot slot-pencil">
+                        <span class="scene-orbit-icon icon-pencil" title="Creativity">
+                          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>
+                          </svg>
+                        </span>
+                      </div>
+                      <!-- 5. Book (Top-Left) -->
+                      <div class="scene-orbit-slot slot-book">
+                        <span class="scene-orbit-icon icon-book" title="Knowledge">
+                          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Visible Ground Floor Platform under feet -->
+                  <div class="avatar-ground-platform" aria-hidden="true"></div>
+
+                  <!-- 3D Student Mascot Avatar Container -->
+                  <div class="student-avatar-container mood-calm" id="studentAvatarContainer" tabindex="0" role="img"
+                    aria-label="Student career assistant smiling and looking forward. Calm mood, no current openings.">
+                    
+                    <!-- Dynamic Speech Bubble (Directly above head, centered) -->
+                    <div class="avatar-speech-bubble" id="avatarSpeechBubble" aria-live="polite">
+                      No openings today, check back soon!
+                    </div>
+
+                    <!-- 5-Click Easter Egg Streak Counter -->
+                    <div class="avatar-click-hint" id="avatarClickHint"></div>
+
+                    <!-- 3D Avatar Stage -->
+                    <div class="avatar-stage" id="avatarStage">
+                      <!-- Calm / Relaxed pose (Active when 0 openings or loading) -->
+                      <img src="images/student_sad.png" alt="Student smiling and looking forward"
+                        class="avatar-photo avatar-photo-calm active" id="avatarPhotoCalm" draggable="false" />
+
+                      <!-- Excited / Celebrating pose (Active when 1+ openings) -->
+                      <img src="images/student_happy.png" alt="Cheerful student celebrating job openings"
+                        class="avatar-photo avatar-photo-excited" id="avatarPhotoExcited" draggable="false" />
+
+                      <!-- Soft Ground Shadow under feet -->
+                      <div class="avatar-ground-shadow" aria-hidden="true"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Section Divider -->
+      <div class="careers-section-divider" aria-hidden="true"></div>
+
+        <!-- Section A: Why Work with Shikshit -->
+        <section class="careers-sub-section reveal-on-scroll" id="why-shikshit" aria-labelledby="why-title">
+          <div class="sub-section-header">
+            <div class="shikshit-chip">
+              <span class="chip-sparkle" aria-hidden="true">✨</span>
+              <span>Our Culture & Mission</span>
+            </div>
+            <h2 id="why-title" class="sub-section-heading">Why work with Shikshit</h2>
+            <p class="sub-section-desc">
+              We are on a mission to democratize quality STEM education across India. Join a community of educators, mentors, and innovators building lasting change.
             </p>
-            <a class="btn-pill btn-primary-gradient careers-contact-link"
-              href="mailto:shikshiteducation@gmail.com?subject=Career%20opportunities%20at%20Shikshit">
-              Get in touch about careers
-            </a>
+          </div>
+
+          <div class="why-values-grid">
+            <!-- Value 1: Student Mentorship -->
+            <div class="value-card">
+              <div class="value-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 class="value-title">Student Mentorship</h3>
+              <p class="value-desc">Empower children from underserved communities through personalized guidance, interactive workshops, and positive role modeling.</p>
+            </div>
+
+            <!-- Value 2: Educational Equity -->
+            <div class="value-card">
+              <div class="value-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="value-title">Educational Equity</h3>
+              <p class="value-desc">Tackle systemic divides by bringing localized, vernacular, high-quality STEM and foundational learning to schools that need it most.</p>
+            </div>
+
+            <!-- Value 3: Community Impact -->
+            <div class="value-card">
+              <div class="value-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+              </div>
+              <h3 class="value-title">Community Impact</h3>
+              <p class="value-desc">Collaborate with grassroots partners, local educators, and families to create sustainable, community-rooted educational change.</p>
+            </div>
+
+            <!-- Value 4: Growth and Learning -->
+            <div class="value-card">
+              <div class="value-icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="value-title">Growth & Learning</h3>
+              <p class="value-desc">Develop your leadership, curriculum, and operational skills in an agile, supportive environment that invests in your future.</p>
+            </div>
           </div>
         </section>
-      </section>
-    </main>
+
+        <!-- Section Divider -->
+        <div class="careers-section-divider" aria-hidden="true"></div>
+
+        <!-- Section B: How We Hire -->
+        <section class="careers-sub-section reveal-on-scroll" id="how-we-hire" aria-labelledby="hiring-title">
+          <div class="sub-section-header">
+            <div class="shikshit-chip">
+              <span class="chip-sparkle" aria-hidden="true">🌱</span>
+              <span>Transparent Process</span>
+            </div>
+            <h2 id="hiring-title" class="sub-section-heading">How we hire</h2>
+            <p class="sub-section-desc">
+              A simple, human-centered hiring journey focused on shared vision, creative teaching, and mutual respect.
+            </p>
+          </div>
+
+          <div class="hiring-timeline" id="hiringTimeline">
+            <div class="timeline-line-track" aria-hidden="true">
+              <div class="timeline-line-progress" id="timelineProgress"></div>
+            </div>
+
+            <div class="timeline-steps">
+              <div class="timeline-step" data-step="1">
+                <div class="step-dot-wrap">
+                  <span class="step-dot">1</span>
+                </div>
+                <div class="step-content">
+                  <h3 class="step-title">Apply</h3>
+                  <p class="step-desc">Submit your profile or expression of interest in 2 minutes via email or our form.</p>
+                </div>
+              </div>
+
+              <div class="timeline-step" data-step="2">
+                <div class="step-dot-wrap">
+                  <span class="step-dot">2</span>
+                </div>
+                <div class="step-content">
+                  <h3 class="step-title">Conversation</h3>
+                  <p class="step-desc">An informal introductory chat about your values, background, and teaching philosophy.</p>
+                </div>
+              </div>
+
+              <div class="timeline-step" data-step="3">
+                <div class="step-dot-wrap">
+                  <span class="step-dot">3</span>
+                </div>
+                <div class="step-content">
+                  <h3 class="step-title">Meet the Team</h3>
+                  <p class="step-desc">Collaborate on a lightweight curriculum prompt and meet fellow educators and mentors.</p>
+                </div>
+              </div>
+
+              <div class="timeline-step" data-step="4">
+                <div class="step-dot-wrap">
+                  <span class="step-dot">4</span>
+                </div>
+                <div class="step-content">
+                  <h3 class="step-title">Join Us</h3>
+                  <p class="step-desc">Receive an offer and step into an empowering culture shaping the future of education.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="careers-section-divider" aria-hidden="true"></div>
+
+        <!-- Section C: Get Notified Strip -->
+        <section class="careers-notify-section reveal-on-scroll" id="get-notified" aria-labelledby="notify-title">
+          <div class="notify-card-banner">
+            <div class="notify-glow-accent" aria-hidden="true"></div>
+            <div class="notify-content">
+              <div class="notify-text-col">
+                <div class="shikshit-chip chip-white-tint">
+                  <span class="chip-sparkle" aria-hidden="true">🔔</span>
+                  <span>Never miss an opening</span>
+                </div>
+                <h2 id="notify-title" class="notify-heading">Be the first to know</h2>
+                <p class="notify-desc">
+                  Get notified straight to your inbox the moment full-time positions, fellowships, or mentorship roles open at Shikshit.
+                </p>
+              </div>
+
+              <div class="notify-form-col">
+                <form class="notify-form" id="careersNotifyForm" novalidate>
+                  <div class="notify-input-group">
+                    <label for="notifyEmailInput" class="visually-hidden">Email address</label>
+                    <input type="email" id="notifyEmailInput" name="email" class="notify-input"
+                      placeholder="Enter your email address..." required autocomplete="email" />
+                    <button type="submit" class="btn-pill btn-primary-gradient notify-submit-btn" id="notifySubmitBtn">
+                      <span>Notify me</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="notify-feedback" id="notifyFeedback" aria-live="polite"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="careers-section-divider" aria-hidden="true"></div>
+
+        <!-- Section D: Frequently Asked Questions Accordion -->
+        <section class="careers-sub-section careers-faq-section reveal-on-scroll" id="careers-faq" aria-labelledby="faq-title">
+          <div class="sub-section-header">
+            <div class="shikshit-chip">
+              <span class="chip-sparkle" aria-hidden="true">💡</span>
+              <span>Common Inquiries</span>
+            </div>
+            <h2 id="faq-title" class="sub-section-heading">Frequently Asked Questions</h2>
+            <p class="sub-section-desc">
+              Have a question about volunteering, speculative applications, or our timeline? Here are answers to our most common questions.
+            </p>
+          </div>
+
+          <div class="faq-accordion" id="faqAccordion">
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-1" id="faq-btn-1">
+                <span class="faq-question">Do you accept volunteers and interns?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-panel" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1" hidden>
+                <p class="faq-answer">
+                  Yes! We actively welcome volunteers and interns across teaching, digital curriculum design, community drives, and event mentorship. Reach out via our <a href="become-a-member.html" class="inline-faq-link">Become a Member</a> page or email us anytime.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-btn-2">
+                <span class="faq-question">Can I submit my resume even if there are no open positions right now?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-panel" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2" hidden>
+                <p class="faq-answer">
+                  Absolutely. We maintain a talent directory of passionate educators and coordinators. When new positions open, we review existing submissions first. Send your CV to <a href="mailto:shikshiteducation@gmail.com" class="inline-faq-link">shikshiteducation@gmail.com</a> with the subject line "Speculative Application - [Your Area of Interest]".
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-btn-3">
+                <span class="faq-question">How will I hear about new openings?</span>
+                <span class="faq-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div class="faq-panel" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3" hidden>
+                <p class="faq-answer">
+                  New openings are posted live on this page, shared directly with our email notification subscribers above, and announced on our official community channels.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
     <div id="shikshit-footer-container"></div>
   </div>
 
   <script src="js/shikshit/main.js"></script>
+  <script src="js/shikshit/careers-data.js"></script>
+  <script src="js/shikshit/careers.js"></script>
+  <script src="js/shikshit/mascot.js"></script>
+  <script src="js/shikshit/page-motion.js"></script>
   <script src="js/shikshit-footer.js" defer></script>
 </body>
 
