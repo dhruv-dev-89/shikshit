@@ -17,7 +17,7 @@
 
 .blogs-hero {
   position: relative;
-  padding: 56px 0 36px;
+  padding: 52px 0 40px;
   text-align: center;
   z-index: 2;
 }
@@ -54,7 +54,7 @@
   line-height: 1.68;
   color: var(--ink);
   max-width: 680px;
-  margin: 0 auto 32px;
+  margin: 0 auto;
 }
 
 /* Floating Editorial Motifs in Background */
@@ -134,76 +134,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. INTERACTIVE PLATFORM FILTER PILLS
-   -------------------------------------------------------------------------- */
-.blogs-filter-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 32px auto 44px;
-  position: relative;
-  z-index: 5;
-}
-
-.blogs-filter-track {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  padding: 6px 8px;
-  border-radius: 9999px;
-  border: 1px solid rgba(124, 58, 237, 0.16);
-  box-shadow: 0 10px 32px rgba(11, 11, 59, 0.08);
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.blogs-filter-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 18px;
-  border-radius: 9999px;
-  border: 1px solid transparent;
-  background: transparent;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--ink);
-  cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.blogs-filter-btn:hover {
-  color: var(--violet);
-  background: rgba(124, 58, 237, 0.06);
-}
-
-.blogs-filter-btn.active {
-  background: linear-gradient(135deg, #7C3AED 0%, #C026D3 100%);
-  color: #FFFFFF;
-  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
-}
-
-.blogs-filter-count {
-  font-size: 12px;
-  font-weight: 800;
-  padding: 2px 7px;
-  border-radius: 9999px;
-  background: rgba(124, 58, 237, 0.1);
-  color: inherit;
-  transition: background 0.25s ease;
-}
-
-.blogs-filter-btn.active .blogs-filter-count {
-  background: rgba(255, 255, 255, 0.25);
-  color: #FFFFFF;
-}
-
-/* --------------------------------------------------------------------------
-   3. SPOTLIGHT FEATURED ARTICLE (2-Column Hero Card)
+   2. SPOTLIGHT FEATURED ARTICLE (2-Column Hero Card)
    -------------------------------------------------------------------------- */
 .blogs-spotlight-section {
   margin-bottom: 56px;
@@ -580,39 +511,7 @@
   display: none !important;
 }
 
-/* --------------------------------------------------------------------------
-   5. IMPACT STATS BAND
-   -------------------------------------------------------------------------- */
-.blogs-stats-band {
-  background: #FFFFFF;
-  border-radius: 28px;
-  border: 1px solid rgba(124, 58, 237, 0.12);
-  box-shadow: 0 14px 40px rgba(11, 11, 59, 0.06);
-  padding: 36px 40px;
-  margin-bottom: 64px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  text-align: center;
-  position: relative;
-  z-index: 3;
-}
 
-.stat-item-number {
-  font-size: clamp(2.2rem, 3.2vw, 3rem);
-  font-weight: 800;
-  background: var(--signature-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.1;
-  margin-bottom: 6px;
-}
-
-.stat-item-label {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: var(--ink);
-}
 
 /* --------------------------------------------------------------------------
    6. RESPONSIVE BREAKPOINTS
@@ -642,23 +541,12 @@
     gap: 20px;
   }
 
-  .blogs-stats-band {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 28px 20px;
-  }
-
   .blog-card-body {
     padding: 20px;
   }
 
   .spotlight-body {
     padding: 24px 20px;
-  }
-
-  .blogs-filter-btn {
-    padding: 7px 14px;
-    font-size: 13px;
   }
 }
 
