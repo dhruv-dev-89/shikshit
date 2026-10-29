@@ -38,6 +38,11 @@
     </script>
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/shikshit/tokens.css">
+    <link rel="stylesheet" href="css/shikshit/base.css">
+    <link rel="stylesheet" href="css/shikshit/components.css">
+    <link rel="stylesheet" href="css/shikshit/donate.css">
+    <link rel="stylesheet" href="css/shikshit/footer.css">
 
     <!-- Load script.js early to ensure includeHTML is available -->
     <script src="js/script.js"></script>
@@ -90,7 +95,7 @@
     <style>
       /* Hero Section Styles */
       .hero-gradient {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #0B0B3B 0%, #1B0B4D 28%, #4C1D95 65%, #7C3AED 100%);
         position: relative;
         overflow: hidden;
         height: 100vh !important;
@@ -111,11 +116,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(102, 126, 234, 0.9) 0%,
-          rgba(118, 75, 162, 0.9) 100%
-        );
+        background: radial-gradient(circle at 50% 25%, rgba(192, 38, 211, 0.28) 0%, transparent 65%);
         z-index: 1;
       }
 
@@ -1452,11 +1453,6 @@
         transform: scale(1.05);
       }
     </style>
-    <link rel="stylesheet" href="css/shikshit/donate.css">
-  <link rel="stylesheet" href="css/shikshit/tokens.css">
-  <link rel="stylesheet" href="css/shikshit/base.css">
-  <link rel="stylesheet" href="css/shikshit/components.css">
-  <link rel="stylesheet" href="css/shikshit/footer.css">
   <style>body.page-donate { padding-top: 0 !important; } body.page-donate .shikshit-header { position: fixed; top: 18px; left: 0; right: 0; }</style>
 </head>
   <body class="page-donate">
@@ -2244,7 +2240,7 @@
     </section>
 
     <!-- Key Interventions Section -->
-    <section class="py-20 lg:py-32 interventions-section">
+    <section class="py-20 lg:py-28 interventions-section">
       <!-- Floating Background Shapes -->
       <div class="floating-shapes">
         <div class="floating-shape"></div>
@@ -2254,231 +2250,150 @@
       </div>
 
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-20">
-          <div class="inline-block">
-            <h2
-              class="intervention-title text-4xl md:text-6xl font-bold mb-8 leading-tight"
-            >
-              Key Interventions Under Shiksha Na Ruke
-            </h2>
+        <div class="text-center mb-16">
+          <div class="shikshit-chip mb-4 inline-flex items-center gap-2" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); border: 1px solid rgba(124, 58, 237, 0.16); border-radius: 9999px; padding: 6px 18px; font-weight: 700; font-size: 14px; color: #7C3AED; box-shadow: 0 4px 16px rgba(124, 58, 237, 0.1);">
+            <span>Our Impact Pillars 🌟</span>
           </div>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive educational initiatives designed to transform lives
-            and build a brighter future for children across India
+          <h2 class="intervention-title text-3xl md:text-5xl font-bold mb-4 leading-tight">
+            Key Interventions Under <span class="shikshit-gradient-text" style="background: linear-gradient(135deg, #7C3AED 0%, #C026D3 60%, #EC4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Shiksha Na Ruke</span>
+          </h2>
+          <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Comprehensive educational initiatives designed to transform lives and build a brighter future for children across India.
           </p>
         </div>
 
-        <!-- Interventions Grid -->
+        <!-- Interventions Grid: Single Unified 8-Card Responsive Grid -->
         <div class="max-w-7xl mx-auto">
-          <!-- First Row -->
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
-          >
-            <!-- Primary and Secondary Education -->
-            <div
-              class="intervention-card bg-white/80 rounded-3xl p-8 shadow-xl text-center group"
-            >
-              <div
-                class="intervention-icon w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <svg
-                  class="w-10 h-10 text-blue-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"
-                  />
+          <div class="interventions-grid">
+            
+            <!-- Card 1 -->
+            <div class="intervention-card group" tabindex="0">
+              <div class="intervention-card-glow" aria-hidden="true"></div>
+              <div class="intervention-badge">Pillar 01 • Schooling</div>
+              <div class="intervention-icon" aria-hidden="true">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold mb-4 px-2">
-                Primary and Secondary education for children
-              </h3>
-              <div
-                class="w-12 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
+              <h3 class="intervention-card-title">Primary &amp; Secondary Education</h3>
+              <p class="intervention-card-desc">
+                Ensuring uninterrupted learning, free textbooks, and uniforms for underprivileged children across India.
+              </p>
+              <div class="intervention-card-accent" aria-hidden="true"></div>
             </div>
 
-            <!-- Health Check-ups -->
-            <div
-              class="intervention-card bg-white/80 rounded-3xl p-8 shadow-xl text-center group"
-            >
-              <div
-                class="intervention-icon w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <svg
-                  class="w-10 h-10 text-green-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"
-                  />
+            <!-- Card 2 -->
+            <div class="intervention-card group" tabindex="0">
+              <div class="intervention-card-glow" aria-hidden="true"></div>
+              <div class="intervention-badge">Pillar 02 • Healthcare</div>
+              <div class="intervention-icon" aria-hidden="true">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold mb-4 px-2">
-                Regular health check-ups & nutrition support
-              </h3>
-              <div
-                class="w-12 h-1 bg-gradient-to-r from-green-400 to-green-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
+              <h3 class="intervention-card-title">Health Check-ups &amp; Nutrition</h3>
+              <p class="intervention-card-desc">
+                Regular medical check-ups, growth monitoring, and wholesome nutrition to keep young learners healthy.
+              </p>
+              <div class="intervention-card-accent" aria-hidden="true"></div>
             </div>
 
-            <!-- Teacher Training -->
-            <div
-              class="intervention-card bg-white/80 rounded-3xl p-8 shadow-xl text-center group"
-            >
-              <div
-                class="intervention-icon w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <svg
-                  class="w-10 h-10 text-purple-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                  />
+            <!-- Card 3 -->
+            <div class="intervention-card group" tabindex="0">
+              <div class="intervention-card-glow" aria-hidden="true"></div>
+              <div class="intervention-badge">Pillar 03 • Pedagogy</div>
+              <div class="intervention-icon" aria-hidden="true">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold mb-4 px-2">
-                Training and capacity building of teachers
-              </h3>
-              <div
-                class="w-12 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
+              <h3 class="intervention-card-title">Teacher Training &amp; Capacity</h3>
+              <p class="intervention-card-desc">
+                Empowering educators with modern pedagogy, interactive digital tools, and empathetic student mentoring.
+              </p>
+              <div class="intervention-card-accent" aria-hidden="true"></div>
             </div>
 
-            <!-- Vocational Education -->
-            <div
-              class="intervention-card bg-white/80 rounded-3xl p-8 shadow-xl text-center group"
-            >
-              <div
-                class="intervention-icon w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <svg
-                  class="w-10 h-10 text-orange-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                  />
+            <!-- Card 4 -->
+            <div class="intervention-card group" tabindex="0">
+              <div class="intervention-card-glow" aria-hidden="true"></div>
+              <div class="intervention-badge">Pillar 04 • Livelihood</div>
+              <div class="intervention-icon" aria-hidden="true">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold mb-4 px-2">
-                Vocational education & Skill Training
-              </h3>
-              <div
-                class="w-12 h-1 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-          </div>
-
-          <!-- Second Row -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Music and Sports -->
-            <div
-              class="intervention-card bg-white/80 rounded-3xl p-8 shadow-xl text-center group"
-            >
-              <div
-                class="intervention-icon w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-pink-100 to-pink-200 rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <svg
-                  class="w-10 h-10 text-pink-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-bold mb-4 px-2">
-                Music, sports, life skills education to promote socio-emotional
-                well being
-              </h3>
-              <div
-                class="w-12 h-1 bg-gradient-to-r from-pink-400 to-pink-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
+              <h3 class="intervention-card-title">Vocational &amp; Skill Training</h3>
+              <p class="intervention-card-desc">
+                Industry-aligned vocational programs and hands-on technical modules for youth empowerment and careers.
+              </p>
+              <div class="intervention-card-accent" aria-hidden="true"></div>
             </div>
 
-            <!-- Infrastructure Development -->
-            <div
-              class="intervention-card bg-white/80 rounded-3xl p-8 shadow-xl text-center group"
-            >
-              <div
-                class="intervention-icon w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <svg
-                  class="w-10 h-10 text-indigo-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-                  />
+            <!-- Card 5 -->
+            <div class="intervention-card group" tabindex="0">
+              <div class="intervention-card-glow" aria-hidden="true"></div>
+              <div class="intervention-badge">Pillar 05 • Wellbeing</div>
+              <div class="intervention-icon" aria-hidden="true">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold mb-4 px-2">
-                Infrastructure development, STEM learning programmes with
-                government schools
-              </h3>
-              <div
-                class="w-12 h-1 bg-gradient-to-r from-indigo-400 to-indigo-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
+              <h3 class="intervention-card-title">Music, Sports &amp; Life Skills</h3>
+              <p class="intervention-card-desc">
+                Promoting holistic socio-emotional health, athletic teamwork, creative arts, and mental resilience.
+              </p>
+              <div class="intervention-card-accent" aria-hidden="true"></div>
             </div>
 
-            <!-- Digital Literacy -->
-            <div
-              class="intervention-card bg-white/80 rounded-3xl p-8 shadow-xl text-center group"
-            >
-              <div
-                class="intervention-icon w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-teal-100 to-teal-200 rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <svg
-                  class="w-10 h-10 text-teal-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"
-                  />
+            <!-- Card 6 -->
+            <div class="intervention-card group" tabindex="0">
+              <div class="intervention-card-glow" aria-hidden="true"></div>
+              <div class="intervention-badge">Pillar 06 • Infrastructure</div>
+              <div class="intervention-icon" aria-hidden="true">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold mb-4 px-2">
-                Digital literacy and learning access to rural & tribal children
-              </h3>
-              <div
-                class="w-12 h-1 bg-gradient-to-r from-teal-400 to-teal-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
+              <h3 class="intervention-card-title">Infrastructure &amp; STEM Labs</h3>
+              <p class="intervention-card-desc">
+                Revitalizing school campuses with smart interactive classrooms, science STEM kits, and sanitation.
+              </p>
+              <div class="intervention-card-accent" aria-hidden="true"></div>
             </div>
 
-            <!-- Merit-based Scholarships -->
-            <div
-              class="intervention-card bg-white/80 rounded-3xl p-8 shadow-xl text-center group"
-            >
-              <div
-                class="intervention-icon w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-2xl flex items-center justify-center shadow-lg"
-              >
-                <svg
-                  class="w-10 h-10 text-yellow-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                  />
+            <!-- Card 7 -->
+            <div class="intervention-card group" tabindex="0">
+              <div class="intervention-card-glow" aria-hidden="true"></div>
+              <div class="intervention-badge">Pillar 07 • Inclusion</div>
+              <div class="intervention-icon" aria-hidden="true">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold mb-4 px-2">
-                Merit-based scholarships for girl children focused on holistic
-                development
-              </h3>
-              <div
-                class="w-12 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
+              <h3 class="intervention-card-title">Digital Literacy Access</h3>
+              <p class="intervention-card-desc">
+                Connecting rural, tribal, and remote schools with digital devices, solar power, and e-learning hubs.
+              </p>
+              <div class="intervention-card-accent" aria-hidden="true"></div>
             </div>
+
+            <!-- Card 8 -->
+            <div class="intervention-card group" tabindex="0">
+              <div class="intervention-card-glow" aria-hidden="true"></div>
+              <div class="intervention-badge">Pillar 08 • Empowerment</div>
+              <div class="intervention-icon" aria-hidden="true">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+              </div>
+              <h3 class="intervention-card-title">Girl Child Scholarships</h3>
+              <p class="intervention-card-desc">
+                Dedicated merit scholarships and career mentoring ensuring bright young girls achieve their aspirations.
+              </p>
+              <div class="intervention-card-accent" aria-hidden="true"></div>
+            </div>
+
           </div>
         </div>
       </div>
