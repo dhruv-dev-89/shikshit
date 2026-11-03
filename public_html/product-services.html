@@ -2392,10 +2392,10 @@ Academic guidance programs, Best education platform for students">
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // Clone items once to create seamless infinite loop
-      const items = Array.from(track.querySelectorAll('.video-item'));
-      if (items.length && !track.dataset.cloned) {
+      const originalItems = Array.from(track.querySelectorAll('.video-item'));
+      if (originalItems.length && !track.dataset.cloned) {
         track.dataset.cloned = 'true';
-        items.forEach(function (item) {
+        originalItems.forEach(function (item) {
           const clone = item.cloneNode(true);
           track.appendChild(clone);
         });
@@ -2407,18 +2407,31 @@ Academic guidance programs, Best education platform for students">
       let isVisible = false;
       let rafId = null;
       let lastTime = performance.now();
-      const speedPxPerSec = 35; // 35px/s drift
+      const speedPxPerSec = 35; // True 35px/s constant velocity
+      let scrollPos = track.scrollLeft;
+
+      function getLoopDistance() {
+        const allItems = track.querySelectorAll('.video-item');
+        if (allItems.length >= 2 * originalItems.length && originalItems.length > 0) {
+          const firstClone = allItems[originalItems.length];
+          const firstOrig = allItems[0];
+          const dist = firstClone.offsetLeft - firstOrig.offsetLeft;
+          if (dist > 0) return dist;
+        }
+        return track.scrollWidth / 2;
+      }
 
       function step(currentTime) {
         const delta = Math.min((currentTime - lastTime) / 1000, 0.1);
         lastTime = currentTime;
 
         if (!isPaused && isVisible) {
-          track.scrollLeft += speedPxPerSec * delta;
-          const halfWidth = track.scrollWidth / 2;
-          if (halfWidth > 0 && track.scrollLeft >= halfWidth) {
-            track.scrollLeft -= halfWidth;
+          scrollPos += speedPxPerSec * delta;
+          const loopDist = getLoopDistance();
+          if (loopDist > 0 && scrollPos >= loopDist) {
+            scrollPos -= loopDist;
           }
+          track.scrollLeft = scrollPos;
         }
 
         rafId = requestAnimationFrame(step);
@@ -2427,6 +2440,7 @@ Academic guidance programs, Best education platform for students">
       function start() {
         if (!rafId && !prefersReducedMotion) {
           lastTime = performance.now();
+          scrollPos = track.scrollLeft;
           rafId = requestAnimationFrame(step);
         }
       }
@@ -2438,7 +2452,21 @@ Academic guidance programs, Best education platform for students">
         }
       }
 
-      // Intersection Observer - only run when section is actually on-screen
+      function pauseScroll() {
+        isPaused = true;
+      }
+
+      function resumeScroll() {
+        const allVideos = track.querySelectorAll('video');
+        const anyPlaying = Array.from(allVideos).some(function (v) { return !v.paused && !v.ended; });
+        if (!anyPlaying) {
+          isPaused = false;
+          lastTime = performance.now();
+          scrollPos = track.scrollLeft;
+        }
+      }
+
+      // Intersection Observer - only run when section is visible
       if ('IntersectionObserver' in window && section) {
         const obs = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
@@ -2456,31 +2484,36 @@ Academic guidance programs, Best education platform for students">
         start();
       }
 
+      // Sync scrollPos on manual scroll/drag
+      track.addEventListener('scroll', function () {
+        if (isPaused) {
+          scrollPos = track.scrollLeft;
+        }
+      }, { passive: true });
+
       // Smooth interaction pauses
-      track.addEventListener('pointerenter', function () { isPaused = true; });
-      track.addEventListener('pointerleave', function () { isPaused = false; });
-      track.addEventListener('pointerdown', function () { isPaused = true; });
-      window.addEventListener('pointerup', function () { isPaused = false; });
-      track.addEventListener('touchstart', function () { isPaused = true; }, { passive: true });
-      track.addEventListener('touchend', function () { isPaused = false; }, { passive: true });
-      track.addEventListener('focusin', function () { isPaused = true; });
-      track.addEventListener('focusout', function () { isPaused = false; });
+      track.addEventListener('pointerenter', pauseScroll);
+      track.addEventListener('pointerleave', resumeScroll);
+      track.addEventListener('pointerdown', pauseScroll);
+      window.addEventListener('pointerup', resumeScroll);
+      track.addEventListener('touchstart', pauseScroll, { passive: true });
+      track.addEventListener('touchend', function () {
+        setTimeout(resumeScroll, 800);
+      }, { passive: true });
+      track.addEventListener('focusin', pauseScroll);
+      track.addEventListener('focusout', resumeScroll);
 
       // Pause auto-scroll when any video is playing
       const allVideos = track.querySelectorAll('video');
       allVideos.forEach(function (video) {
         video.addEventListener('play', function () {
-          isPaused = true;
+          pauseScroll();
           allVideos.forEach(function (other) {
             if (other !== video && !other.paused) other.pause();
           });
         });
-        const checkPlaying = function () {
-          const anyPlaying = Array.from(allVideos).some(function (v) { return !v.paused && !v.ended; });
-          if (!anyPlaying) isPaused = false;
-        };
-        video.addEventListener('pause', checkPlaying);
-        video.addEventListener('ended', checkPlaying);
+        video.addEventListener('pause', resumeScroll);
+        video.addEventListener('ended', resumeScroll);
       });
     })();
   </script>

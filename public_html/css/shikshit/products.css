@@ -2186,9 +2186,11 @@ body.page-products .carousel-track {
   gap: 24px !important;
   overflow-x: auto !important;
   padding: 20px 10px 40px !important;
-  scroll-behavior: smooth !important;
+  scroll-behavior: auto !important;
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
+  -webkit-overflow-scrolling: touch !important;
+  will-change: scroll-position !important;
 }
 
 body.page-products .carousel-track::-webkit-scrollbar {
@@ -2220,6 +2222,9 @@ body.page-products .video-item video {
   height: 240px !important;
   object-fit: cover !important;
   display: block !important;
+  opacity: 0.999 !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
 }
 
 /* Top Scroll Progress Bar */

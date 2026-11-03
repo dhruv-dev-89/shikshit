@@ -616,6 +616,9 @@ body.page-member .video-item video {
   object-position: center;
   display: block;
   background-color: #000;
+  opacity: 0.999 !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
 }
 
 @media (max-width: 640px) {
