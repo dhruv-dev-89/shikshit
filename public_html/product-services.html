@@ -2242,32 +2242,32 @@ Academic guidance programs, Best education platform for students">
       <div class="carousel-track">
         <div class="video-item">
           <video controls >
-            <source src="video1.mp4" type="video/mp4">
+            <source src="./vid_testonomials/video1.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
           <video controls >
-            <source src="video2.mp4" type="video/mp4">
+            <source src="./vid_testonomials/video2.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
           <video controls >
-            <source src="video3.mp4" type="video/mp4">
+            <source src="./vid_testonomials/video3.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
           <video controls >
-            <source src="video4.mp4" type="video/mp4">
+            <source src="./vid_testonomials/video4.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
           <video controls >
-            <source src="video5.mp4" type="video/mp4">
+            <source src="./vid_testonomials//video5.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
           <video controls >
-            <source src="video6.mp4" type="video/mp4">
+            <source src="./vid_testonomials//video6.webm" type="video/mp4">
           </video>
         </div>
       </div>
@@ -2407,7 +2407,7 @@ Academic guidance programs, Best education platform for students">
       let isVisible = false;
       let rafId = null;
       let lastTime = performance.now();
-      const speedPxPerSec = 35; // smooth 35px/s drift
+      const speedPxPerSec = 35; // 35px/s drift
 
       function step(currentTime) {
         const delta = Math.min((currentTime - lastTime) / 1000, 0.1);
@@ -2465,6 +2465,23 @@ Academic guidance programs, Best education platform for students">
       track.addEventListener('touchend', function () { isPaused = false; }, { passive: true });
       track.addEventListener('focusin', function () { isPaused = true; });
       track.addEventListener('focusout', function () { isPaused = false; });
+
+      // Pause auto-scroll when any video is playing
+      const allVideos = track.querySelectorAll('video');
+      allVideos.forEach(function (video) {
+        video.addEventListener('play', function () {
+          isPaused = true;
+          allVideos.forEach(function (other) {
+            if (other !== video && !other.paused) other.pause();
+          });
+        });
+        const checkPlaying = function () {
+          const anyPlaying = Array.from(allVideos).some(function (v) { return !v.paused && !v.ended; });
+          if (!anyPlaying) isPaused = false;
+        };
+        video.addEventListener('pause', checkPlaying);
+        video.addEventListener('ended', checkPlaying);
+      });
     })();
   </script>
 

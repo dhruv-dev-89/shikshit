@@ -1158,37 +1158,43 @@
     </div>
 </section>
 <!--   VIDEO SECTION -->
-<section class="video-carousel">
+<section class="video-carousel" aria-label="Our Video Ads">
       <h2>Our Video Ads</h2>
       <div class="carousel-track">
         <div class="video-item">
-          <video controls poster="thumb1.jpg">
-            <source src="video1.mp4" type="video/mp4">
+          <video controls preload="metadata" playsinline>
+            <source src="./vid_testonomials/video1.webm" type="video/webm">
+            <source src="./vid_testonomials/video1.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls poster="thumb2.jpg">
-            <source src="video2.mp4" type="video/mp4">
+          <video controls preload="metadata" playsinline>
+            <source src="./vid_testonomials/video2.webm" type="video/webm">
+            <source src="./vid_testonomials/video2.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls poster="thumb3.jpg">
-            <source src="video3.mp4" type="video/mp4">
+          <video controls preload="metadata" playsinline>
+            <source src="./vid_testonomials/video3.webm" type="video/webm">
+            <source src="./vid_testonomials/video3.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls poster="thumb4.jpg">
-            <source src="video4.mp4" type="video/mp4">
+          <video controls preload="metadata" playsinline>
+            <source src="./vid_testonomials/video4.webm" type="video/webm">
+            <source src="./vid_testonomials/video4.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls poster="thumb5.jpg">
-            <source src="video5.mp4" type="video/mp4">
+          <video controls preload="metadata" playsinline>
+            <source src="./vid_testonomials/video5.webm" type="video/webm">
+            <source src="./vid_testonomials/video5.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls poster="thumb6.jpg">
-            <source src="video6.mp4" type="video/mp4">
+          <video controls preload="metadata" playsinline>
+            <source src="./vid_testonomials/video6.webm" type="video/webm">
+            <source src="./vid_testonomials/video6.webm" type="video/mp4">
           </video>
         </div>
       </div>
@@ -1782,41 +1788,106 @@
         });
     </script>
 
-    <script>const track = document.querySelector('.carousel-track');
-let scrollInterval;
+    <script>
+      (function () {
+        const track = document.querySelector('.carousel-track');
+        const section = document.querySelector('.video-carousel') || track;
+        if (!track) return;
 
-// Clone items to create seamless loop
-const items = document.querySelectorAll('.video-item');
-items.forEach(item => {
-  const clone = item.cloneNode(true);
-  track.appendChild(clone);
-});
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Auto-scroll function
-function startAutoScroll() {
-  scrollInterval = setInterval(() => {
-    track.scrollLeft += 1; // speed (px per tick)
-    // When reaching half (original + clones), reset smoothly
-    if (track.scrollLeft >= track.scrollWidth / 2) {
-      track.scrollLeft = 0;
-    }
-  }, 20); // adjust speed (lower = faster)
-}
+        // Clone items once to create seamless infinite loop
+        const items = Array.from(track.querySelectorAll('.video-item'));
+        if (items.length && !track.dataset.cloned) {
+          track.dataset.cloned = 'true';
+          items.forEach(function (item) {
+            const clone = item.cloneNode(true);
+            track.appendChild(clone);
+          });
+        }
 
-// Stop auto-scroll
-function stopAutoScroll() {
-  clearInterval(scrollInterval);
-}
+        if (prefersReducedMotion) return;
 
-// Start on load
-startAutoScroll();
+        let isPaused = false;
+        let isVisible = false;
+        let rafId = null;
+        let lastTime = performance.now();
+        const speedPxPerSec = 65; // 35px/s drift
 
-// Pause on hover
-track.addEventListener('mouseenter', stopAutoScroll);
-track.addEventListener('mouseleave', startAutoScroll);
+        function step(currentTime) {
+          const delta = Math.min((currentTime - lastTime) / 1000, 0.1);
+          lastTime = currentTime;
 
+          if (!isPaused && isVisible) {
+            track.scrollLeft += speedPxPerSec * delta;
+            const halfWidth = track.scrollWidth / 2;
+            if (halfWidth > 0 && track.scrollLeft >= halfWidth) {
+              track.scrollLeft -= halfWidth;
+            }
+          }
 
+          rafId = requestAnimationFrame(step);
+        }
 
+        function start() {
+          if (!rafId && !prefersReducedMotion) {
+            lastTime = performance.now();
+            rafId = requestAnimationFrame(step);
+          }
+        }
+
+        function stop() {
+          if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+          }
+        }
+
+        // Intersection Observer - only run when section is visible
+        if ('IntersectionObserver' in window && section) {
+          const obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              isVisible = entry.isIntersecting;
+              if (isVisible) {
+                start();
+              } else {
+                stop();
+              }
+            });
+          }, { threshold: 0.05 });
+          obs.observe(section);
+        } else {
+          isVisible = true;
+          start();
+        }
+
+        // Smooth interaction pauses
+        track.addEventListener('pointerenter', function () { isPaused = true; });
+        track.addEventListener('pointerleave', function () { isPaused = false; });
+        track.addEventListener('pointerdown', function () { isPaused = true; });
+        window.addEventListener('pointerup', function () { isPaused = false; });
+        track.addEventListener('touchstart', function () { isPaused = true; }, { passive: true });
+        track.addEventListener('touchend', function () { isPaused = false; }, { passive: true });
+        track.addEventListener('focusin', function () { isPaused = true; });
+        track.addEventListener('focusout', function () { isPaused = false; });
+
+        // Pause auto-scroll when any video is playing
+        const allVideos = track.querySelectorAll('video');
+        allVideos.forEach(function (video) {
+          video.addEventListener('play', function () {
+            isPaused = true;
+            allVideos.forEach(function (other) {
+              if (other !== video && !other.paused) other.pause();
+            });
+          });
+          const checkPlaying = function () {
+            const anyPlaying = Array.from(allVideos).some(function (v) { return !v.paused && !v.ended; });
+            if (!anyPlaying) isPaused = false;
+          };
+          video.addEventListener('pause', checkPlaying);
+          video.addEventListener('ended', checkPlaying);
+        });
+      })();
     </script>
 
   <script src="js/shikshit/inner.js"></script>
