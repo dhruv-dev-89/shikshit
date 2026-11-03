@@ -82,32 +82,55 @@
 }
 
 /* Brand Column (Column 1) */
-.footer-editorial .footer-brand {
+.footer-editorial .footer-brand-col {
   display: flex !important;
+  flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
-  margin: 0 !important;
+  gap: 0 !important;
+}
+
+.footer-editorial .footer-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  margin: 0 0 14px 0 !important;
   padding: 0 !important;
-  height: 56px !important;
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+.footer-editorial .footer-brand-link {
+  display: inline-block !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
 }
 
 .footer-editorial .footer-logo,
 .footer-editorial img[src*="sikshitlogo"] {
-  height: 176px !important;
+  height: 100px !important;
   width: auto !important;
   max-width: 100% !important;
   object-fit: contain !important;
   display: block !important;
-  margin: 0 !important;
+  margin: -24px 0 -22px -10px !important;
   filter: drop-shadow(0 2px 8px rgba(11, 11, 59, 0.08)) !important;
+  transition: transform 0.25s ease !important;
 }
 
+.footer-editorial .footer-logo:hover,
+.footer-editorial img[src*="sikshitlogo"]:hover {
+  transform: scale(1.03) !important;
+}
+
+.footer-editorial .footer-brand-desc,
 .footer-editorial .footer-grid > div:first-child p {
   font-size: 14.5px !important;
   line-height: 1.65 !important;
   color: var(--ink, var(--shikshit-footer-ink)) !important;
   max-width: 340px !important;
-  margin-top: 16px !important;
+  margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
@@ -252,6 +275,7 @@
 }
 
 /* Mobile (max-width: 768px) */
+/* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
   .footer-editorial {
     padding: 48px 0 28px !important;
@@ -266,16 +290,47 @@
   }
 
   .footer-editorial .footer-brand {
-    height: 48px !important;
+    height: auto !important;
+    margin: 0 0 12px 0 !important;
   }
 
   .footer-editorial .footer-logo,
   .footer-editorial img[src*="sikshitlogo"] {
-    height: 48px !important;
+    height: 90px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: -22px 0 -20px -8px !important;
   }
 
+  .footer-editorial .footer-brand-desc,
   .footer-editorial .footer-grid > div:first-child p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-top: 0 !important;
     max-width: 100% !important;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .footer-editorial .footer-brand {
+    height: auto !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .footer-editorial .footer-logo,
+  .footer-editorial img[src*="sikshitlogo"] {
+    height: 84px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: -20px 0 -18px -6px !important;
+  }
+
+  .footer-editorial .footer-brand-desc,
+  .footer-editorial .footer-grid > div:first-child p {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    margin-top: 0 !important;
   }
 }
 

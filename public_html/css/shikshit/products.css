@@ -240,27 +240,6 @@ body.page-products .shikshit-navbar.scrolled .shikshit-logo {
 }
 
 @media (max-width: 979px) {
-  body.page-products .shikshit-header {
-    top: 18px !important;
-    margin-top: 18px !important;
-    padding: 0 12px !important;
-  }
-
-  body.page-products .shikshit-navbar {
-    height: 60px !important;
-    padding: 6px 18px !important;
-  }
-
-  body.page-products .shikshit-logo {
-    width: 95px !important;
-    height: auto !important;
-    margin: -18px 0 !important;
-  }
-
-  body.page-products .products-hero {
-    padding-top: 40px !important;
-  }
-
   body.page-products .shikshit-nav-menu {
     display: none !important;
   }
@@ -1020,38 +999,6 @@ body.page-products .footer-grid,
   text-align: left !important;
 }
 
-/* Brand Column: Logo top edge aligns with column headings, 56px tall, 16px gap to paragraph */
-body.page-products .footer-editorial .footer-brand,
-.footer-editorial .footer-brand {
-  display: flex !important;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 56px !important;
-}
-
-body.page-products .footer-editorial .footer-logo,
-.footer-editorial .footer-logo,
-.footer-editorial img[src*="sikshitlogo"] {
-  height: 56px !important;
-  width: auto !important;
-  max-width: 100% !important;
-  object-fit: contain !important;
-  display: block !important;
-  margin: 0 !important;
-  filter: drop-shadow(0 2px 8px rgba(11, 11, 59, 0.08)) !important;
-}
-
-body.page-products .footer-editorial .footer-grid > div:first-child p,
-.footer-editorial .footer-grid > div:first-child p {
-  margin-top: 16px !important;
-  margin-bottom: 0 !important;
-  font-size: 14.5px !important;
-  line-height: 1.65 !important;
-  color: var(--ink) !important;
-  max-width: 340px !important;
-}
 
 /* Headings in columns */
 body.page-products .footer-col h4,
@@ -2491,45 +2438,6 @@ body.page-products .footer-bottom {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 32px !important;
   }
-
-  .products-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: left;
-  }
-
-  .products-hero-content {
-    align-items: flex-start;
-  }
-
-  .products-hero-tags {
-    justify-content: flex-start;
-  }
-
-  .products-hero-cta {
-    justify-content: flex-start;
-  }
-
-  .products-hero-visual {
-    height: 420px;
-    margin-top: 10px;
-  }
-
-  .products-arch-frame {
-    width: 250px;
-    height: 360px;
-  }
-
-  .products-blob-frame {
-    width: 200px;
-    height: 230px;
-    margin-top: 50px;
-  }
-
-  .products-stat-badge {
-    right: 0;
-    top: 10px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -2552,29 +2460,6 @@ body.page-products .footer-bottom {
     font-size: 12.5px;
   }
 
-  body.page-products .products-hero {
-    padding: 44px 0 24px;
-  }
-
-  body.page-products .products-hero-bands {
-    height: 150px;
-    margin-top: 24px;
-  }
-
-  body.page-products .ribbon {
-    height: 52px;
-  }
-
-  body.page-products .track-half {
-    font-size: 0.98rem;
-    gap: 20px;
-    padding-right: 20px;
-  }
-
-  body.page-products .ribbon-gradient { top: 0 !important; transform: none !important; }
-
-  body.page-products .ribbon-white { top: 2.75rem !important; transform: none !important; }
-
   .products-cta-card {
     padding: 44px 24px;
     border-radius: 28px;
@@ -2585,102 +2470,11 @@ body.page-products .footer-bottom {
   }
 }
 
-@media (max-width: 480px) {
-  body.page-products .shikshit-header {
-    top: 16px !important;
-    margin-top: 16px !important;
-  }
-
-  body.page-products .shikshit-navbar {
-    height: 56px !important;
-    padding: 6px 14px !important;
-  }
-
-  body.page-products .shikshit-logo {
-    width: 88px !important;
-    height: auto !important;
-    margin: -16px 0 !important;
-  }
-
-  body.page-products .products-hero {
-    padding-top: 32px !important;
-  }
-
-  .products-hero-visual {
-    height: 360px;
-    grid-template-columns: 180px 140px;
-    column-gap: -15px;
-  }
-
-  .products-arch-frame {
-    width: 180px;
-    height: 290px;
-  }
-
-  .products-blob-frame {
-    width: 140px;
-    height: 190px;
-    margin-left: -15px;
-    margin-top: 40px;
-  }
-
-  .products-stat-badge {
-    display: none;
-  }
-
-  body.page-products .products-hero-bands {
-    height: 140px;
-    margin-top: 18px;
-  }
-
-  body.page-products .ribbon {
-    height: 48px;
-  }
-
-  body.page-products .track-half {
-    font-size: 0.9rem;
-    gap: 16px;
-    padding-right: 16px;
-  }
-
-  body.page-products .ribbon-gradient { top: 0 !important; transform: none !important; }
-
-  body.page-products .ribbon-white { top: 2.75rem !important; transform: none !important; }
-}
-
 /* Reduced Motion Safety */
 /* Ambient blob and frame animations preserved */
 
 
-body.page-products .footer-editorial .footer-brand {
-  display: flex !important;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 56px !important;
-}
-
-body.page-products .footer-editorial .footer-logo,
-body.page-products .footer-editorial img[src*="sikshitlogo"] {
-  height: 176px !important;
-  width: auto !important;
-  max-width: 100% !important;
-  object-fit: contain !important;
-  display: block !important;
-  margin: 0 !important;
-  filter: drop-shadow(0 2px 8px rgba(11, 11, 59, 0.08)) !important;
-}
-
-@media (max-width: 768px) {
-  body.page-products .footer-editorial .footer-brand {
-    height: 48px !important;
-  }
-  body.page-products .footer-editorial .footer-logo,
-  body.page-products .footer-editorial img[src*="sikshitlogo"] {
-    height: 48px !important;
-  }
-}
+/* Centrally handled in footer.css */
 
 
 /* ==========================================================================
@@ -2873,31 +2667,347 @@ body.page-products #diploma-courses .card-accent-line {
   }
 }
 
-/* Responsive single-column hero grid on tablets and mobile */
+/* ==========================================================================
+   PRODUCTS HERO - RESPONSIVE PERFECTION FOR TABLETS & MOBILE
+   ========================================================================== */
 @media (max-width: 991px) {
+  /* Prevent fixed/sticky navbar from overlapping hero */
+  body.page-products .products-hero {
+    padding-top: clamp(88px, 12vh, 108px) !important;
+    padding-bottom: 24px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: clip !important;
+    overflow-y: visible !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 1-column vertically-stacked centered layout */
   body.page-products .products-hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
     grid-template-columns: 1fr !important;
-    gap: 2.5rem !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+    align-items: center !important;
+    text-align: center !important;
     min-height: auto !important;
   }
 
+  /* Hero Content container */
   body.page-products .products-hero-content {
+    display: flex !important;
+    flex-direction: column !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 620px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    align-items: center !important;
     text-align: center !important;
+    box-sizing: border-box !important;
   }
 
-  body.page-products .products-hero-badge,
-  body.page-products .products-hero-tags,
+  /* Badge pill */
+  body.page-products .products-hero-badge {
+    margin: 0 auto 14px !important;
+    align-self: center !important;
+    text-align: center !important;
+    justify-content: center !important;
+    max-width: 95% !important;
+    font-size: 0.85rem !important;
+    padding: 7px 16px !important;
+  }
+
+  /* Hero Title */
+  body.page-products .products-hero-title {
+    font-size: clamp(1.85rem, 5.2vw, 2.6rem) !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin: 0 auto 14px !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+  }
+
+  body.page-products .hero-sig-phrase {
+    display: inline !important;
+  }
+
+  body.page-products .editorial-sig-underline {
+    position: absolute !important;
+    left: 0 !important;
+    bottom: -4px !important;
+    width: 100% !important;
+    height: 12px !important;
+  }
+
+  /* Hero Description */
+  body.page-products .products-hero-desc {
+    font-size: clamp(0.95rem, 2.6vw, 1.05rem) !important;
+    line-height: 1.55 !important;
+    text-align: center !important;
+    margin: 0 auto 18px !important;
+    max-width: 34rem !important;
+  }
+
+  /* Tags / Category Pills */
+  body.page-products .products-hero-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 auto 22px !important;
+    max-width: 100% !important;
+  }
+
+  body.page-products .products-tag-pill {
+    padding: 6px 12px !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* CTA Buttons */
   body.page-products .products-hero-cta {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-products .products-hero-cta .btn-pill {
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 22px !important;
+    font-size: 14.5px !important;
+    flex: 0 1 auto !important;
+  }
+
+  /* Hero Visual photo collage container */
+  body.page-products .products-hero-visual {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 315px !important;
+    height: 255px !important;
+    margin: 18px auto 0 !important;
+    overflow: visible !important;
+    grid-template-columns: none !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Arch Photo Frame (Left photo) */
+  body.page-products .products-arch-frame {
+    position: absolute !important;
+    left: 4px !important;
+    top: 20px !important;
+    width: 158px !important;
+    height: 215px !important;
+    border-radius: 18px !important;
+    border: 3.5px solid #FFFFFF !important;
+    transform: rotate(-3deg) !important;
+    box-shadow: 0 14px 34px rgba(124, 58, 237, 0.16) !important;
+    z-index: 1 !important;
+    margin: 0 !important;
+    grid-column: auto !important;
+  }
+
+  /* Blob Photo Frame (Right photo) */
+  body.page-products .products-blob-frame {
+    position: absolute !important;
+    right: 4px !important;
+    top: 38px !important;
+    width: 144px !important;
+    height: 180px !important;
+    border-radius: 18px !important;
+    border: 3.5px solid #FFFFFF !important;
+    transform: rotate(3deg) !important;
+    box-shadow: 0 14px 34px rgba(192, 38, 211, 0.18) !important;
+    z-index: 2 !important;
+    margin: 0 !important;
+    grid-column: auto !important;
+  }
+
+  /* Photo Frame tag badges */
+  body.page-products .products-arch-tag,
+  body.page-products .products-blob-tag {
+    bottom: 8px !important;
+    left: 8px !important;
+    right: auto !important;
+    padding: 3px 8px !important;
+    font-size: 10.5px !important;
+    gap: 4px !important;
+    max-width: 90% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  body.page-products .products-arch-tag svg,
+  body.page-products .products-blob-tag svg {
+    width: 12px !important;
+    height: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Stat Badge ("Trusted by 5000+ Students") */
+  body.page-products .products-stat-badge {
+    position: absolute !important;
+    top: -12px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 6px 14px !important;
+    border-radius: 9999px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    border: 1px solid rgba(124, 58, 237, 0.16) !important;
+    box-shadow: 0 10px 26px rgba(124, 58, 237, 0.14) !important;
+    z-index: 10 !important;
+    width: max-content !important;
+    max-width: 92% !important;
+  }
+
+  body.page-products .products-stat-badge-icon {
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
     justify-content: center !important;
   }
 
-  body.page-products .products-hero-visual {
+  body.page-products .products-stat-badge-icon svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  body.page-products .products-stat-badge-title {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    color: var(--navy) !important;
+  }
+
+  body.page-products .products-stat-badge-sub {
+    font-size: 10px !important;
+    line-height: 1.15 !important;
+    color: #6B7280 !important;
+  }
+
+  /* Hero Marquee Bands */
+  body.page-products .products-hero-bands {
     width: 100% !important;
-    max-width: 330px !important;
-    margin: 24px auto 0 !important;
-    overflow: visible !important;
+    max-width: 100% !important;
+    height: 96px !important;
+    margin-top: 14px !important;
+    margin-bottom: 12px !important;
+    overflow: hidden !important;
+  }
+
+  body.page-products .ribbon {
+    height: 44px !important;
+  }
+
+  body.page-products .ribbon-white {
+    top: 2.2rem !important;
+  }
+
+  body.page-products .track-half {
+    font-size: 0.85rem !important;
+    gap: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+/* Small mobile devices (<= 480px) */
+@media (max-width: 480px) {
+  body.page-products .products-hero {
+    padding-top: clamp(82px, 11vh, 98px) !important;
+    padding-bottom: 18px !important;
+  }
+
+  body.page-products .products-hero-grid {
+    padding: 0 12px !important;
+    gap: 20px !important;
+  }
+
+  body.page-products .products-hero-title {
+    font-size: clamp(1.6rem, 6.2vw, 2.1rem) !important;
+    line-height: 1.22 !important;
+    margin-bottom: 12px !important;
+  }
+
+  body.page-products .products-hero-desc {
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 16px !important;
+  }
+
+  body.page-products .products-tag-pill {
+    padding: 5px 10px !important;
+    font-size: 0.76rem !important;
+  }
+
+  body.page-products .products-hero-cta {
+    gap: 8px !important;
+  }
+
+  body.page-products .products-hero-cta .btn-pill {
+    height: 46px !important;
+    min-height: 46px !important;
+    padding: 0 18px !important;
+    font-size: 13.5px !important;
+  }
+
+  body.page-products .products-hero-visual {
+    max-width: 295px !important;
+    height: 240px !important;
+    margin: 14px auto 0 !important;
+  }
+
+  body.page-products .products-arch-frame {
+    left: 2px !important;
+    top: 18px !important;
+    width: 148px !important;
+    height: 202px !important;
+  }
+
+  body.page-products .products-blob-frame {
+    right: 2px !important;
+    top: 34px !important;
+    width: 135px !important;
+    height: 172px !important;
+  }
+
+  body.page-products .products-stat-badge {
+    top: -10px !important;
+    padding: 5px 12px !important;
+  }
+
+  body.page-products .products-stat-badge-icon {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  body.page-products .products-stat-badge-title {
+    font-size: 11px !important;
+  }
+
+  body.page-products .products-stat-badge-sub {
+    font-size: 9.5px !important;
   }
 }
 

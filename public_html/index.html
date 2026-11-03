@@ -140,7 +140,7 @@ shikshit academic development services,shikshit training and mentorship,
       <nav class="shikshit-navbar navbar" aria-label="Main Navigation">
         <!-- Brand Logo (Existing logo file unchanged) -->
         <a href="/" class="shikshit-brand navbar-brand" aria-label="Shikshit Homepage">
-          <img src="images/sikshitlogo.webp" alt="Sikshit Logo" class="shikshit-logo navbar-logo-enlarged">
+          <img src="images/sikshitlogo.webp" alt="Shikshit Logo - Empowering Education & Scholarships" class="shikshit-logo navbar-logo-enlarged">
         </a>
 
         <!-- Main Desktop Navigation -->
@@ -808,7 +808,7 @@ shikshit academic development services,shikshit training and mentorship,
 
               <!-- Below: Program Categories & Key Benefits as Glass Pill Chips -->
               <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 32px; margin-top: 32px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                <div class="nsmas-categories-benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
                   <div>
                     <h4 style="color: white; font-size: 17px; margin-bottom: 12px;">Program Categories</h4>
                     <div class="glass-pills-row">
@@ -1025,7 +1025,8 @@ shikshit academic development services,shikshit training and mentorship,
             <!-- Video 1 -->
             <div class="video-editorial-card editorial-reveal video-item">
               <div class="video-aspect-frame">
-                <video controls preload="metadata">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video3.webm" type="video/webm">
                   <source src="./vid_testonomials/video3.webm" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -1035,8 +1036,9 @@ shikshit academic development services,shikshit training and mentorship,
             <!-- Video 2 -->
             <div class="video-editorial-card editorial-reveal video-item">
               <div class="video-aspect-frame">
-                <video controls preload="metadata" >
-                  <source src="./vid_testonomials//video2.webm" type="video/mp4">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video2.webm" type="video/webm">
+                  <source src="./vid_testonomials/video2.webm" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -1045,8 +1047,9 @@ shikshit academic development services,shikshit training and mentorship,
             <!-- Video 3 -->
             <div class="video-editorial-card editorial-reveal video-item">
               <div class="video-aspect-frame">
-                <video controls preload="metadata" >
-                  <source src="./vid_testonomials//video5.webm" type="video/mp4">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video5.webm" type="video/webm">
+                  <source src="./vid_testonomials/video5.webm" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -1133,6 +1136,7 @@ shikshit academic development services,shikshit training and mentorship,
 
   <!-- Dedicated Main JS File (Loaded ONLY on index.html) -->
   <script src="js/shikshit/main.js"></script>
+  <script src="js/shikshit/video-player.js" defer></script>
 
   <!-- Centralized Shikshit Footer Component Loader -->
   <script src="js/shikshit-footer.js" defer></script>

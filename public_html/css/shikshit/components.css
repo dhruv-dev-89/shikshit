@@ -378,19 +378,89 @@
 /* --------------------------------------------------------------------------
    6. RESPONSIVE BREAKPOINTS FOR NAVBAR & MOBILE
    -------------------------------------------------------------------------- */
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS: DESKTOP, LAPTOP, TABLET, MOBILE
+   ========================================================================== */
+
+/* Laptop / Small Desktop (993px - 1199px) */
+@media (max-width: 1199px) and (min-width: 993px) {
+  .shikshit-header {
+    padding: 0 16px;
+  }
+  .shikshit-navbar {
+    padding: 8px 18px;
+  }
+  .shikshit-nav-menu {
+    gap: 16px;
+  }
+  .shikshit-nav-link {
+    font-size: 14px;
+    padding: 6px 2px;
+  }
+  .shikshit-nav-actions {
+    gap: 8px;
+  }
+  .shikshit-nav-actions .btn-pill {
+    padding: 9px 18px;
+    font-size: 13.5px;
+  }
+}
+
+/* Tablet & Mobile Header/Nav (<= 992px) */
 @media (max-width: 992px) {
+  .shikshit-header {
+    top: 12px;
+    padding: 0 16px;
+  }
+
+  .shikshit-navbar {
+    padding: 8px 18px;
+  }
+
   .shikshit-nav-menu,
   .shikshit-nav-actions {
-    display: none;
+    display: none !important;
   }
 
   .mobile-menu-toggle {
-    display: flex;
+    display: flex !important;
   }
 
   .shikshit-logo {
-    height: 96px;
-    margin: -22px 0;
+    height: 94px !important;
+    margin: -22px 0 !important;
+    width: auto !important;
+  }
+}
+
+/* Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .shikshit-header {
+    top: 8px;
+    padding: 0 10px;
+  }
+
+  .shikshit-navbar {
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+
+  .shikshit-logo {
+    height: 84px !important;
+    margin: -19px 0 !important;
+    width: auto !important;
+  }
+
+  .mobile-menu {
+    left: 10px;
+    right: 10px;
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .mobile-nav .nav-link {
+    padding: 11px 16px;
+    font-size: 15px;
   }
 }
 
@@ -415,40 +485,282 @@
 }
 
 /* --------------------------------------------------------------------------
-   FOOTER EDITORIAL BRAND & LOGO (Part B Fixes)
+   FOOTER EDITORIAL BRAND & LOGO (Responsive Proportional Scaling)
    -------------------------------------------------------------------------- */
-.footer-editorial .footer-brand {
+.footer-editorial .footer-brand-col {
   display: flex !important;
+  flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
-  margin: 0 !important;
+  gap: 0 !important;
+}
+
+.footer-editorial .footer-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  margin: 0 0 14px 0 !important;
   padding: 0 !important;
-  height: 56px !important;
+  height: auto !important;
+  min-height: auto !important;
+  overflow: visible !important;
+}
+
+.footer-editorial .footer-brand-link {
+  display: inline-block !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
 }
 
 .footer-editorial .footer-logo,
 .footer-editorial img[src*="sikshitlogo"] {
-  height: 56px !important;
+  height: 100px !important;
   width: auto !important;
   max-width: 100% !important;
   object-fit: contain !important;
   display: block !important;
-  margin: 0 !important;
+  margin: -24px 0 -22px -10px !important;
   filter: drop-shadow(0 2px 8px rgba(11, 11, 59, 0.08)) !important;
+  transition: transform 0.25s ease !important;
 }
 
+.footer-editorial .footer-logo:hover,
+.footer-editorial img[src*="sikshitlogo"]:hover {
+  transform: scale(1.03) !important;
+}
+
+.footer-editorial .footer-brand-desc,
 .footer-editorial .footer-grid > div:first-child p {
-  margin-top: 16px !important;
+  font-size: 14.5px !important;
+  line-height: 1.65 !important;
+  color: var(--ink, #4B4A68) !important;
+  max-width: 340px !important;
+  margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
 @media (max-width: 768px) {
   .footer-editorial .footer-brand {
-    height: 48px !important;
+    height: auto !important;
+    margin: 0 0 12px 0 !important;
   }
 
   .footer-editorial .footer-logo,
   .footer-editorial img[src*="sikshitlogo"] {
-    height: 48px !important;
+    height: 90px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: -22px 0 -20px -8px !important;
+  }
+
+  .footer-editorial .footer-brand-desc,
+  .footer-editorial .footer-grid > div:first-child p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    margin-top: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-editorial .footer-brand {
+    height: auto !important;
+    margin: 0 0 10px 0 !important;
+  }
+
+  .footer-editorial .footer-logo,
+  .footer-editorial img[src*="sikshitlogo"] {
+    height: 84px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: -20px 0 -18px -6px !important;
+  }
+
+  .footer-editorial .footer-brand-desc,
+  .footer-editorial .footer-grid > div:first-child p {
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+    margin-top: 0 !important;
+  }
+}
+
+
+/* ==========================================================================
+   CUSTOM SLEEK VIDEO CONTROLS (Replaces native browser controls)
+   ========================================================================== */
+.video-editorial-card.video-item {
+  background: var(--white) !important;
+  background-image: linear-gradient(white, white), var(--signature-gradient) !important;
+}
+
+.video-item {
+  position: relative !important;
+  user-select: none;
+  -webkit-user-select: none;
+  background: #0B0B3B;
+}
+
+/* Force hide any native shadow DOM controls */
+.video-item video::-webkit-media-controls {
+  display: none !important;
+}
+
+.video-item video {
+  pointer-events: auto;
+}
+
+/* Click overlay across the video for play/pause toggle */
+.video-click-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* Hide center play button and time display as requested */
+.custom-center-play,
+.custom-time-display {
+  display: none !important;
+}
+
+/* Bottom Floating Control Bar */
+.custom-video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100% !important;
+  box-sizing: border-box;
+  padding: 32px 14px 10px;
+  background: linear-gradient(to top, rgba(11, 11, 59, 0.95) 0%, rgba(11, 11, 59, 0.65) 60%, transparent 100%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 6;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+}
+
+/* Hide controls on inactivity while playing */
+.video-item.is-playing.hide-controls .custom-video-controls {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Control buttons */
+.custom-ctrl-btn {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #fff;
+  transition: transform 0.15s ease, background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.custom-ctrl-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: scale(1.1);
+}
+
+/* Play/Pause toggle icons */
+.ctrl-play-toggle .icon-pause { display: none !important; }
+.ctrl-play-toggle .icon-play { display: block !important; }
+.is-playing .ctrl-play-toggle .icon-play,
+.video-item.is-playing .ctrl-play-toggle .icon-play { display: none !important; }
+.is-playing .ctrl-play-toggle .icon-pause,
+.video-item.is-playing .ctrl-play-toggle .icon-pause { display: block !important; }
+
+/* Mute/Unmute toggle icons */
+.ctrl-mute-toggle .icon-vol-muted { display: none !important; }
+.ctrl-mute-toggle .icon-vol-on { display: block !important; }
+.is-muted .ctrl-mute-toggle .icon-vol-on,
+.video-item.is-muted .ctrl-mute-toggle .icon-vol-on { display: none !important; }
+.is-muted .ctrl-mute-toggle .icon-vol-muted,
+.video-item.is-muted .ctrl-mute-toggle .icon-vol-muted { display: block !important; }
+
+/* Hide controls on inactivity while playing */
+.is-playing.hide-controls .custom-video-controls,
+.video-item.is-playing.hide-controls .custom-video-controls {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-aspect-frame {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.video-aspect-frame video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Progress Container & Bar */
+.custom-progress-container {
+  flex: 1;
+  min-width: 40px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 4px;
+  position: relative;
+  overflow: visible;
+  transition: height 0.15s ease;
+}
+
+.custom-progress-container:hover .custom-progress-track {
+  height: 6px;
+}
+
+.custom-progress-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(90deg, #7C3AED 0%, #C026D3 100%);
+  border-radius: 4px;
+}
+
+.custom-progress-thumb {
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%) scale(0);
+  width: 11px;
+  height: 11px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s ease;
+}
+
+.custom-progress-container:hover .custom-progress-thumb {
+  transform: translateY(-50%) scale(1);
+}
+
+@media (max-width: 480px) {
+  .custom-video-controls {
+    padding: 24px 8px 8px;
+    gap: 6px;
   }
 }

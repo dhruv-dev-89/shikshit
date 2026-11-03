@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product & Services - NS-MAS</title>
+  <title>Products & Services - Comprehensive Educational Solutions | Shikshit</title>
   <link rel="canonical" href="https://www.shikshit.in/product-services.html" />
+  <meta name="description" content="Explore the Shikshit educational ecosystem: merit scholarships, UGC-approved diploma courses, Olympiad competitions, and hands-on technical training." />
   <meta name="keywords" content="Shikshit product and services, Shikshit education services,
 Online education platform India, Skill development programs India,
 Career guidance services for students, Student support services India Online certification courses,
@@ -1399,7 +1400,7 @@ Academic guidance programs, Best education platform for students">
       <nav class="shikshit-navbar" aria-label="Main Navigation">
         <!-- Brand Logo (Existing logo file unchanged) -->
         <a href="/" class="shikshit-brand navbar-brand" aria-label="Shikshit Homepage">
-          <img src="images/sikshitlogo.webp" alt="Sikshit Logo" class="shikshit-logo navbar-logo-enlarged">
+          <img src="images/sikshitlogo.webp" alt="Shikshit Logo - Empowering Education & Scholarships" class="shikshit-logo navbar-logo-enlarged">
         </a>
 
         <!-- Main Desktop Navigation -->
@@ -2241,33 +2242,39 @@ Academic guidance programs, Best education platform for students">
       <h2>Our Video Ads</h2>
       <div class="carousel-track">
         <div class="video-item">
-          <video controls >
+          <video preload="metadata" playsinline>
+            <source src="./vid_testonomials/video1.webm" type="video/webm">
             <source src="./vid_testonomials/video1.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls >
+          <video preload="metadata" playsinline>
+            <source src="./vid_testonomials/video2.webm" type="video/webm">
             <source src="./vid_testonomials/video2.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls >
+          <video preload="metadata" playsinline>
+            <source src="./vid_testonomials/video3.webm" type="video/webm">
             <source src="./vid_testonomials/video3.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls >
+          <video preload="metadata" playsinline>
+            <source src="./vid_testonomials/video4.webm" type="video/webm">
             <source src="./vid_testonomials/video4.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls >
-            <source src="./vid_testonomials//video5.webm" type="video/mp4">
+          <video preload="metadata" playsinline>
+            <source src="./vid_testonomials/video5.webm" type="video/webm">
+            <source src="./vid_testonomials/video5.webm" type="video/mp4">
           </video>
         </div>
         <div class="video-item">
-          <video controls >
-            <source src="./vid_testonomials//video6.webm" type="video/mp4">
+          <video preload="metadata" playsinline>
+            <source src="./vid_testonomials/video6.webm" type="video/webm">
+            <source src="./vid_testonomials/video6.webm" type="video/mp4">
           </video>
         </div>
       </div>
@@ -2383,140 +2390,7 @@ Academic guidance programs, Best education platform for students">
       toggle.classList.toggle("active");
     }
   </script>
-  <script>
-    (function () {
-      const track = document.querySelector('.carousel-track');
-      const section = document.getElementById('video-ads') || track;
-      if (!track) return;
-
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Clone items once to create seamless infinite loop
-      const originalItems = Array.from(track.querySelectorAll('.video-item'));
-      if (originalItems.length && !track.dataset.cloned) {
-        track.dataset.cloned = 'true';
-        originalItems.forEach(function (item) {
-          const clone = item.cloneNode(true);
-          track.appendChild(clone);
-        });
-      }
-
-      if (prefersReducedMotion) return;
-
-      let isPaused = false;
-      let isVisible = false;
-      let rafId = null;
-      let lastTime = performance.now();
-      const speedPxPerSec = 35; // True 35px/s constant velocity
-      let scrollPos = track.scrollLeft;
-
-      function getLoopDistance() {
-        const allItems = track.querySelectorAll('.video-item');
-        if (allItems.length >= 2 * originalItems.length && originalItems.length > 0) {
-          const firstClone = allItems[originalItems.length];
-          const firstOrig = allItems[0];
-          const dist = firstClone.offsetLeft - firstOrig.offsetLeft;
-          if (dist > 0) return dist;
-        }
-        return track.scrollWidth / 2;
-      }
-
-      function step(currentTime) {
-        const delta = Math.min((currentTime - lastTime) / 1000, 0.1);
-        lastTime = currentTime;
-
-        if (!isPaused && isVisible) {
-          scrollPos += speedPxPerSec * delta;
-          const loopDist = getLoopDistance();
-          if (loopDist > 0 && scrollPos >= loopDist) {
-            scrollPos -= loopDist;
-          }
-          track.scrollLeft = scrollPos;
-        }
-
-        rafId = requestAnimationFrame(step);
-      }
-
-      function start() {
-        if (!rafId && !prefersReducedMotion) {
-          lastTime = performance.now();
-          scrollPos = track.scrollLeft;
-          rafId = requestAnimationFrame(step);
-        }
-      }
-
-      function stop() {
-        if (rafId) {
-          cancelAnimationFrame(rafId);
-          rafId = null;
-        }
-      }
-
-      function pauseScroll() {
-        isPaused = true;
-      }
-
-      function resumeScroll() {
-        const allVideos = track.querySelectorAll('video');
-        const anyPlaying = Array.from(allVideos).some(function (v) { return !v.paused && !v.ended; });
-        if (!anyPlaying) {
-          isPaused = false;
-          lastTime = performance.now();
-          scrollPos = track.scrollLeft;
-        }
-      }
-
-      // Intersection Observer - only run when section is visible
-      if ('IntersectionObserver' in window && section) {
-        const obs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            isVisible = entry.isIntersecting;
-            if (isVisible) {
-              start();
-            } else {
-              stop();
-            }
-          });
-        }, { threshold: 0.05 });
-        obs.observe(section);
-      } else {
-        isVisible = true;
-        start();
-      }
-
-      // Sync scrollPos on manual scroll/drag
-      track.addEventListener('scroll', function () {
-        if (isPaused) {
-          scrollPos = track.scrollLeft;
-        }
-      }, { passive: true });
-
-      // Smooth interaction pauses
-      track.addEventListener('pointerenter', pauseScroll);
-      track.addEventListener('pointerleave', resumeScroll);
-      track.addEventListener('pointerdown', pauseScroll);
-      window.addEventListener('pointerup', resumeScroll);
-      track.addEventListener('touchstart', pauseScroll, { passive: true });
-      track.addEventListener('touchend', function () {
-        setTimeout(resumeScroll, 800);
-      }, { passive: true });
-      track.addEventListener('focusin', pauseScroll);
-      track.addEventListener('focusout', resumeScroll);
-
-      // Pause auto-scroll when any video is playing
-      const allVideos = track.querySelectorAll('video');
-      allVideos.forEach(function (video) {
-        video.addEventListener('play', function () {
-          pauseScroll();
-          allVideos.forEach(function (other) {
-            if (other !== video && !other.paused) other.pause();
-          });
-        });
-        video.addEventListener('pause', resumeScroll);
-        video.addEventListener('ended', resumeScroll);
-      });
-    })();
-  </script>
+  <script src="js/shikshit/video-player.js"></script>
 
   <!-- Inner Pages Interaction & Motion Script -->
   <script src="js/shikshit/inner.js"></script>
