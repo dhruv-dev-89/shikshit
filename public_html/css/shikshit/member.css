@@ -525,10 +525,22 @@ body.page-member .py-20.bg-gradient-to-b .group:hover {
 
 /* Avatar Ring */
 body.page-member .py-20.bg-gradient-to-b .w-24.h-24 {
+  width: 6rem !important;
+  height: 6rem !important;
+  border-radius: 9999px !important;
+  overflow: hidden !important;
   border: 3.5px solid transparent !important;
   background: linear-gradient(#fff, #fff) padding-box,
               linear-gradient(135deg, #7C3AED, #C026D3, #EC4899) border-box !important;
   box-shadow: 0 6px 18px rgba(124, 58, 237, 0.2) !important;
+}
+
+body.page-member .py-20.bg-gradient-to-b .w-24.h-24 picture,
+body.page-member .py-20.bg-gradient-to-b .w-24.h-24 img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 
 body.page-member .py-20.bg-gradient-to-b h3 {
