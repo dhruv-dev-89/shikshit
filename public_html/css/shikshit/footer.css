@@ -94,7 +94,7 @@
   display: inline-flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  margin: 0 0 14px 0 !important;
+  margin: 0 0 16px 0 !important;
   padding: 0 !important;
   height: auto !important;
   min-height: auto !important;
@@ -109,12 +109,12 @@
 
 .footer-editorial .footer-logo,
 .footer-editorial img[src*="sikshitlogo"] {
-  height: 100px !important;
+  height: 185px !important;
   width: auto !important;
   max-width: 100% !important;
   object-fit: contain !important;
   display: block !important;
-  margin: -24px 0 -22px -10px !important;
+  margin: -51px 0 -51px -14px !important;
   filter: drop-shadow(0 2px 8px rgba(11, 11, 59, 0.08)) !important;
   transition: transform 0.25s ease !important;
 }
@@ -291,15 +291,15 @@
 
   .footer-editorial .footer-brand {
     height: auto !important;
-    margin: 0 0 12px 0 !important;
+    margin: 0 0 14px 0 !important;
   }
 
   .footer-editorial .footer-logo,
   .footer-editorial img[src*="sikshitlogo"] {
-    height: 90px !important;
+    height: 155px !important;
     width: auto !important;
     max-width: 100% !important;
-    margin: -22px 0 -20px -8px !important;
+    margin: -43px 0 -41px -10px !important;
   }
 
   .footer-editorial .footer-brand-desc,
@@ -315,15 +315,15 @@
 @media (max-width: 480px) {
   .footer-editorial .footer-brand {
     height: auto !important;
-    margin: 0 0 10px 0 !important;
+    margin: 0 0 12px 0 !important;
   }
 
   .footer-editorial .footer-logo,
   .footer-editorial img[src*="sikshitlogo"] {
-    height: 84px !important;
+    height: 138px !important;
     width: auto !important;
     max-width: 100% !important;
-    margin: -20px 0 -18px -6px !important;
+    margin: -38px 0 -36px -8px !important;
   }
 
   .footer-editorial .footer-brand-desc,
