@@ -38,6 +38,7 @@
     const link = document.createElement('a');
     link.href = `#${id}`;
     link.textContent = label;
+    link.title = `Jump to ${label}`;
     link.addEventListener('click', () => {
       if (mobileQuery.matches) details.open = false;
     });

@@ -2,10 +2,61 @@
 <html lang="en">
 
 <head>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogs & Articles - Stories of Educational Impact | Shikshit</title>
+  <title>Educational Insights &amp; Scholarship Guides | Shikshit Blogs</title>
   <meta name="description" content="Explore informative articles, scholarship updates, career guidance tips, and inspirational student stories from the Shikshit educational team." />
+  <meta name="keywords" content="educational blogs, scholarship articles, career guidance articles, indian education reform, student stories">
+  <meta name="author" content="Shikshit Educational Foundation">
+
+<!-- Structured Data: Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://www.shikshit.in/blogs.html#blog",
+        "url": "https://www.shikshit.in/blogs.html",
+        "name": "Blogs | Shikshit Educational Foundation",
+        "description": "Explore insightful educational articles, academic scholarship advice, student success stories, and career growth tips on the Shikshit blog portal.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.shikshit.in/#website",
+          "url": "https://www.shikshit.in/",
+          "name": "Shikshit",
+          "publisher": {
+            "@type": "EducationalOrganization",
+            "name": "Shikshit",
+            "url": "https://www.shikshit.in/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.shikshit.in/images/sikshitlogo.webp"
+            }
+          }
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.shikshit.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blogs",
+              "item": "https://www.shikshit.in/blogs.html"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
   <meta name="theme-color" content="#7C3AED">
   <link rel="canonical" href="https://www.shikshit.in/blogs.html" />
 
@@ -37,6 +88,8 @@
   <link rel="stylesheet" href="css/shikshit/components.css">
   <link rel="stylesheet" href="css/shikshit/blogs.css">
   <link rel="stylesheet" href="css/shikshit/footer.css">
+
+  
 </head>
 
 <body class="shikshit-editorial blogs-page">
@@ -470,9 +523,9 @@
   </div>
 
   <!-- Scripts -->
-  <script src="js/shikshit/main.js"></script>
-  <script src="js/shikshit/articles.js"></script>
-  <script src="js/shikshit/blogs.js"></script>
+  <script src="js/shikshit/main.js" defer></script>
+  <script src="js/shikshit/articles.js" defer></script>
+  <script src="js/shikshit/blogs.js" defer></script>
   <script src="js/shikshit-footer.js" defer></script>
 </body>
 
