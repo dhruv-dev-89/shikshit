@@ -84,13 +84,11 @@
             <h4>Quick Links</h4>
             <ul>
               <li><a href="${base}index.html">Home</a></li>
-              <li><a href="${base}about-us.html">About Us</a></li>
               <li><a href="${base}product-services.html">Programs &amp; Services</a></li>
               <li><a href="${base}blogs.html">Blogs</a></li>
               <li><a href="${base}become-a-member.html">Become a Member</a></li>
               <li><a href="${base}careers.html">Career</a></li>
               <li><a href="${base}donate.html">Donate</a></li>
-              <li><a href="${base}contact.html">Contact</a></li>
             </ul>
           </div>
 
@@ -101,6 +99,8 @@
               <li><a href="${base}how-it-works.html">How It Works</a></li>
               <li><a href="${base}scholarship.html">Scholarships</a></li>
               <li><a href="${base}registration.html">Student Registration</a></li>
+              <li><a href="${base}about-us.html">About Us</a></li>
+              <li><a href="${base}contact.html">Contact Us</a></li>
               <li><a href="${base}privacypolicy.html">Privacy Policy</a></li>
               <li><a href="${base}termsandservice.html">Terms of Service</a></li>
             </ul>
