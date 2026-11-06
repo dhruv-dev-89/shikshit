@@ -106,6 +106,7 @@ shikshit academic development services,shikshit training and mentorship,
   <link rel="stylesheet" href="css/shikshit/components.css">
   <link rel="stylesheet" href="css/shikshit/pages.css">
   <link rel="stylesheet" href="css/shikshit/footer.css">
+  <link rel="stylesheet" href="css/shikshit/navbar.css">
 </head>
 
 <body class="shikshit-editorial">
@@ -133,79 +134,8 @@ shikshit academic development services,shikshit training and mentorship,
 
   <div class="shikshit-main-content">
 
-    <!-- ======================================================================
-         NAVBAR: Sticky Floating White-Glass Pill (Backdrop blur, soft shadow)
-         Items stay exactly: NS-MAS | Products and Services | Apply Now + 2 CTAs
-         ====================================================================== -->
-    <header class="shikshit-header" role="banner">
-      <nav class="shikshit-navbar navbar" aria-label="Main Navigation">
-        <!-- Brand Logo (Existing logo file unchanged) -->
-        <a href="/" class="shikshit-brand navbar-brand" aria-label="Shikshit Homepage">
-          <img src="images/sikshitlogo.webp" alt="Shikshit Logo - Empowering Education & Scholarships" class="shikshit-logo navbar-logo-enlarged">
-        </a>
-
-        <!-- Main Desktop Navigation -->
-        <ul class="shikshit-nav-menu navbar-nav">
-          <li class="nav-item">
-            <a href="ns-mas.html" class="shikshit-nav-link nav-link">NS-MAS</a>
-          </li>
-          <li class="nav-item">
-            <a href="product-services.html" class="shikshit-nav-link nav-link">Products and Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="registration.html" class="shikshit-nav-link nav-link">Apply Now</a>
-          </li>
-          <li class="nav-item">
-            <a href="careers.html" class="shikshit-nav-link nav-link">Career</a>
-          </li>
-          <li class="nav-item">
-            <a href="blogs.html" class="shikshit-nav-link nav-link">Blogs</a>
-          </li>
-        </ul>
-
-        <!-- CTA Buttons -->
-        <div class="shikshit-nav-actions cta-buttons">
-          <a href="become-a-member.html" class="btn-pill btn-secondary-white btn-partner">
-            Become a Member
-          </a>
-          <a href="donate.html" class="btn-pill btn-primary-gradient btn-donate">
-            Donate Us
-          </a>
-        </div>
-
-        <!-- Mobile Menu Toggle Button (Preserves toggleMobileMenu hook) -->
-        <button type="button" class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <!-- Mobile Menu Dropdown -->
-        <div class="mobile-menu" id="mobileMenu">
-          <ul class="mobile-nav">
-            <li class="nav-item">
-              <a href="ns-mas.html" class="nav-link">NS-MAS</a>
-            </li>
-            <li class="nav-item">
-              <a href="product-services.html" class="nav-link">Products and Services</a>
-            </li>
-            <li class="nav-item">
-              <a href="registration.html" class="nav-link">Apply Now</a>
-            </li>
-            <li class="nav-item">
-              <a href="careers.html" class="nav-link">Career</a>
-            </li>
-            <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
-            <li class="nav-item" style="margin-top: 6px;">
-              <a href="become-a-member.html" class="btn-pill btn-secondary-white" style="width: 100%; text-align: center;">Become a Member</a>
-            </li>
-            <li class="nav-item">
-              <a href="donate.html" class="btn-pill btn-primary-gradient" style="width: 100%; text-align: center;">Donate Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <!-- Shared Shikshit navbar is inserted here. -->
+    <div id="shikshit-navbar-container"></div>
 
     <main id="main-content">
 
@@ -1010,7 +940,7 @@ shikshit academic development services,shikshit training and mentorship,
 
 
       <!-- ====================================================================
-           10. Our Testimonial: 3-Column Grid of 16:9 Cards with Gradient Frame
+           10. Our Testimonials: Infinite Horizontal Video Carousel
            ==================================================================== -->
       <section class="shikshit-section video-carousel" id="video-ads">
         <div class="shikshit-container">
@@ -1022,7 +952,7 @@ shikshit academic development services,shikshit training and mentorship,
             </p>
           </div>
 
-          <div class="videos-editorial-grid">
+          <div class="videos-editorial-grid carousel-track" aria-label="Scrolling video testimonials">
             <!-- Video 1 -->
             <div class="video-editorial-card editorial-reveal video-item">
               <div class="video-aspect-frame">
@@ -1051,6 +981,78 @@ shikshit academic development services,shikshit training and mentorship,
                 <video preload="metadata" playsinline>
                   <source src="./vid_testonomials/video5.webm" type="video/webm">
                   <source src="./vid_testonomials/video5.webm" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="video-editorial-card editorial-reveal video-item">
+              <div class="video-aspect-frame">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video1.webm" type="video/webm">
+                  <source src="./vid_testonomials/video1.webm" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="video-editorial-card editorial-reveal video-item">
+              <div class="video-aspect-frame">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video4.webm" type="video/webm">
+                  <source src="./vid_testonomials/video4.webm" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="video-editorial-card editorial-reveal video-item">
+              <div class="video-aspect-frame">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video15.webm" type="video/webm">
+                  <source src="./vid_testonomials/video15.webm" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="video-editorial-card editorial-reveal video-item">
+              <div class="video-aspect-frame">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video6.webm" type="video/webm">
+                  <source src="./vid_testonomials/video6.webm" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="video-editorial-card editorial-reveal video-item">
+              <div class="video-aspect-frame">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video14.webm" type="video/webm">
+                  <source src="./vid_testonomials/video14.webm" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="video-editorial-card editorial-reveal video-item">
+              <div class="video-aspect-frame">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video16.webm" type="video/webm">
+                  <source src="./vid_testonomials/video16.webm" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="video-editorial-card editorial-reveal video-item">
+              <div class="video-aspect-frame">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video19.webm" type="video/webm">
+                  <source src="./vid_testonomials/video19.webm" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="video-editorial-card editorial-reveal video-item">
+              <div class="video-aspect-frame">
+                <video preload="metadata" playsinline>
+                  <source src="./vid_testonomials/video22.webm" type="video/webm">
+                  <source src="./vid_testonomials/video22.webm" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -1141,6 +1143,7 @@ shikshit academic development services,shikshit training and mentorship,
 
   <!-- Centralized Shikshit Footer Component Loader -->
   <script src="js/shikshit-footer.js" defer></script>
+  <script src="js/shikshit/navbar.js" defer></script>
 </body>
 
 </html>

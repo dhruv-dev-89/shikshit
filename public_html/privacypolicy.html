@@ -97,11 +97,12 @@
     </style>
     <link rel="stylesheet" href="css/nsmas-footer.css">
     <script src="js/nsmas-footer.js" defer></script>
+  <link rel="stylesheet" href="css/shikshit/navbar.css">
 </head>
 <body class="bg-gradient-to-b from-purple-100 via-pink-50 to-white text-gray-800 min-h-screen flex flex-col">
         <!-- Navbar -->
     <header class="w-full">
-        <div include-html="components/nsmas_navbar.html"></div>
+        <div id="shikshit-navbar-container"></div>
     </header>
 
     <!-- Content Section -->
@@ -252,8 +253,8 @@
         document.addEventListener("DOMContentLoaded", includeHTML);
         window.onload = () => { window.scrollTo({ top: 0, behavior: 'smooth' }); };
     </script>
-    <script src="js/hamburger-menu-fix.js"></script>
     <div include-html="components/footer.html"></div>
 
-    </body>
+  <script src="js/shikshit/navbar.js" defer></script>
+</body>
 </html>

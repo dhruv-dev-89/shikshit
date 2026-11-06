@@ -41,7 +41,7 @@ body.page-products {
   color: var(--color-secondary-text);
   overflow-x: clip !important;
   position: relative;
-  padding-top: 0 !important; /* resets 100px padding-top inherited from sikshitnavbar.css */
+  padding-top: 0 !important;
 }
 
 /* Ambient Background Pastel Blobs */
@@ -99,9 +99,7 @@ body.page-products {
   100% { transform: translate(50px, -40px) scale(1.06); translate: 50px -40px; }
 }
 
-/* --------------------------------------------------------------------------
-   0. FLOATING WHITE-GLASS PILL NAVBAR (Defect Fix 2)
-   -------------------------------------------------------------------------- */
+/* Page scroll progress indicator */
 body.page-products #scroll-progress-bar {
   position: fixed !important;
   top: 0 !important;
@@ -111,181 +109,6 @@ body.page-products #scroll-progress-bar {
   background: var(--signature-gradient) !important;
   z-index: 10000 !important;
   box-shadow: none !important;
-}
-
-body.page-products .shikshit-header {
-  position: sticky !important;
-  top: 28px !important;
-  z-index: 1000 !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin-top: 28px !important;
-  margin-bottom: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  pointer-events: none !important;
-  overflow: visible !important;
-}
-
-body.page-products .shikshit-header::before,
-body.page-products .shikshit-header::after {
-  display: none !important;
-}
-
-body.page-products .shikshit-navbar {
-  pointer-events: auto !important;
-  position: relative !important;
-  width: var(--container) !important;
-  max-width: var(--container) !important;
-  margin: 0 auto !important;
-  margin-inline: auto !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 4rem !important;
-  padding: 0.5rem 1.5rem !important;
-  background: rgba(255, 255, 255, 0.90) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border-radius: 999px !important;
-  border: 1px solid rgba(124, 58, 237, 0.14) !important;
-  box-shadow: 0 10px 30px rgba(11, 11, 59, 0.08) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  box-sizing: border-box !important;
-}
-
-body.page-products .shikshit-navbar::before,
-body.page-products .shikshit-navbar::after {
-  display: none !important;
-}
-
-body.page-products .shikshit-logo {
-  width: 110px !important;
-  height: auto !important;
-  max-height: none !important;
-  margin: -22px 0 !important;
-  object-fit: contain !important;
-  display: block !important;
-  filter: drop-shadow(0 2px 6px rgba(11, 11, 59, 0.10)) !important;
-  transition: transform 0.25s ease, width 0.25s ease !important;
-}
-
-/* Header & Navbar Shrink After Scroll */
-@supports (animation-timeline: scroll()) {
-  body.page-products .shikshit-navbar {
-    animation: navShrink linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0px 80px;
-  }
-  body.page-products .shikshit-logo {
-    animation: logoShrink linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0px 80px;
-  }
-}
-
-@keyframes navShrink {
-  to {
-    height: 56px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 12px 32px rgba(11, 11, 59, 0.12);
-  }
-}
-
-@keyframes logoShrink {
-  to {
-    width: 90px;
-    height: auto;
-    margin: -16px 0;
-  }
-}
-
-body.page-products .shikshit-header.scrolled .shikshit-navbar,
-body.page-products .shikshit-navbar.scrolled {
-  height: 56px !important;
-  padding: 6px 20px !important;
-  background: rgba(255, 255, 255, 0.95) !important;
-  box-shadow: 0 12px 32px rgba(11, 11, 59, 0.12) !important;
-}
-
-body.page-products .shikshit-header.scrolled .shikshit-logo,
-body.page-products .shikshit-navbar.scrolled .shikshit-logo {
-  width: 90px !important;
-  height: auto !important;
-  margin: -16px 0 !important;
-}
-
-/* Desktop vs Mobile Nav Visibility (Strictly Never Together) */
-@media (min-width: 980px) {
-  body.page-products .mobile-menu-toggle {
-    display: none !important;
-  }
-  body.page-products .shikshit-nav-menu {
-    display: flex !important;
-    align-items: center !important;
-    gap: 24px !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  body.page-products .shikshit-nav-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-  }
-}
-
-@media (max-width: 979px) {
-  body.page-products .shikshit-nav-menu {
-    display: none !important;
-  }
-  body.page-products .shikshit-nav-actions {
-    display: none !important;
-  }
-  body.page-products .mobile-menu-toggle {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 4px !important;
-    width: 44px !important;
-    height: 44px !important;
-    background: rgba(255, 255, 255, 0.9) !important;
-    border: 1px solid rgba(124, 58, 237, 0.2) !important;
-    border-radius: 12px !important;
-    padding: 0 !important;
-    cursor: pointer !important;
-  }
-}
-
-body.page-products .mobile-menu-toggle .hamburger-line {
-  display: block !important;
-  width: 22px !important;
-  height: 2.5px !important;
-  background-color: var(--navy) !important;
-  border-radius: 2px !important;
-  margin: 0 !important;
-}
-
-/* Navbar Buttons & Secondary White */
-body.page-products .shikshit-nav-actions .btn-partner,
-body.page-products .btn-secondary-white {
-  color: var(--navy) !important;
-  background: #FFFFFF !important;
-  border: 1px solid rgba(124, 58, 237, 0.18) !important;
-  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.08) !important;
-}
-
-body.page-products .shikshit-nav-actions .btn-partner:hover,
-body.page-products .btn-secondary-white:hover {
-  color: var(--violet) !important;
-  border-color: rgba(124, 58, 237, 0.35) !important;
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.16) !important;
-  transform: translateY(-2px) !important;
 }
 
 /* Smooth Scroll Margin for Sections */
@@ -2671,7 +2494,7 @@ body.page-products #diploma-courses .card-accent-line {
    PRODUCTS HERO - RESPONSIVE PERFECTION FOR TABLETS & MOBILE
    ========================================================================== */
 @media (max-width: 991px) {
-  /* Prevent fixed/sticky navbar from overlapping hero */
+  /* Keep the hero clear of the shared site header */
   body.page-products .products-hero {
     padding-top: clamp(88px, 12vh, 108px) !important;
     padding-bottom: 24px !important;

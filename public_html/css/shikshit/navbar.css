@@ -1,0 +1,164 @@
+/* Shared Shikshit navbar. Keep navigation appearance in one place. */
+.shikshit-header {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 0 var(--container-padding, 24px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* navbar.js sizes this spacer to preserve page flow beneath the fixed header. */
+.shikshit-navbar-spacer {
+  display: block;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+}
+
+/* These full-bleed heroes begin at the top edge behind the shared header. */
+body.page-member .shikshit-navbar-spacer,
+body.page-donate .shikshit-navbar-spacer {
+  height: 0 !important;
+}
+
+.shikshit-navbar {
+  box-sizing: border-box;
+  max-width: var(--container-max, 1200px);
+  margin: 0 auto;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-pill, 9999px);
+  border: var(--hairline-border, 1px solid rgba(124,58,237,.12));
+  box-shadow: var(--shadow-nav, 0 10px 30px rgba(11,11,59,.06));
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: all .3s ease;
+}
+
+.shikshit-header.scrolled .shikshit-navbar {
+  padding: 8px 24px;
+  background: rgba(255,255,255,.95);
+  box-shadow: 0 14px 34px rgba(11,11,59,.1);
+  transform: translateY(-4px);
+}
+
+.shikshit-brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.shikshit-logo {
+  display:block; width:auto; height:110px; margin:-28px 0; object-fit:contain;
+  filter:drop-shadow(0 2px 4px rgba(11,11,59,.08)); transition:transform .25s ease;
+}
+.shikshit-header.scrolled .shikshit-logo { height:90px; margin:-20px 0; }
+.shikshit-brand:hover .shikshit-logo { transform:scale(1.04); }
+
+.shikshit-nav-menu {
+  display:flex; align-items:center; gap:36px; list-style:none; margin:0; padding:0;
+}
+.shikshit-nav-link {
+  display:inline-flex; position:relative; align-items:center; gap:6px; padding:8px 2px;
+  color:var(--navy,#0b0b3b); font-size:15px; font-weight:600; text-decoration:none;
+  transition:color .2s ease;
+}
+.shikshit-nav-link::after {
+  content:''; position:absolute; bottom:0; left:0; width:0; height:2.5px;
+  background:var(--signature-gradient,linear-gradient(135deg,#7c3aed,#c026d3 60%,#ec4899));
+  border-radius:2px; transition:width .28s cubic-bezier(.4,0,.2,1);
+}
+.shikshit-nav-link:hover,.shikshit-nav-link.active { color:var(--violet,#7c3aed); }
+.shikshit-nav-link:hover::after,.shikshit-nav-link.active::after { width:100%; }
+.shikshit-nav-actions { display:flex; align-items:center; gap:14px; }
+.shikshit-nav-cta {
+  display:inline-flex; position:relative; align-items:center; justify-content:center; gap:9px;
+  padding:12px 26px; overflow:hidden; border:0; border-radius:var(--radius-pill,9999px);
+  font-size:15px; font-weight:700; text-decoration:none; white-space:nowrap; cursor:pointer;
+  transition:transform .2s ease,box-shadow .25s ease,background .25s ease;
+}
+.shikshit-nav-cta:active { transform:scale(.97); }
+.shikshit-nav-cta-primary {
+  color:#fff; background:var(--signature-gradient,linear-gradient(135deg,#7c3aed,#c026d3 60%,#ec4899));
+  box-shadow:0 8px 26px rgba(124,58,237,.28);
+}
+.shikshit-nav-cta-primary:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(192,38,211,.38); }
+.shikshit-nav-cta-secondary {
+  color:var(--violet,#7c3aed); background:#fff;
+  border:var(--hairline-border,1px solid rgba(124,58,237,.12)); box-shadow:0 4px 18px rgba(11,11,59,.05);
+}
+.shikshit-nav-cta-secondary:hover { transform:translateY(-2px); background:var(--lav-50,#f7f5ff); }
+
+.shikshit-mobile-toggle {
+  display:none; flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  width:44px; height:44px; padding:8px; border:1px solid rgba(124,58,237,.12);
+  border-radius:9999px; background:#f7f5ff; cursor:pointer;
+}
+.shikshit-hamburger-line { width:22px; height:2.5px; border-radius:2px; background:#0b0b3b; transition:all .25s ease; }
+.shikshit-mobile-toggle.active .shikshit-hamburger-line:nth-child(1) { transform:translateY(7.5px) rotate(45deg); }
+.shikshit-mobile-toggle.active .shikshit-hamburger-line:nth-child(2) { opacity:0; }
+.shikshit-mobile-toggle.active .shikshit-hamburger-line:nth-child(3) { transform:translateY(-7.5px) rotate(-45deg); }
+.shikshit-mobile-menu {
+  display:none; position:absolute; top:calc(100% + 12px); left:20px; right:20px; z-index:1001;
+  padding:24px; border:1px solid rgba(124,58,237,.12); border-radius:28px;
+  background:rgba(255,255,255,.98); box-shadow:0 20px 50px rgba(11,11,59,.15);
+  opacity:0; visibility:hidden; transform:translateY(-10px); transition:opacity .25s ease,transform .25s ease,visibility .25s;
+}
+.shikshit-mobile-menu.active { display:block; opacity:1; visibility:visible; transform:translateY(0); }
+.shikshit-header #shikshitMobileMenu.active {
+  display:block;
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+  pointer-events:auto;
+  max-height:min(80vh,600px);
+  overflow-y:auto;
+}
+.shikshit-header #shikshitMobileMenu {
+  top:calc(100% + 12px);
+  left:20px;
+  right:20px;
+  width:auto;
+  border:1px solid rgba(124,58,237,.12);
+  border-radius:28px;
+}
+.shikshit-mobile-nav { display:flex; flex-direction:column; gap:12px; list-style:none; margin:0; padding:0; }
+.shikshit-mobile-link {
+  display:flex; align-items:center; justify-content:center; padding:14px 20px; border-radius:9999px;
+  color:#0b0b3b; background:#f7f5ff; border:1px solid rgba(124,58,237,.08);
+  font-size:16px; font-weight:700; text-decoration:none;
+}
+.shikshit-mobile-link:hover { color:#7c3aed; background:#ede9fe; }
+.shikshit-mobile-nav .shikshit-nav-cta { display:flex; width:100%; box-sizing:border-box; }
+
+@media (max-width:1199px) and (min-width:993px) {
+  .shikshit-header { padding:0 16px; }
+  .shikshit-navbar { padding:8px 18px; }
+  .shikshit-nav-menu { gap:16px; }
+  .shikshit-nav-link { padding:6px 2px; font-size:14px; }
+  .shikshit-nav-actions { gap:8px; }
+  .shikshit-nav-actions .shikshit-nav-cta { padding:9px 18px; font-size:13.5px; }
+}
+@media (min-width:993px) {
+  .shikshit-header .shikshit-mobile-toggle { display:none!important; }
+}
+@media (max-width:992px) {
+  .shikshit-header { top:12px; padding:0 16px; }
+  .shikshit-navbar { padding:8px 18px; }
+  .shikshit-nav-menu,.shikshit-nav-actions { display:none!important; }
+  .shikshit-mobile-toggle { display:flex!important; }
+  .shikshit-logo { height:94px!important; margin:-22px 0!important; }
+}
+@media (max-width:480px) {
+  .shikshit-header { top:8px; padding:0 10px; }
+  .shikshit-navbar { padding:6px 14px; border-radius:20px; }
+  .shikshit-logo { height:84px!important; margin:-19px 0!important; }
+  .shikshit-mobile-menu { left:10px; right:10px; padding:16px; border-radius:20px; }
+  .shikshit-mobile-link { padding:11px 16px; font-size:15px; }
+}
+
+@media print {
+  .shikshit-header { display:none!important; }
+}

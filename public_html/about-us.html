@@ -436,28 +436,26 @@
     </style>
     <link rel="stylesheet" href="css/nsmas-footer.css">
     <script src="js/nsmas-footer.js" defer></script>
-
-  
+  <link rel="stylesheet" href="css/shikshit/navbar.css">
 </head>
   <body
     class="bg-gray-50 w-full overflow-x-hidden"
     style="margin: 0; padding: 0; width: 100vw; max-width: 100vw"
   >
-    <!-- Include Navbar -->
-    <div include-html="components/nsmas_navbar.html"></div>
+    <!-- Shared Shikshit navbar is inserted here. -->
+    <div id="shikshit-navbar-container"></div>
 
     <!-- Viewport height fix script -->
     <script src="js/viewport-fix.js"></script>
 
     <!-- Mobile menu fix CSS -->
-    <link rel="stylesheet" href="css/mobile-menu-fix.css" />
+
 
     <!-- Comprehensive Mobile menu fix script - loads first -->
     
     <!-- Mobile menu position fix script -->
     
     <!-- Mobile menu fix scripts -->
-                    <script src="js/hamburger-menu-fix.js"></script>
     
     <!-- Search toggle fix script -->
     
@@ -466,13 +464,8 @@
     <!-- Include HTML script -->
     <script src="js/script.js"></script>
 
-    <!-- Mobile menu initialization is now handled in navbar.html and mobile-menu-fix.js -->
+    <!-- Shared Shikshit navbar is initialized by navbar.js. -->
     <script>
-      // This script is kept for compatibility but the actual initialization is in navbar.html and mobile-menu-fix.js
-      console.log(
-        "Mobile menu initialization is handled in navbar.html and mobile-menu-fix.js"
-      );
-
       // Additional mobile fixes
       document.addEventListener("DOMContentLoaded", function () {
         // Fix for mobile input fields to prevent zoom
@@ -491,53 +484,6 @@
           });
         });
 
-        // Additional fix for mobile menu button
-        setTimeout(function () {
-          const mobileMenuButton =
-            document.getElementById("mobile-menu-button");
-          if (mobileMenuButton) {
-            console.log(
-              "Adding additional click handler to mobile menu button"
-            );
-
-            // Add direct click handler as a fallback
-            mobileMenuButton.addEventListener("click", function (e) {
-              console.log("Mobile menu button clicked from about-us.html");
-              e.preventDefault();
-              e.stopPropagation();
-
-              // Call the toggle function if available
-              if (typeof window.toggleMobileMenu === "function") {
-                window.toggleMobileMenu(e);
-              } else {
-                // Fallback toggle implementation
-                const mobileMenu = document.getElementById("mobile-menu");
-                if (mobileMenu) {
-                  const isHidden = mobileMenu.classList.contains("hidden");
-                  if (isHidden) {
-                    mobileMenu.classList.remove("hidden");
-                    mobileMenu.style.display = "block";
-                  } else {
-                    mobileMenu.classList.add("hidden");
-                    mobileMenu.style.display = "none";
-                  }
-                }
-              }
-            });
-
-            // Also add touch event listener
-            mobileMenuButton.addEventListener(
-              "touchstart",
-              function (e) {
-                console.log("Mobile menu button touched from about-us.html");
-                e.preventDefault();
-
-                // Trigger click event
-                mobileMenuButton.click();
-              },
-              { passive: false }
-            );
-          }
         }, 1000);
       });
     </script>
@@ -2384,5 +2330,6 @@
     <!-- Include Footer -->
     <div include-html="components/footer.html"></div>
 
-    </body>
+  <script src="js/shikshit/navbar.js" defer></script>
+</body>
 </html>

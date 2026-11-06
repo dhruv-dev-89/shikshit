@@ -132,44 +132,6 @@
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="js/payment-gateway.js" defer></script>
 
-    <!-- Mobile Menu Toggle Function -->
-    <script>
-      // Global function to toggle mobile menu - must be defined before HTML uses it
-      function toggleMobileMenu(e) {
-        if (e) {
-          e.preventDefault();
-          e.stopPropagation();
-        }
-
-        console.log("Toggle mobile menu function called");
-
-        // Find the mobile menu and toggle button
-        const mobileMenu = document.getElementById("mobileMenu");
-        const toggleButton = document.querySelector(".mobile-menu-toggle");
-
-        if (!mobileMenu) {
-          console.error("Mobile menu not found");
-          return;
-        }
-
-        // Toggle the active class on both menu and button
-        const isActive = mobileMenu.classList.contains("active");
-
-        if (isActive) {
-          // Hide menu
-          mobileMenu.classList.remove("active");
-          if (toggleButton) toggleButton.classList.remove("active");
-          console.log("Mobile menu hidden");
-        } else {
-          // Show menu
-          mobileMenu.classList.add("active");
-          if (toggleButton) toggleButton.classList.add("active");
-          console.log("Mobile menu shown");
-        }
-      }
-
-      // Make function globally available
-      window.toggleMobileMenu = toggleMobileMenu;
     </script>
 
     <style>
@@ -1518,24 +1480,11 @@
           transform: translateY(0);
         }
       }
-
-      /* Enlarged logo styles */
-      .navbar-logo-enlarged {
-        height: 130px;
-        width: auto;
-        margin-right: 0;
-        transition: transform 0.3s ease;
-        object-fit: contain;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-      }
-
-      .navbar-logo-enlarged:hover {
-        transform: scale(1.05);
-      }
     </style>
-  <style>body.page-donate { padding-top: 0 !important; } body.page-donate .shikshit-header { position: fixed; top: 18px; left: 0; right: 0; }</style>
+  <style>body.page-donate { padding-top: 0 !important; }</style>
 
   
+  <link rel="stylesheet" href="css/shikshit/navbar.css">
 </head>
   <body class="page-donate">
   <!-- Ambient Background Layer (Theme: "Light of Learning") -->
@@ -1552,73 +1501,7 @@
     <svg class="donate-floating-orb" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
   </div>
     <!-- Navbar -->
-    <header class="shikshit-header" role="banner">
-      <nav class="shikshit-navbar" aria-label="Main Navigation">
-        <!-- Brand Logo (Existing logo file unchanged) -->
-        <a href="index.html" class="shikshit-brand" aria-label="Shikshit Homepage">
-          <img src="images/sikshitlogo.webp" alt="Shikshit Logo - Empowering Education & Scholarships" class="shikshit-logo">
-        </a>
-
-        <!-- Main Desktop Navigation -->
-        <ul class="shikshit-nav-menu">
-          <li>
-            <a href="ns-mas.html" class="shikshit-nav-link">NS-MAS</a>
-          </li>
-          <li>
-            <a href="product-services.html" class="shikshit-nav-link">Products and Services</a>
-          </li>
-          <li>
-            <a href="registration.html" class="shikshit-nav-link">Apply Now</a>
-          </li>
-          <li>
-            <a href="careers.html" class="shikshit-nav-link">Career</a>
-          </li>
-          <li class="nav-item"><a href="blogs.html" class="shikshit-nav-link">Blogs</a></li>
-        </ul>
-
-        <!-- CTA Buttons -->
-        <div class="shikshit-nav-actions">
-          <a href="become-a-member.html" class="btn-pill btn-secondary-white btn-partner">
-            Become a Member
-          </a>
-          <a href="donate.html" class="btn-pill btn-primary-gradient btn-donate">
-            Donate Us
-          </a>
-        </div>
-
-        <!-- Mobile Menu Toggle Button (Preserves toggleMobileMenu hook) -->
-        <button type="button" class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <!-- Mobile Menu Dropdown (Preserves #mobileMenu id and exact 5 links) -->
-        <div class="mobile-menu" id="mobileMenu">
-          <ul class="mobile-nav">
-            <li>
-              <a href="ns-mas.html" class="nav-link">NS-MAS</a>
-            </li>
-            <li>
-              <a href="product-services.html" class="nav-link">Products and Services</a>
-            </li>
-            <li>
-              <a href="registration.html" class="nav-link">Apply Now</a>
-            </li>
-            <li>
-              <a href="careers.html" class="nav-link">Career</a>
-            </li>
-            <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
-            <li style="margin-top: 6px;">
-              <a href="become-a-member.html" class="btn-pill btn-secondary-white" style="width: 100%; text-align: center;">Become a Member</a>
-            </li>
-            <li>
-              <a href="donate.html" class="btn-pill btn-primary-gradient" style="width: 100%; text-align: center;">Donate Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <div id="shikshit-navbar-container"></div>
 
     <!-- Hero Section -->
     <section class="hero-gradient">
@@ -2487,28 +2370,6 @@
 
     <!-- Scripts -->
     <script>
-      // Function to handle NS-MAS navigation to ns-mas.html
-      function navigateToHome(event) {
-        // Close mobile menu if open
-        const mobileMenu = document.getElementById("mobileMenu");
-        const toggle = document.querySelector(".mobile-menu-toggle");
-        if (mobileMenu && mobileMenu.classList.contains("active")) {
-          mobileMenu.classList.remove("active");
-          toggle.classList.remove("active");
-        }
-
-        // Add visual feedback
-        const link = event.target.closest(".nav-link");
-        if (link) {
-          link.style.transform = "scale(0.95)";
-          setTimeout(() => {
-            link.style.transform = "";
-          }, 150);
-        }
-
-        // Allow normal navigation to ns-mas.html
-      }
-
       // Global variables for payment
       let selectedPaymentMethod = "";
       let selectedAmount = 0;
@@ -2668,5 +2529,6 @@
     <script src="js/shikshit/inner.js"></script>
   <!-- Centralized Shikshit Footer Component Loader -->
   <script src="js/shikshit-footer.js" defer></script>
+  <script src="js/shikshit/navbar.js" defer></script>
 </body>
 </html>

@@ -12,10 +12,9 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ------------------------------------------------------------------------
-     1. Scroll Progress Bar & Sticky Header
+     1. Scroll Progress Bar
      ------------------------------------------------------------------------ */
   const progressBar = document.getElementById('scroll-progress-bar');
-  const header = document.querySelector('.shikshit-header');
 
   function handleScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -26,58 +25,13 @@
       progressBar.style.width = progress + '%';
     }
 
-    if (header) {
-      if (scrollTop > 40) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
   /* ------------------------------------------------------------------------
-     2. Global Mobile Menu Toggle (Preserving existing toggleMobileMenu())
-     ------------------------------------------------------------------------ */
-  function toggleMobileMenu(e) {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    const mobileMenu = document.getElementById('mobileMenu');
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
-
-    if (!mobileMenu) return;
-
-    const isActive = mobileMenu.classList.contains('active');
-    if (isActive) {
-      mobileMenu.classList.remove('active');
-      if (toggleButton) toggleButton.classList.remove('active');
-      document.body.style.overflow = '';
-    } else {
-      mobileMenu.classList.add('active');
-      if (toggleButton) toggleButton.classList.add('active');
-    }
-  }
-
-  window.toggleMobileMenu = toggleMobileMenu;
-
-  // Close mobile menu on click outside
-  document.addEventListener('click', function (e) {
-    const mobileMenu = document.getElementById('mobileMenu');
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
-    if (mobileMenu && mobileMenu.classList.contains('active')) {
-      if (!mobileMenu.contains(e.target) && !toggleButton.contains(e.target)) {
-        mobileMenu.classList.remove('active');
-        if (toggleButton) toggleButton.classList.remove('active');
-      }
-    }
-  });
-
-  /* ------------------------------------------------------------------------
-     3. Animated Stat Counters (Count up once when scrolled into view)
+     2. Animated Stat Counters (Count up once when scrolled into view)
      ------------------------------------------------------------------------ */
   function initCounters() {
     if (prefersReducedMotion) return;

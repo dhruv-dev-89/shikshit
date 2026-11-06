@@ -90,6 +90,7 @@
   <link rel="stylesheet" href="css/shikshit/footer.css">
 
   
+  <link rel="stylesheet" href="css/shikshit/navbar.css">
 </head>
 
 <body class="shikshit-editorial blogs-page">
@@ -134,80 +135,8 @@
 
   <div class="shikshit-main-content">
 
-    <!-- ======================================================================
-         NAVBAR: Sticky Floating White-Glass Pill
-         ====================================================================== -->
-    <header class="shikshit-header" role="banner">
-      <nav class="shikshit-navbar navbar" aria-label="Main Navigation">
-        <!-- Brand Logo -->
-        <a href="index.html" class="shikshit-brand navbar-brand" aria-label="Shikshit Homepage">
-          <img src="images/sikshitlogo.webp" alt="Shikshit Logo" class="shikshit-logo navbar-logo-enlarged">
-        </a>
-
-        <!-- Main Desktop Navigation -->
-        <ul class="shikshit-nav-menu navbar-nav">
-          <li class="nav-item">
-            <a href="ns-mas.html" class="shikshit-nav-link nav-link">NS-MAS</a>
-          </li>
-          <li class="nav-item">
-            <a href="product-services.html" class="shikshit-nav-link nav-link">Products and Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="registration.html" class="shikshit-nav-link nav-link">Apply Now</a>
-          </li>
-          <li class="nav-item">
-            <a href="careers.html" class="shikshit-nav-link nav-link">Career</a>
-          </li>
-          <li class="nav-item">
-            <a href="blogs.html" class="shikshit-nav-link nav-link active" aria-current="page">Blogs</a>
-          </li>
-        </ul>
-
-        <!-- CTA Buttons -->
-        <div class="shikshit-nav-actions cta-buttons">
-          <a href="become-a-member.html" class="btn-pill btn-secondary-white btn-partner">
-            Become a Member
-          </a>
-          <a href="donate.html" class="btn-pill btn-primary-gradient btn-donate">
-            Donate Us
-          </a>
-        </div>
-
-        <!-- Mobile Menu Toggle Button -->
-        <button type="button" class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <!-- Mobile Menu Dropdown -->
-        <div class="mobile-menu" id="mobileMenu">
-          <ul class="mobile-nav">
-            <li class="nav-item">
-              <a href="ns-mas.html" class="nav-link">NS-MAS</a>
-            </li>
-            <li class="nav-item">
-              <a href="product-services.html" class="nav-link">Products and Services</a>
-            </li>
-            <li class="nav-item">
-              <a href="registration.html" class="nav-link">Apply Now</a>
-            </li>
-            <li class="nav-item">
-              <a href="careers.html" class="nav-link">Career</a>
-            </li>
-            <li class="nav-item">
-              <a href="blogs.html" class="nav-link active" aria-current="page">Blogs</a>
-            </li>
-            <li class="nav-item" style="margin-top: 6px;">
-              <a href="become-a-member.html" class="btn-pill btn-secondary-white" style="width: 100%; text-align: center;">Become a Member</a>
-            </li>
-            <li class="nav-item">
-              <a href="donate.html" class="btn-pill btn-primary-gradient" style="width: 100%; text-align: center;">Donate Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <!-- Shared Shikshit navbar is inserted here. -->
+    <div id="shikshit-navbar-container"></div>
 
     <main id="main-content">
 
@@ -527,6 +456,7 @@
   <script src="js/shikshit/articles.js" defer></script>
   <script src="js/shikshit/blogs.js" defer></script>
   <script src="js/shikshit-footer.js" defer></script>
+  <script src="js/shikshit/navbar.js" defer></script>
 </body>
 
 </html>

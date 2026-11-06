@@ -89,7 +89,7 @@ Career guidance services for students, Student support services India Online cer
 Professional skill development training,
 Internship support services, Career counseling for students,
 Academic guidance programs, Best education platform for students">
-    <link rel="stylesheet" href="css/sikshitnavbar.css" />
+
 
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,200 +107,10 @@ Academic guidance programs, Best education platform for students">
   <!-- Load script.js early to ensure includeHTML is available -->
   <script src="js/script.js" defer></script>
 
-  <!-- Mobile Menu Toggle Function -->
-  <script>
-    // Global function to toggle mobile menu - must be defined before HTML uses it
-    function toggleMobileMenu(e) {
-      if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-
-      console.log("Toggle mobile menu function called");
-
-      // Find the mobile menu and toggle button
-      const mobileMenu = document.getElementById("mobileMenu");
-      const toggleButton = document.querySelector(".mobile-menu-toggle");
-
-      if (!mobileMenu) {
-        console.error("Mobile menu not found");
-        return;
-      }
-
-      // Toggle the active class on both menu and button
-      const isActive = mobileMenu.classList.contains("active");
-
-      if (isActive) {
-        // Hide menu
-        mobileMenu.classList.remove("active");
-        if (toggleButton) toggleButton.classList.remove("active");
-        console.log("Mobile menu hidden");
-      } else {
-        // Show menu
-        mobileMenu.classList.add("active");
-        if (toggleButton) toggleButton.classList.add("active");
-        console.log("Mobile menu shown");
-      }
-    }
-
-    // Make function globally available
-    window.toggleMobileMenu = toggleMobileMenu;
   </script>
 
-  <!-- Additional Mobile Menu Debugging Styles -->
+  <!-- Product & Services page styles -->
   <style>
-    /* Enhanced Mobile Menu Styles */
-    @media (max-width: 1334px) {
-      .mobile-menu-toggle {
-        display: flex !important;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        z-index: 1002;
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(107, 70, 193, 0.3);
-        border-radius: 8px;
-        padding: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        width: 44px;
-        height: 44px;
-      }
-
-      .mobile-menu-toggle:hover {
-        background: rgba(107, 70, 193, 0.15);
-        border-color: rgba(107, 70, 193, 0.5);
-        transform: scale(1.05);
-      }
-
-      .hamburger-line {
-        background-color: #6b46c1 !important;
-        width: 24px;
-        height: 3px;
-        margin: 2px 0;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-      }
-
-      /* Mobile Menu Container */
-      .mobile-menu {
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        right: 0 !important;
-        background: linear-gradient(135deg,
-            #ffffff 0%,
-            #f8fafc 100%) !important;
-        border-top: 3px solid #6b46c1 !important;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
-        z-index: 1001 !important;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        border-radius: 0 0 16px 16px;
-        overflow: hidden;
-      }
-
-      .mobile-menu.active {
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0);
-        max-height: 600px !important;
-      }
-
-      /* Mobile Navigation List */
-      .mobile-nav {
-        padding: 24px 20px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important;
-        list-style: none !important;
-        margin: 0 !important;
-      }
-
-      .mobile-nav .nav-item {
-        list-style: none !important;
-        margin: 0 !important;
-      }
-
-      /* Mobile Navigation Links */
-      .mobile-nav .nav-link {
-        padding: 16px 20px !important;
-        border: 2px solid #e2e8f0 !important;
-        border-radius: 12px !important;
-        text-align: center !important;
-        display: block !important;
-        text-decoration: none !important;
-        color: #374151 !important;
-        font-weight: 600 !important;
-        font-size: 16px !important;
-        transition: all 0.3s ease !important;
-        background: white !important;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .mobile-nav .nav-link::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg,
-            transparent,
-            rgba(107, 70, 193, 0.1),
-            transparent);
-        transition: left 0.5s ease;
-      }
-
-      .mobile-nav .nav-link:hover::before {
-        left: 100%;
-      }
-
-      .mobile-nav .nav-link:hover {
-        border-color: #6b46c1 !important;
-        color: #6b46c1 !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 20px rgba(107, 70, 193, 0.2) !important;
-        background: #f8fafc !important;
-      }
-
-      /* Special styling for CTA buttons in mobile */
-      .mobile-nav .btn-partner {
-        background: linear-gradient(135deg, #10b981, #059669) !important;
-        color: white !important;
-        border-color: #10b981 !important;
-        font-weight: 700 !important;
-      }
-
-      .mobile-nav .btn-partner:hover {
-        background: linear-gradient(135deg, #059669, #047857) !important;
-        border-color: #059669 !important;
-        color: white !important;
-        transform: translateY(-3px) !important;
-        box-shadow: 0 6px 25px rgba(16, 185, 129, 0.4) !important;
-      }
-
-      .mobile-nav .btn-donate {
-        background: linear-gradient(135deg, #ef4444, #dc2626) !important;
-        color: white !important;
-        border-color: #ef4444 !important;
-        font-weight: 700 !important;
-      }
-
-      .mobile-nav .btn-donate:hover {
-        background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
-        border-color: #dc2626 !important;
-        color: white !important;
-        transform: translateY(-3px) !important;
-        box-shadow: 0 6px 25px rgba(239, 68, 68, 0.4) !important;
-      }
-    }
-
     /* Modern Product & Services Page Styles */
     .hero-section {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -1352,20 +1162,6 @@ Academic guidance programs, Best education platform for students">
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
 
-    /* Enlarged logo styles */
-    .navbar-logo-enlarged {
-      height: 130px;
-      width: auto;
-      margin-right: 0;
-      transition: transform 0.3s ease;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
-
-    .navbar-logo-enlarged:hover {
-      transform: scale(1.05);
-    }
-
     .videos {
   padding: 40px 20px;
   text-align: center;
@@ -1443,6 +1239,7 @@ Academic guidance programs, Best education platform for students">
   <link rel="stylesheet" href="css/shikshit/footer.css">
 
   
+  <link rel="stylesheet" href="css/shikshit/navbar.css">
 </head>
 
 <body class="shikshit-editorial page-products">
@@ -1470,79 +1267,8 @@ Academic guidance programs, Best education platform for students">
 
   <div class="shikshit-main-content">
 
-    <!-- ======================================================================
-         NAVBAR: Sticky Floating White-Glass Pill (Backdrop blur, soft shadow)
-         Items: NS-MAS | Products and Services | Apply Now | Career + 2 CTAs
-         ====================================================================== -->
-    <header class="shikshit-header" role="banner">
-      <nav class="shikshit-navbar" aria-label="Main Navigation">
-        <!-- Brand Logo (Existing logo file unchanged) -->
-        <a href="index.html" class="shikshit-brand navbar-brand" aria-label="Shikshit Homepage">
-          <img src="images/sikshitlogo.webp" alt="Shikshit Logo - Empowering Education & Scholarships" class="shikshit-logo navbar-logo-enlarged">
-        </a>
-
-        <!-- Main Desktop Navigation -->
-        <ul class="shikshit-nav-menu navbar-nav">
-          <li class="nav-item">
-            <a href="ns-mas.html" class="shikshit-nav-link nav-link">NS-MAS</a>
-          </li>
-          <li class="nav-item">
-            <a href="product-services.html" class="shikshit-nav-link nav-link active" style="color: var(--violet); font-weight: 700;">Products and Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="registration.html" class="shikshit-nav-link nav-link">Apply Now</a>
-          </li>
-          <li class="nav-item">
-            <a href="careers.html" class="shikshit-nav-link nav-link">Career</a>
-          </li>
-          <li class="nav-item">
-            <a href="blogs.html" class="shikshit-nav-link nav-link">Blogs</a>
-          </li>
-        </ul>
-
-        <!-- CTA Buttons -->
-        <div class="shikshit-nav-actions cta-buttons">
-          <a href="become-a-member.html" class="btn-pill btn-secondary-white btn-partner">
-            Become a Member
-          </a>
-          <a href="donate.html" class="btn-pill btn-primary-gradient btn-donate">
-            Donate Us
-          </a>
-        </div>
-
-        <!-- Mobile Menu Toggle Button (Preserves toggleMobileMenu hook) -->
-        <button type="button" class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
-
-        <!-- Mobile Menu Dropdown -->
-        <div class="mobile-menu" id="mobileMenu">
-          <ul class="mobile-nav">
-            <li class="nav-item">
-              <a href="ns-mas.html" class="nav-link">NS-MAS</a>
-            </li>
-            <li class="nav-item">
-              <a href="product-services.html" class="nav-link" style="color: var(--violet); font-weight: 700;">Products and Services</a>
-            </li>
-            <li class="nav-item">
-              <a href="registration.html" class="nav-link">Apply Now</a>
-            </li>
-            <li class="nav-item">
-              <a href="careers.html" class="nav-link">Career</a>
-            </li>
-            <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
-            <li class="nav-item">
-              <a href="become-a-member.html" class="nav-link btn-partner">Become a Member</a>
-            </li>
-            <li class="nav-item">
-              <a href="donate.html" class="nav-link btn-donate">Donate Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <!-- Shared Shikshit navbar is inserted here. -->
+    <div id="shikshit-navbar-container"></div>
 
     <!-- ======================================================================
          1. PRODUCTS & SERVICES CREATIVE HERO
@@ -2437,36 +2163,6 @@ Academic guidance programs, Best education platform for students">
       });
     });
 
-    // Function to handle NS-MAS navigation to ns-mas.html
-    function navigateToHome(event) {
-      // Close mobile menu if open
-      const mobileMenu = document.getElementById("mobileMenu");
-      const toggle = document.querySelector(".mobile-menu-toggle");
-      if (mobileMenu && mobileMenu.classList.contains("active")) {
-        mobileMenu.classList.remove("active");
-        toggle.classList.remove("active");
-      }
-
-      // Add visual feedback
-      const link = event.target.closest(".nav-link");
-      if (link) {
-        link.style.transform = "scale(0.95)";
-        setTimeout(() => {
-          link.style.transform = "";
-        }, 150);
-      }
-
-      // Allow normal navigation to ns-mas.html
-    }
-
-    // Mobile Menu Toggle Script
-    function toggleMobileMenu() {
-      const mobileMenu = document.getElementById("mobileMenu");
-      const toggle = document.querySelector(".mobile-menu-toggle");
-
-      mobileMenu.classList.toggle("active");
-      toggle.classList.toggle("active");
-    }
   </script>
   <script src="js/shikshit/video-player.js" defer></script>
 
@@ -2474,6 +2170,7 @@ Academic guidance programs, Best education platform for students">
   <script src="js/shikshit/inner.js"></script>
       <!-- Centralized Shikshit Footer Component Loader -->
   <script src="js/shikshit-footer.js" defer></script>
+  <script src="js/shikshit/navbar.js" defer></script>
 </body>
 
 </html>

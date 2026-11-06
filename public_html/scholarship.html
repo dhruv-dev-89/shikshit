@@ -212,7 +212,7 @@ Education funding support India, Student financial aid program" >
 
         /* No padding for body to allow hero to take full viewport */
         body {
-            padding-top: 0; /* Removed padding for navbar */
+            padding-top: 0;
             margin: 0 !important;
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -2836,8 +2836,7 @@ Education funding support India, Student financial aid program" >
     </style>
     <link rel="stylesheet" href="css/nsmas-footer.css">
     <script src="js/nsmas-footer.js" defer></script>
-
-  
+  <link rel="stylesheet" href="css/shikshit/navbar.css">
 </head>
 <body class="bg-gray-50 w-full overflow-x-hidden" style="margin: 0; padding: 0; width: 100vw; max-width: 100vw;">
     <!-- Early script to ensure includeHTML is called -->
@@ -2875,64 +2874,25 @@ Education funding support India, Student financial aid program" >
         }, 0);
     </script>
 
-    <!-- Include NSMAS Navbar -->
-    <div include-html="components/nsmas_navbar.html"></div>
+    <!-- Shared Shikshit Navbar -->
+    <div id="shikshit-navbar-container"></div>
 
     <!-- Viewport height fix scripts -->
     <script src="js/viewport-fix.js"></script>
 
-    <!-- Mobile menu fix CSS -->
-    <link rel="stylesheet" href="css/mobile-menu-fix.css">
-
     <!-- Include HTML script -->
     <script src="js/script.js"></script>
 
-    <!-- Comprehensive Hamburger Menu Fix Script - handles all mobile menu functionality -->
-    <script src="js/hamburger-menu-fix.js"></script>
-
-
-
-    <!-- Script to handle include-html completion -->
-    <script>
-        // Function to check when include-html has completed loading the navbar
-        function checkIncludeHtmlCompletion() {
-            const includeHtmlElements = document.querySelectorAll('[include-html]');
-
-            // Create a MutationObserver to watch for changes to the include-html elements
-            const includeObserver = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-                        // If navbar has been loaded, adjust hero height
-                        console.log("Navbar loaded via include-html");
-                        setTimeout(setHeroHeight, 0);
-                        if (typeof setHeroHeight === 'function') setTimeout(setHeroHeight, 100);
-                    }
-                });
-            });
-
-            // Observe each include-html element
-            includeHtmlElements.forEach(element => {
-                includeObserver.observe(element, { childList: true, subtree: true });
-            });
-        }
-
-        // Run when DOM is loaded
-        document.addEventListener('DOMContentLoaded', checkIncludeHtmlCompletion);
-    </script>
-
     <!-- Hero section height fix script -->
     <script>
-        // Function to set hero height to exactly viewport height minus navbar
+        // Function to keep the hero at viewport height across devices
         function setHeroHeight() {
-            const navbar = document.querySelector('nav') || document.querySelector('header') || document.querySelector('.navbar-container');
-            const navbarHeight = navbar ? navbar.offsetHeight : 70;
             const heroSection = document.querySelector('.hero-section');
 
             const isMobile = window.innerWidth <= 767;
             const isTablet = window.innerWidth > 767 && window.innerWidth <= 1024;
 
             if (heroSection) {
-                const exactHeight = window.innerHeight - navbarHeight;
                 heroSection.style.height = '100vh';
                 heroSection.style.minHeight = '100vh';
                 heroSection.style.maxHeight = '100vh';
@@ -2942,7 +2902,6 @@ Education funding support India, Student financial aid program" >
                 heroSection.style.justifyContent = 'center';
                 heroSection.style.padding = '0';
 
-                document.documentElement.style.setProperty('--hero-height', exactHeight + 'px');
                 heroSection.setAttribute('data-viewport-adjusted', 'true');
                 heroSection.setAttribute('data-mobile-view', isMobile ? 'true' : 'false');
                 heroSection.setAttribute('data-tablet-view', isTablet ? 'true' : 'false');
@@ -4697,7 +4656,7 @@ Education funding support India, Student financial aid program" >
 
     <!-- Explicitly call includeHTML function to ensure components are loaded -->
     <script>
-        // Call includeHTML function to load navbar and footer
+        // Call includeHTML to load the page's remaining HTML components
         if (typeof includeHTML === 'function') {
             includeHTML();
             console.log("includeHTML function called explicitly");
@@ -4719,11 +4678,6 @@ Education funding support India, Student financial aid program" >
         window.addEventListener('load', function() {
             // Wait for all resources to load
             setTimeout(function() {
-                // Get the navbar height
-                const navbar = document.querySelector('nav') || document.querySelector('header') || document.querySelector('.navbar-container');
-                const navbarHeight = navbar ? navbar.offsetHeight : 70;
-                console.log("Final navbar height: " + navbarHeight + "px");
-
                 // Check if we're on a mobile device
                 const isMobile = window.innerWidth <= 767;
 
@@ -5100,5 +5054,6 @@ Education funding support India, Student financial aid program" >
     <div include-html="components/nsmas-floating-button.html"></div>
     <div include-html="components/footer.html"></div>
 
-    </body>
+  <script src="js/shikshit/navbar.js" defer></script>
+</body>
 </html>

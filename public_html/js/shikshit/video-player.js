@@ -205,6 +205,26 @@
 
     card.addEventListener('mousemove', resetHideTimer);
     card.addEventListener('mouseenter', resetHideTimer);
+    card.addEventListener('pointerenter', function(event) {
+      if (event.pointerType === 'touch') return;
+
+      // Hover previews play with sound. Browsers may reject audible autoplay
+      // until the visitor has interacted with the page, so leave the video
+      // paused if that happens instead of unexpectedly starting it muted.
+      document.querySelectorAll('video').forEach(function(otherVideo) {
+        if (otherVideo !== video && !otherVideo.paused) otherVideo.pause();
+      });
+      video.muted = false;
+      syncClasses('is-muted', false);
+      if (video.ended) video.currentTime = 0;
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(function() {});
+      }
+    });
+    card.addEventListener('pointerleave', function(event) {
+      if (event.pointerType !== 'touch' && !video.paused) video.pause();
+    });
     card.addEventListener('mouseleave', function() {
       if (!video.paused && !video.ended) {
         syncClasses('hide-controls', true);
@@ -243,6 +263,7 @@
     speedPxPerSec = speedPxPerSec || 35;
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) speedPxPerSec = Math.min(speedPxPerSec, 18);
 
     // Clone items once to create seamless infinite loop
     const originalItems = Array.from(track.querySelectorAll('.video-item'));
@@ -289,7 +310,7 @@
     }
 
     function start() {
-      if (!rafId && !prefersReducedMotion) {
+      if (!rafId) {
         lastTime = performance.now();
         scrollPos = track.scrollLeft;
         rafId = requestAnimationFrame(step);
@@ -329,8 +350,6 @@
       });
     });
 
-    if (prefersReducedMotion) return;
-
     // Visibility Observer
     const section = track.closest('.video-carousel') || track;
     if ('IntersectionObserver' in window && section) {
@@ -354,9 +373,15 @@
       }
     }, { passive: true });
 
+    let wheelResumeTimer = null;
+    track.addEventListener('wheel', function(event) {
+      if (Math.abs(event.deltaX) < Math.abs(event.deltaY) && !event.shiftKey) return;
+      pauseScroll();
+      clearTimeout(wheelResumeTimer);
+      wheelResumeTimer = setTimeout(resumeScroll, 1200);
+    }, { passive: true });
+
     // Interaction pauses
-    track.addEventListener('pointerenter', pauseScroll);
-    track.addEventListener('pointerleave', resumeScroll);
     track.addEventListener('pointerdown', pauseScroll);
     window.addEventListener('pointerup', resumeScroll);
     track.addEventListener('touchstart', pauseScroll, { passive: true });
