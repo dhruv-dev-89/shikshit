@@ -86,15 +86,23 @@
               <li><a href="${base}index.html">Home</a></li>
               <li><a href="${base}about-us.html">About Us</a></li>
               <li><a href="${base}product-services.html">Programs &amp; Services</a></li>
-              <li><a href="${base}how-it-works.html">How It Works</a></li>
-              <li><a href="${base}scholarship.html">Scholarships</a></li>
-              <li><a href="${base}ns-mas.html">NS-MAS Scholarship</a></li>
               <li><a href="${base}blogs.html">Blogs</a></li>
               <li><a href="${base}become-a-member.html">Become a Member</a></li>
-              <li><a href="${base}registration.html">Student Registration</a></li>
               <li><a href="${base}careers.html">Career</a></li>
               <li><a href="${base}donate.html">Donate</a></li>
               <li><a href="${base}contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>NSMAS</h4>
+            <ul>
+              <li><a href="${base}ns-mas.html">NS-MAS Home</a></li>
+              <li><a href="${base}how-it-works.html">How It Works</a></li>
+              <li><a href="${base}scholarship.html">Scholarships</a></li>
+              <li><a href="${base}registration.html">Student Registration</a></li>
+              <li><a href="${base}privacypolicy.html">Privacy Policy</a></li>
+              <li><a href="${base}termsandservice.html">Terms of Service</a></li>
             </ul>
           </div>
 
@@ -125,7 +133,24 @@
         </div>
 
         <div class="footer-bottom">
-          &copy; 2026 Shikshit Education. All Rights Reserved.
+          <span class="footer-copyright">&copy; 2026 Shikshit Education. All Rights Reserved.</span>
+          <nav class="footer-social-links" aria-label="Social media links">
+            <a href="https://www.facebook.com/profile.php?id=61585718603669&amp;sk=followers" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.4v3h2.7v8h3.4Z"/></svg>
+            </a>
+            <a href="https://twitter.com/shikshiteducation" target="_blank" rel="noopener noreferrer" aria-label="X" title="X">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l7.3-8.4L1.9 2h6.5l4.4 6.8L18.9 2Zm-1.1 18h1.7L7.4 3.9H5.6L17.8 20Z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCOSa-VBqUhlX8JNkWvoORtg" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/shikshit_0?igsh=MWdvOGdscWQ1Znk1Mg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.3-3.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/shikshit.in/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9h3.7v12H3.4V9Zm5.9 0h3.5v1.6h.1A3.8 3.8 0 0 1 16.3 8c3.8 0 4.5 2.5 4.5 5.7V21h-3.7v-6.5c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V21H9.3V9Z"/></svg>
+            </a>
+          </nav>
         </div>
       </div>
     </footer>
@@ -157,6 +182,7 @@
     const footerEl = container.querySelector('.footer-editorial');
     if (footerEl) {
       footerEl.classList.add('in-view');
+      ensureSocialLinks(footerEl);
     }
 
     // Force all grid column containers to be visible immediately
@@ -176,6 +202,61 @@
     try {
       document.dispatchEvent(new CustomEvent('shikshit:footer-loaded', { detail: { container } }));
     } catch (e) {}
+  }
+
+  // Older cached footer markup may only contain the first two social links.
+  // Fill in any missing Shikshit profiles after every component load.
+  function ensureSocialLinks(footer) {
+    const bottom = footer.querySelector('.footer-bottom');
+    if (!bottom) return;
+
+    let nav = bottom.querySelector('.footer-social-links');
+    if (!nav) {
+      nav = document.createElement('nav');
+      nav.className = 'footer-social-links';
+      nav.setAttribute('aria-label', 'Social media links');
+      bottom.appendChild(nav);
+    }
+
+    const profiles = [
+      {
+        label: 'Facebook',
+        href: 'https://www.facebook.com/profile.php?id=61585718603669&sk=followers',
+        icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.4v3h2.7v8h3.4Z"/></svg>'
+      },
+      {
+        label: 'X',
+        href: 'https://twitter.com/shikshiteducation',
+        icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.4l7.3-8.4L1.9 2h6.5l4.4 6.8L18.9 2Zm-1.1 18h1.7L7.4 3.9H5.6L17.8 20Z"/></svg>'
+      },
+      {
+        label: 'YouTube',
+        href: 'https://www.youtube.com/channel/UCOSa-VBqUhlX8JNkWvoORtg',
+        icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>'
+      },
+      {
+        label: 'Instagram',
+        href: 'https://www.instagram.com/shikshit_0?igsh=MWdvOGdscWQ1Znk1Mg==',
+        icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.3-3.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>'
+      },
+      {
+        label: 'LinkedIn',
+        href: 'https://www.linkedin.com/company/shikshit.in/',
+        icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 3a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9h3.7v12H3.4V9Zm5.9 0h3.5v1.6h.1A3.8 3.8 0 0 1 16.3 8c3.8 0 4.5 2.5 4.5 5.7V21h-3.7v-6.5c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V21H9.3V9Z"/></svg>'
+      }
+    ];
+
+    profiles.forEach(function (profile) {
+      if (nav.querySelector('a[aria-label="' + profile.label + '"]')) return;
+      const link = document.createElement('a');
+      link.href = profile.href;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', profile.label);
+      link.title = profile.label;
+      link.innerHTML = profile.icon;
+      nav.appendChild(link);
+    });
   }
 
   /**
@@ -211,7 +292,7 @@
       const componentUrl = basePath + 'components/ShikshitFooter.html';
 
       // Attempt to fetch components/ShikshitFooter.html
-      fetch(componentUrl)
+      fetch(componentUrl, { cache: 'no-store' })
         .then(function (response) {
           if (response.ok) {
             return response.text();

@@ -436,14 +436,12 @@
     </style>
     <link rel="stylesheet" href="css/nsmas-footer.css">
     <script src="js/nsmas-footer.js" defer></script>
-  <link rel="stylesheet" href="css/shikshit/navbar.css">
 </head>
   <body
     class="bg-gray-50 w-full overflow-x-hidden"
     style="margin: 0; padding: 0; width: 100vw; max-width: 100vw"
   >
-    <!-- Shared Shikshit navbar is inserted here. -->
-    <div id="shikshit-navbar-container"></div>
+    <div include-html="components/nsmas_navbar.html"></div>
 
     <!-- Viewport height fix script -->
     <script src="js/viewport-fix.js"></script>
@@ -464,7 +462,6 @@
     <!-- Include HTML script -->
     <script src="js/script.js"></script>
 
-    <!-- Shared Shikshit navbar is initialized by navbar.js. -->
     <script>
       // Additional mobile fixes
       document.addEventListener("DOMContentLoaded", function () {
@@ -2330,6 +2327,5 @@
     <!-- Include Footer -->
     <div include-html="components/footer.html"></div>
 
-  <script src="js/shikshit/navbar.js" defer></script>
 </body>
 </html>

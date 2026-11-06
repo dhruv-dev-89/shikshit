@@ -27,6 +27,9 @@
     // Remove native controls
     video.removeAttribute('controls');
     video.playsInline = true;
+    // Keep every Shikshit video looping, including carousel clones and
+    // standalone videos initialized through the shared player.
+    video.loop = true;
     if (!video.preload) video.preload = 'metadata';
 
     if (video.readyState === 0) {

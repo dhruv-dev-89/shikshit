@@ -131,6 +131,23 @@
 
     if (!pillMap.length) return;
 
+    // Keep the service section index from covering footer content while the
+    // shared global navbar remains visible during scrolling.
+    let observedFooter = null;
+    function watchFooterOverlap() {
+      const footer = document.querySelector('.footer-editorial');
+      if (!footer || footer === observedFooter || !('IntersectionObserver' in window)) return;
+      observedFooter = footer;
+      const footerObserver = new IntersectionObserver(function (entries) {
+        const footerIsVisible = entries.some(entry => entry.isIntersecting);
+        bar.classList.toggle('footer-overlap', footerIsVisible);
+      }, { threshold: 0 });
+      footerObserver.observe(footer);
+    }
+
+    document.addEventListener('shikshit:footer-loaded', watchFooterOverlap, { once: true });
+    watchFooterOverlap();
+
     // Detect active section on scroll
     function determineActivePill() {
       if (isClickScrolling) return;

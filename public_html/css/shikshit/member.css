@@ -562,12 +562,16 @@ body.page-member .py-20.bg-gradient-to-b p.text-gray-500 {
    6. VIDEO ADS SECTION
    ========================================================================== */
 body.page-member .video-carousel {
-  padding: 4.5rem 1rem !important;
+  padding: 4.5rem 1rem 1rem !important;
   background: rgba(247, 245, 255, 0.65) !important;
   text-align: center;
   position: relative;
   z-index: 2;
   overflow: hidden;
+}
+
+body.page-member .footer-editorial {
+  margin-top: 0 !important;
 }
 
 body.page-member .video-carousel h2 {

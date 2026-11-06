@@ -65,11 +65,11 @@
   box-sizing: border-box !important;
 }
 
-/* 4-Column Responsive Layout Grid */
+/* 5-Column Responsive Layout Grid */
 .footer-editorial .footer-grid {
   display: grid !important;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr !important;
-  gap: 40px !important;
+  grid-template-columns: 1.35fr repeat(4, 1fr) !important;
+  gap: 28px !important;
   margin-bottom: 48px !important;
   align-items: start !important;
 }
@@ -253,13 +253,64 @@
 
 /* Footer Bottom Hairline & Copyright */
 .footer-editorial .footer-bottom {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
   border-top: 1px solid rgba(124, 58, 237, 0.12) !important;
   padding-top: 24px !important;
   margin-top: 0 !important;
-  text-align: center !important;
+  text-align: left !important;
   font-size: 13.5px !important;
   color: var(--ink, var(--shikshit-footer-ink)) !important;
   letter-spacing: -0.01em !important;
+}
+
+.footer-editorial .footer-copyright {
+  display: block;
+}
+
+.footer-editorial .footer-social-links {
+  display: flex !important;
+  flex: 0 0 240px !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  width: 240px !important;
+  min-width: 240px !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+.footer-editorial .footer-social-links a {
+  display: inline-flex !important;
+  flex: 0 0 40px !important;
+  width: 40px !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background: rgba(11, 11, 59, 0.08) !important;
+  color: var(--navy, var(--shikshit-footer-navy)) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease !important;
+}
+
+.footer-editorial .footer-social-links svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  fill: currentColor !important;
+}
+
+.footer-editorial .footer-social-links a:hover,
+.footer-editorial .footer-social-links a:focus-visible {
+  background: var(--signature-gradient, var(--shikshit-footer-gradient)) !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -287,6 +338,16 @@
     grid-template-columns: 1fr !important;
     gap: 28px !important;
     margin-bottom: 32px !important;
+  }
+
+  .footer-editorial .footer-bottom {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .footer-editorial .footer-social-links {
+    justify-content: flex-start !important;
   }
 
   .footer-editorial .footer-brand {

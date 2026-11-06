@@ -811,12 +811,12 @@ body.page-products .footer-editorial .shikshit-container,
   padding: 0 !important;
 }
 
-/* Columns: 1.4fr 1fr 1fr 1.2fr top-aligned */
+/* Five columns match the shared Shikshit footer component. */
 body.page-products .footer-grid,
 .footer-editorial .footer-grid {
   display: grid !important;
-  grid-template-columns: 1.4fr 1fr 1fr 1.2fr !important;
-  gap: 36px !important;
+  grid-template-columns: 1.35fr repeat(4, 1fr) !important;
+  gap: 28px !important;
   align-items: start !important;
   margin-bottom: 40px !important;
   text-align: left !important;
@@ -2190,13 +2190,13 @@ body.page-products #diploma-courses [style*="border-radius: 16px"] > div:last-ch
 }
 
 /* --------------------------------------------------------------------------
-   6. EDITORIAL FOOTER (4-Column Layout, Lavender-to-Peach Gradient)
+   6. EDITORIAL FOOTER (5-Column Layout, Lavender-to-Peach Gradient)
    -------------------------------------------------------------------------- */
 body.page-products .footer-editorial {
   background: linear-gradient(135deg, var(--lav-50) 0%, var(--blush) 50%, var(--peach) 100%) !important;
   border-radius: 48px 48px 0 0 !important;
   border-top: 1px solid rgba(124, 58, 237, 0.15) !important;
-  padding: 56px 24px 32px !important;
+  padding: 100px 24px 32px !important;
   margin-top: 60px !important;
   position: relative !important;
   z-index: 2 !important;
@@ -2212,8 +2212,8 @@ body.page-products .footer-editorial .shikshit-container {
 
 body.page-products .footer-grid {
   display: grid !important;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr !important;
-  gap: 40px !important;
+  grid-template-columns: 1.35fr repeat(4, 1fr) !important;
+  gap: 28px !important;
   margin-bottom: 48px !important;
   text-align: left !important;
 }
@@ -2232,6 +2232,12 @@ body.page-products .footer-col ul {
   display: flex !important;
   flex-direction: column !important;
   gap: 10px !important;
+}
+
+body.page-products .sticky-section-index.footer-overlap {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 body.page-products .footer-col a {
@@ -2260,6 +2266,10 @@ body.page-products .footer-bottom {
   body.page-products .footer-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 32px !important;
+  }
+
+  body.page-products .footer-editorial {
+    padding-top: 88px !important;
   }
 }
 
